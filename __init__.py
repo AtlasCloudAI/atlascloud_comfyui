@@ -19,5 +19,4 @@ __author__ = """AtlasCloud"""
 __email__ = "irene.chen@atlascloud.ai"
 __version__ = "0.0.1"
 
-from .src.atlascloud_comfyui.nodes import NODE_CLASS_MAPPINGS
-from .src.atlascloud_comfyui.nodes import NODE_DISPLAY_NAME_MAPPINGS
+from atlascloud_comfyui.registry import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
