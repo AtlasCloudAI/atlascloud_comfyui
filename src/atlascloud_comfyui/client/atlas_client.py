@@ -38,6 +38,18 @@ class AtlasClient:
         except Exception as e:
             raise AtlasError(f"Unexpected generateVideo response: {data}") from e
 
+    def generate_image(self, payload: dict) -> str:
+        url = f"{self.base_url}/api/v1/model/generateImage"
+        headers = {"Content-Type": "application/json", **self._auth_headers()}
+        r = requests.post(url, headers=headers, json=payload, timeout=120)
+        r.raise_for_status()
+        data = r.json()
+        try:
+            return data["data"]["id"]
+        except Exception as e:
+            raise AtlasError(f"Unexpected generateImage response: {data}") from e
+
+
     def poll_prediction(self, prediction_id: str, *, poll_interval_sec: float = 2.0, timeout_sec: float = 900) -> dict:
         import requests
 

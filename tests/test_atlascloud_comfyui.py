@@ -20,7 +20,7 @@ def test_example_node_initialization(example_node):
 def test_return_types():
     """Test the node's metadata."""
     assert AtlasClientNode.RETURN_NAMES == ("atlas_client",)
-    assert AtlasClientNode.INPUT_TYPES == {
+    assert AtlasClientNode.INPUT_TYPES() == {
         "required": {
             "api_key": ("STRING", {"default": ""}),
         },
