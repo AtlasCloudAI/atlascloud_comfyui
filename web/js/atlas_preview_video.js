@@ -154,3 +154,5 @@ app.registerExtension({
         addVideoPreview(nodeType);
     },
 });
+
+console.log("[AtlasCloudPreviewVideo] loaded");
