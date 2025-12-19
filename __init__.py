@@ -22,22 +22,16 @@ SRC_PKG_DIR = os.path.join(SRC_DIR, "atlascloud_comfyui")
 if os.path.isdir(SRC_PKG_DIR) and SRC_PKG_DIR not in __path__:
     __path__.append(SRC_PKG_DIR)
 
-__all__ = [
-    "NODE_CLASS_MAPPINGS",
-    "NODE_DISPLAY_NAME_MAPPINGS",
-    "WEB_DIRECTORY"
-]
+__all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS", "WEB_DIRECTORY"]
 
 __author__ = """AtlasCloud"""
 __email__ = "irene.chen@atlascloud.ai"
 __version__ = "0.0.1"
 
 try:
-    import folder_paths  # type: ignore  # noqa: F401
-
     from atlascloud_comfyui.registry import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
-except Exception:
-    # Allow importing the package outside of ComfyUI (tests/tooling).
+except Exception as e:
+    # Keep variables defined so tooling doesn't crash, but surface why it failed
+    print("[AtlasCloud] Failed to import registry:", repr(e))
     NODE_CLASS_MAPPINGS = {}
     NODE_DISPLAY_NAME_MAPPINGS = {}
-
