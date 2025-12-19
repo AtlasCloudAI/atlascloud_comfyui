@@ -4,19 +4,18 @@ import base64
 import io
 import re
 import urllib.request
-from typing import Tuple
-
-import numpy as np
-import torch
-from PIL import Image
 
 
-def _pil_to_comfy_image(pil: Image.Image) -> torch.Tensor:
-    arr = np.array(pil.convert("RGB")).astype(np.float32) / 255.0
-    return torch.from_numpy(arr)[None, ...]  # [1,H,W,3]
+def _load_image(source: str, timeout_sec: int = 60):
+    # PIL Image at runtime (do NOT import PIL at module top)
+    try:
+        from PIL import Image
+    except ModuleNotFoundError as e:
+        raise RuntimeError(
+            "AtlasImagePreviewURL requires Pillow. Install in ComfyUI Python env:\n"
+            "  ~/Documents/ComfyUI/.venv/bin/python -m pip install pillow"
+        ) from e
 
-
-def _load_image(source: str, timeout_sec: int = 60) -> Image.Image:
     s = (source or "").strip()
     if not s:
         raise RuntimeError("source is empty")
@@ -51,8 +50,29 @@ class AtlasImagePreviewURL:
             },
         }
 
-    def run(self, source: str, timeout_sec: int = 60) -> Tuple[torch.Tensor, int, int]:
+    def run(self, source: str, timeout_sec: int = 60):
+        # runtime-only deps (CI/node-diff safe)
+        try:
+            import numpy as np
+        except ModuleNotFoundError as e:
+            raise RuntimeError(
+                "AtlasImagePreviewURL requires numpy. Install in ComfyUI Python env:\n"
+                "  ~/Documents/ComfyUI/.venv/bin/python -m pip install numpy"
+            ) from e
+
+        try:
+            import torch
+        except ModuleNotFoundError as e:
+            raise RuntimeError(
+                "AtlasImagePreviewURL requires torch (ComfyUI already includes it). "
+                "If you are running outside ComfyUI, please use ComfyUI's Python env."
+            ) from e
+
         pil = _load_image(source, timeout_sec=timeout_sec)
+        pil = pil.convert("RGB")
         w, h = pil.size
-        image = _pil_to_comfy_image(pil)
+
+        arr = np.array(pil).astype(np.float32) / 255.0
+        image = torch.from_numpy(arr)[None, ...]  # [1,H,W,3]
+
         return (image, w, h)
