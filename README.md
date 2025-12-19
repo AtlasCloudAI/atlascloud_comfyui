@@ -1,7 +1,7 @@
 # AtlasCloud_ComfyUI
 
-AtlasCloud official custom nodes for **ComfyUI**.
-
+AtlasCloud official custom nodes v1.0.0 for **ComfyUI**.
+[AtlasCloud Website](https://atlascloud.ai/?utm_source=github&utm_medium=readme&utm_campaign=comfyui/)
 With these nodes you can call AtlasCloud’s hosted models directly inside ComfyUI workflows.
 
 ---
@@ -12,7 +12,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 
 -   Python dependencies are handled by ComfyUI’s own environment (recommended)
 
--   An **AtlasCloud API Key**
+-   An **AtlasCloud API Key** [AtlasCloud Website](https://atlascloud.ai/?utm_source=github&utm_medium=readme&utm_campaign=comfyui/)
 
 > Tip: If you’re using **ComfyUI Desktop**, you should install dependencies into ComfyUI’s bundled venv (not your system Python).
 
