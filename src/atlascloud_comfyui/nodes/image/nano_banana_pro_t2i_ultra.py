@@ -36,8 +36,6 @@ class AtlasNanoBananaProTextToImageUltra:
         self,
         atlas_client: AtlasClientHandle,
         prompt: str,
-        width: int,
-        height: int,
         aspect_ratio: str,
         resolution: str,
         output_format: str,
@@ -49,14 +47,12 @@ class AtlasNanoBananaProTextToImageUltra:
         timeout_sec: int = 300,
     ) -> Tuple[str, str]:
         client = atlas_client.client
-        size = f"{width}*{height}"
 
         payload: Dict[str, Any] = {
             "model": "google/nano-banana-pro/text-to-image-ultra",
             "prompt": prompt,
             "negative_prompt": negative_prompt,
             "seed": seed,
-            "size": size,  # ✅ per your standard
             "aspect_ratio": aspect_ratio,
             "resolution": resolution,
             "output_format": output_format,
