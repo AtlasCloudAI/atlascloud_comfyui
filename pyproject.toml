@@ -67,6 +67,11 @@ module = "tests.*"
 allow_untyped_defs = true
 disable_error_code = "attr-defined"
 
+[[tool.mypy.overrides]]
+# Allow untyped imports for third-party libraries
+module = "atlascloud_comfyui.client.*"
+ignore_missing_imports = true
+
 [tool.ruff]
 # extend-exclude = ["static", "ci/templates"]
 line-length = 140

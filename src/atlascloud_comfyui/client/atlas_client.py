@@ -5,7 +5,7 @@ import time
 from dataclasses import dataclass
 from typing import Any, Dict, Optional
 
-import requests
+import requests  # type: ignore[import-untyped]
 
 
 class AtlasError(RuntimeError):
@@ -49,10 +49,7 @@ class AtlasClient:
         except Exception as e:
             raise AtlasError(f"Unexpected generateImage response: {data}") from e
 
-
     def poll_prediction(self, prediction_id: str, *, poll_interval_sec: float = 2.0, timeout_sec: float = 900) -> dict:
-        import requests
-
         try:
             from comfy.utils import ProgressBar
 
