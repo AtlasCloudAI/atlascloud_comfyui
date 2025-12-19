@@ -15,7 +15,7 @@ from typing import Dict, Type, Any
 # --- Import node classes (should be import-safe in CI)
 # IMPORTANT: Node modules should NOT import folder_paths/comfy/requests at top-level.
 # Move those imports inside run().
-
+from atlascloud_comfyui.nodes.legacy.nodes import Example as LegacyExample
 from atlascloud_comfyui.nodes.auth.atlas_client_node import AtlasClientNode
 
 from atlascloud_comfyui.nodes.video.wan26_t2v import AtlasWAN26TextToVideo
@@ -71,3 +71,6 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Flux2 Flex Text-to-Image": "AtlasCloud Flux2 Flex Text-to-Image",
     "AtlasCloud Video Preview": "AtlasCloud Video Preview",
 }
+
+NODE_CLASS_MAPPINGS["Example"] = LegacyExample
+NODE_DISPLAY_NAME_MAPPINGS["Example"] = "Example (Deprecated)"
