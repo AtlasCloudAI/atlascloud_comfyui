@@ -1,67 +1,154 @@
 # AtlasCloud_ComfyUI
 
-A collection of custom nodes for ComfyUI
+AtlasCloud official custom nodes v1.0.0 for **ComfyUI**.
+[AtlasCloud Website](https://atlascloud.ai/?utm_source=github&utm_medium=readme&utm_campaign=comfyui/)
+With these nodes you can call AtlasCloud’s hosted models directly inside ComfyUI workflows.
 
-> [!NOTE]
-> This projected was created with a [cookiecutter](https://github.com/Comfy-Org/cookiecutter-comfy-extension) template. It helps you start writing custom nodes without worrying about the Python setup.
+---
 
-## Quickstart
+## Requirements
 
-1. Install [ComfyUI](https://docs.comfy.org/get_started).
-1. Install [ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)
-1. Look up this extension in ComfyUI-Manager. If you are installing manually, clone this repository under `ComfyUI/custom_nodes`.
-1. Restart ComfyUI.
+-   **ComfyUI** (Desktop app or source install)
 
-# Features
+-   Python dependencies are handled by ComfyUI’s own environment (recommended)
 
-- A list of features
+-   An **AtlasCloud API Key** [AtlasCloud Website](https://atlascloud.ai/?utm_source=github&utm_medium=readme&utm_campaign=comfyui/)
 
-## Develop
+> Tip: If you’re using **ComfyUI Desktop**, you should install dependencies into ComfyUI’s bundled venv (not your system Python).
 
-To install the dev dependencies and pre-commit (will run the ruff hook), do:
+---
 
-```bash
-cd atlascloud_comfyui
-pip install -e .[dev]
-pre-commit install
-```
+## Installation
 
-The `-e` flag above will result in a "live" install, in the sense that any changes you make to your node extension will automatically be picked up the next time you run ComfyUI.
+### Option A — ComfyUI Desktop (Recommended)
 
-## Publish to Github
+1. Quit ComfyUI Desktop completely.
+2. Open a terminal and go to your ComfyUI custom nodes folder:
 
-Install Github Desktop or follow these [instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) for ssh.
+    ```bash
+    cd ~/Documents/ComfyUI/custom_nodes
+    ```
 
-1. Create a Github repository that matches the directory name. 
-2. Push the files to Git
-```
-git add .
-git commit -m "project scaffolding"
-git push
-``` 
+3. Clone the repo:
+    ```
+    git clone https://github.com/AtlascloudAI/atlascloud_comfyui.git
+    ```
+4. Install dependencies into ComfyUI Desktop venv:
 
-## Writing custom nodes
+    ```
+    cd atlascloud_comfyui
+    ~/Documents/ComfyUI/.venv/bin/python -m pip install -r requirements.txt
+    ```
 
-An example custom node is located in [node.py](src/atlascloud_comfyui/nodes.py). To learn more, read the [docs](https://docs.comfy.org/essentials/custom_node_overview).
+5. Launch ComfyUI Desktop again. You should see AtlasCloud nodes under:
+   **Node Library → AtlasCloud**
 
+### Option B — ComfyUI Source Installation (Recommended)
 
-## Tests
+1. Go to your ComfyUI `custom_nodes` directory:
+   `cd /path/to/ComfyUI/custom_nodes`
 
-This repo contains unit tests written in Pytest in the `tests/` directory. It is recommended to unit test your custom node.
+2. Clone the repo:
+   `git clone https://github.com/AtlascloudAI/atlascloud_comfyui.git`
+3. Install dependencies using the same Python environment you use to run ComfyUI:
+    ```
+    cd atlascloud_comfyui
+    python -m pip install -r requirements.txt
+    ```
+4. Restart ComfyUI.
 
-- [build-pipeline.yml](.github/workflows/build-pipeline.yml) will run pytest and linter on any open PRs
-- [validate.yml](.github/workflows/validate.yml) will run [node-diff](https://github.com/Comfy-Org/node-diff) to check for breaking changes
+---
 
-## Publishing to Registry
+## Available Nodes (v1.0.0)
 
-If you wish to share this custom node with others in the community, you can publish it to the registry. We've already auto-populated some fields in `pyproject.toml` under `tool.comfy`, but please double-check that they are correct.
+### Common
 
-You need to make an account on https://registry.comfy.org and create an API key token.
+-   AtlasCloud Client
+    Stores your API key and base URL for all AtlasCloud nodes.
+-   Video Previewer
+-   Image Previewer
 
-- [ ] Go to the [registry](https://registry.comfy.org). Login and create a publisher id (everything after the `@` sign on your registry profile). 
-- [ ] Add the publisher id into the pyproject.toml file.
-- [ ] Create an api key on the Registry for publishing from Github. [Instructions](https://docs.comfy.org/registry/publishing#create-an-api-key-for-publishing).
-- [ ] Add it to your Github Repository Secrets as `REGISTRY_ACCESS_TOKEN`.
+### Text-to-Video（t2v）
 
-A Github action will run on every git push. You can also run the Github action manually. Full instructions [here](https://docs.comfy.org/registry/publishing). Join our [discord](https://discord.com/invite/comfyorg) if you have any questions!
+-   AtlasCloud WAN2.6 Text-to-Video
 
+-   AtlasCloud WAN2.5 Text-to-Video
+
+-   AtlasCloud WAN2.2 Text-to-Video 720p
+
+-   AtlasCloud VEO3.1 Text-to-Video
+
+-   AtlasCloud Kling V2.6 Pro Text-to-Video
+
+-   AtlasCloud Kling Video O1 Text-to-Video
+
+-   AtlasCloud Seedance V1 Pro Text-to-Video 1080p
+
+-   AtlasCloud Hailuo 2.3 Pro Text-to-Video
+
+### Text-to-Image
+
+-   AtlasCloud Seedream V4.5 Text-to-Image
+
+-   AtlasCloud Flux 2 Flex Text-to-Image
+
+-   AtlasCloud Z-Image Turbo LoRA Text-to-Image
+
+-   AtlasCloud Nano Banana Pro Text-to-Image Ultra
+
+### Nodes may expand over time as new models are added.
+
+---
+
+## Troubleshooting
+
+### Nodes not showing up
+
+-   Make sure the repo is placed under:
+
+    -   `ComfyUI/custom_nodes/atlascloud_comfyui`
+
+-   Restart ComfyUI completely (quit and reopen for Desktop).
+
+-   Check logs for import errors:
+
+    -   macOS (Desktop): ~/Library/Logs/ComfyUI/comfyui.log
+
+### Dependency / module not found
+
+Install dependencies into the same Python ComfyUI uses.
+
+-   Desktop default venv:
+    ```
+    ~/Documents/ComfyUI/.venv/bin/python -m pip install -r requirements.txt
+    ```
+
+### API request fails
+
+-   Verify your API key is valid.
+
+-   Check network access and firewall/proxy restrictions.
+
+-   If the API returns an error message, it will appear in the ComfyUI console/log.
+
+---
+
+## Support
+
+GitHub Issues: use the repo Issues page to report bugs and request features.
+
+Please include:
+
+-   your ComfyUI version
+
+-   OS and hardware
+
+-   the model node you used
+
+-   the error traceback from logs
+
+---
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
