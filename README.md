@@ -86,6 +86,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 
 -   AtlasCloud Hailuo 2.3 Pro Text-to-Video
 
+-   AtlasCloud Sora 2 Pro Text-to-Video
+
 ### Text-to-Image
 
 -   AtlasCloud Seedream V4.5 Text-to-Image
