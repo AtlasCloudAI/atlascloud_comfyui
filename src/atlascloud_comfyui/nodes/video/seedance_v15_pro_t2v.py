@@ -16,10 +16,8 @@ class AtlasSeedanceV15ProTextToVideo:
                 "atlas_client": ("ATLAS_CLIENT", {"tooltip": "Connect from 'AtlasCloud Client (API Key/Base URL)' node"}),
                 "prompt": ("STRING", {"default": "", "multiline": True, "tooltip": "Text prompt"}),
                 "duration": ("INT", {"default": 8, "min": 4, "max": 12, "tooltip": "Duration (seconds)"}),
-
-                "aspect_ratio": (["16:9", "9:16", "1:1", "4:3", "3:4","21:9"], {"default": "16:9", "tooltip": "Aspect ratio"}),
+                "aspect_ratio": (["16:9", "9:16", "1:1", "4:3", "3:4", "21:9"], {"default": "16:9", "tooltip": "Aspect ratio"}),
                 "resolution": (["720p", "480p"], {"default": "720p", "tooltip": "Output resolution preset"}),
-
                 "camera_fixed": ("BOOLEAN", {"default": False, "tooltip": "If true, camera is fixed"}),
                 "generate_audio": ("BOOLEAN", {"default": True, "tooltip": "If true, generate audio track"}),
                 "seed": ("INT", {"default": -1, "min": -1, "max": 2147483647, "tooltip": "Seed (-1 for random)"}),

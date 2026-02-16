@@ -10,10 +10,8 @@ class AtlasSeedreamV45TextToImage:
             "required": {
                 "atlas_client": ("ATLAS_CLIENT",),
                 "prompt": ("STRING", {"multiline": True, "tooltip": "Text prompt"}),
-
                 "width": ("INT", {"default": 2048, "min": 1472, "max": 4096, "step": 64, "tooltip": "Width (1472-4096)"}),
                 "height": ("INT", {"default": 2048, "min": 1472, "max": 4096, "step": 64, "tooltip": "Height (1472-4096)"}),
-
                 "enable_base64_output": ("BOOLEAN", {"default": False, "tooltip": "Return base64 instead of URL if supported"}),
             },
             "optional": {
