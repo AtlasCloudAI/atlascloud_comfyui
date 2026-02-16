@@ -30,6 +30,7 @@ from atlascloud_comfyui.nodes.video.sora2_t2v_pro import AtlasSora2TextToVideoPr
 from atlascloud_comfyui.nodes.video.seedance_v15_pro_t2v import AtlasSeedanceV15ProTextToVideo
 from atlascloud_comfyui.nodes.video.kling_v30_pro_t2v import AtlasKlingV30ProTextToVideo
 from atlascloud_comfyui.nodes.video.kling_v30_std_t2v import AtlasKlingV30StdTextToVideo
+from atlascloud_comfyui.nodes.video.kling_v30_std_i2v import AtlasKlingV30StdImageToVideo
 
 from atlascloud_comfyui.nodes.image.seedream_v45_t2i import AtlasSeedreamV45TextToImage
 from atlascloud_comfyui.nodes.image.zimage_turbo_lora_t2i import AtlasZImageTurboLoraTextToImage
@@ -60,6 +61,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Video Preview": AtlasVideoPreviewer,
     "AtlasCloud Kling V3.0 Pro Text-to-Video": AtlasKlingV30ProTextToVideo,
     "AtlasCloud Kling V3.0 Std Text-to-Video": AtlasKlingV30StdTextToVideo,
+    "AtlasCloud Kling V3.0 Std Image-to-Video": AtlasKlingV30StdImageToVideo,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
@@ -82,6 +84,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Video Preview": "AtlasCloud Video Preview",
     "AtlasCloud Kling V3.0 Pro Text-to-Video": "AtlasCloud Kling V3.0 Pro Text-to-Video",
     "AtlasCloud Kling V3.0 Std Text-to-Video": "AtlasCloud Kling V3.0 Std Text-to-Video",
+    "AtlasCloud Kling V3.0 Std Image-to-Video": "AtlasCloud Kling V3.0 Std Image-to-Video",
 }
 
 NODE_CLASS_MAPPINGS["Example"] = LegacyExample
