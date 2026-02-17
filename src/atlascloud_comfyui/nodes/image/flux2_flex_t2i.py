@@ -17,11 +17,9 @@ class AtlasFlux2FlexTextToImage:
             "required": {
                 "atlas_client": ("ATLAS_CLIENT",),
                 "prompt": ("STRING", {"multiline": True, "tooltip": "Text prompt"}),
-
                 # ✅ image nodes: width/height -> size string
                 "width": ("INT", {"default": 1024, "min": 256, "max": 1536, "step": 64, "tooltip": "Width"}),
                 "height": ("INT", {"default": 1024, "min": 256, "max": 1536, "step": 64, "tooltip": "Height"}),
-
                 "seed": ("INT", {"default": -1, "min": -1, "max": 2**31 - 1, "tooltip": "Random if -1"}),
                 "enable_base64_output": ("BOOLEAN", {"default": False, "tooltip": "Return base64 instead of URL if supported"}),
             },

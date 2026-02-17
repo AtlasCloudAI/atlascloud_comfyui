@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any, Dict, Tuple
 
 
-class AtlasSeedanceV15ProTextToVideo:
+class AtlasKlingV30StdTextToVideo:
     CATEGORY = "AtlasCloud/Video"
     FUNCTION = "run"
     RETURN_TYPES = ("STRING",)
@@ -15,14 +15,13 @@ class AtlasSeedanceV15ProTextToVideo:
             "required": {
                 "atlas_client": ("ATLAS_CLIENT", {"tooltip": "Connect from 'AtlasCloud Client (API Key/Base URL)' node"}),
                 "prompt": ("STRING", {"default": "", "multiline": True, "tooltip": "Text prompt"}),
-                "duration": ("INT", {"default": 8, "min": 4, "max": 12, "tooltip": "Duration (seconds)"}),
-                "aspect_ratio": (["16:9", "9:16", "1:1", "4:3", "3:4", "21:9"], {"default": "16:9", "tooltip": "Aspect ratio"}),
-                "resolution": (["720p", "480p"], {"default": "720p", "tooltip": "Output resolution preset"}),
-                "camera_fixed": ("BOOLEAN", {"default": False, "tooltip": "If true, camera is fixed"}),
-                "generate_audio": ("BOOLEAN", {"default": True, "tooltip": "If true, generate audio track"}),
-                "seed": ("INT", {"default": -1, "min": -1, "max": 2147483647, "tooltip": "Seed (-1 for random)"}),
+                "duration": ([5, 10], {"default": 5, "tooltip": "Duration (seconds)"}),
+                "aspect_ratio": (["16:9", "9:16", "1:1"], {"default": "16:9", "tooltip": "Aspect ratio"}),
+                "cfg_scale": ("FLOAT", {"default": 0.5, "min": 0.0, "max": 1.0, "step": 0.01, "tooltip": "Classifier-free guidance scale"}),
+                "sound": ("BOOLEAN", {"default": False, "tooltip": "Generate sound track (if supported)"}),
             },
             "optional": {
+                "negative_prompt": ("STRING", {"default": "", "multiline": True, "tooltip": "Negative prompt (optional)"}),
                 "timeout_sec": ("INT", {"default": 900, "min": 30, "max": 7200, "tooltip": "Polling timeout (seconds)"}),
                 "poll_interval_sec": ("FLOAT", {"default": 2.0, "min": 0.5, "max": 10.0, "tooltip": "Polling interval (seconds)"}),
             },
@@ -34,10 +33,9 @@ class AtlasSeedanceV15ProTextToVideo:
         prompt: str,
         duration: int,
         aspect_ratio: str,
-        resolution: str,
-        camera_fixed: bool,
-        generate_audio: bool,
-        seed: int,
+        cfg_scale: float,
+        sound: bool,
+        negative_prompt: str = "",
         timeout_sec: int = 900,
         poll_interval_sec: float = 2.0,
     ) -> Tuple[str]:
@@ -50,15 +48,17 @@ class AtlasSeedanceV15ProTextToVideo:
             raise RuntimeError("Invalid ATLAS_CLIENT handle: missing `.client`")
 
         payload: Dict[str, Any] = {
-            "model": "bytedance/seedance-v1.5-pro/text-to-video",
+            "model": "kwaivgi/kling-v3.0-std/text-to-video",
             "prompt": prompt,
             "duration": int(duration),
             "aspect_ratio": aspect_ratio,
-            "resolution": resolution,
-            "camera_fixed": bool(camera_fixed),
-            "generate_audio": bool(generate_audio),
-            "seed": int(seed),
+            "cfg_scale": float(cfg_scale),
+            "sound": bool(sound),
         }
+
+        neg = (negative_prompt or "").strip()
+        if neg:
+            payload["negative_prompt"] = neg
 
         prediction_id = client.generate_video(payload)
         result = client.poll_prediction(
@@ -74,5 +74,5 @@ class AtlasSeedanceV15ProTextToVideo:
         return (outputs[0],)
 
 
-NODE_CLASS_MAPPINGS = {"AtlasCloud Seedance V1.5 Pro Text-to-Video": AtlasSeedanceV15ProTextToVideo}
-NODE_DISPLAY_NAME_MAPPINGS = {"AtlasCloud Seedance V1.5 Pro Text-to-Video": "AtlasCloud Seedance V1.5 Pro Text-to-Video"}
+NODE_CLASS_MAPPINGS = {"AtlasCloud Kling V3.0 Std Text-to-Video": AtlasKlingV30StdTextToVideo}
+NODE_DISPLAY_NAME_MAPPINGS = {"AtlasCloud Kling V3.0 Std Text-to-Video": "AtlasCloud Kling V3.0 Std Text-to-Video"}

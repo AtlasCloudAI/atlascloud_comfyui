@@ -88,6 +88,12 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 
 -   AtlasCloud Sora 2 Pro Text-to-Video
 
+### Image-to-Video（i2v）
+
+-   AtlasCloud Kling V3.0 Pro Image-to-Video
+
+-   AtlasCloud Kling V3.0 Std Image-to-Video
+
 ### Text-to-Image
 
 -   AtlasCloud Seedream V4.5 Text-to-Image
