@@ -139,6 +139,11 @@ class AtlasClient:
                         timeout=60,
                     )
 
+                    # ✅ 401/403/422：不可重试，立即抛出，避免认证失败等错误被隐藏到超时
+                    if r.status_code in (401, 403, 422):
+                        body = (r.text or "")[:800]
+                        raise AtlasError(f"Prediction query failed (http={r.status_code}) url={url} body={body}")
+
                     # ✅ 400/404：很多异步系统刚创建会短暂查不到，warmup 内继续轮询
                     if r.status_code in (400, 404):
                         got_response = True
@@ -159,6 +164,9 @@ class AtlasClient:
                     resp = getattr(e, "response", None)
                     last_http = getattr(resp, "status_code", None)
                     last_body = (getattr(resp, "text", "") or "")[:800] if resp is not None else repr(e)
+                    # 401/403/422 不可重试，立即抛出，避免认证失败等错误被隐藏到超时
+                    if last_http in (401, 403, 422):
+                        raise AtlasError(f"Prediction query failed (http={last_http}) url={url} body={last_body}")
                     continue
 
             if not got_response or not isinstance(data, dict):
