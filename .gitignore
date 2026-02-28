@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Cursor (skills, agent state – do not commit)
+.cursor/
+
 # OSX useful to ignore
 *.DS_Store
 .AppleDouble
