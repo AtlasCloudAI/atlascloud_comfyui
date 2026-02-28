@@ -5,6 +5,10 @@ on:
     branches:
       - master
       - main
+  push:
+    branches:
+      - master
+      - main
 jobs:
   build:
     runs-on: ${{ matrix.os }}
