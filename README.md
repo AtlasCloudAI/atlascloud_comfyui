@@ -76,6 +76,9 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud VEO3.1 Text-to-Video | google/veo3.1/text-to-video |
 | AtlasCloud VEO2 Text-to-Video | google/veo2 |
 | AtlasCloud WAN2.6 Text-to-Video | alibaba/wan-2.6/text-to-video |
+| AtlasCloud WAN2.6 Video-to-Video | alibaba/wan-2.6/video-to-video |
+| AtlasCloud Kling Video O3 Pro Text-to-Video | kwaivgi/kling-video-o3-pro/text-to-video |
+| AtlasCloud Kling Video O3 Std Text-to-Video | kwaivgi/kling-video-o3-std/text-to-video |
 | AtlasCloud WAN2.5 Text-to-Video | alibaba/wan-2.5/text-to-video |
 | AtlasCloud WAN2.2 Text-to-Video 720p | alibaba/wan-2.2/text-to-video-720p |
 | AtlasCloud Luma Ray 2 Text-to-Video | luma/ray-2-t2v |
@@ -104,6 +107,11 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud VEO3.1 Image-to-Video | google/veo3.1/image-to-video |
 | AtlasCloud VEO2 Image-to-Video | google/veo2/image-to-video |
 | AtlasCloud WAN2.5 Image-to-Video | alibaba/wan-2.5/image-to-video |
+| AtlasCloud WAN2.6 Image-to-Video Flash | alibaba/wan-2.6/image-to-video-flash |
+| AtlasCloud Kling Video O3 Pro Image-to-Video | kwaivgi/kling-video-o3-pro/image-to-video |
+| AtlasCloud Kling Video O3 Std Image-to-Video | kwaivgi/kling-video-o3-std/image-to-video |
+| AtlasCloud Kling Video O3 Pro Reference-to-Video | kwaivgi/kling-video-o3-pro/reference-to-video |
+| AtlasCloud Kling Video O3 Std Reference-to-Video | kwaivgi/kling-video-o3-std/reference-to-video |
 | AtlasCloud Luma Ray 2 Image-to-Video | luma/ray-2-i2v |
 | AtlasCloud Pika V2.1 Image-to-Video | pika/v2.1-i2v |
 | AtlasCloud PixVerse V4.5 Image-to-Video | pixverse/pixverse-v4.5-i2v |
@@ -117,6 +125,9 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Hunyuan Image-to-Video | atlascloud/hunyuan-video/i2v |
 
 ### Text-to-Image (T2I)
+
+| AtlasCloud WAN2.6 Text-to-Image | alibaba/wan-2.6/text-to-image |
+
 
 | Node | Model |
 |------|-------|
@@ -136,6 +147,13 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Recraft V3 Text-to-Image | recraft-ai/recraft-v3 |
 | AtlasCloud Flux2 Flex Text-to-Image | flux2/flex |
 | AtlasCloud ZImage Turbo Lora Text-to-Image | z-image/turbo-lora |
+
+### Video Edit
+
+| Node | Model |
+|------|-------|
+| AtlasCloud Kling Video O3 Pro Video-Edit | kwaivgi/kling-video-o3-pro/video-edit |
+| AtlasCloud Kling Video O3 Std Video-Edit | kwaivgi/kling-video-o3-std/video-edit |
 
 ### Image Edit
 

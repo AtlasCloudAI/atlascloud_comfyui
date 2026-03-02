@@ -35,7 +35,7 @@ _t2i_image_url: str | None = None
 
 @skip_no_key
 def test_t2i():
-    """Test T2I: Google Imagen4 Fast (minimal params, fast, reliable credits)."""
+    """Test T2I: Google Imagen4 Fast (minimal params, fast, stable credits)."""
     global _t2i_image_url
     from atlascloud_comfyui.nodes.image.imagen4_fast_t2i import (
         AtlasImagen4FastTextToImage,

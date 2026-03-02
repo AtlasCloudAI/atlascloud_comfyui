@@ -19,6 +19,19 @@ from atlascloud_comfyui.nodes.legacy.nodes import Example as LegacyExample
 from atlascloud_comfyui.nodes.auth.atlas_client_node import AtlasClientNode
 
 from atlascloud_comfyui.nodes.video.wan26_t2v import AtlasWAN26TextToVideo
+from atlascloud_comfyui.nodes.video.wan26_i2v_flash import AtlasWAN26ImageToVideoFlash
+from atlascloud_comfyui.nodes.video.wan26_v2v import AtlasWAN26VideoToVideo
+from atlascloud_comfyui.nodes.image.wan26_t2i import AtlasWAN26TextToImage
+
+from atlascloud_comfyui.nodes.video.kling_video_o3_pro_t2v import AtlasKlingVideoO3ProTextToVideo
+from atlascloud_comfyui.nodes.video.kling_video_o3_pro_i2v import AtlasKlingVideoO3ProImageToVideo
+from atlascloud_comfyui.nodes.video.kling_video_o3_pro_r2v import AtlasKlingVideoO3ProReferenceToVideo
+from atlascloud_comfyui.nodes.video.kling_video_o3_pro_video_edit import AtlasKlingVideoO3ProVideoEdit
+
+from atlascloud_comfyui.nodes.video.kling_video_o3_std_t2v import AtlasKlingVideoO3StdTextToVideo
+from atlascloud_comfyui.nodes.video.kling_video_o3_std_i2v import AtlasKlingVideoO3StdImageToVideo
+from atlascloud_comfyui.nodes.video.kling_video_o3_std_r2v import AtlasKlingVideoO3StdReferenceToVideo
+from atlascloud_comfyui.nodes.video.kling_video_o3_std_video_edit import AtlasKlingVideoO3StdVideoEdit
 from atlascloud_comfyui.nodes.video.wan25_t2v import AtlasWAN25TextToVideo
 from atlascloud_comfyui.nodes.video.wan22_t2v_720p import AtlasWAN22T2V720p
 from atlascloud_comfyui.nodes.video.veo31_t2v import AtlasVeo31TextToVideo
@@ -86,6 +99,19 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Client": AtlasClientNode,
     "AtlasCloud WAN2.5 Text-to-Video": AtlasWAN25TextToVideo,
     "AtlasCloud WAN2.6 Text-to-Video": AtlasWAN26TextToVideo,
+    "AtlasCloud WAN2.6 Text-to-Image": AtlasWAN26TextToImage,
+    "AtlasCloud WAN2.6 Image-to-Video Flash": AtlasWAN26ImageToVideoFlash,
+    "AtlasCloud WAN2.6 Video-to-Video": AtlasWAN26VideoToVideo,
+
+    "AtlasCloud Kling Video O3 Pro Text-to-Video": AtlasKlingVideoO3ProTextToVideo,
+    "AtlasCloud Kling Video O3 Pro Image-to-Video": AtlasKlingVideoO3ProImageToVideo,
+    "AtlasCloud Kling Video O3 Pro Reference-to-Video": AtlasKlingVideoO3ProReferenceToVideo,
+    "AtlasCloud Kling Video O3 Pro Video-Edit": AtlasKlingVideoO3ProVideoEdit,
+
+    "AtlasCloud Kling Video O3 Std Text-to-Video": AtlasKlingVideoO3StdTextToVideo,
+    "AtlasCloud Kling Video O3 Std Image-to-Video": AtlasKlingVideoO3StdImageToVideo,
+    "AtlasCloud Kling Video O3 Std Reference-to-Video": AtlasKlingVideoO3StdReferenceToVideo,
+    "AtlasCloud Kling Video O3 Std Video-Edit": AtlasKlingVideoO3StdVideoEdit,
     "AtlasCloud WAN2.2 Text-to-Video 720p": AtlasWAN22T2V720p,
     "AtlasCloud VEO3.1 Text-to-Video": AtlasVeo31TextToVideo,
     "AtlasCloud Kling V2.6 Pro Text-to-Video": AtlasKlingV26ProTextToVideo,
@@ -150,6 +176,19 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Client": "AtlasCloud Client (API Key/Base URL)",
     "AtlasCloud WAN2.5 Text-to-Video": "AtlasCloud WAN2.5 Text-to-Video",
     "AtlasCloud WAN2.6 Text-to-Video": "AtlasCloud WAN2.6 Text-to-Video",
+    "AtlasCloud WAN2.6 Text-to-Image": "AtlasCloud WAN2.6 Text-to-Image",
+    "AtlasCloud WAN2.6 Image-to-Video Flash": "AtlasCloud WAN2.6 Image-to-Video Flash",
+    "AtlasCloud WAN2.6 Video-to-Video": "AtlasCloud WAN2.6 Video-to-Video",
+
+    "AtlasCloud Kling Video O3 Pro Text-to-Video": "AtlasCloud Kling Video O3 Pro Text-to-Video",
+    "AtlasCloud Kling Video O3 Pro Image-to-Video": "AtlasCloud Kling Video O3 Pro Image-to-Video",
+    "AtlasCloud Kling Video O3 Pro Reference-to-Video": "AtlasCloud Kling Video O3 Pro Reference-to-Video",
+    "AtlasCloud Kling Video O3 Pro Video-Edit": "AtlasCloud Kling Video O3 Pro Video-Edit",
+
+    "AtlasCloud Kling Video O3 Std Text-to-Video": "AtlasCloud Kling Video O3 Std Text-to-Video",
+    "AtlasCloud Kling Video O3 Std Image-to-Video": "AtlasCloud Kling Video O3 Std Image-to-Video",
+    "AtlasCloud Kling Video O3 Std Reference-to-Video": "AtlasCloud Kling Video O3 Std Reference-to-Video",
+    "AtlasCloud Kling Video O3 Std Video-Edit": "AtlasCloud Kling Video O3 Std Video-Edit",
     "AtlasCloud WAN2.2 Text-to-Video 720p": "AtlasCloud WAN2.2 Text-to-Video 720p",
     "AtlasCloud VEO3.1 Text-to-Video": "AtlasCloud VEO3.1 Text-to-Video",
     "AtlasCloud Kling V2.6 Pro Text-to-Video": "AtlasCloud Kling V2.6 Pro Text-to-Video",
