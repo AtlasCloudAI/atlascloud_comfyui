@@ -33,9 +33,15 @@ def make_client() -> AtlasClientHandle:
     return AtlasClientHandle(client=client)
 
 
+# Module-level cache so I2V tests can reuse the T2I output
+_wan26_t2i_image_url: str | None = None
+
+
 @skip_no_key
 def test_wan26_t2i():
     """WAN2.6 text-to-image should return a URL."""
+    global _wan26_t2i_image_url
+
     from atlascloud_comfyui.nodes.image.wan26_t2i import AtlasWAN26TextToImage
 
     node = AtlasWAN26TextToImage()
@@ -59,6 +65,8 @@ def test_wan26_t2i():
     assert prediction_id
     assert image_url
     assert image_url.startswith("http") or image_url.startswith("data:"), image_url[:80]
+
+    _wan26_t2i_image_url = image_url
 
 
 @skip_no_key
@@ -107,6 +115,75 @@ def test_kling_video_o3_std_t2v():
         sound=False,
         poll_interval_sec=3.0,
         timeout_sec=420,
+    )
+    elapsed = time.time() - start
+
+    print(f"\n  prediction_id: {prediction_id}")
+    print(f"  video_url:     {video_url[:120]}...")
+    print(f"  elapsed:       {elapsed:.1f}s")
+
+    assert prediction_id
+    assert video_url
+    assert video_url.startswith("http"), video_url[:80]
+
+
+@skip_no_key
+def test_wan26_i2v_flash():
+    """WAN2.6 image-to-video-flash should work using the WAN2.6 T2I image as input."""
+    from atlascloud_comfyui.nodes.video.wan26_i2v_flash import AtlasWAN26ImageToVideoFlash
+
+    image_url = _wan26_t2i_image_url
+    if not image_url:
+        pytest.skip("No image available (test_wan26_t2i must run first)")
+
+    node = AtlasWAN26ImageToVideoFlash()
+    handle = make_client()
+
+    start = time.time()
+    video_url, prediction_id = node.run(
+        atlas_client=handle,
+        image=image_url,
+        prompt="The mug slowly rotates on the table with soft studio lighting",
+        resolution="720p",
+        duration=5,
+        enable_prompt_expansion=True,
+        shot_type="single",
+        generate_audio=False,
+        poll_interval_sec=3.0,
+        timeout_sec=600,
+    )
+    elapsed = time.time() - start
+
+    print(f"\n  prediction_id: {prediction_id}")
+    print(f"  video_url:     {video_url[:120]}...")
+    print(f"  elapsed:       {elapsed:.1f}s")
+
+    assert prediction_id
+    assert video_url
+    assert video_url.startswith("http"), video_url[:80]
+
+
+@skip_no_key
+def test_kling_video_o3_pro_i2v():
+    """Kling Video O3 Pro image-to-video should work using the WAN2.6 T2I image as input."""
+    from atlascloud_comfyui.nodes.video.kling_video_o3_pro_i2v import AtlasKlingVideoO3ProImageToVideo
+
+    image_url = _wan26_t2i_image_url
+    if not image_url:
+        pytest.skip("No image available (test_wan26_t2i must run first)")
+
+    node = AtlasKlingVideoO3ProImageToVideo()
+    handle = make_client()
+
+    start = time.time()
+    video_url, prediction_id = node.run(
+        atlas_client=handle,
+        prompt="The mug gently slides into frame and the camera pulls focus",
+        image=image_url,
+        duration=5,
+        generate_audio=False,
+        poll_interval_sec=3.0,
+        timeout_sec=600,
     )
     elapsed = time.time() - start
 
