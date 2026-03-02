@@ -35,19 +35,21 @@ _t2i_image_url: str | None = None
 
 @skip_no_key
 def test_t2i():
-    """Test T2I: Luma Photon Flash (minimal params, fast)."""
+    """Test T2I: Google Imagen4 Fast (minimal params, fast, reliable credits)."""
     global _t2i_image_url
-    from atlascloud_comfyui.nodes.image.luma_photon_flash_t2i import (
-        AtlasLumaPhotonFlashTextToImage,
+    from atlascloud_comfyui.nodes.image.imagen4_fast_t2i import (
+        AtlasImagen4FastTextToImage,
     )
 
-    node = AtlasLumaPhotonFlashTextToImage()
+    node = AtlasImagen4FastTextToImage()
     handle = make_client()
 
     start = time.time()
     result = node.run(
         atlas_client=handle,
         prompt="A cute orange cat sitting on a windowsill",
+        aspect_ratio="1:1",
+        num_images=1,
         enable_base64_output=False,
         poll_interval_sec=2.0,
         timeout_sec=120,
