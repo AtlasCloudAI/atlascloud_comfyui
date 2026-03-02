@@ -117,3 +117,6 @@ node.zip
 .claude/
 
 WORKFLOW.md
+
+# local
+.venv/
