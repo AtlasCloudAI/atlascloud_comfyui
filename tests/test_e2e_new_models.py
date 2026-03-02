@@ -199,10 +199,19 @@ def test_kling_video_o3_pro_i2v():
 # Optional: requires a user-provided video URL (<=10s). Set env var to enable.
 @skip_no_key
 def test_kling_video_o3_video_edit_requires_input_video():
-    """Video-edit needs a real video URL; skip unless provided."""
+    """Video-edit needs a real video URL; skip unless provided.
+
+    Note: we've observed this job can stay in `created` for a long time depending on backend queue.
+    We therefore treat it as optional even when a key is present.
+    """
+
     video = os.getenv("ATLASCLOUD_E2E_VIDEO_URL", "").strip()
     if not video:
         pytest.skip("Set ATLASCLOUD_E2E_VIDEO_URL to run video-edit E2E")
+
+    # Allow forcing skip in CI if this model is queueing
+    if os.getenv("ATLASCLOUD_SKIP_VIDEO_EDIT_E2E", "").strip() == "1":
+        pytest.skip("ATLASCLOUD_SKIP_VIDEO_EDIT_E2E=1")
 
     from atlascloud_comfyui.nodes.video.kling_video_o3_std_video_edit import AtlasKlingVideoO3StdVideoEdit
 
@@ -217,7 +226,7 @@ def test_kling_video_o3_video_edit_requires_input_video():
         images="",
         keep_original_sound=True,
         poll_interval_sec=3.0,
-        timeout_sec=600,
+        timeout_sec=1200,
     )
     elapsed = time.time() - start
 
