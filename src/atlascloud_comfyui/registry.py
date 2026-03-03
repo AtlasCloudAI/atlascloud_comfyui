@@ -20,8 +20,10 @@ from atlascloud_comfyui.nodes.auth.atlas_client_node import AtlasClientNode
 
 from atlascloud_comfyui.nodes.video.wan26_t2v import AtlasWAN26TextToVideo
 from atlascloud_comfyui.nodes.video.wan26_i2v_flash import AtlasWAN26ImageToVideoFlash
+from atlascloud_comfyui.nodes.video.wan26_i2v import AtlasWAN26ImageToVideo
 from atlascloud_comfyui.nodes.video.wan26_v2v import AtlasWAN26VideoToVideo
 from atlascloud_comfyui.nodes.image.wan26_t2i import AtlasWAN26TextToImage
+from atlascloud_comfyui.nodes.image.wan26_image_edit import AtlasWAN26ImageEdit
 
 from atlascloud_comfyui.nodes.video.kling_video_o3_pro_t2v import AtlasKlingVideoO3ProTextToVideo
 from atlascloud_comfyui.nodes.video.kling_video_o3_pro_i2v import AtlasKlingVideoO3ProImageToVideo
@@ -55,8 +57,13 @@ from atlascloud_comfyui.nodes.video.sora2_i2v import AtlasSora2ImageToVideo
 from atlascloud_comfyui.nodes.video.kling_v25_turbo_pro_t2v import AtlasKlingV25TurboProTextToVideo
 from atlascloud_comfyui.nodes.video.hunyuan_t2v import AtlasHunyuanTextToVideo
 from atlascloud_comfyui.nodes.video.vidu_q3_i2v import AtlasViduQ3ImageToVideo
+from atlascloud_comfyui.nodes.video.vidu_q3_i2v_v2 import AtlasViduQ3ImageToVideoV2
+from atlascloud_comfyui.nodes.video.vidu_q3_t2v import AtlasViduQ3TextToVideo
 from atlascloud_comfyui.nodes.video.veo3_fast_t2v import AtlasVeo3FastTextToVideo
 from atlascloud_comfyui.nodes.video.veo31_i2v import AtlasVeo31ImageToVideo
+from atlascloud_comfyui.nodes.video.google_veo31_fast_t2v import AtlasVeo31FastTextToVideo
+from atlascloud_comfyui.nodes.video.google_veo31_fast_i2v import AtlasVeo31FastImageToVideo
+from atlascloud_comfyui.nodes.video.google_veo31_r2v import AtlasVeo31ReferenceToVideo
 from atlascloud_comfyui.nodes.video.veo3_i2v import AtlasVeo3ImageToVideo
 from atlascloud_comfyui.nodes.video.veo2_t2v import AtlasVeo2TextToVideo
 from atlascloud_comfyui.nodes.video.veo2_i2v import AtlasVeo2ImageToVideo
@@ -81,6 +88,8 @@ from atlascloud_comfyui.nodes.image.nano_banana2_edit import AtlasNanoBanana2Edi
 from atlascloud_comfyui.nodes.image.nano_banana2_edit_dev import AtlasNanoBanana2EditDev
 from atlascloud_comfyui.nodes.image.seedream_v50_lite_t2i import AtlasSeedreamV50LiteTextToImage
 from atlascloud_comfyui.nodes.image.seedream_v50_lite_edit import AtlasSeedreamV50LiteEdit
+from atlascloud_comfyui.nodes.image.seedream_v50_lite_sequential_t2i import AtlasSeedreamV50LiteSequentialTextToImage
+from atlascloud_comfyui.nodes.image.seedream_v50_lite_edit_sequential import AtlasSeedreamV50LiteEditSequential
 from atlascloud_comfyui.nodes.image.imagen4_t2i import AtlasImagen4TextToImage
 from atlascloud_comfyui.nodes.image.imagen4_fast_t2i import AtlasImagen4FastTextToImage
 from atlascloud_comfyui.nodes.image.imagen4_ultra_t2i import AtlasImagen4UltraTextToImage
@@ -90,6 +99,7 @@ from atlascloud_comfyui.nodes.image.ideogram_v3_turbo_t2i import AtlasIdeogramV3
 from atlascloud_comfyui.nodes.image.luma_photon_t2i import AtlasLumaPhotonTextToImage
 from atlascloud_comfyui.nodes.image.luma_photon_flash_t2i import AtlasLumaPhotonFlashTextToImage
 from atlascloud_comfyui.nodes.image.recraft_v3_t2i import AtlasRecraftV3TextToImage
+from atlascloud_comfyui.nodes.image.qwen_image_edit_plus_20251215 import AtlasQwenImageEditPlus20251215
 
 from atlascloud_comfyui.nodes.utils.image_preview import AtlasImagePreviewURL
 from atlascloud_comfyui.nodes.utils.video_previewer import AtlasVideoPreviewer
@@ -100,6 +110,8 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud WAN2.5 Text-to-Video": AtlasWAN25TextToVideo,
     "AtlasCloud WAN2.6 Text-to-Video": AtlasWAN26TextToVideo,
     "AtlasCloud WAN2.6 Text-to-Image": AtlasWAN26TextToImage,
+    "AtlasCloud WAN2.6 Image-Edit": AtlasWAN26ImageEdit,
+    "AtlasCloud WAN2.6 Image-to-Video": AtlasWAN26ImageToVideo,
     "AtlasCloud WAN2.6 Image-to-Video Flash": AtlasWAN26ImageToVideoFlash,
     "AtlasCloud WAN2.6 Video-to-Video": AtlasWAN26VideoToVideo,
 
@@ -135,8 +147,12 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Nano Banana 2 Edit": AtlasNanoBanana2Edit,
     "AtlasCloud Nano Banana 2 Edit Developer": AtlasNanoBanana2EditDev,
     "AtlasCloud Seedream V5.0 Lite Text-to-Image": AtlasSeedreamV50LiteTextToImage,
+    "AtlasCloud Seedream V5.0 Lite Sequential Text-to-Image": AtlasSeedreamV50LiteSequentialTextToImage,
     "AtlasCloud Seedream V5.0 Lite Edit": AtlasSeedreamV50LiteEdit,
+    "AtlasCloud Seedream V5.0 Lite Edit Sequential": AtlasSeedreamV50LiteEditSequential,
+    "AtlasCloud Vidu Q3 Text-to-Video": AtlasViduQ3TextToVideo,
     "AtlasCloud Vidu Q3 Image-to-Video": AtlasViduQ3ImageToVideo,
+    "AtlasCloud Vidu Q3 Image-to-Video (Q3 API)": AtlasViduQ3ImageToVideoV2,
     "AtlasCloud VEO3 Text-to-Video": AtlasVeo3TextToVideo,
     "AtlasCloud Imagen4 Text-to-Image": AtlasImagen4TextToImage,
     "AtlasCloud Imagen4 Fast Text-to-Image": AtlasImagen4FastTextToImage,
@@ -149,6 +165,9 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Kling V2.5 Turbo Pro Text-to-Video": AtlasKlingV25TurboProTextToVideo,
     "AtlasCloud Hunyuan Text-to-Video": AtlasHunyuanTextToVideo,
     "AtlasCloud VEO3 Fast Text-to-Video": AtlasVeo3FastTextToVideo,
+    "AtlasCloud VEO3.1 Fast Text-to-Video": AtlasVeo31FastTextToVideo,
+    "AtlasCloud VEO3.1 Fast Image-to-Video": AtlasVeo31FastImageToVideo,
+    "AtlasCloud VEO3.1 Reference-to-Video": AtlasVeo31ReferenceToVideo,
     "AtlasCloud VEO3.1 Image-to-Video": AtlasVeo31ImageToVideo,
     "AtlasCloud VEO3 Image-to-Video": AtlasVeo3ImageToVideo,
     "AtlasCloud VEO2 Text-to-Video": AtlasVeo2TextToVideo,
@@ -170,13 +189,17 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Luma Photon Text-to-Image": AtlasLumaPhotonTextToImage,
     "AtlasCloud Luma Photon Flash Text-to-Image": AtlasLumaPhotonFlashTextToImage,
     "AtlasCloud Recraft V3 Text-to-Image": AtlasRecraftV3TextToImage,
+    "AtlasCloud Qwen Image Edit Plus 20251215": AtlasQwenImageEditPlus20251215,
 }
+
 
 NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Client": "AtlasCloud Client (API Key/Base URL)",
     "AtlasCloud WAN2.5 Text-to-Video": "AtlasCloud WAN2.5 Text-to-Video",
     "AtlasCloud WAN2.6 Text-to-Video": "AtlasCloud WAN2.6 Text-to-Video",
     "AtlasCloud WAN2.6 Text-to-Image": "AtlasCloud WAN2.6 Text-to-Image",
+    "AtlasCloud WAN2.6 Image-Edit": "AtlasCloud WAN2.6 Image-Edit",
+    "AtlasCloud WAN2.6 Image-to-Video": "AtlasCloud WAN2.6 Image-to-Video",
     "AtlasCloud WAN2.6 Image-to-Video Flash": "AtlasCloud WAN2.6 Image-to-Video Flash",
     "AtlasCloud WAN2.6 Video-to-Video": "AtlasCloud WAN2.6 Video-to-Video",
 
@@ -212,8 +235,12 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Nano Banana 2 Edit": "AtlasCloud Nano Banana 2 Edit",
     "AtlasCloud Nano Banana 2 Edit Developer": "AtlasCloud Nano Banana 2 Edit Developer",
     "AtlasCloud Seedream V5.0 Lite Text-to-Image": "AtlasCloud Seedream V5.0 Lite Text-to-Image",
+    "AtlasCloud Seedream V5.0 Lite Sequential Text-to-Image": "AtlasCloud Seedream V5.0 Lite Sequential Text-to-Image",
     "AtlasCloud Seedream V5.0 Lite Edit": "AtlasCloud Seedream V5.0 Lite Edit",
+    "AtlasCloud Seedream V5.0 Lite Edit Sequential": "AtlasCloud Seedream V5.0 Lite Edit Sequential",
+    "AtlasCloud Vidu Q3 Text-to-Video": "AtlasCloud Vidu Q3 Text-to-Video",
     "AtlasCloud Vidu Q3 Image-to-Video": "AtlasCloud Vidu Q3 Image-to-Video",
+    "AtlasCloud Vidu Q3 Image-to-Video (Q3 API)": "AtlasCloud Vidu Q3 Image-to-Video (Q3 API)",
     "AtlasCloud VEO3 Text-to-Video": "AtlasCloud VEO3 Text-to-Video",
     "AtlasCloud Imagen4 Text-to-Image": "AtlasCloud Imagen4 Text-to-Image",
     "AtlasCloud Imagen4 Fast Text-to-Image": "AtlasCloud Imagen4 Fast Text-to-Image",
@@ -226,6 +253,9 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Kling V2.5 Turbo Pro Text-to-Video": "AtlasCloud Kling V2.5 Turbo Pro Text-to-Video",
     "AtlasCloud Hunyuan Text-to-Video": "AtlasCloud Hunyuan Text-to-Video",
     "AtlasCloud VEO3 Fast Text-to-Video": "AtlasCloud VEO3 Fast Text-to-Video",
+    "AtlasCloud VEO3.1 Fast Text-to-Video": "AtlasCloud VEO3.1 Fast Text-to-Video",
+    "AtlasCloud VEO3.1 Fast Image-to-Video": "AtlasCloud VEO3.1 Fast Image-to-Video",
+    "AtlasCloud VEO3.1 Reference-to-Video": "AtlasCloud VEO3.1 Reference-to-Video",
     "AtlasCloud VEO3.1 Image-to-Video": "AtlasCloud VEO3.1 Image-to-Video",
     "AtlasCloud VEO3 Image-to-Video": "AtlasCloud VEO3 Image-to-Video",
     "AtlasCloud VEO2 Text-to-Video": "AtlasCloud VEO2 Text-to-Video",
@@ -247,7 +277,9 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Luma Photon Text-to-Image": "AtlasCloud Luma Photon Text-to-Image",
     "AtlasCloud Luma Photon Flash Text-to-Image": "AtlasCloud Luma Photon Flash Text-to-Image",
     "AtlasCloud Recraft V3 Text-to-Image": "AtlasCloud Recraft V3 Text-to-Image",
+    "AtlasCloud Qwen Image Edit Plus 20251215": "AtlasCloud Qwen Image Edit Plus 20251215",
 }
+
 
 NODE_CLASS_MAPPINGS["Example"] = LegacyExample
 NODE_DISPLAY_NAME_MAPPINGS["Example"] = "Example (Deprecated)"

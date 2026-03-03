@@ -74,6 +74,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud VEO3 Text-to-Video | google/veo3 |
 | AtlasCloud VEO3 Fast Text-to-Video | google/veo3-fast |
 | AtlasCloud VEO3.1 Text-to-Video | google/veo3.1/text-to-video |
+| AtlasCloud VEO3.1 Fast Text-to-Video | google/veo3.1-fast/text-to-video |
 | AtlasCloud VEO2 Text-to-Video | google/veo2 |
 | AtlasCloud WAN2.6 Text-to-Video | alibaba/wan-2.6/text-to-video |
 | AtlasCloud WAN2.6 Video-to-Video | alibaba/wan-2.6/video-to-video |
@@ -104,9 +105,12 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | Node | Model |
 |------|-------|
 | AtlasCloud VEO3 Image-to-Video | google/veo3/image-to-video |
+| AtlasCloud VEO3.1 Fast Image-to-Video | google/veo3.1-fast/image-to-video |
+| AtlasCloud VEO3.1 Reference-to-Video | google/veo3.1/reference-to-video |
 | AtlasCloud VEO3.1 Image-to-Video | google/veo3.1/image-to-video |
 | AtlasCloud VEO2 Image-to-Video | google/veo2/image-to-video |
 | AtlasCloud WAN2.5 Image-to-Video | alibaba/wan-2.5/image-to-video |
+| AtlasCloud WAN2.6 Image-to-Video | alibaba/wan-2.6/image-to-video |
 | AtlasCloud WAN2.6 Image-to-Video Flash | alibaba/wan-2.6/image-to-video-flash |
 | AtlasCloud Kling Video O3 Pro Image-to-Video | kwaivgi/kling-video-o3-pro/image-to-video |
 | AtlasCloud Kling Video O3 Std Image-to-Video | kwaivgi/kling-video-o3-std/image-to-video |
@@ -121,7 +125,9 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Kling V3.0 Pro Image-to-Video | kwaivgi/kling-v3.0-pro/image-to-video |
 | AtlasCloud Kling V3.0 Std Image-to-Video | kwaivgi/kling-v3.0-std/image-to-video |
 | AtlasCloud Kling V2.5 Turbo Pro Image-to-Video | kwaivgi/kling-v2.5-turbo-pro/image-to-video |
+| AtlasCloud Vidu Q3 Text-to-Video | vidu/q3/text-to-video |
 | AtlasCloud Vidu Q3 Image-to-Video | vidu/image-to-video-2.0 |
+| AtlasCloud Vidu Q3 Image-to-Video (Q3 API) | vidu/q3/image-to-video |
 | AtlasCloud Hunyuan Image-to-Video | atlascloud/hunyuan-video/i2v |
 
 ### Text-to-Image (T2I)
@@ -139,6 +145,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Nano Banana 2 Text-to-Image Developer | google/nano-banana-2/text-to-image-developer |
 | AtlasCloud Nano Banana Pro Text-to-Image Ultra | google/nano-banana-pro/text-to-image-ultra |
 | AtlasCloud Seedream V5.0 Lite Text-to-Image | bytedance/seedream-v5.0-lite |
+| AtlasCloud Seedream V5.0 Lite Sequential Text-to-Image | bytedance/seedream-v5.0-lite/sequential |
 | AtlasCloud Seedream V4.5 Text-to-Image | bytedance/seedream-v4.5 |
 | AtlasCloud Ideogram V3 Quality Text-to-Image | ideogram-ai/ideogram-v3-quality |
 | AtlasCloud Ideogram V3 Turbo Text-to-Image | ideogram-ai/ideogram-v3-turbo |
@@ -162,6 +169,9 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Nano Banana 2 Edit | google/nano-banana-2/edit |
 | AtlasCloud Nano Banana 2 Edit Developer | google/nano-banana-2/edit-developer |
 | AtlasCloud Seedream V5.0 Lite Edit | bytedance/seedream-v5.0-lite/edit |
+| AtlasCloud Seedream V5.0 Lite Edit Sequential | bytedance/seedream-v5.0-lite/edit-sequential |
+| AtlasCloud WAN2.6 Image-Edit | alibaba/wan-2.6/image-edit |
+| AtlasCloud Qwen Image Edit Plus 20251215 | alibaba/qwen-image/edit-plus-20251215 |
 
 > Nodes are continuously expanded as new models are added to AtlasCloud.
 
