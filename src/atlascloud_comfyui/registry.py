@@ -78,9 +78,26 @@ from atlascloud_comfyui.nodes.video.kling_v25_turbo_pro_i2v import AtlasKlingV25
 from atlascloud_comfyui.nodes.video.hunyuan_i2v import AtlasHunyuanImageToVideo
 from atlascloud_comfyui.nodes.video.wan25_i2v import AtlasWAN25ImageToVideo
 
+from atlascloud_comfyui.nodes.video.kling_v26_pro_avatar import AtlasKlingV26ProAvatar
+from atlascloud_comfyui.nodes.video.kling_v26_std_avatar import AtlasKlingV26StdAvatar
+from atlascloud_comfyui.nodes.video.kling_v26_pro_motion_control import AtlasKlingV26ProMotionControl
+from atlascloud_comfyui.nodes.video.kling_v26_std_motion_control import AtlasKlingV26StdMotionControl
+from atlascloud_comfyui.nodes.video.seedance_v15_pro_i2v import AtlasSeedanceV15ProImageToVideo
+from atlascloud_comfyui.nodes.video.seedance_v15_pro_i2v_fast import AtlasSeedanceV15ProImageToVideoFast
+from atlascloud_comfyui.nodes.video.seedance_v15_pro_t2v_fast import AtlasSeedanceV15ProTextToVideoFast
+from atlascloud_comfyui.nodes.video.kling_video_o1_i2v import AtlasKlingVideoO1ImageToVideo
+from atlascloud_comfyui.nodes.video.kling_v26_pro_i2v import AtlasKlingV26ProImageToVideo
+
 from atlascloud_comfyui.nodes.image.seedream_v45_t2i import AtlasSeedreamV45TextToImage
+from atlascloud_comfyui.nodes.image.seedream_v45_edit import AtlasSeedreamV45Edit
+from atlascloud_comfyui.nodes.image.seedream_v45_sequential_t2i import AtlasSeedreamV45SequentialTextToImage
+from atlascloud_comfyui.nodes.image.seedream_v45_edit_sequential import AtlasSeedreamV45EditSequential
 from atlascloud_comfyui.nodes.image.zimage_turbo_lora_t2i import AtlasZImageTurboLoraTextToImage
+from atlascloud_comfyui.nodes.image.zimage_turbo_t2i import AtlasZImageTurboTextToImage
+from atlascloud_comfyui.nodes.image.qwen_image_edit import AtlasQwenImageEdit
 from atlascloud_comfyui.nodes.image.nano_banana_pro_t2i_ultra import AtlasNanoBananaProTextToImageUltra
+from atlascloud_comfyui.nodes.image.nano_banana_pro_t2i import AtlasNanoBananaProTextToImage
+from atlascloud_comfyui.nodes.image.nano_banana_pro_edit import AtlasNanoBananaProEdit
 from atlascloud_comfyui.nodes.image.flux2_flex_t2i import AtlasFlux2FlexTextToImage
 from atlascloud_comfyui.nodes.image.nano_banana2_t2i import AtlasNanoBanana2TextToImage
 from atlascloud_comfyui.nodes.image.nano_banana2_t2i_dev import AtlasNanoBanana2TextToImageDev
@@ -127,13 +144,26 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud WAN2.2 Text-to-Video 720p": AtlasWAN22T2V720p,
     "AtlasCloud VEO3.1 Text-to-Video": AtlasVeo31TextToVideo,
     "AtlasCloud Kling V2.6 Pro Text-to-Video": AtlasKlingV26ProTextToVideo,
+    "AtlasCloud Kling V2.6 Pro Avatar": AtlasKlingV26ProAvatar,
+    "AtlasCloud Kling V2.6 Std Avatar": AtlasKlingV26StdAvatar,
+    "AtlasCloud Kling V2.6 Pro Motion-Control": AtlasKlingV26ProMotionControl,
+    "AtlasCloud Kling V2.6 Std Motion-Control": AtlasKlingV26StdMotionControl,
+    "AtlasCloud Kling V2.6 Pro Image-to-Video": AtlasKlingV26ProImageToVideo,
     "AtlasCloud Kling Video O1 Text-to-Video": AtlasKlingVideoO1TextToVideo,
+    "AtlasCloud Kling Video O1 Image-to-Video": AtlasKlingVideoO1ImageToVideo,
     "AtlasCloud Seedance V1 Pro Text-to-Video 1080p": AtlasSeedanceV1ProT2V1080p,
     "AtlasCloud Hailuo 2.3 Pro Text-to-Video": AtlasHailuo23T2VPro,
     "AtlasCloud Sora 2 Text-to-Video Pro": AtlasSora2TextToVideoPro,
     "AtlasCloud Seedance V1.5 Pro Text-to-Video": AtlasSeedanceV15ProTextToVideo,
+    "AtlasCloud Seedance V1.5 Pro Text-to-Video Fast": AtlasSeedanceV15ProTextToVideoFast,
+    "AtlasCloud Seedance V1.5 Pro Image-to-Video": AtlasSeedanceV15ProImageToVideo,
+    "AtlasCloud Seedance V1.5 Pro Image-to-Video Fast": AtlasSeedanceV15ProImageToVideoFast,
     "AtlasCloud Seedream V4.5 Text-to-Image": AtlasSeedreamV45TextToImage,
+    "AtlasCloud Seedream V4.5 Edit": AtlasSeedreamV45Edit,
+    "AtlasCloud Seedream V4.5 Sequential Text-to-Image": AtlasSeedreamV45SequentialTextToImage,
+    "AtlasCloud Seedream V4.5 Edit Sequential": AtlasSeedreamV45EditSequential,
     "AtlasCloud ZImage Turbo Lora Text-to-Image": AtlasZImageTurboLoraTextToImage,
+    "AtlasCloud ZImage Turbo Text-to-Image": AtlasZImageTurboTextToImage,
     "AtlasCloud Nano Banana Pro Text-to-Image Ultra": AtlasNanoBananaProTextToImageUltra,
     "AtlasCloud Flux2 Flex Text-to-Image": AtlasFlux2FlexTextToImage,
     "AtlasCloud Image Preview": AtlasImagePreviewURL,
@@ -189,6 +219,9 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Luma Photon Text-to-Image": AtlasLumaPhotonTextToImage,
     "AtlasCloud Luma Photon Flash Text-to-Image": AtlasLumaPhotonFlashTextToImage,
     "AtlasCloud Recraft V3 Text-to-Image": AtlasRecraftV3TextToImage,
+    "AtlasCloud Qwen Image Edit": AtlasQwenImageEdit,
+    "AtlasCloud Nano Banana Pro Text-to-Image": AtlasNanoBananaProTextToImage,
+    "AtlasCloud Nano Banana Pro Edit": AtlasNanoBananaProEdit,
     "AtlasCloud Qwen Image Edit Plus 20251215": AtlasQwenImageEditPlus20251215,
 }
 
@@ -215,14 +248,27 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud WAN2.2 Text-to-Video 720p": "AtlasCloud WAN2.2 Text-to-Video 720p",
     "AtlasCloud VEO3.1 Text-to-Video": "AtlasCloud VEO3.1 Text-to-Video",
     "AtlasCloud Kling V2.6 Pro Text-to-Video": "AtlasCloud Kling V2.6 Pro Text-to-Video",
+    "AtlasCloud Kling V2.6 Pro Avatar": "AtlasCloud Kling V2.6 Pro Avatar",
+    "AtlasCloud Kling V2.6 Std Avatar": "AtlasCloud Kling V2.6 Std Avatar",
+    "AtlasCloud Kling V2.6 Pro Motion-Control": "AtlasCloud Kling V2.6 Pro Motion-Control",
+    "AtlasCloud Kling V2.6 Std Motion-Control": "AtlasCloud Kling V2.6 Std Motion-Control",
+    "AtlasCloud Kling V2.6 Pro Image-to-Video": "AtlasCloud Kling V2.6 Pro Image-to-Video",
     "AtlasCloud Kling Video O1 Text-to-Video": "AtlasCloud Kling Video O1 Text-to-Video",
+    "AtlasCloud Kling Video O1 Image-to-Video": "AtlasCloud Kling Video O1 Image-to-Video",
     "AtlasCloud Seedance V1 Pro Text-to-Video 1080p": "AtlasCloud Seedance V1 Pro Text-to-Video 1080p",
     "AtlasCloud Hailuo 2.3 Pro Text-to-Video": "AtlasCloud Hailuo 2.3 Pro Text-to-Video",
     "AtlasCloud Sora 2 Text-to-Video Pro": "AtlasCloud Sora 2 Text-to-Video Pro",
     "AtlasCloud Seedance V1.5 Pro Text-to-Video": "AtlasCloud Seedance V1.5 Pro Text-to-Video",
+    "AtlasCloud Seedance V1.5 Pro Text-to-Video Fast": "AtlasCloud Seedance V1.5 Pro Text-to-Video Fast",
+    "AtlasCloud Seedance V1.5 Pro Image-to-Video": "AtlasCloud Seedance V1.5 Pro Image-to-Video",
+    "AtlasCloud Seedance V1.5 Pro Image-to-Video Fast": "AtlasCloud Seedance V1.5 Pro Image-to-Video Fast",
     "AtlasCloud Seedream V4.5 Text-to-Image": "AtlasCloud Seedream V4.5 Text-to-Image",
+    "AtlasCloud Seedream V4.5 Edit": "AtlasCloud Seedream V4.5 Edit",
+    "AtlasCloud Seedream V4.5 Sequential Text-to-Image": "AtlasCloud Seedream V4.5 Sequential Text-to-Image",
+    "AtlasCloud Seedream V4.5 Edit Sequential": "AtlasCloud Seedream V4.5 Edit Sequential",
     "AtlasCloud Image Preview": "AtlasCloud Image Preview",
     "AtlasCloud ZImage Turbo Lora Text-to-Image": "AtlasCloud ZImage Turbo Lora Text-to-Image",
+    "AtlasCloud ZImage Turbo Text-to-Image": "AtlasCloud ZImage Turbo Text-to-Image",
     "AtlasCloud Nano Banana Pro Text-to-Image Ultra": "AtlasCloud Nano Banana Pro Text-to-Image Ultra",
     "AtlasCloud Flux2 Flex Text-to-Image": "AtlasCloud Flux2 Flex Text-to-Image",
     "AtlasCloud Video Preview": "AtlasCloud Video Preview",
@@ -277,6 +323,9 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Luma Photon Text-to-Image": "AtlasCloud Luma Photon Text-to-Image",
     "AtlasCloud Luma Photon Flash Text-to-Image": "AtlasCloud Luma Photon Flash Text-to-Image",
     "AtlasCloud Recraft V3 Text-to-Image": "AtlasCloud Recraft V3 Text-to-Image",
+    "AtlasCloud Qwen Image Edit": "AtlasCloud Qwen Image Edit",
+    "AtlasCloud Nano Banana Pro Text-to-Image": "AtlasCloud Nano Banana Pro Text-to-Image",
+    "AtlasCloud Nano Banana Pro Edit": "AtlasCloud Nano Banana Pro Edit",
     "AtlasCloud Qwen Image Edit Plus 20251215": "AtlasCloud Qwen Image Edit Plus 20251215",
 }
 
