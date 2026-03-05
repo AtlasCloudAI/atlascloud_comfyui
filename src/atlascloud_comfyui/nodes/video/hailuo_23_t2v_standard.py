@@ -38,7 +38,7 @@ class AtlasHailuo23T2VStandard:
         client = atlas_client.client
 
         payload: Dict[str, Any] = {
-            "model": 'minimax/hailuo-2.3/t2v-standard',
+            "model": "",
             "prompt": prompt,
         }
 

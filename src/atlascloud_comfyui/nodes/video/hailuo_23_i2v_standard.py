@@ -44,7 +44,7 @@ class AtlasHailuo23I2VStandard:
         client = atlas_client.client
 
         payload: Dict[str, Any] = {
-            "model": 'minimax/hailuo-2.3/i2v-standard',
+            "model": "",
             "image": image,
         }
 

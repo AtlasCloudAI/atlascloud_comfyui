@@ -44,7 +44,7 @@ class AtlasKlingEffects:
         client = atlas_client.client
 
         payload: Dict[str, Any] = {
-            "model": 'kwaivgi/kling-effects',
+            "model": "",
             "image": image,
             "effect_scene": effect_scene,
         }
