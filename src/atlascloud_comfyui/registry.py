@@ -132,6 +132,24 @@ from atlascloud_comfyui.nodes.video.vidu_start_end_to_video_v2 import AtlasViduS
 from atlascloud_comfyui.nodes.video.kling_v20_i2v_master import AtlasKlingV20I2VMaster
 from atlascloud_comfyui.nodes.video.veo3_fast_i2v import AtlasVeo3FastImageToVideo
 from atlascloud_comfyui.nodes.video.kling_v21_t2v_master import AtlasKlingV21T2VMaster
+from atlascloud_comfyui.nodes.video.kling_v21_i2v_master import AtlasKlingV21I2VMaster
+from atlascloud_comfyui.nodes.video.kling_v21_i2v_pro_start_end_frame import AtlasKlingV21I2VProStartEndFrame
+from atlascloud_comfyui.nodes.video.kling_v16_multi_i2v_pro import AtlasKlingV16MultiI2VPro
+from atlascloud_comfyui.nodes.video.kling_v16_multi_i2v_standard import AtlasKlingV16MultiI2VStandard
+from atlascloud_comfyui.nodes.video.kling_effects import AtlasKlingEffects
+
+from atlascloud_comfyui.nodes.video.hailuo_23_t2v_standard import AtlasHailuo23T2VStandard
+from atlascloud_comfyui.nodes.video.hailuo_23_i2v_standard import AtlasHailuo23I2VStandard
+from atlascloud_comfyui.nodes.video.hailuo_23_i2v_pro import AtlasHailuo23I2VPro
+from atlascloud_comfyui.nodes.video.hailuo_23_fast import AtlasHailuo23Fast
+from atlascloud_comfyui.nodes.video.hailuo_02_fast import AtlasHailuo02Fast
+from atlascloud_comfyui.nodes.video.hailuo_02_pro import AtlasHailuo02Pro
+from atlascloud_comfyui.nodes.video.hailuo_02_t2v_standard import AtlasHailuo02T2VStandard
+
+from atlascloud_comfyui.nodes.video.seedance_v1_lite_t2v_1080p import AtlasSeedanceV1LiteT2V1080p
+from atlascloud_comfyui.nodes.video.seedance_v1_lite_t2v_720p import AtlasSeedanceV1LiteT2V720p
+from atlascloud_comfyui.nodes.video.seedance_v1_lite_i2v_1080p import AtlasSeedanceV1LiteI2V1080p
+
 from atlascloud_comfyui.nodes.video.kling_v20_t2v_master import AtlasKlingV20T2VMaster
 
 from atlascloud_comfyui.nodes.utils.image_preview import AtlasImagePreviewURL
@@ -254,6 +272,25 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Kling V2.0 I2V Master": AtlasKlingV20I2VMaster,
     "AtlasCloud VEO3 Fast Image-to-Video": AtlasVeo3FastImageToVideo,
     "AtlasCloud Kling V2.1 T2V Master": AtlasKlingV21T2VMaster,
+    "AtlasCloud Kling V2.1 I2V Master": AtlasKlingV21I2VMaster,
+    "AtlasCloud Kling V2.1 I2V Pro (Start/End Frame)": AtlasKlingV21I2VProStartEndFrame,
+    "AtlasCloud Kling V1.6 Multi I2V Pro": AtlasKlingV16MultiI2VPro,
+    "AtlasCloud Kling V1.6 Multi I2V Standard": AtlasKlingV16MultiI2VStandard,
+    "AtlasCloud Kling Effects": AtlasKlingEffects,
+
+    "AtlasCloud Hailuo 2.3 T2V Standard": AtlasHailuo23T2VStandard,
+    "AtlasCloud Hailuo 2.3 I2V Standard": AtlasHailuo23I2VStandard,
+    "AtlasCloud Hailuo 2.3 I2V Pro": AtlasHailuo23I2VPro,
+    "AtlasCloud Hailuo 2.3 Fast": AtlasHailuo23Fast,
+
+    "AtlasCloud Hailuo 02 Fast": AtlasHailuo02Fast,
+    "AtlasCloud Hailuo 02 Pro": AtlasHailuo02Pro,
+    "AtlasCloud Hailuo 02 T2V Standard": AtlasHailuo02T2VStandard,
+
+    "AtlasCloud Seedance V1 Lite T2V 1080p": AtlasSeedanceV1LiteT2V1080p,
+    "AtlasCloud Seedance V1 Lite T2V 720p": AtlasSeedanceV1LiteT2V720p,
+    "AtlasCloud Seedance V1 Lite I2V 1080p": AtlasSeedanceV1LiteI2V1080p,
+
     "AtlasCloud Kling V2.0 T2V Master": AtlasKlingV20T2VMaster,
 }
 
@@ -374,6 +411,25 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Kling V2.0 I2V Master": "AtlasCloud Kling V2.0 I2V Master",
     "AtlasCloud VEO3 Fast Image-to-Video": "AtlasCloud VEO3 Fast Image-to-Video",
     "AtlasCloud Kling V2.1 T2V Master": "AtlasCloud Kling V2.1 T2V Master",
+    "AtlasCloud Kling V2.1 I2V Master": "AtlasCloud Kling V2.1 I2V Master",
+    "AtlasCloud Kling V2.1 I2V Pro (Start/End Frame)": "AtlasCloud Kling V2.1 I2V Pro (Start/End Frame)",
+    "AtlasCloud Kling V1.6 Multi I2V Pro": "AtlasCloud Kling V1.6 Multi I2V Pro",
+    "AtlasCloud Kling V1.6 Multi I2V Standard": "AtlasCloud Kling V1.6 Multi I2V Standard",
+    "AtlasCloud Kling Effects": "AtlasCloud Kling Effects",
+
+    "AtlasCloud Hailuo 2.3 T2V Standard": "AtlasCloud Hailuo 2.3 T2V Standard",
+    "AtlasCloud Hailuo 2.3 I2V Standard": "AtlasCloud Hailuo 2.3 I2V Standard",
+    "AtlasCloud Hailuo 2.3 I2V Pro": "AtlasCloud Hailuo 2.3 I2V Pro",
+    "AtlasCloud Hailuo 2.3 Fast": "AtlasCloud Hailuo 2.3 Fast",
+
+    "AtlasCloud Hailuo 02 Fast": "AtlasCloud Hailuo 02 Fast",
+    "AtlasCloud Hailuo 02 Pro": "AtlasCloud Hailuo 02 Pro",
+    "AtlasCloud Hailuo 02 T2V Standard": "AtlasCloud Hailuo 02 T2V Standard",
+
+    "AtlasCloud Seedance V1 Lite T2V 1080p": "AtlasCloud Seedance V1 Lite T2V 1080p",
+    "AtlasCloud Seedance V1 Lite T2V 720p": "AtlasCloud Seedance V1 Lite T2V 720p",
+    "AtlasCloud Seedance V1 Lite I2V 1080p": "AtlasCloud Seedance V1 Lite I2V 1080p",
+
     "AtlasCloud Kling V2.0 T2V Master": "AtlasCloud Kling V2.0 T2V Master",
 }
 
