@@ -117,6 +117,22 @@ from atlascloud_comfyui.nodes.image.luma_photon_t2i import AtlasLumaPhotonTextTo
 from atlascloud_comfyui.nodes.image.luma_photon_flash_t2i import AtlasLumaPhotonFlashTextToImage
 from atlascloud_comfyui.nodes.image.recraft_v3_t2i import AtlasRecraftV3TextToImage
 from atlascloud_comfyui.nodes.image.qwen_image_edit_plus_20251215 import AtlasQwenImageEditPlus20251215
+from atlascloud_comfyui.nodes.image.qwen_image_t2i_plus import AtlasQwenImageTextToImagePlus
+from atlascloud_comfyui.nodes.image.qwen_image_t2i_max import AtlasQwenImageTextToImageMax
+
+from atlascloud_comfyui.nodes.video.seedance_v1_pro_fast_t2v import AtlasSeedanceV1ProFastTextToVideo
+from atlascloud_comfyui.nodes.video.seedance_v1_pro_fast_i2v import AtlasSeedanceV1ProFastImageToVideo
+from atlascloud_comfyui.nodes.video.wan25_fast_t2v import AtlasWAN25TextToVideoFast
+from atlascloud_comfyui.nodes.video.wan25_fast_i2v import AtlasWAN25ImageToVideoFast
+from atlascloud_comfyui.nodes.video.van26_t2v import AtlasVan26TextToVideo
+from atlascloud_comfyui.nodes.video.van26_i2v import AtlasVan26ImageToVideo
+from atlascloud_comfyui.nodes.video.vidu_reference_to_video_q1 import AtlasViduReferenceToVideoQ1
+from atlascloud_comfyui.nodes.video.vidu_reference_to_video_v2 import AtlasViduReferenceToVideoV2
+from atlascloud_comfyui.nodes.video.vidu_start_end_to_video_v2 import AtlasViduStartEndToVideoV2
+from atlascloud_comfyui.nodes.video.kling_v20_i2v_master import AtlasKlingV20I2VMaster
+from atlascloud_comfyui.nodes.video.veo3_fast_i2v import AtlasVeo3FastImageToVideo
+from atlascloud_comfyui.nodes.video.kling_v21_t2v_master import AtlasKlingV21T2VMaster
+from atlascloud_comfyui.nodes.video.kling_v20_t2v_master import AtlasKlingV20T2VMaster
 
 from atlascloud_comfyui.nodes.utils.image_preview import AtlasImagePreviewURL
 from atlascloud_comfyui.nodes.utils.video_previewer import AtlasVideoPreviewer
@@ -223,6 +239,22 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Nano Banana Pro Text-to-Image": AtlasNanoBananaProTextToImage,
     "AtlasCloud Nano Banana Pro Edit": AtlasNanoBananaProEdit,
     "AtlasCloud Qwen Image Edit Plus 20251215": AtlasQwenImageEditPlus20251215,
+    "AtlasCloud Qwen Image Text-to-Image Plus": AtlasQwenImageTextToImagePlus,
+    "AtlasCloud Qwen Image Text-to-Image Max": AtlasQwenImageTextToImageMax,
+
+    "AtlasCloud Seedance V1 Pro Fast Text-to-Video": AtlasSeedanceV1ProFastTextToVideo,
+    "AtlasCloud Seedance V1 Pro Fast Image-to-Video": AtlasSeedanceV1ProFastImageToVideo,
+    "AtlasCloud WAN2.5 Text-to-Video Fast": AtlasWAN25TextToVideoFast,
+    "AtlasCloud WAN2.5 Image-to-Video Fast": AtlasWAN25ImageToVideoFast,
+    "AtlasCloud Van-2.6 Text-to-Video": AtlasVan26TextToVideo,
+    "AtlasCloud Van-2.6 Image-to-Video": AtlasVan26ImageToVideo,
+    "AtlasCloud Vidu Reference-to-Video Q1": AtlasViduReferenceToVideoQ1,
+    "AtlasCloud Vidu Reference-to-Video 2.0": AtlasViduReferenceToVideoV2,
+    "AtlasCloud Vidu Start-End-to-Video 2.0": AtlasViduStartEndToVideoV2,
+    "AtlasCloud Kling V2.0 I2V Master": AtlasKlingV20I2VMaster,
+    "AtlasCloud VEO3 Fast Image-to-Video": AtlasVeo3FastImageToVideo,
+    "AtlasCloud Kling V2.1 T2V Master": AtlasKlingV21T2VMaster,
+    "AtlasCloud Kling V2.0 T2V Master": AtlasKlingV20T2VMaster,
 }
 
 
@@ -327,6 +359,22 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Nano Banana Pro Text-to-Image": "AtlasCloud Nano Banana Pro Text-to-Image",
     "AtlasCloud Nano Banana Pro Edit": "AtlasCloud Nano Banana Pro Edit",
     "AtlasCloud Qwen Image Edit Plus 20251215": "AtlasCloud Qwen Image Edit Plus 20251215",
+    "AtlasCloud Qwen Image Text-to-Image Plus": "AtlasCloud Qwen Image Text-to-Image Plus",
+    "AtlasCloud Qwen Image Text-to-Image Max": "AtlasCloud Qwen Image Text-to-Image Max",
+
+    "AtlasCloud Seedance V1 Pro Fast Text-to-Video": "AtlasCloud Seedance V1 Pro Fast Text-to-Video",
+    "AtlasCloud Seedance V1 Pro Fast Image-to-Video": "AtlasCloud Seedance V1 Pro Fast Image-to-Video",
+    "AtlasCloud WAN2.5 Text-to-Video Fast": "AtlasCloud WAN2.5 Text-to-Video Fast",
+    "AtlasCloud WAN2.5 Image-to-Video Fast": "AtlasCloud WAN2.5 Image-to-Video Fast",
+    "AtlasCloud Van-2.6 Text-to-Video": "AtlasCloud Van-2.6 Text-to-Video",
+    "AtlasCloud Van-2.6 Image-to-Video": "AtlasCloud Van-2.6 Image-to-Video",
+    "AtlasCloud Vidu Reference-to-Video Q1": "AtlasCloud Vidu Reference-to-Video Q1",
+    "AtlasCloud Vidu Reference-to-Video 2.0": "AtlasCloud Vidu Reference-to-Video 2.0",
+    "AtlasCloud Vidu Start-End-to-Video 2.0": "AtlasCloud Vidu Start-End-to-Video 2.0",
+    "AtlasCloud Kling V2.0 I2V Master": "AtlasCloud Kling V2.0 I2V Master",
+    "AtlasCloud VEO3 Fast Image-to-Video": "AtlasCloud VEO3 Fast Image-to-Video",
+    "AtlasCloud Kling V2.1 T2V Master": "AtlasCloud Kling V2.1 T2V Master",
+    "AtlasCloud Kling V2.0 T2V Master": "AtlasCloud Kling V2.0 T2V Master",
 }
 
 

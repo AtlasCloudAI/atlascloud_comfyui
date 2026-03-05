@@ -371,3 +371,121 @@ def test_recraft_v3_t2i_node_metadata():
 
     assert "atlas_client" in AtlasRecraftV3TextToImage.INPUT_TYPES()["required"]
     assert AtlasRecraftV3TextToImage.RETURN_TYPES == ("STRING", "STRING")
+
+
+# --- Batch 4: 2026-03-05 sync ---
+
+
+def test_qwen_image_t2i_plus_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.qwen_image_t2i_plus import AtlasQwenImageTextToImagePlus
+
+    assert "atlas_client" in AtlasQwenImageTextToImagePlus.INPUT_TYPES()["required"]
+    assert AtlasQwenImageTextToImagePlus.RETURN_TYPES == ("STRING", "STRING")
+    assert "image_url" in AtlasQwenImageTextToImagePlus.RETURN_NAMES
+
+
+def test_qwen_image_t2i_max_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.qwen_image_t2i_max import AtlasQwenImageTextToImageMax
+
+    assert "atlas_client" in AtlasQwenImageTextToImageMax.INPUT_TYPES()["required"]
+    assert AtlasQwenImageTextToImageMax.RETURN_TYPES == ("STRING", "STRING")
+    assert "image_url" in AtlasQwenImageTextToImageMax.RETURN_NAMES
+
+
+def test_seedance_v1_pro_fast_t2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.seedance_v1_pro_fast_t2v import AtlasSeedanceV1ProFastTextToVideo
+
+    assert "atlas_client" in AtlasSeedanceV1ProFastTextToVideo.INPUT_TYPES()["required"]
+    assert AtlasSeedanceV1ProFastTextToVideo.RETURN_TYPES == ("STRING", "STRING")
+    assert "video_url" in AtlasSeedanceV1ProFastTextToVideo.RETURN_NAMES
+
+
+def test_seedance_v1_pro_fast_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.seedance_v1_pro_fast_i2v import AtlasSeedanceV1ProFastImageToVideo
+
+    assert "atlas_client" in AtlasSeedanceV1ProFastImageToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasSeedanceV1ProFastImageToVideo.INPUT_TYPES()["required"]
+    assert AtlasSeedanceV1ProFastImageToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_wan25_fast_t2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.wan25_fast_t2v import AtlasWAN25TextToVideoFast
+
+    assert "atlas_client" in AtlasWAN25TextToVideoFast.INPUT_TYPES()["required"]
+    assert AtlasWAN25TextToVideoFast.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_wan25_fast_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.wan25_fast_i2v import AtlasWAN25ImageToVideoFast
+
+    assert "atlas_client" in AtlasWAN25ImageToVideoFast.INPUT_TYPES()["required"]
+    assert "image" in AtlasWAN25ImageToVideoFast.INPUT_TYPES()["required"]
+    assert AtlasWAN25ImageToVideoFast.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_van26_t2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.van26_t2v import AtlasVan26TextToVideo
+
+    assert "atlas_client" in AtlasVan26TextToVideo.INPUT_TYPES()["required"]
+    assert AtlasVan26TextToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_van26_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.van26_i2v import AtlasVan26ImageToVideo
+
+    assert "atlas_client" in AtlasVan26ImageToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasVan26ImageToVideo.INPUT_TYPES()["required"]
+    assert AtlasVan26ImageToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_vidu_reference_to_video_q1_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.vidu_reference_to_video_q1 import AtlasViduReferenceToVideoQ1
+
+    assert "atlas_client" in AtlasViduReferenceToVideoQ1.INPUT_TYPES()["required"]
+    assert AtlasViduReferenceToVideoQ1.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_vidu_reference_to_video_v2_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.vidu_reference_to_video_v2 import AtlasViduReferenceToVideoV2
+
+    assert "atlas_client" in AtlasViduReferenceToVideoV2.INPUT_TYPES()["required"]
+    assert AtlasViduReferenceToVideoV2.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_vidu_start_end_to_video_v2_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.vidu_start_end_to_video_v2 import AtlasViduStartEndToVideoV2
+
+    assert "atlas_client" in AtlasViduStartEndToVideoV2.INPUT_TYPES()["required"]
+    assert "start_image" in AtlasViduStartEndToVideoV2.INPUT_TYPES()["required"]
+    assert "end_image" in AtlasViduStartEndToVideoV2.INPUT_TYPES()["required"]
+    assert AtlasViduStartEndToVideoV2.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_kling_v20_i2v_master_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.kling_v20_i2v_master import AtlasKlingV20I2VMaster
+
+    assert "atlas_client" in AtlasKlingV20I2VMaster.INPUT_TYPES()["required"]
+    assert "image" in AtlasKlingV20I2VMaster.INPUT_TYPES()["required"]
+    assert AtlasKlingV20I2VMaster.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_veo3_fast_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.veo3_fast_i2v import AtlasVeo3FastImageToVideo
+
+    assert "atlas_client" in AtlasVeo3FastImageToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasVeo3FastImageToVideo.INPUT_TYPES()["required"]
+    assert AtlasVeo3FastImageToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_kling_v21_t2v_master_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.kling_v21_t2v_master import AtlasKlingV21T2VMaster
+
+    assert "atlas_client" in AtlasKlingV21T2VMaster.INPUT_TYPES()["required"]
+    assert AtlasKlingV21T2VMaster.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_kling_v20_t2v_master_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.kling_v20_t2v_master import AtlasKlingV20T2VMaster
+
+    assert "atlas_client" in AtlasKlingV20T2VMaster.INPUT_TYPES()["required"]
+    assert AtlasKlingV20T2VMaster.RETURN_TYPES == ("STRING", "STRING")
