@@ -93,7 +93,11 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Pika V2.0 Turbo Text-to-Video | pika/v2.0-turbo-t2v |
 | AtlasCloud PixVerse V4.5 Text-to-Video | pixverse/pixverse-v4.5-t2v |
 | AtlasCloud Hailuo 02 T2V Pro | minimax/hailuo-02/t2v-pro |
+| AtlasCloud Hailuo 02 T2V Standard | minimax/hailuo-02/t2v-standard |
+| AtlasCloud Hailuo 02 Pro | minimax/hailuo-02/pro |
+| AtlasCloud Hailuo 02 Fast | minimax/hailuo-02/fast |
 | AtlasCloud Hailuo 2.3 Pro Text-to-Video | minimax/hailuo-2.3-pro/text-to-video |
+| AtlasCloud Hailuo 2.3 T2V Standard | minimax/hailuo-2.3/t2v-standard |
 | AtlasCloud Sora 2 Text-to-Video | openai/sora-2/text-to-video |
 | AtlasCloud Sora 2 Text-to-Video Pro | openai/sora-2/text-to-video-pro |
 | AtlasCloud Kling V3.0 Pro Text-to-Video | kwaivgi/kling-v3.0-pro/text-to-video |
@@ -106,6 +110,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Kling V2.5 Turbo Pro Text-to-Video | kwaivgi/kling-v2.5-turbo-pro/text-to-video |
 | AtlasCloud Kling Video O1 Text-to-Video | kwaivgi/kling-video-o1/text-to-video |
 | AtlasCloud Seedance V1 Pro Text-to-Video 1080p | bytedance/seedance-v1-pro/text-to-video-1080p |
+| AtlasCloud Seedance V1 Lite T2V 1080p | bytedance/seedance-v1-lite-t2v-1080p |
+| AtlasCloud Seedance V1 Lite T2V 720p | bytedance/seedance-v1-lite-t2v-720p |
 | AtlasCloud Seedance V1.5 Pro Text-to-Video | bytedance/seedance-v1.5-pro/text-to-video |
 | AtlasCloud Seedance V1.5 Pro Text-to-Video Fast | bytedance/seedance-v1.5-pro/text-to-video-fast |
 | AtlasCloud Hunyuan Text-to-Video | atlascloud/hunyuan-video/t2v |
@@ -128,6 +134,11 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Vidu Reference-to-Video 2.0 | vidu/reference-to-video-2.0 |
 | AtlasCloud Vidu Start-End-to-Video 2.0 | vidu/start-end-to-video-2.0 |
 | AtlasCloud Kling V2.0 I2V Master | kwaivgi/kling-v2.0-i2v-master |
+| AtlasCloud Kling V2.1 I2V Master | kwaivgi/kling-v2.1-i2v-master |
+| AtlasCloud Kling V2.1 I2V Pro (Start/End Frame) | kwaivgi/kling-v2.1-i2v-pro/start-end-frame |
+| AtlasCloud Kling V1.6 Multi I2V Pro | kwaivgi/kling-v1.6-multi-i2v-pro |
+| AtlasCloud Kling V1.6 Multi I2V Standard | kwaivgi/kling-v1.6-multi-i2v-standard |
+| AtlasCloud Kling Effects | kwaivgi/kling-effects |
 | AtlasCloud WAN2.6 Image-to-Video | alibaba/wan-2.6/image-to-video |
 | AtlasCloud WAN2.6 Image-to-Video Flash | alibaba/wan-2.6/image-to-video-flash |
 | AtlasCloud Kling Video O3 Pro Image-to-Video | kwaivgi/kling-video-o3-pro/image-to-video |
@@ -138,6 +149,9 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Pika V2.1 Image-to-Video | pika/v2.1-i2v |
 | AtlasCloud PixVerse V4.5 Image-to-Video | pixverse/pixverse-v4.5-i2v |
 | AtlasCloud Hailuo 02 I2V Pro | minimax/hailuo-02/i2v-pro |
+| AtlasCloud Hailuo 2.3 I2V Standard | minimax/hailuo-2.3/i2v-standard |
+| AtlasCloud Hailuo 2.3 I2V Pro | minimax/hailuo-2.3/i2v-pro |
+| AtlasCloud Hailuo 2.3 Fast | minimax/hailuo-2.3/fast |
 | AtlasCloud Sora 2 Image-to-Video | openai/sora-2/image-to-video |
 | AtlasCloud Sora 2 Image-to-Video Pro | openai/sora-2/image-to-video-pro |
 | AtlasCloud Kling V3.0 Pro Image-to-Video | kwaivgi/kling-v3.0-pro/image-to-video |
@@ -145,6 +159,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Kling V2.6 Pro Image-to-Video | kwaivgi/kling-v2.6-pro/image-to-video |
 | AtlasCloud Kling Video O1 Image-to-Video | kwaivgi/kling-video-o1/image-to-video |
 | AtlasCloud Seedance V1.5 Pro Image-to-Video | bytedance/seedance-v1.5-pro/image-to-video |
+| AtlasCloud Seedance V1 Lite I2V 1080p | bytedance/seedance-v1-lite-i2v-1080p |
 | AtlasCloud Seedance V1.5 Pro Image-to-Video Fast | bytedance/seedance-v1.5-pro/image-to-video-fast |
 | AtlasCloud Kling V2.5 Turbo Pro Image-to-Video | kwaivgi/kling-v2.5-turbo-pro/image-to-video |
 | AtlasCloud Vidu Q3 Text-to-Video | vidu/q3/text-to-video |
