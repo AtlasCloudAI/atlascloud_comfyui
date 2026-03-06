@@ -71,7 +71,14 @@ def test_wan26_t2i():
 
 @skip_no_key
 def test_kling_video_o3_pro_t2v():
-    """Kling Video O3 Pro text-to-video should return a video URL."""
+    """Kling Video O3 Pro text-to-video should return a video URL.
+
+    Note: this model can queue for a long time depending on backend capacity/credits.
+    Keep it opt-in via ATLASCLOUD_RUN_KLING_O3_E2E=1 to avoid hanging CI.
+    """
+
+    if os.getenv("ATLASCLOUD_RUN_KLING_O3_E2E", "").strip() != "1":
+        pytest.skip("Set ATLASCLOUD_RUN_KLING_O3_E2E=1 to run Kling O3 Pro T2V E2E")
     from atlascloud_comfyui.nodes.video.kling_video_o3_pro_t2v import AtlasKlingVideoO3ProTextToVideo
 
     node = AtlasKlingVideoO3ProTextToVideo()
@@ -100,7 +107,14 @@ def test_kling_video_o3_pro_t2v():
 
 @skip_no_key
 def test_kling_video_o3_std_t2v():
-    """Kling Video O3 Std text-to-video should return a video URL."""
+    """Kling Video O3 Std text-to-video should return a video URL.
+
+    Note: this model can queue for a long time depending on backend capacity/credits.
+    Keep it opt-in via ATLASCLOUD_RUN_KLING_O3_E2E=1 to avoid hanging CI.
+    """
+
+    if os.getenv("ATLASCLOUD_RUN_KLING_O3_E2E", "").strip() != "1":
+        pytest.skip("Set ATLASCLOUD_RUN_KLING_O3_E2E=1 to run Kling O3 Std T2V E2E")
     from atlascloud_comfyui.nodes.video.kling_video_o3_std_t2v import AtlasKlingVideoO3StdTextToVideo
 
     node = AtlasKlingVideoO3StdTextToVideo()

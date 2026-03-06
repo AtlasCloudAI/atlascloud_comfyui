@@ -36,6 +36,9 @@ from atlascloud_comfyui.nodes.video.kling_video_o3_std_r2v import AtlasKlingVide
 from atlascloud_comfyui.nodes.video.kling_video_o3_std_video_edit import AtlasKlingVideoO3StdVideoEdit
 from atlascloud_comfyui.nodes.video.wan25_t2v import AtlasWAN25TextToVideo
 from atlascloud_comfyui.nodes.video.wan22_t2v_720p import AtlasWAN22T2V720p
+from atlascloud_comfyui.nodes.video.alibaba_wan_2_2_t2v_480p import AtlasAlibabaWan22T2V480p
+from atlascloud_comfyui.nodes.video.alibaba_wan_2_2_i2v_720p import AtlasAlibabaWan22I2V720p
+from atlascloud_comfyui.nodes.video.alibaba_wan_2_2_i2v_480p import AtlasAlibabaWan22I2V480p
 from atlascloud_comfyui.nodes.video.veo31_t2v import AtlasVeo31TextToVideo
 from atlascloud_comfyui.nodes.video.kling_v26_pro_t2v import AtlasKlingV26ProTextToVideo
 from atlascloud_comfyui.nodes.video.kling_video_o1_t2v import AtlasKlingVideoO1TextToVideo
@@ -72,6 +75,7 @@ from atlascloud_comfyui.nodes.video.pika_v20_turbo_t2v import AtlasPikaV20TurboT
 from atlascloud_comfyui.nodes.video.pika_v21_i2v import AtlasPikaV21ImageToVideo
 from atlascloud_comfyui.nodes.video.pixverse_v45_i2v import AtlasPixVerseV45ImageToVideo
 from atlascloud_comfyui.nodes.video.hailuo_02_i2v_pro import AtlasHailuo02I2VPro
+from atlascloud_comfyui.nodes.video.minimax_hailuo_02_i2v_standard import AtlasMinimaxHailuo02I2VStandard
 from atlascloud_comfyui.nodes.video.sora2_i2v_pro import AtlasSora2ImageToVideoPro
 from atlascloud_comfyui.nodes.video.sora2_t2v import AtlasSora2TextToVideo
 from atlascloud_comfyui.nodes.video.kling_v25_turbo_pro_i2v import AtlasKlingV25TurboProImageToVideo
@@ -134,9 +138,12 @@ from atlascloud_comfyui.nodes.video.veo3_fast_i2v import AtlasVeo3FastImageToVid
 from atlascloud_comfyui.nodes.video.kling_v21_t2v_master import AtlasKlingV21T2VMaster
 from atlascloud_comfyui.nodes.video.kling_v21_i2v_master import AtlasKlingV21I2VMaster
 from atlascloud_comfyui.nodes.video.kling_v21_i2v_pro_start_end_frame import AtlasKlingV21I2VProStartEndFrame
+from atlascloud_comfyui.nodes.video.kwaivgi_kling_v2_1_i2v_pro import AtlasKwaivgiKlingV21I2VPro
 from atlascloud_comfyui.nodes.video.kling_v16_multi_i2v_pro import AtlasKlingV16MultiI2VPro
 from atlascloud_comfyui.nodes.video.kling_v16_multi_i2v_standard import AtlasKlingV16MultiI2VStandard
 from atlascloud_comfyui.nodes.video.kling_effects import AtlasKlingEffects
+from atlascloud_comfyui.nodes.video.kwaivgi_kling_v1_6_t2v_standard import AtlasKwaivgiKlingV16T2VStandard
+from atlascloud_comfyui.nodes.video.kwaivgi_kling_v1_6_i2v_pro import AtlasKwaivgiKlingV16I2VPro
 
 from atlascloud_comfyui.nodes.video.hailuo_23_t2v_standard import AtlasHailuo23T2VStandard
 from atlascloud_comfyui.nodes.video.hailuo_23_i2v_standard import AtlasHailuo23I2VStandard
@@ -149,6 +156,14 @@ from atlascloud_comfyui.nodes.video.hailuo_02_t2v_standard import AtlasHailuo02T
 from atlascloud_comfyui.nodes.video.seedance_v1_lite_t2v_1080p import AtlasSeedanceV1LiteT2V1080p
 from atlascloud_comfyui.nodes.video.seedance_v1_lite_t2v_720p import AtlasSeedanceV1LiteT2V720p
 from atlascloud_comfyui.nodes.video.seedance_v1_lite_i2v_1080p import AtlasSeedanceV1LiteI2V1080p
+from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_lite_t2v_480p import AtlasBytedanceSeedanceV1LiteT2V480p
+from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_lite_i2v_720p import AtlasBytedanceSeedanceV1LiteI2V720p
+from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_lite_i2v_480p import AtlasBytedanceSeedanceV1LiteI2V480p
+from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_pro_t2v_720p import AtlasBytedanceSeedanceV1ProT2V720p
+from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_pro_t2v_480p import AtlasBytedanceSeedanceV1ProT2V480p
+from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_pro_i2v_1080p import AtlasBytedanceSeedanceV1ProI2V1080p
+from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_pro_i2v_720p import AtlasBytedanceSeedanceV1ProI2V720p
+from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_pro_i2v_480p import AtlasBytedanceSeedanceV1ProI2V480p
 
 from atlascloud_comfyui.nodes.video.kling_v20_t2v_master import AtlasKlingV20T2VMaster
 
@@ -176,6 +191,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Kling Video O3 Std Reference-to-Video": AtlasKlingVideoO3StdReferenceToVideo,
     "AtlasCloud Kling Video O3 Std Video-Edit": AtlasKlingVideoO3StdVideoEdit,
     "AtlasCloud WAN2.2 Text-to-Video 720p": AtlasWAN22T2V720p,
+    "AtlasCloud WAN2.2 Text-to-Video 480p": AtlasAlibabaWan22T2V480p,
     "AtlasCloud VEO3.1 Text-to-Video": AtlasVeo31TextToVideo,
     "AtlasCloud Kling V2.6 Pro Text-to-Video": AtlasKlingV26ProTextToVideo,
     "AtlasCloud Kling V2.6 Pro Avatar": AtlasKlingV26ProAvatar,
@@ -186,6 +202,9 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Kling Video O1 Text-to-Video": AtlasKlingVideoO1TextToVideo,
     "AtlasCloud Kling Video O1 Image-to-Video": AtlasKlingVideoO1ImageToVideo,
     "AtlasCloud Seedance V1 Pro Text-to-Video 1080p": AtlasSeedanceV1ProT2V1080p,
+    "AtlasCloud Seedance V1 Pro Text-to-Video 720p": AtlasBytedanceSeedanceV1ProT2V720p,
+    "AtlasCloud Seedance V1 Pro Text-to-Video 480p": AtlasBytedanceSeedanceV1ProT2V480p,
+    "AtlasCloud Seedance V1 Lite Text-to-Video 480p": AtlasBytedanceSeedanceV1LiteT2V480p,
     "AtlasCloud Hailuo 2.3 Pro Text-to-Video": AtlasHailuo23T2VPro,
     "AtlasCloud Sora 2 Text-to-Video Pro": AtlasSora2TextToVideoPro,
     "AtlasCloud Seedance V1.5 Pro Text-to-Video": AtlasSeedanceV15ProTextToVideo,
@@ -241,11 +260,14 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Pika V2.1 Image-to-Video": AtlasPikaV21ImageToVideo,
     "AtlasCloud PixVerse V4.5 Image-to-Video": AtlasPixVerseV45ImageToVideo,
     "AtlasCloud Hailuo 02 I2V Pro": AtlasHailuo02I2VPro,
+    "AtlasCloud Hailuo 02 I2V Standard": AtlasMinimaxHailuo02I2VStandard,
     "AtlasCloud Sora 2 Image-to-Video Pro": AtlasSora2ImageToVideoPro,
     "AtlasCloud Sora 2 Text-to-Video": AtlasSora2TextToVideo,
     "AtlasCloud Kling V2.5 Turbo Pro Image-to-Video": AtlasKlingV25TurboProImageToVideo,
     "AtlasCloud Hunyuan Image-to-Video": AtlasHunyuanImageToVideo,
     "AtlasCloud WAN2.5 Image-to-Video": AtlasWAN25ImageToVideo,
+    "AtlasCloud WAN2.2 Image-to-Video 720p": AtlasAlibabaWan22I2V720p,
+    "AtlasCloud WAN2.2 Image-to-Video 480p": AtlasAlibabaWan22I2V480p,
     "AtlasCloud Imagen4 Ultra Text-to-Image": AtlasImagen4UltraTextToImage,
     "AtlasCloud Imagen3 Text-to-Image": AtlasImagen3TextToImage,
     "AtlasCloud Ideogram V3 Quality Text-to-Image": AtlasIdeogramV3QualityTextToImage,
@@ -262,6 +284,11 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
 
     "AtlasCloud Seedance V1 Pro Fast Text-to-Video": AtlasSeedanceV1ProFastTextToVideo,
     "AtlasCloud Seedance V1 Pro Fast Image-to-Video": AtlasSeedanceV1ProFastImageToVideo,
+    "AtlasCloud Seedance V1 Pro Image-to-Video 1080p": AtlasBytedanceSeedanceV1ProI2V1080p,
+    "AtlasCloud Seedance V1 Pro Image-to-Video 720p": AtlasBytedanceSeedanceV1ProI2V720p,
+    "AtlasCloud Seedance V1 Pro Image-to-Video 480p": AtlasBytedanceSeedanceV1ProI2V480p,
+    "AtlasCloud Seedance V1 Lite Image-to-Video 720p": AtlasBytedanceSeedanceV1LiteI2V720p,
+    "AtlasCloud Seedance V1 Lite Image-to-Video 480p": AtlasBytedanceSeedanceV1LiteI2V480p,
     "AtlasCloud WAN2.5 Text-to-Video Fast": AtlasWAN25TextToVideoFast,
     "AtlasCloud WAN2.5 Image-to-Video Fast": AtlasWAN25ImageToVideoFast,
     "AtlasCloud Van-2.6 Text-to-Video": AtlasVan26TextToVideo,
@@ -274,8 +301,11 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Kling V2.1 T2V Master": AtlasKlingV21T2VMaster,
     "AtlasCloud Kling V2.1 I2V Master": AtlasKlingV21I2VMaster,
     "AtlasCloud Kling V2.1 I2V Pro (Start/End Frame)": AtlasKlingV21I2VProStartEndFrame,
+    "AtlasCloud Kling V2.1 I2V Pro": AtlasKwaivgiKlingV21I2VPro,
     "AtlasCloud Kling V1.6 Multi I2V Pro": AtlasKlingV16MultiI2VPro,
     "AtlasCloud Kling V1.6 Multi I2V Standard": AtlasKlingV16MultiI2VStandard,
+    "AtlasCloud Kling V1.6 T2V Standard": AtlasKwaivgiKlingV16T2VStandard,
+    "AtlasCloud Kling V1.6 I2V Pro": AtlasKwaivgiKlingV16I2VPro,
     "AtlasCloud Kling Effects": AtlasKlingEffects,
 
     "AtlasCloud Hailuo 2.3 T2V Standard": AtlasHailuo23T2VStandard,
@@ -315,6 +345,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Kling Video O3 Std Reference-to-Video": "AtlasCloud Kling Video O3 Std Reference-to-Video",
     "AtlasCloud Kling Video O3 Std Video-Edit": "AtlasCloud Kling Video O3 Std Video-Edit",
     "AtlasCloud WAN2.2 Text-to-Video 720p": "AtlasCloud WAN2.2 Text-to-Video 720p",
+    "AtlasCloud WAN2.2 Text-to-Video 480p": "AtlasCloud WAN2.2 Text-to-Video 480p",
     "AtlasCloud VEO3.1 Text-to-Video": "AtlasCloud VEO3.1 Text-to-Video",
     "AtlasCloud Kling V2.6 Pro Text-to-Video": "AtlasCloud Kling V2.6 Pro Text-to-Video",
     "AtlasCloud Kling V2.6 Pro Avatar": "AtlasCloud Kling V2.6 Pro Avatar",
@@ -325,6 +356,9 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Kling Video O1 Text-to-Video": "AtlasCloud Kling Video O1 Text-to-Video",
     "AtlasCloud Kling Video O1 Image-to-Video": "AtlasCloud Kling Video O1 Image-to-Video",
     "AtlasCloud Seedance V1 Pro Text-to-Video 1080p": "AtlasCloud Seedance V1 Pro Text-to-Video 1080p",
+    "AtlasCloud Seedance V1 Pro Text-to-Video 720p": "AtlasCloud Seedance V1 Pro Text-to-Video 720p",
+    "AtlasCloud Seedance V1 Pro Text-to-Video 480p": "AtlasCloud Seedance V1 Pro Text-to-Video 480p",
+    "AtlasCloud Seedance V1 Lite Text-to-Video 480p": "AtlasCloud Seedance V1 Lite Text-to-Video 480p",
     "AtlasCloud Hailuo 2.3 Pro Text-to-Video": "AtlasCloud Hailuo 2.3 Pro Text-to-Video",
     "AtlasCloud Sora 2 Text-to-Video Pro": "AtlasCloud Sora 2 Text-to-Video Pro",
     "AtlasCloud Seedance V1.5 Pro Text-to-Video": "AtlasCloud Seedance V1.5 Pro Text-to-Video",
@@ -380,11 +414,14 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Pika V2.1 Image-to-Video": "AtlasCloud Pika V2.1 Image-to-Video",
     "AtlasCloud PixVerse V4.5 Image-to-Video": "AtlasCloud PixVerse V4.5 Image-to-Video",
     "AtlasCloud Hailuo 02 I2V Pro": "AtlasCloud Hailuo 02 I2V Pro",
+    "AtlasCloud Hailuo 02 I2V Standard": "AtlasCloud Hailuo 02 I2V Standard",
     "AtlasCloud Sora 2 Image-to-Video Pro": "AtlasCloud Sora 2 Image-to-Video Pro",
     "AtlasCloud Sora 2 Text-to-Video": "AtlasCloud Sora 2 Text-to-Video",
     "AtlasCloud Kling V2.5 Turbo Pro Image-to-Video": "AtlasCloud Kling V2.5 Turbo Pro Image-to-Video",
     "AtlasCloud Hunyuan Image-to-Video": "AtlasCloud Hunyuan Image-to-Video",
     "AtlasCloud WAN2.5 Image-to-Video": "AtlasCloud WAN2.5 Image-to-Video",
+    "AtlasCloud WAN2.2 Image-to-Video 720p": "AtlasCloud WAN2.2 Image-to-Video 720p",
+    "AtlasCloud WAN2.2 Image-to-Video 480p": "AtlasCloud WAN2.2 Image-to-Video 480p",
     "AtlasCloud Imagen4 Ultra Text-to-Image": "AtlasCloud Imagen4 Ultra Text-to-Image",
     "AtlasCloud Imagen3 Text-to-Image": "AtlasCloud Imagen3 Text-to-Image",
     "AtlasCloud Ideogram V3 Quality Text-to-Image": "AtlasCloud Ideogram V3 Quality Text-to-Image",
@@ -401,6 +438,11 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
 
     "AtlasCloud Seedance V1 Pro Fast Text-to-Video": "AtlasCloud Seedance V1 Pro Fast Text-to-Video",
     "AtlasCloud Seedance V1 Pro Fast Image-to-Video": "AtlasCloud Seedance V1 Pro Fast Image-to-Video",
+    "AtlasCloud Seedance V1 Pro Image-to-Video 1080p": "AtlasCloud Seedance V1 Pro Image-to-Video 1080p",
+    "AtlasCloud Seedance V1 Pro Image-to-Video 720p": "AtlasCloud Seedance V1 Pro Image-to-Video 720p",
+    "AtlasCloud Seedance V1 Pro Image-to-Video 480p": "AtlasCloud Seedance V1 Pro Image-to-Video 480p",
+    "AtlasCloud Seedance V1 Lite Image-to-Video 720p": "AtlasCloud Seedance V1 Lite Image-to-Video 720p",
+    "AtlasCloud Seedance V1 Lite Image-to-Video 480p": "AtlasCloud Seedance V1 Lite Image-to-Video 480p",
     "AtlasCloud WAN2.5 Text-to-Video Fast": "AtlasCloud WAN2.5 Text-to-Video Fast",
     "AtlasCloud WAN2.5 Image-to-Video Fast": "AtlasCloud WAN2.5 Image-to-Video Fast",
     "AtlasCloud Van-2.6 Text-to-Video": "AtlasCloud Van-2.6 Text-to-Video",
@@ -413,8 +455,11 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Kling V2.1 T2V Master": "AtlasCloud Kling V2.1 T2V Master",
     "AtlasCloud Kling V2.1 I2V Master": "AtlasCloud Kling V2.1 I2V Master",
     "AtlasCloud Kling V2.1 I2V Pro (Start/End Frame)": "AtlasCloud Kling V2.1 I2V Pro (Start/End Frame)",
+    "AtlasCloud Kling V2.1 I2V Pro": "AtlasCloud Kling V2.1 I2V Pro",
     "AtlasCloud Kling V1.6 Multi I2V Pro": "AtlasCloud Kling V1.6 Multi I2V Pro",
     "AtlasCloud Kling V1.6 Multi I2V Standard": "AtlasCloud Kling V1.6 Multi I2V Standard",
+    "AtlasCloud Kling V1.6 T2V Standard": "AtlasCloud Kling V1.6 T2V Standard",
+    "AtlasCloud Kling V1.6 I2V Pro": "AtlasCloud Kling V1.6 I2V Pro",
     "AtlasCloud Kling Effects": "AtlasCloud Kling Effects",
 
     "AtlasCloud Hailuo 2.3 T2V Standard": "AtlasCloud Hailuo 2.3 T2V Standard",
