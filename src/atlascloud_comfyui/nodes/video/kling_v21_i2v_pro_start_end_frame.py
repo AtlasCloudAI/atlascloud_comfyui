@@ -52,7 +52,7 @@ class AtlasKlingV21I2VProStartEndFrame:
         client = atlas_client.client
 
         payload: Dict[str, Any] = {
-            "model": 'kwaivgi/kling-v2.1-i2v-pro/start-end-frame',
+            "model": "kwaivgi/kling-v2.1-i2v-pro/start-end-frame",
             "prompt": prompt,
             "image": image,
             "end_image": end_image,

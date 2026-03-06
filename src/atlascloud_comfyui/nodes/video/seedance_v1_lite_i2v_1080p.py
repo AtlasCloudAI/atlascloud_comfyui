@@ -50,7 +50,7 @@ class AtlasSeedanceV1LiteI2V1080p:
         client = atlas_client.client
 
         payload: Dict[str, Any] = {
-            "model": 'bytedance/seedance-v1-lite-i2v-1080p',
+            "model": "bytedance/seedance-v1-lite-i2v-1080p",
             "image": image,
         }
 
