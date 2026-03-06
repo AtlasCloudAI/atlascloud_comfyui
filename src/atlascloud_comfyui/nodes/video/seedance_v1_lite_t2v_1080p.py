@@ -42,7 +42,7 @@ class AtlasSeedanceV1LiteT2V1080p:
         client = atlas_client.client
 
         payload: Dict[str, Any] = {
-            "model": "",
+            "model": "bytedance/seedance-v1-lite-t2v-1080p",
             "prompt": prompt,
         }
 

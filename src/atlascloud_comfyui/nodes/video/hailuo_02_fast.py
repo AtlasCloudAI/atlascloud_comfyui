@@ -46,7 +46,7 @@ class AtlasHailuo02Fast:
         client = atlas_client.client
 
         payload: Dict[str, Any] = {
-            "model": "",
+            "model": "minimax/hailuo-02/fast",
             "image": image,
         }
 

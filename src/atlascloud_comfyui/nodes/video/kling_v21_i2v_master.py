@@ -46,7 +46,7 @@ class AtlasKlingV21I2VMaster:
         client = atlas_client.client
 
         payload: Dict[str, Any] = {
-            "model": "",
+            "model": "kwaivgi/kling-v2.1-i2v-master",
             "prompt": prompt,
             "image": image,
         }
