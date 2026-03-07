@@ -132,6 +132,11 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud VEO2 Image-to-Video | google/veo2/image-to-video |
 | AtlasCloud WAN2.5 Image-to-Video | alibaba/wan-2.5/image-to-video |
 | AtlasCloud WAN2.5 Image-to-Video Fast | alibaba/wan-2.5/image-to-video-fast |
+| AtlasCloud Van-2.5 Text-to-Video | atlascloud/van-2.5/text-to-video |
+| AtlasCloud Van-2.5 Image-to-Video | atlascloud/van-2.5/image-to-video |
+| AtlasCloud Kling V2.1 I2V Standard | kwaivgi/kling-v2.1-i2v-standard |
+| AtlasCloud WAN2.2 Animate Mix | alibaba/wan-2.2/animate-mix |
+| AtlasCloud WAN2.2 Animate Move | alibaba/wan-2.2/animate-move |
 | AtlasCloud WAN2.2 Image-to-Video 720p | alibaba/wan-2.2/i2v-720p |
 | AtlasCloud WAN2.2 Image-to-Video 480p | alibaba/wan-2.2/i2v-480p |
 | AtlasCloud Van-2.6 Image-to-Video | atlascloud/van-2.6/image-to-video |
@@ -186,6 +191,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | Node | Model |
 |------|-------|
 | AtlasCloud WAN2.6 Text-to-Image | alibaba/wan-2.6/text-to-image |
+| AtlasCloud WAN2.5 Text-to-Image | alibaba/wan-2.5/text-to-image |
 | AtlasCloud Imagen4 Text-to-Image | google/imagen4 |
 | AtlasCloud Imagen4 Fast Text-to-Image | google/imagen4-fast |
 | AtlasCloud Imagen4 Ultra Text-to-Image | google/imagen4-ultra |
@@ -196,6 +202,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Nano Banana Pro Text-to-Image | google/nano-banana-pro/text-to-image |
 | AtlasCloud Seedream V5.0 Lite Text-to-Image | bytedance/seedream-v5.0-lite |
 | AtlasCloud Seedream V5.0 Lite Sequential Text-to-Image | bytedance/seedream-v5.0-lite/sequential |
+| AtlasCloud Seedream V4 Text-to-Image | bytedance/seedream-v4 |
+| AtlasCloud Seedream V4 Sequential Text-to-Image | bytedance/seedream-v4/sequential |
 | AtlasCloud Seedream V4.5 Text-to-Image | bytedance/seedream-v4.5 |
 | AtlasCloud Seedream V4.5 Sequential Text-to-Image | bytedance/seedream-v4.5/sequential |
 | AtlasCloud ZImage Turbo Text-to-Image | z-image/turbo |
@@ -205,6 +213,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Luma Photon Flash Text-to-Image | luma/photon-flash |
 | AtlasCloud Recraft V3 Text-to-Image | recraft-ai/recraft-v3 |
 | AtlasCloud Flux2 Flex Text-to-Image | flux2/flex |
+| AtlasCloud Flux Dev Text-to-Image | black-forest-labs/flux-dev |
+| AtlasCloud Flux Dev LoRA Text-to-Image | black-forest-labs/flux-dev-lora |
 | AtlasCloud ZImage Turbo Lora Text-to-Image | z-image/turbo-lora |
 | AtlasCloud Qwen Image Text-to-Image Plus | alibaba/qwen-image/text-to-image-plus |
 | AtlasCloud Qwen Image Text-to-Image Max | alibaba/qwen-image/text-to-image-max |
@@ -225,9 +235,13 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Seedream V5.0 Lite Edit | bytedance/seedream-v5.0-lite/edit |
 | AtlasCloud Seedream V5.0 Lite Edit Sequential | bytedance/seedream-v5.0-lite/edit-sequential |
 | AtlasCloud WAN2.6 Image-Edit | alibaba/wan-2.6/image-edit |
+| AtlasCloud Seedream V4 Edit | bytedance/seedream-v4/edit |
+| AtlasCloud Seedream V4 Edit Sequential | bytedance/seedream-v4/edit-sequential |
 | AtlasCloud Seedream V4.5 Edit | bytedance/seedream-v4.5/edit |
 | AtlasCloud Seedream V4.5 Edit Sequential | bytedance/seedream-v4.5/edit-sequential |
 | AtlasCloud Qwen Image Edit | atlascloud/qwen-image/edit |
+| AtlasCloud Qwen Image Edit (Alibaba) | alibaba/qwen-image/edit |
+| AtlasCloud Qwen Image Edit Plus (Alibaba) | alibaba/qwen-image/edit-plus |
 | AtlasCloud Nano Banana Pro Edit | google/nano-banana-pro/edit |
 | AtlasCloud Qwen Image Edit Plus 20251215 | alibaba/qwen-image/edit-plus-20251215 |
 
