@@ -376,6 +376,107 @@ def test_recraft_v3_t2i_node_metadata():
 # --- Batch 4: 2026-03-05 sync ---
 
 
+def test_imagen3_fast_t2i_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.imagen3_fast_t2i import AtlasImagen3FastTextToImage
+
+    assert "atlas_client" in AtlasImagen3FastTextToImage.INPUT_TYPES()["required"]
+    assert AtlasImagen3FastTextToImage.RETURN_TYPES == ("STRING", "STRING")
+    assert "image_url" in AtlasImagen3FastTextToImage.RETURN_NAMES
+
+
+def test_nano_banana_t2i_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.nano_banana_t2i import AtlasNanoBananaTextToImage
+
+    assert "atlas_client" in AtlasNanoBananaTextToImage.INPUT_TYPES()["required"]
+    assert AtlasNanoBananaTextToImage.RETURN_TYPES == ("STRING", "STRING")
+    assert "image_url" in AtlasNanoBananaTextToImage.RETURN_NAMES
+
+
+def test_nano_banana_t2i_dev_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.nano_banana_t2i_dev import AtlasNanoBananaTextToImageDeveloper
+
+    assert "atlas_client" in AtlasNanoBananaTextToImageDeveloper.INPUT_TYPES()["required"]
+    assert AtlasNanoBananaTextToImageDeveloper.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_nano_banana_edit_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.nano_banana_edit import AtlasNanoBananaEdit
+
+    assert "atlas_client" in AtlasNanoBananaEdit.INPUT_TYPES()["required"]
+    assert "images" in AtlasNanoBananaEdit.INPUT_TYPES()["required"]
+    assert AtlasNanoBananaEdit.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_nano_banana_edit_dev_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.nano_banana_edit_dev import AtlasNanoBananaEditDeveloper
+
+    assert "atlas_client" in AtlasNanoBananaEditDeveloper.INPUT_TYPES()["required"]
+    assert "images" in AtlasNanoBananaEditDeveloper.INPUT_TYPES()["required"]
+    assert AtlasNanoBananaEditDeveloper.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_nano_banana_pro_t2i_dev_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.nano_banana_pro_t2i_dev import AtlasNanoBananaProTextToImageDeveloper
+
+    assert "atlas_client" in AtlasNanoBananaProTextToImageDeveloper.INPUT_TYPES()["required"]
+    assert AtlasNanoBananaProTextToImageDeveloper.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_nano_banana_pro_edit_dev_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.nano_banana_pro_edit_dev import AtlasNanoBananaProEditDeveloper
+
+    assert "atlas_client" in AtlasNanoBananaProEditDeveloper.INPUT_TYPES()["required"]
+    assert "images" in AtlasNanoBananaProEditDeveloper.INPUT_TYPES()["required"]
+    assert AtlasNanoBananaProEditDeveloper.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_flux_schnell_t2i_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.flux_schnell_t2i import AtlasFluxSchnellTextToImage
+
+    assert "atlas_client" in AtlasFluxSchnellTextToImage.INPUT_TYPES()["required"]
+    assert AtlasFluxSchnellTextToImage.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_flux_kontext_dev_edit_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.flux_kontext_dev_edit import AtlasFluxKontextDevEdit
+
+    assert "atlas_client" in AtlasFluxKontextDevEdit.INPUT_TYPES()["required"]
+    assert "image" in AtlasFluxKontextDevEdit.INPUT_TYPES()["required"]
+    assert AtlasFluxKontextDevEdit.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_flux_kontext_dev_lora_edit_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.flux_kontext_dev_lora_edit import AtlasFluxKontextDevLoraEdit
+
+    assert "atlas_client" in AtlasFluxKontextDevLoraEdit.INPUT_TYPES()["required"]
+    assert "image" in AtlasFluxKontextDevLoraEdit.INPUT_TYPES()["required"]
+    assert AtlasFluxKontextDevLoraEdit.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_wan25_image_edit_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.wan25_image_edit import AtlasWan25ImageEdit
+
+    assert "atlas_client" in AtlasWan25ImageEdit.INPUT_TYPES()["required"]
+    assert "images" in AtlasWan25ImageEdit.INPUT_TYPES()["required"]
+    assert AtlasWan25ImageEdit.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_kling_v16_i2v_standard_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.kling_v16_i2v_standard import AtlasKlingV16I2VStandard
+
+    assert "atlas_client" in AtlasKlingV16I2VStandard.INPUT_TYPES()["required"]
+    assert "image" in AtlasKlingV16I2VStandard.INPUT_TYPES()["required"]
+    assert AtlasKlingV16I2VStandard.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_hailuo_02_standard_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.hailuo_02_i2v_standard import AtlasHailuo02I2VStandard
+
+    assert "atlas_client" in AtlasHailuo02I2VStandard.INPUT_TYPES()["required"]
+    assert "image" in AtlasHailuo02I2VStandard.INPUT_TYPES()["required"]
+    assert AtlasHailuo02I2VStandard.RETURN_TYPES == ("STRING", "STRING")
+
+
 def test_qwen_image_t2i_plus_node_metadata():
     from src.atlascloud_comfyui.nodes.image.qwen_image_t2i_plus import AtlasQwenImageTextToImagePlus
 

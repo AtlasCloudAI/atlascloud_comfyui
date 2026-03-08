@@ -76,6 +76,7 @@ from atlascloud_comfyui.nodes.video.pika_v21_i2v import AtlasPikaV21ImageToVideo
 from atlascloud_comfyui.nodes.video.pixverse_v45_i2v import AtlasPixVerseV45ImageToVideo
 from atlascloud_comfyui.nodes.video.hailuo_02_i2v_pro import AtlasHailuo02I2VPro
 from atlascloud_comfyui.nodes.video.minimax_hailuo_02_i2v_standard import AtlasMinimaxHailuo02I2VStandard
+from atlascloud_comfyui.nodes.video.hailuo_02_i2v_standard import AtlasHailuo02I2VStandard
 from atlascloud_comfyui.nodes.video.sora2_i2v_pro import AtlasSora2ImageToVideoPro
 from atlascloud_comfyui.nodes.video.sora2_t2v import AtlasSora2TextToVideo
 from atlascloud_comfyui.nodes.video.kling_v25_turbo_pro_i2v import AtlasKlingV25TurboProImageToVideo
@@ -124,7 +125,18 @@ from atlascloud_comfyui.nodes.image.imagen4_t2i import AtlasImagen4TextToImage
 from atlascloud_comfyui.nodes.image.imagen4_fast_t2i import AtlasImagen4FastTextToImage
 from atlascloud_comfyui.nodes.image.imagen4_ultra_t2i import AtlasImagen4UltraTextToImage
 from atlascloud_comfyui.nodes.image.imagen3_t2i import AtlasImagen3TextToImage
+from atlascloud_comfyui.nodes.image.imagen3_fast_t2i import AtlasImagen3FastTextToImage
 from atlascloud_comfyui.nodes.image.wan25_t2i import AtlasWan25TextToImage
+from atlascloud_comfyui.nodes.image.wan25_image_edit import AtlasWan25ImageEdit
+from atlascloud_comfyui.nodes.image.nano_banana_t2i import AtlasNanoBananaTextToImage
+from atlascloud_comfyui.nodes.image.nano_banana_t2i_dev import AtlasNanoBananaTextToImageDeveloper
+from atlascloud_comfyui.nodes.image.nano_banana_edit import AtlasNanoBananaEdit
+from atlascloud_comfyui.nodes.image.nano_banana_edit_dev import AtlasNanoBananaEditDeveloper
+from atlascloud_comfyui.nodes.image.nano_banana_pro_t2i_dev import AtlasNanoBananaProTextToImageDeveloper
+from atlascloud_comfyui.nodes.image.nano_banana_pro_edit_dev import AtlasNanoBananaProEditDeveloper
+from atlascloud_comfyui.nodes.image.flux_kontext_dev_edit import AtlasFluxKontextDevEdit
+from atlascloud_comfyui.nodes.image.flux_kontext_dev_lora_edit import AtlasFluxKontextDevLoraEdit
+from atlascloud_comfyui.nodes.image.flux_schnell_t2i import AtlasFluxSchnellTextToImage
 from atlascloud_comfyui.nodes.image.ideogram_v3_quality_t2i import AtlasIdeogramV3QualityTextToImage
 from atlascloud_comfyui.nodes.image.ideogram_v3_turbo_t2i import AtlasIdeogramV3TurboTextToImage
 from atlascloud_comfyui.nodes.image.luma_photon_t2i import AtlasLumaPhotonTextToImage
@@ -156,6 +168,7 @@ from atlascloud_comfyui.nodes.video.kwaivgi_kling_v2_1_i2v_pro import AtlasKwaiv
 from atlascloud_comfyui.nodes.video.kwaivgi_kling_v2_1_i2v_standard import AtlasKwaivgiKlingV21I2VStandard
 from atlascloud_comfyui.nodes.video.kling_v16_multi_i2v_pro import AtlasKlingV16MultiI2VPro
 from atlascloud_comfyui.nodes.video.kling_v16_multi_i2v_standard import AtlasKlingV16MultiI2VStandard
+from atlascloud_comfyui.nodes.video.kling_v16_i2v_standard import AtlasKlingV16I2VStandard
 from atlascloud_comfyui.nodes.video.kling_effects import AtlasKlingEffects
 from atlascloud_comfyui.nodes.video.kwaivgi_kling_v1_6_t2v_standard import AtlasKwaivgiKlingV16T2VStandard
 from atlascloud_comfyui.nodes.video.kwaivgi_kling_v1_6_i2v_pro import AtlasKwaivgiKlingV16I2VPro
@@ -192,6 +205,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud WAN2.6 Text-to-Video": AtlasWAN26TextToVideo,
     "AtlasCloud WAN2.6 Text-to-Image": AtlasWAN26TextToImage,
     "AtlasCloud WAN2.5 Text-to-Image": AtlasWan25TextToImage,
+    "AtlasCloud WAN2.5 Image-Edit": AtlasWan25ImageEdit,
     "AtlasCloud WAN2.6 Image-Edit": AtlasWAN26ImageEdit,
     "AtlasCloud WAN2.6 Image-to-Video": AtlasWAN26ImageToVideo,
     "AtlasCloud WAN2.6 Image-to-Video Flash": AtlasWAN26ImageToVideoFlash,
@@ -241,6 +255,9 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Flux2 Flex Text-to-Image": AtlasFlux2FlexTextToImage,
     "AtlasCloud Flux Dev Text-to-Image": AtlasFluxDevTextToImage,
     "AtlasCloud Flux Dev LoRA Text-to-Image": AtlasFluxDevLoraTextToImage,
+    "AtlasCloud Flux Schnell Text-to-Image": AtlasFluxSchnellTextToImage,
+    "AtlasCloud Flux Kontext Dev Edit": AtlasFluxKontextDevEdit,
+    "AtlasCloud Flux Kontext Dev LoRA Edit": AtlasFluxKontextDevLoraEdit,
     "AtlasCloud Image Preview": AtlasImagePreviewURL,
     "AtlasCloud Video Preview": AtlasVideoPreviewer,
     "AtlasCloud Kling V3.0 Pro Text-to-Video": AtlasKlingV30ProTextToVideo,
@@ -283,6 +300,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud PixVerse V4.5 Image-to-Video": AtlasPixVerseV45ImageToVideo,
     "AtlasCloud Hailuo 02 I2V Pro": AtlasHailuo02I2VPro,
     "AtlasCloud Hailuo 02 I2V Standard": AtlasMinimaxHailuo02I2VStandard,
+    "AtlasCloud Hailuo 02 Standard": AtlasHailuo02I2VStandard,
     "AtlasCloud Sora 2 Image-to-Video Pro": AtlasSora2ImageToVideoPro,
     "AtlasCloud Sora 2 Text-to-Video": AtlasSora2TextToVideo,
     "AtlasCloud Kling V2.5 Turbo Pro Image-to-Video": AtlasKlingV25TurboProImageToVideo,
@@ -294,6 +312,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud WAN2.2 Animate Move": AtlasWan22AnimateMove,
     "AtlasCloud Imagen4 Ultra Text-to-Image": AtlasImagen4UltraTextToImage,
     "AtlasCloud Imagen3 Text-to-Image": AtlasImagen3TextToImage,
+    "AtlasCloud Imagen3 Fast Text-to-Image": AtlasImagen3FastTextToImage,
     "AtlasCloud Ideogram V3 Quality Text-to-Image": AtlasIdeogramV3QualityTextToImage,
     "AtlasCloud Ideogram V3 Turbo Text-to-Image": AtlasIdeogramV3TurboTextToImage,
     "AtlasCloud Luma Photon Text-to-Image": AtlasLumaPhotonTextToImage,
@@ -304,7 +323,13 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Qwen Image Edit (Alibaba)": AtlasAlibabaQwenImageEdit,
     "AtlasCloud Qwen Image Edit Plus (Alibaba)": AtlasAlibabaQwenImageEditPlus,
     "AtlasCloud Nano Banana Pro Text-to-Image": AtlasNanoBananaProTextToImage,
+    "AtlasCloud Nano Banana Pro Text-to-Image Developer": AtlasNanoBananaProTextToImageDeveloper,
     "AtlasCloud Nano Banana Pro Edit": AtlasNanoBananaProEdit,
+    "AtlasCloud Nano Banana Pro Edit Developer": AtlasNanoBananaProEditDeveloper,
+    "AtlasCloud Nano Banana Text-to-Image": AtlasNanoBananaTextToImage,
+    "AtlasCloud Nano Banana Text-to-Image Developer": AtlasNanoBananaTextToImageDeveloper,
+    "AtlasCloud Nano Banana Edit": AtlasNanoBananaEdit,
+    "AtlasCloud Nano Banana Edit Developer": AtlasNanoBananaEditDeveloper,
     "AtlasCloud Qwen Image Edit Plus 20251215": AtlasQwenImageEditPlus20251215,
     "AtlasCloud Qwen Image Text-to-Image Plus": AtlasQwenImageTextToImagePlus,
     "AtlasCloud Qwen Image Text-to-Image Max": AtlasQwenImageTextToImageMax,
@@ -334,6 +359,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Kling V2.1 I2V Standard": AtlasKwaivgiKlingV21I2VStandard,
     "AtlasCloud Kling V1.6 Multi I2V Pro": AtlasKlingV16MultiI2VPro,
     "AtlasCloud Kling V1.6 Multi I2V Standard": AtlasKlingV16MultiI2VStandard,
+    "AtlasCloud Kling V1.6 I2V Standard": AtlasKlingV16I2VStandard,
     "AtlasCloud Kling V1.6 T2V Standard": AtlasKwaivgiKlingV16T2VStandard,
     "AtlasCloud Kling V1.6 I2V Pro": AtlasKwaivgiKlingV16I2VPro,
     "AtlasCloud Kling Effects": AtlasKlingEffects,
@@ -360,6 +386,8 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud WAN2.5 Text-to-Video": "AtlasCloud WAN2.5 Text-to-Video",
     "AtlasCloud WAN2.6 Text-to-Video": "AtlasCloud WAN2.6 Text-to-Video",
     "AtlasCloud WAN2.6 Text-to-Image": "AtlasCloud WAN2.6 Text-to-Image",
+    "AtlasCloud WAN2.5 Text-to-Image": "AtlasCloud WAN2.5 Text-to-Image",
+    "AtlasCloud WAN2.5 Image-Edit": "AtlasCloud WAN2.5 Image-Edit",
     "AtlasCloud WAN2.6 Image-Edit": "AtlasCloud WAN2.6 Image-Edit",
     "AtlasCloud WAN2.6 Image-to-Video": "AtlasCloud WAN2.6 Image-to-Video",
     "AtlasCloud WAN2.6 Image-to-Video Flash": "AtlasCloud WAN2.6 Image-to-Video Flash",
@@ -410,6 +438,9 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Flux2 Flex Text-to-Image": "AtlasCloud Flux2 Flex Text-to-Image",
     "AtlasCloud Flux Dev Text-to-Image": "AtlasCloud Flux Dev Text-to-Image",
     "AtlasCloud Flux Dev LoRA Text-to-Image": "AtlasCloud Flux Dev LoRA Text-to-Image",
+    "AtlasCloud Flux Schnell Text-to-Image": "AtlasCloud Flux Schnell Text-to-Image",
+    "AtlasCloud Flux Kontext Dev Edit": "AtlasCloud Flux Kontext Dev Edit",
+    "AtlasCloud Flux Kontext Dev LoRA Edit": "AtlasCloud Flux Kontext Dev LoRA Edit",
     "AtlasCloud Video Preview": "AtlasCloud Video Preview",
     "AtlasCloud Kling V3.0 Pro Text-to-Video": "AtlasCloud Kling V3.0 Pro Text-to-Video",
     "AtlasCloud Kling V3.0 Std Text-to-Video": "AtlasCloud Kling V3.0 Std Text-to-Video",
@@ -451,6 +482,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud PixVerse V4.5 Image-to-Video": "AtlasCloud PixVerse V4.5 Image-to-Video",
     "AtlasCloud Hailuo 02 I2V Pro": "AtlasCloud Hailuo 02 I2V Pro",
     "AtlasCloud Hailuo 02 I2V Standard": "AtlasCloud Hailuo 02 I2V Standard",
+    "AtlasCloud Hailuo 02 Standard": "AtlasCloud Hailuo 02 Standard",
     "AtlasCloud Sora 2 Image-to-Video Pro": "AtlasCloud Sora 2 Image-to-Video Pro",
     "AtlasCloud Sora 2 Text-to-Video": "AtlasCloud Sora 2 Text-to-Video",
     "AtlasCloud Kling V2.5 Turbo Pro Image-to-Video": "AtlasCloud Kling V2.5 Turbo Pro Image-to-Video",
@@ -462,6 +494,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud WAN2.2 Animate Move": "AtlasCloud WAN2.2 Animate Move",
     "AtlasCloud Imagen4 Ultra Text-to-Image": "AtlasCloud Imagen4 Ultra Text-to-Image",
     "AtlasCloud Imagen3 Text-to-Image": "AtlasCloud Imagen3 Text-to-Image",
+    "AtlasCloud Imagen3 Fast Text-to-Image": "AtlasCloud Imagen3 Fast Text-to-Image",
     "AtlasCloud Ideogram V3 Quality Text-to-Image": "AtlasCloud Ideogram V3 Quality Text-to-Image",
     "AtlasCloud Ideogram V3 Turbo Text-to-Image": "AtlasCloud Ideogram V3 Turbo Text-to-Image",
     "AtlasCloud Luma Photon Text-to-Image": "AtlasCloud Luma Photon Text-to-Image",
@@ -472,7 +505,13 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Qwen Image Edit (Alibaba)": "AtlasCloud Qwen Image Edit (Alibaba)",
     "AtlasCloud Qwen Image Edit Plus (Alibaba)": "AtlasCloud Qwen Image Edit Plus (Alibaba)",
     "AtlasCloud Nano Banana Pro Text-to-Image": "AtlasCloud Nano Banana Pro Text-to-Image",
+    "AtlasCloud Nano Banana Pro Text-to-Image Developer": "AtlasCloud Nano Banana Pro Text-to-Image Developer",
     "AtlasCloud Nano Banana Pro Edit": "AtlasCloud Nano Banana Pro Edit",
+    "AtlasCloud Nano Banana Pro Edit Developer": "AtlasCloud Nano Banana Pro Edit Developer",
+    "AtlasCloud Nano Banana Text-to-Image": "AtlasCloud Nano Banana Text-to-Image",
+    "AtlasCloud Nano Banana Text-to-Image Developer": "AtlasCloud Nano Banana Text-to-Image Developer",
+    "AtlasCloud Nano Banana Edit": "AtlasCloud Nano Banana Edit",
+    "AtlasCloud Nano Banana Edit Developer": "AtlasCloud Nano Banana Edit Developer",
     "AtlasCloud Qwen Image Edit Plus 20251215": "AtlasCloud Qwen Image Edit Plus 20251215",
     "AtlasCloud Qwen Image Text-to-Image Plus": "AtlasCloud Qwen Image Text-to-Image Plus",
     "AtlasCloud Qwen Image Text-to-Image Max": "AtlasCloud Qwen Image Text-to-Image Max",
@@ -484,7 +523,6 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Seedance V1 Pro Image-to-Video 480p": "AtlasCloud Seedance V1 Pro Image-to-Video 480p",
     "AtlasCloud Seedance V1 Lite Image-to-Video 720p": "AtlasCloud Seedance V1 Lite Image-to-Video 720p",
     "AtlasCloud Seedance V1 Lite Image-to-Video 480p": "AtlasCloud Seedance V1 Lite Image-to-Video 480p",
-    "AtlasCloud WAN2.5 Text-to-Image": "AtlasCloud WAN2.5 Text-to-Image",
     "AtlasCloud WAN2.5 Text-to-Video Fast": "AtlasCloud WAN2.5 Text-to-Video Fast",
     "AtlasCloud WAN2.5 Image-to-Video Fast": "AtlasCloud WAN2.5 Image-to-Video Fast",
     "AtlasCloud Van-2.5 Text-to-Video": "AtlasCloud Van-2.5 Text-to-Video",
@@ -503,6 +541,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Kling V2.1 I2V Standard": "AtlasCloud Kling V2.1 I2V Standard",
     "AtlasCloud Kling V1.6 Multi I2V Pro": "AtlasCloud Kling V1.6 Multi I2V Pro",
     "AtlasCloud Kling V1.6 Multi I2V Standard": "AtlasCloud Kling V1.6 Multi I2V Standard",
+    "AtlasCloud Kling V1.6 I2V Standard": "AtlasCloud Kling V1.6 I2V Standard",
     "AtlasCloud Kling V1.6 T2V Standard": "AtlasCloud Kling V1.6 T2V Standard",
     "AtlasCloud Kling V1.6 I2V Pro": "AtlasCloud Kling V1.6 I2V Pro",
     "AtlasCloud Kling Effects": "AtlasCloud Kling Effects",
