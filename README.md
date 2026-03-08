@@ -154,6 +154,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Kling V1.6 Multi I2V Pro | kwaivgi/kling-v1.6-multi-i2v-pro |
 | AtlasCloud Kling V1.6 Multi I2V Standard | kwaivgi/kling-v1.6-multi-i2v-standard |
 | AtlasCloud Kling V1.6 I2V Pro | kwaivgi/kling-v1.6-i2v-pro |
+| AtlasCloud Kling V1.6 I2V Standard | kwaivgi/kling-v1.6-i2v-standard |
 | AtlasCloud Kling Effects | kwaivgi/kling-effects |
 | AtlasCloud WAN2.6 Image-to-Video | alibaba/wan-2.6/image-to-video |
 | AtlasCloud WAN2.6 Image-to-Video Flash | alibaba/wan-2.6/image-to-video-flash |
@@ -166,6 +167,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud PixVerse V4.5 Image-to-Video | pixverse/pixverse-v4.5-i2v |
 | AtlasCloud Hailuo 02 I2V Pro | minimax/hailuo-02/i2v-pro |
 | AtlasCloud Hailuo 02 I2V Standard | minimax/hailuo-02/i2v-standard |
+| AtlasCloud Hailuo 02 Standard | minimax/hailuo-02/standard |
 | AtlasCloud Hailuo 2.3 I2V Standard | minimax/hailuo-2.3/i2v-standard |
 | AtlasCloud Hailuo 2.3 I2V Pro | minimax/hailuo-2.3/i2v-pro |
 | AtlasCloud Hailuo 2.3 Fast | minimax/hailuo-2.3/fast |
@@ -196,10 +198,14 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Imagen4 Fast Text-to-Image | google/imagen4-fast |
 | AtlasCloud Imagen4 Ultra Text-to-Image | google/imagen4-ultra |
 | AtlasCloud Imagen3 Text-to-Image | google/imagen3 |
+| AtlasCloud Imagen3 Fast Text-to-Image | google/imagen3-fast |
 | AtlasCloud Nano Banana 2 Text-to-Image | google/nano-banana-2/text-to-image |
 | AtlasCloud Nano Banana 2 Text-to-Image Developer | google/nano-banana-2/text-to-image-developer |
 | AtlasCloud Nano Banana Pro Text-to-Image Ultra | google/nano-banana-pro/text-to-image-ultra |
 | AtlasCloud Nano Banana Pro Text-to-Image | google/nano-banana-pro/text-to-image |
+| AtlasCloud Nano Banana Pro Text-to-Image Developer | google/nano-banana-pro/text-to-image-developer |
+| AtlasCloud Nano Banana Text-to-Image | google/nano-banana/text-to-image |
+| AtlasCloud Nano Banana Text-to-Image Developer | google/nano-banana/text-to-image-developer |
 | AtlasCloud Seedream V5.0 Lite Text-to-Image | bytedance/seedream-v5.0-lite |
 | AtlasCloud Seedream V5.0 Lite Sequential Text-to-Image | bytedance/seedream-v5.0-lite/sequential |
 | AtlasCloud Seedream V4 Text-to-Image | bytedance/seedream-v4 |
@@ -215,6 +221,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Flux2 Flex Text-to-Image | flux2/flex |
 | AtlasCloud Flux Dev Text-to-Image | black-forest-labs/flux-dev |
 | AtlasCloud Flux Dev LoRA Text-to-Image | black-forest-labs/flux-dev-lora |
+| AtlasCloud Flux Schnell Text-to-Image | black-forest-labs/flux-schnell |
 | AtlasCloud ZImage Turbo Lora Text-to-Image | z-image/turbo-lora |
 | AtlasCloud Qwen Image Text-to-Image Plus | alibaba/qwen-image/text-to-image-plus |
 | AtlasCloud Qwen Image Text-to-Image Max | alibaba/qwen-image/text-to-image-max |
@@ -235,6 +242,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Seedream V5.0 Lite Edit | bytedance/seedream-v5.0-lite/edit |
 | AtlasCloud Seedream V5.0 Lite Edit Sequential | bytedance/seedream-v5.0-lite/edit-sequential |
 | AtlasCloud WAN2.6 Image-Edit | alibaba/wan-2.6/image-edit |
+| AtlasCloud WAN2.5 Image-Edit | alibaba/wan-2.5/image-edit |
 | AtlasCloud Seedream V4 Edit | bytedance/seedream-v4/edit |
 | AtlasCloud Seedream V4 Edit Sequential | bytedance/seedream-v4/edit-sequential |
 | AtlasCloud Seedream V4.5 Edit | bytedance/seedream-v4.5/edit |
@@ -243,6 +251,11 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Qwen Image Edit (Alibaba) | alibaba/qwen-image/edit |
 | AtlasCloud Qwen Image Edit Plus (Alibaba) | alibaba/qwen-image/edit-plus |
 | AtlasCloud Nano Banana Pro Edit | google/nano-banana-pro/edit |
+| AtlasCloud Nano Banana Pro Edit Developer | google/nano-banana-pro/edit-developer |
+| AtlasCloud Nano Banana Edit | google/nano-banana/edit |
+| AtlasCloud Nano Banana Edit Developer | google/nano-banana/edit-developer |
+| AtlasCloud Flux Kontext Dev Edit | black-forest-labs/flux-kontext-dev |
+| AtlasCloud Flux Kontext Dev LoRA Edit | black-forest-labs/flux-kontext-dev-lora |
 | AtlasCloud Qwen Image Edit Plus 20251215 | alibaba/qwen-image/edit-plus-20251215 |
 
 > Nodes are continuously expanded as new models are added to AtlasCloud.
