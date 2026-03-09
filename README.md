@@ -318,9 +318,6 @@ Please include:
 [MIT](https://choosealicense.com/licenses/mit/)
 
 ## Deprecated / Legacy Models
-These model ids are **not returned by AtlasCloud `/api/v1/models`** at the time of this release.
-They are kept in this repo so older ComfyUI workflows can still load, but they are considered **deprecated**.
-To force execution anyway (at your own risk), set `ATLAS_ALLOW_DEPRECATED_MODELS=1` in your environment before launching ComfyUI.
 
 | Model id | Status |
 |---|---|
