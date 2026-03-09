@@ -61,6 +61,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 
 ## Available Nodes
 
+> Note: Some nodes are kept for **backward compatibility** even if their model id is no longer returned by AtlasCloud `/api/v1/models`. These nodes are marked as **Deprecated** and will raise an error at runtime unless you set `ATLAS_ALLOW_DEPRECATED_MODELS=1`.
+
 ### Common
 
 -   **AtlasCloud Client** — Stores your API key and base URL for all AtlasCloud nodes.
@@ -314,3 +316,33 @@ Please include:
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Deprecated / Legacy Models
+These model ids are **not returned by AtlasCloud `/api/v1/models`** at the time of this release.
+They are kept in this repo so older ComfyUI workflows can still load, but they are considered **deprecated**.
+To force execution anyway (at your own risk), set `ATLAS_ALLOW_DEPRECATED_MODELS=1` in your environment before launching ComfyUI.
+
+| Model id | Status |
+|---|---|
+| `atlascloud/hunyuan-video/i2v` | Deprecated (not in `/api/v1/models`) |
+| `atlascloud/hunyuan-video/t2v` | Deprecated (not in `/api/v1/models`) |
+| `black-forest-labs/flux-2-flex/text-to-image` | Deprecated (not in `/api/v1/models`) |
+| `google/nano-banana-pro/text-to-image-ultra` | Deprecated (not in `/api/v1/models`) |
+| `ideogram-ai/ideogram-v3-quality` | Deprecated (not in `/api/v1/models`) |
+| `ideogram-ai/ideogram-v3-turbo` | Deprecated (not in `/api/v1/models`) |
+| `luma/photon` | Deprecated (not in `/api/v1/models`) |
+| `luma/photon-flash` | Deprecated (not in `/api/v1/models`) |
+| `luma/ray-2-flash-t2v` | Deprecated (not in `/api/v1/models`) |
+| `luma/ray-2-i2v` | Deprecated (not in `/api/v1/models`) |
+| `luma/ray-2-t2v` | Deprecated (not in `/api/v1/models`) |
+| `openai/sora-2/image-to-video` | Deprecated (not in `/api/v1/models`) |
+| `openai/sora-2/image-to-video-pro` | Deprecated (not in `/api/v1/models`) |
+| `openai/sora-2/text-to-video` | Deprecated (not in `/api/v1/models`) |
+| `openai/sora-2/text-to-video-pro` | Deprecated (not in `/api/v1/models`) |
+| `pika/v2.0-turbo-t2v` | Deprecated (not in `/api/v1/models`) |
+| `pika/v2.1-i2v` | Deprecated (not in `/api/v1/models`) |
+| `pika/v2.2-t2v` | Deprecated (not in `/api/v1/models`) |
+| `pixverse/pixverse-v4.5-i2v` | Deprecated (not in `/api/v1/models`) |
+| `pixverse/pixverse-v4.5-t2v` | Deprecated (not in `/api/v1/models`) |
+| `recraft-ai/recraft-v3` | Deprecated (not in `/api/v1/models`) |
+| `z-image/turbo-lora` | Deprecated (not in `/api/v1/models`) |

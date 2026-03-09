@@ -1,3 +1,10 @@
+# NOTE: This node targets a model id that is no longer present in AtlasCloud /api/v1/models
+# It is kept for backward compatibility with existing ComfyUI workflows.
+DEPRECATED_MODEL_ID = True
+DEPRECATION_REASON = "Model id not returned by AtlasCloud /api/v1/models; likely deprecated or removed upstream."
+
+import os
+
 class AtlasZImageTurboLoraTextToImage:
     CATEGORY = "AtlasCloud/Image"
     FUNCTION = "run"
@@ -39,6 +46,13 @@ class AtlasZImageTurboLoraTextToImage:
         poll_interval_sec: float = 2.0,
         timeout_sec: int = 300,
     ):
+        # Deprecated model guard
+        if os.getenv('ATLAS_ALLOW_DEPRECATED_MODELS', '').lower() not in ('1', 'true', 'yes'):
+            raise RuntimeError(
+                "Deprecated model id: z-image/turbo-lora. This node is kept for backward compatibility, but the model is not returned by AtlasCloud /api/v1/models. "
+                "Set ATLAS_ALLOW_DEPRECATED_MODELS=1 to force execution at your own risk."
+            )
+
         import json
 
         client = atlas_client.client
