@@ -114,6 +114,40 @@ def test_vidu_q3_i2v_node_metadata():
     assert "video_url" in AtlasViduQ3ImageToVideo.RETURN_NAMES
 
 
+def test_vidu_q3_pro_t2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.vidu_q3_pro_t2v import AtlasViduQ3ProTextToVideo
+
+    assert "atlas_client" in AtlasViduQ3ProTextToVideo.INPUT_TYPES()["required"]
+    assert AtlasViduQ3ProTextToVideo.RETURN_TYPES == ("STRING", "STRING")
+    assert "video_url" in AtlasViduQ3ProTextToVideo.RETURN_NAMES
+
+
+def test_vidu_q3_pro_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.vidu_q3_pro_i2v import AtlasViduQ3ProImageToVideo
+
+    assert "atlas_client" in AtlasViduQ3ProImageToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasViduQ3ProImageToVideo.INPUT_TYPES()["required"]
+    assert AtlasViduQ3ProImageToVideo.RETURN_TYPES == ("STRING", "STRING")
+    assert "video_url" in AtlasViduQ3ProImageToVideo.RETURN_NAMES
+
+
+def test_wan22_spicy_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.wan22_spicy_i2v import AtlasWan22SpicyImageToVideo
+
+    assert "atlas_client" in AtlasWan22SpicyImageToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasWan22SpicyImageToVideo.INPUT_TYPES()["required"]
+    assert AtlasWan22SpicyImageToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_wan22_spicy_i2v_lora_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.wan22_spicy_i2v_lora import AtlasWan22SpicyImageToVideoLora
+
+    assert "atlas_client" in AtlasWan22SpicyImageToVideoLora.INPUT_TYPES()["required"]
+    assert "image" in AtlasWan22SpicyImageToVideoLora.INPUT_TYPES()["required"]
+    assert "loras_json" in AtlasWan22SpicyImageToVideoLora.INPUT_TYPES()["required"]
+    assert AtlasWan22SpicyImageToVideoLora.RETURN_TYPES == ("STRING", "STRING")
+
+
 # --- Batch 2: Recent HOT models ---
 
 

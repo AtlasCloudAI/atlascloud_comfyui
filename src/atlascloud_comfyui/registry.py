@@ -62,6 +62,10 @@ from atlascloud_comfyui.nodes.video.hunyuan_t2v import AtlasHunyuanTextToVideo
 from atlascloud_comfyui.nodes.video.vidu_q3_i2v import AtlasViduQ3ImageToVideo
 from atlascloud_comfyui.nodes.video.vidu_q3_i2v_v2 import AtlasViduQ3ImageToVideoV2
 from atlascloud_comfyui.nodes.video.vidu_q3_t2v import AtlasViduQ3TextToVideo
+from atlascloud_comfyui.nodes.video.vidu_q3_pro_t2v import AtlasViduQ3ProTextToVideo
+from atlascloud_comfyui.nodes.video.vidu_q3_pro_i2v import AtlasViduQ3ProImageToVideo
+from atlascloud_comfyui.nodes.video.wan22_spicy_i2v import AtlasWan22SpicyImageToVideo
+from atlascloud_comfyui.nodes.video.wan22_spicy_i2v_lora import AtlasWan22SpicyImageToVideoLora
 from atlascloud_comfyui.nodes.video.veo3_fast_t2v import AtlasVeo3FastTextToVideo
 from atlascloud_comfyui.nodes.video.veo31_i2v import AtlasVeo31ImageToVideo
 from atlascloud_comfyui.nodes.video.google_veo31_fast_t2v import AtlasVeo31FastTextToVideo
@@ -275,6 +279,10 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Vidu Q3 Text-to-Video": AtlasViduQ3TextToVideo,
     "AtlasCloud Vidu Q3 Image-to-Video": AtlasViduQ3ImageToVideo,
     "AtlasCloud Vidu Q3 Image-to-Video (Q3 API)": AtlasViduQ3ImageToVideoV2,
+    "AtlasCloud Vidu Q3-Pro Text-to-Video": AtlasViduQ3ProTextToVideo,
+    "AtlasCloud Vidu Q3-Pro Image-to-Video": AtlasViduQ3ProImageToVideo,
+    "AtlasCloud WAN2.2 Spicy Image-to-Video": AtlasWan22SpicyImageToVideo,
+    "AtlasCloud WAN2.2 Spicy Image-to-Video LoRA": AtlasWan22SpicyImageToVideoLora,
     "AtlasCloud VEO3 Text-to-Video": AtlasVeo3TextToVideo,
     "AtlasCloud Imagen4 Text-to-Image": AtlasImagen4TextToImage,
     "AtlasCloud Imagen4 Fast Text-to-Image": AtlasImagen4FastTextToImage,
@@ -457,6 +465,10 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Vidu Q3 Text-to-Video": "AtlasCloud Vidu Q3 Text-to-Video",
     "AtlasCloud Vidu Q3 Image-to-Video": "AtlasCloud Vidu Q3 Image-to-Video",
     "AtlasCloud Vidu Q3 Image-to-Video (Q3 API)": "AtlasCloud Vidu Q3 Image-to-Video (Q3 API)",
+    "AtlasCloud Vidu Q3-Pro Text-to-Video": "AtlasCloud Vidu Q3-Pro Text-to-Video",
+    "AtlasCloud Vidu Q3-Pro Image-to-Video": "AtlasCloud Vidu Q3-Pro Image-to-Video",
+    "AtlasCloud WAN2.2 Spicy Image-to-Video": "AtlasCloud WAN2.2 Spicy Image-to-Video",
+    "AtlasCloud WAN2.2 Spicy Image-to-Video LoRA": "AtlasCloud WAN2.2 Spicy Image-to-Video LoRA",
     "AtlasCloud VEO3 Text-to-Video": "AtlasCloud VEO3 Text-to-Video",
     "AtlasCloud Imagen4 Text-to-Image": "AtlasCloud Imagen4 Text-to-Image",
     "AtlasCloud Imagen4 Fast Text-to-Image": "AtlasCloud Imagen4 Fast Text-to-Image",
