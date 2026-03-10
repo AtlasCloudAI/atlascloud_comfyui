@@ -186,8 +186,12 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Seedance V1.5 Pro Image-to-Video Fast | bytedance/seedance-v1.5-pro/image-to-video-fast |
 | AtlasCloud Kling V2.5 Turbo Pro Image-to-Video | kwaivgi/kling-v2.5-turbo-pro/image-to-video |
 | AtlasCloud Vidu Q3 Text-to-Video | vidu/q3/text-to-video |
+| AtlasCloud Vidu Q3-Pro Text-to-Video | vidu/q3-pro/text-to-video |
 | AtlasCloud Vidu Q3 Image-to-Video | vidu/image-to-video-2.0 |
 | AtlasCloud Vidu Q3 Image-to-Video (Q3 API) | vidu/q3/image-to-video |
+| AtlasCloud Vidu Q3-Pro Image-to-Video | vidu/q3-pro/image-to-video |
+| AtlasCloud WAN2.2 Spicy Image-to-Video | alibaba/wan-2.2-spicy/image-to-video |
+| AtlasCloud WAN2.2 Spicy Image-to-Video LoRA | alibaba/wan-2.2-spicy/image-to-video-lora |
 | AtlasCloud Hunyuan Image-to-Video | atlascloud/hunyuan-video/i2v |
 
 ### Text-to-Image (T2I)
