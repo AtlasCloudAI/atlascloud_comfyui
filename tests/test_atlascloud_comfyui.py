@@ -131,6 +131,43 @@ def test_vidu_q3_pro_i2v_node_metadata():
     assert "video_url" in AtlasViduQ3ProImageToVideo.RETURN_NAMES
 
 
+def test_vidu_q3_pro_start_end_to_video_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.vidu_q3_pro_start_end_to_video import AtlasViduQ3ProStartEndToVideo
+
+    assert "atlas_client" in AtlasViduQ3ProStartEndToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasViduQ3ProStartEndToVideo.INPUT_TYPES()["required"]
+    assert "end_image" in AtlasViduQ3ProStartEndToVideo.INPUT_TYPES()["required"]
+    assert AtlasViduQ3ProStartEndToVideo.RETURN_TYPES == ("STRING", "STRING")
+    assert "video_url" in AtlasViduQ3ProStartEndToVideo.RETURN_NAMES
+
+
+def test_vidu_q3_turbo_t2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.vidu_q3_turbo_t2v import AtlasViduQ3TurboTextToVideo
+
+    assert "atlas_client" in AtlasViduQ3TurboTextToVideo.INPUT_TYPES()["required"]
+    assert AtlasViduQ3TurboTextToVideo.RETURN_TYPES == ("STRING", "STRING")
+    assert "video_url" in AtlasViduQ3TurboTextToVideo.RETURN_NAMES
+
+
+def test_vidu_q3_turbo_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.vidu_q3_turbo_i2v import AtlasViduQ3TurboImageToVideo
+
+    assert "atlas_client" in AtlasViduQ3TurboImageToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasViduQ3TurboImageToVideo.INPUT_TYPES()["required"]
+    assert AtlasViduQ3TurboImageToVideo.RETURN_TYPES == ("STRING", "STRING")
+    assert "video_url" in AtlasViduQ3TurboImageToVideo.RETURN_NAMES
+
+
+def test_vidu_q3_turbo_start_end_to_video_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.vidu_q3_turbo_start_end_to_video import AtlasViduQ3TurboStartEndToVideo
+
+    assert "atlas_client" in AtlasViduQ3TurboStartEndToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasViduQ3TurboStartEndToVideo.INPUT_TYPES()["required"]
+    assert "end_image" in AtlasViduQ3TurboStartEndToVideo.INPUT_TYPES()["required"]
+    assert AtlasViduQ3TurboStartEndToVideo.RETURN_TYPES == ("STRING", "STRING")
+    assert "video_url" in AtlasViduQ3TurboStartEndToVideo.RETURN_NAMES
+
+
 def test_wan22_spicy_i2v_node_metadata():
     from src.atlascloud_comfyui.nodes.video.wan22_spicy_i2v import AtlasWan22SpicyImageToVideo
 

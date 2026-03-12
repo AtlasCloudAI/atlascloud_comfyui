@@ -190,6 +190,10 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Vidu Q3 Image-to-Video | vidu/image-to-video-2.0 |
 | AtlasCloud Vidu Q3 Image-to-Video (Q3 API) | vidu/q3/image-to-video |
 | AtlasCloud Vidu Q3-Pro Image-to-Video | vidu/q3-pro/image-to-video |
+| AtlasCloud Vidu Q3-Pro Start-End-to-Video | vidu/q3-pro/start-end-to-video |
+| AtlasCloud Vidu Q3-Turbo Text-to-Video | vidu/q3-turbo/text-to-video |
+| AtlasCloud Vidu Q3-Turbo Image-to-Video | vidu/q3-turbo/image-to-video |
+| AtlasCloud Vidu Q3-Turbo Start-End-to-Video | vidu/q3-turbo/start-end-to-video |
 | AtlasCloud WAN2.2 Spicy Image-to-Video | alibaba/wan-2.2-spicy/image-to-video |
 | AtlasCloud WAN2.2 Spicy Image-to-Video LoRA | alibaba/wan-2.2-spicy/image-to-video-lora |
 | AtlasCloud Hunyuan Image-to-Video | atlascloud/hunyuan-video/i2v |
