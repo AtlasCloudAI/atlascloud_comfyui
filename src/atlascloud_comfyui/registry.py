@@ -118,6 +118,7 @@ from atlascloud_comfyui.nodes.image.qwen_image_t2i_atlascloud import AtlasAtlasc
 from atlascloud_comfyui.nodes.image.nano_banana_pro_t2i_ultra import AtlasNanoBananaProTextToImageUltra
 from atlascloud_comfyui.nodes.image.nano_banana_pro_t2i import AtlasNanoBananaProTextToImage
 from atlascloud_comfyui.nodes.image.nano_banana_pro_edit import AtlasNanoBananaProEdit
+from atlascloud_comfyui.nodes.image.nano_banana_pro_edit_ultra import AtlasNanoBananaProEditUltra
 from atlascloud_comfyui.nodes.image.flux2_flex_t2i import AtlasFlux2FlexTextToImage
 from atlascloud_comfyui.nodes.image.flux_dev_t2i import AtlasFluxDevTextToImage
 from atlascloud_comfyui.nodes.image.flux_dev_lora_t2i import AtlasFluxDevLoraTextToImage
@@ -167,6 +168,8 @@ from atlascloud_comfyui.nodes.video.van26_i2v import AtlasVan26ImageToVideo
 from atlascloud_comfyui.nodes.video.vidu_reference_to_video_q1 import AtlasViduReferenceToVideoQ1
 from atlascloud_comfyui.nodes.video.vidu_reference_to_video_v2 import AtlasViduReferenceToVideoV2
 from atlascloud_comfyui.nodes.video.vidu_start_end_to_video_v2 import AtlasViduStartEndToVideoV2
+from atlascloud_comfyui.nodes.video.vidu_q2_pro_fast_reference_to_video import AtlasViduQ2ProFastReferenceToVideo
+from atlascloud_comfyui.nodes.video.vidu_q2_pro_fast_reference_to_video_with_audio import AtlasViduQ2ProFastReferenceToVideoWithAudio
 from atlascloud_comfyui.nodes.video.kling_v20_i2v_master import AtlasKlingV20I2VMaster
 from atlascloud_comfyui.nodes.video.veo3_fast_i2v import AtlasVeo3FastImageToVideo
 from atlascloud_comfyui.nodes.video.kling_v21_t2v_master import AtlasKlingV21T2VMaster
@@ -341,6 +344,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Nano Banana Pro Text-to-Image": AtlasNanoBananaProTextToImage,
     "AtlasCloud Nano Banana Pro Text-to-Image Developer": AtlasNanoBananaProTextToImageDeveloper,
     "AtlasCloud Nano Banana Pro Edit": AtlasNanoBananaProEdit,
+    "AtlasCloud Nano Banana Pro Edit Ultra": AtlasNanoBananaProEditUltra,
     "AtlasCloud Nano Banana Pro Edit Developer": AtlasNanoBananaProEditDeveloper,
     "AtlasCloud Nano Banana Text-to-Image": AtlasNanoBananaTextToImage,
     "AtlasCloud Nano Banana Text-to-Image Developer": AtlasNanoBananaTextToImageDeveloper,
@@ -365,6 +369,8 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Van-2.6 Image-to-Video": AtlasVan26ImageToVideo,
     "AtlasCloud Vidu Reference-to-Video Q1": AtlasViduReferenceToVideoQ1,
     "AtlasCloud Vidu Reference-to-Video 2.0": AtlasViduReferenceToVideoV2,
+    "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video": AtlasViduQ2ProFastReferenceToVideo,
+    "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video (with Audio)": AtlasViduQ2ProFastReferenceToVideoWithAudio,
     "AtlasCloud Vidu Start-End-to-Video 2.0": AtlasViduStartEndToVideoV2,
     "AtlasCloud Kling V2.0 I2V Master": AtlasKlingV20I2VMaster,
     "AtlasCloud VEO3 Fast Image-to-Video": AtlasVeo3FastImageToVideo,
@@ -531,6 +537,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Nano Banana Pro Text-to-Image": "AtlasCloud Nano Banana Pro Text-to-Image",
     "AtlasCloud Nano Banana Pro Text-to-Image Developer": "AtlasCloud Nano Banana Pro Text-to-Image Developer",
     "AtlasCloud Nano Banana Pro Edit": "AtlasCloud Nano Banana Pro Edit",
+    "AtlasCloud Nano Banana Pro Edit Ultra": "AtlasCloud Nano Banana Pro Edit Ultra",
     "AtlasCloud Nano Banana Pro Edit Developer": "AtlasCloud Nano Banana Pro Edit Developer",
     "AtlasCloud Nano Banana Text-to-Image": "AtlasCloud Nano Banana Text-to-Image",
     "AtlasCloud Nano Banana Text-to-Image Developer": "AtlasCloud Nano Banana Text-to-Image Developer",
@@ -555,6 +562,8 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Van-2.6 Image-to-Video": "AtlasCloud Van-2.6 Image-to-Video",
     "AtlasCloud Vidu Reference-to-Video Q1": "AtlasCloud Vidu Reference-to-Video Q1",
     "AtlasCloud Vidu Reference-to-Video 2.0": "AtlasCloud Vidu Reference-to-Video 2.0",
+    "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video": "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video",
+    "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video (with Audio)": "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video (with Audio)",
     "AtlasCloud Vidu Start-End-to-Video 2.0": "AtlasCloud Vidu Start-End-to-Video 2.0",
     "AtlasCloud Kling V2.0 I2V Master": "AtlasCloud Kling V2.0 I2V Master",
     "AtlasCloud VEO3 Fast Image-to-Video": "AtlasCloud VEO3 Fast Image-to-Video",
