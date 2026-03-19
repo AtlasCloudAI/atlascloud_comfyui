@@ -661,3 +661,34 @@ def test_kling_v20_t2v_master_node_metadata():
 
     assert "atlas_client" in AtlasKlingV20T2VMaster.INPUT_TYPES()["required"]
     assert AtlasKlingV20T2VMaster.RETURN_TYPES == ("STRING", "STRING")
+
+# --- 2026-03-19: Sync NEW models from /api/v1/models ---
+
+
+def test_nano_banana_pro_edit_ultra_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.nano_banana_pro_edit_ultra import AtlasNanoBananaProEditUltra
+
+    assert "atlas_client" in AtlasNanoBananaProEditUltra.INPUT_TYPES()["required"]
+    assert "images" in AtlasNanoBananaProEditUltra.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasNanoBananaProEditUltra.INPUT_TYPES()["required"]
+    assert AtlasNanoBananaProEditUltra.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_vidu_q2_pro_fast_reference_to_video_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.vidu_q2_pro_fast_reference_to_video import AtlasViduQ2ProFastReferenceToVideo
+
+    assert "atlas_client" in AtlasViduQ2ProFastReferenceToVideo.INPUT_TYPES()["required"]
+    assert "images" in AtlasViduQ2ProFastReferenceToVideo.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasViduQ2ProFastReferenceToVideo.INPUT_TYPES()["required"]
+    assert AtlasViduQ2ProFastReferenceToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_vidu_q2_pro_fast_reference_to_video_with_audio_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.vidu_q2_pro_fast_reference_to_video_with_audio import (
+        AtlasViduQ2ProFastReferenceToVideoWithAudio,
+    )
+
+    assert "atlas_client" in AtlasViduQ2ProFastReferenceToVideoWithAudio.INPUT_TYPES()["required"]
+    assert "images" in AtlasViduQ2ProFastReferenceToVideoWithAudio.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasViduQ2ProFastReferenceToVideoWithAudio.INPUT_TYPES()["required"]
+    assert AtlasViduQ2ProFastReferenceToVideoWithAudio.RETURN_TYPES == ("STRING", "STRING")

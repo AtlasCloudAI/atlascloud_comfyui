@@ -148,6 +148,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Seedance V1 Pro I2V 480p | bytedance/seedance-v1-pro-i2v-480p |
 | AtlasCloud Vidu Reference-to-Video Q1 | vidu/reference-to-video-q1 |
 | AtlasCloud Vidu Reference-to-Video 2.0 | vidu/reference-to-video-2.0 |
+| AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video | vidu/q2-pro-fast/reference-to-video |
+| AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video (with Audio) | vidu/q2-pro-fast/reference-to-video-with-audio |
 | AtlasCloud Vidu Start-End-to-Video 2.0 | vidu/start-end-to-video-2.0 |
 | AtlasCloud Kling V2.0 I2V Master | kwaivgi/kling-v2.0-i2v-master |
 | AtlasCloud Kling V2.1 I2V Master | kwaivgi/kling-v2.1-i2v-master |
@@ -261,6 +263,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Qwen Image Edit (Alibaba) | alibaba/qwen-image/edit |
 | AtlasCloud Qwen Image Edit Plus (Alibaba) | alibaba/qwen-image/edit-plus |
 | AtlasCloud Nano Banana Pro Edit | google/nano-banana-pro/edit |
+| AtlasCloud Nano Banana Pro Edit Ultra | google/nano-banana-pro/edit-ultra |
 | AtlasCloud Nano Banana Pro Edit Developer | google/nano-banana-pro/edit-developer |
 | AtlasCloud Nano Banana Edit | google/nano-banana/edit |
 | AtlasCloud Nano Banana Edit Developer | google/nano-banana/edit-developer |
