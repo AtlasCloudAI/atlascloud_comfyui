@@ -69,6 +69,7 @@ from atlascloud_comfyui.nodes.video.vidu_q3_turbo_i2v import AtlasViduQ3TurboIma
 from atlascloud_comfyui.nodes.video.vidu_q3_turbo_start_end_to_video import AtlasViduQ3TurboStartEndToVideo
 from atlascloud_comfyui.nodes.video.vidu_q3_pro_start_end_to_video import AtlasViduQ3ProStartEndToVideo
 from atlascloud_comfyui.nodes.video.wan22_spicy_i2v import AtlasWan22SpicyImageToVideo
+from atlascloud_comfyui.nodes.video.wan22_turbo_spicy_i2v import AtlasWan22TurboSpicyImageToVideo
 from atlascloud_comfyui.nodes.video.wan22_spicy_i2v_lora import AtlasWan22SpicyImageToVideoLora
 from atlascloud_comfyui.nodes.video.veo3_fast_t2v import AtlasVeo3FastTextToVideo
 from atlascloud_comfyui.nodes.video.veo31_i2v import AtlasVeo31ImageToVideo
@@ -96,6 +97,7 @@ from atlascloud_comfyui.nodes.video.kling_v26_std_avatar import AtlasKlingV26Std
 from atlascloud_comfyui.nodes.video.kling_v26_pro_motion_control import AtlasKlingV26ProMotionControl
 from atlascloud_comfyui.nodes.video.kling_v26_std_motion_control import AtlasKlingV26StdMotionControl
 from atlascloud_comfyui.nodes.video.seedance_v15_pro_i2v import AtlasSeedanceV15ProImageToVideo
+from atlascloud_comfyui.nodes.video.seedance_v15_pro_i2v_spicy import AtlasSeedanceV15ProImageToVideoSpicy
 from atlascloud_comfyui.nodes.video.seedance_v15_pro_i2v_fast import AtlasSeedanceV15ProImageToVideoFast
 from atlascloud_comfyui.nodes.video.seedance_v15_pro_t2v_fast import AtlasSeedanceV15ProTextToVideoFast
 from atlascloud_comfyui.nodes.video.kling_video_o1_i2v import AtlasKlingVideoO1ImageToVideo
@@ -251,6 +253,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Seedance V1.5 Pro Text-to-Video": AtlasSeedanceV15ProTextToVideo,
     "AtlasCloud Seedance V1.5 Pro Text-to-Video Fast": AtlasSeedanceV15ProTextToVideoFast,
     "AtlasCloud Seedance V1.5 Pro Image-to-Video": AtlasSeedanceV15ProImageToVideo,
+    "AtlasCloud Seedance V1.5 Pro Image-to-Video (Spicy)": AtlasSeedanceV15ProImageToVideoSpicy,
     "AtlasCloud Seedance V1.5 Pro Image-to-Video Fast": AtlasSeedanceV15ProImageToVideoFast,
     "AtlasCloud Seedream V4 Text-to-Image": AtlasSeedreamV4TextToImage,
     "AtlasCloud Seedream V4 Sequential Text-to-Image": AtlasSeedreamV4SequentialTextToImage,
@@ -293,6 +296,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Vidu Q3-Turbo Image-to-Video": AtlasViduQ3TurboImageToVideo,
     "AtlasCloud Vidu Q3-Turbo Start-End-to-Video": AtlasViduQ3TurboStartEndToVideo,
     "AtlasCloud WAN2.2 Spicy Image-to-Video": AtlasWan22SpicyImageToVideo,
+    "AtlasCloud WAN2.2 Turbo Spicy Image-to-Video": AtlasWan22TurboSpicyImageToVideo,
     "AtlasCloud WAN2.2 Spicy Image-to-Video LoRA": AtlasWan22SpicyImageToVideoLora,
     "AtlasCloud VEO3 Text-to-Video": AtlasVeo3TextToVideo,
     "AtlasCloud Imagen4 Text-to-Image": AtlasImagen4TextToImage,
@@ -444,6 +448,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Seedance V1.5 Pro Text-to-Video": "AtlasCloud Seedance V1.5 Pro Text-to-Video",
     "AtlasCloud Seedance V1.5 Pro Text-to-Video Fast": "AtlasCloud Seedance V1.5 Pro Text-to-Video Fast",
     "AtlasCloud Seedance V1.5 Pro Image-to-Video": "AtlasCloud Seedance V1.5 Pro Image-to-Video",
+    "AtlasCloud Seedance V1.5 Pro Image-to-Video (Spicy)": "AtlasCloud Seedance V1.5 Pro Image-to-Video (Spicy)",
     "AtlasCloud Seedance V1.5 Pro Image-to-Video Fast": "AtlasCloud Seedance V1.5 Pro Image-to-Video Fast",
     "AtlasCloud Seedream V4 Text-to-Image": "AtlasCloud Seedream V4 Text-to-Image",
     "AtlasCloud Seedream V4 Sequential Text-to-Image": "AtlasCloud Seedream V4 Sequential Text-to-Image",
@@ -486,6 +491,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Vidu Q3-Turbo Image-to-Video": "AtlasCloud Vidu Q3-Turbo Image-to-Video",
     "AtlasCloud Vidu Q3-Turbo Start-End-to-Video": "AtlasCloud Vidu Q3-Turbo Start-End-to-Video",
     "AtlasCloud WAN2.2 Spicy Image-to-Video": "AtlasCloud WAN2.2 Spicy Image-to-Video",
+    "AtlasCloud WAN2.2 Turbo Spicy Image-to-Video": "AtlasCloud WAN2.2 Turbo Spicy Image-to-Video",
     "AtlasCloud WAN2.2 Spicy Image-to-Video LoRA": "AtlasCloud WAN2.2 Spicy Image-to-Video LoRA",
     "AtlasCloud VEO3 Text-to-Video": "AtlasCloud VEO3 Text-to-Video",
     "AtlasCloud Imagen4 Text-to-Image": "AtlasCloud Imagen4 Text-to-Image",
