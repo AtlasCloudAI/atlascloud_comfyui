@@ -185,6 +185,22 @@ def test_wan22_spicy_i2v_lora_node_metadata():
     assert AtlasWan22SpicyImageToVideoLora.RETURN_TYPES == ("STRING", "STRING")
 
 
+def test_wan22_turbo_spicy_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.wan22_turbo_spicy_i2v import AtlasWan22TurboSpicyImageToVideo
+
+    assert "atlas_client" in AtlasWan22TurboSpicyImageToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasWan22TurboSpicyImageToVideo.INPUT_TYPES()["required"]
+    assert AtlasWan22TurboSpicyImageToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_seedance_v15_pro_i2v_spicy_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.seedance_v15_pro_i2v_spicy import AtlasSeedanceV15ProImageToVideoSpicy
+
+    assert "atlas_client" in AtlasSeedanceV15ProImageToVideoSpicy.INPUT_TYPES()["required"]
+    assert "image" in AtlasSeedanceV15ProImageToVideoSpicy.INPUT_TYPES()["required"]
+    assert AtlasSeedanceV15ProImageToVideoSpicy.RETURN_TYPES == ("STRING", "STRING")
+
+
 # --- Batch 2: Recent HOT models ---
 
 

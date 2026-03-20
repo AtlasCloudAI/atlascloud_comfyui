@@ -182,6 +182,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Kling V2.6 Pro Image-to-Video | kwaivgi/kling-v2.6-pro/image-to-video |
 | AtlasCloud Kling Video O1 Image-to-Video | kwaivgi/kling-video-o1/image-to-video |
 | AtlasCloud Seedance V1.5 Pro Image-to-Video | bytedance/seedance-v1.5-pro/image-to-video |
+| AtlasCloud Seedance V1.5 Pro Image-to-Video (Spicy) | bytedance/seedance-v1.5-pro/image-to-video-spicy |
 | AtlasCloud Seedance V1 Lite I2V 1080p | bytedance/seedance-v1-lite-i2v-1080p |
 | AtlasCloud Seedance V1 Lite I2V 720p | bytedance/seedance-v1-lite-i2v-720p |
 | AtlasCloud Seedance V1 Lite I2V 480p | bytedance/seedance-v1-lite-i2v-480p |
@@ -197,6 +198,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Vidu Q3-Turbo Image-to-Video | vidu/q3-turbo/image-to-video |
 | AtlasCloud Vidu Q3-Turbo Start-End-to-Video | vidu/q3-turbo/start-end-to-video |
 | AtlasCloud WAN2.2 Spicy Image-to-Video | alibaba/wan-2.2-spicy/image-to-video |
+| AtlasCloud WAN2.2 Turbo Spicy Image-to-Video | atlascloud/wan-2.2-turbo-spicy/image-to-video |
 | AtlasCloud WAN2.2 Spicy Image-to-Video LoRA | alibaba/wan-2.2-spicy/image-to-video-lora |
 | AtlasCloud Hunyuan Image-to-Video | atlascloud/hunyuan-video/i2v |
 
