@@ -182,6 +182,7 @@ class AtlasClient:
 
             if status == "failed":
                 err = (data.get("data") or {}).get("error") or "Generation failed"
-                raise AtlasError(err)
+                code = (data.get("data") or {}).get("error_code")
+                raise AtlasError(f"{err} (error_code={code})" if code else err)
 
             time.sleep(float(poll_interval_sec))
