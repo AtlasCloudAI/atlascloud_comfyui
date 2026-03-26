@@ -71,6 +71,7 @@ from atlascloud_comfyui.nodes.video.vidu_q3_pro_start_end_to_video import AtlasV
 from atlascloud_comfyui.nodes.video.wan22_spicy_i2v import AtlasWan22SpicyImageToVideo
 from atlascloud_comfyui.nodes.video.wan22_turbo_spicy_i2v import AtlasWan22TurboSpicyImageToVideo
 from atlascloud_comfyui.nodes.video.wan22_spicy_i2v_lora import AtlasWan22SpicyImageToVideoLora
+from atlascloud_comfyui.nodes.video.wan22_turbo_spicy_i2v_lora import AtlasWan22TurboSpicyImageToVideoLora
 from atlascloud_comfyui.nodes.video.veo3_fast_t2v import AtlasVeo3FastTextToVideo
 from atlascloud_comfyui.nodes.video.veo31_i2v import AtlasVeo31ImageToVideo
 from atlascloud_comfyui.nodes.video.google_veo31_fast_t2v import AtlasVeo31FastTextToVideo
@@ -297,6 +298,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Vidu Q3-Turbo Start-End-to-Video": AtlasViduQ3TurboStartEndToVideo,
     "AtlasCloud WAN2.2 Spicy Image-to-Video": AtlasWan22SpicyImageToVideo,
     "AtlasCloud WAN2.2 Turbo Spicy Image-to-Video": AtlasWan22TurboSpicyImageToVideo,
+    "AtlasCloud WAN2.2 Turbo Spicy Image-to-Video LoRA": AtlasWan22TurboSpicyImageToVideoLora,
     "AtlasCloud WAN2.2 Spicy Image-to-Video LoRA": AtlasWan22SpicyImageToVideoLora,
     "AtlasCloud VEO3 Text-to-Video": AtlasVeo3TextToVideo,
     "AtlasCloud Imagen4 Text-to-Image": AtlasImagen4TextToImage,
@@ -492,6 +494,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Vidu Q3-Turbo Start-End-to-Video": "AtlasCloud Vidu Q3-Turbo Start-End-to-Video",
     "AtlasCloud WAN2.2 Spicy Image-to-Video": "AtlasCloud WAN2.2 Spicy Image-to-Video",
     "AtlasCloud WAN2.2 Turbo Spicy Image-to-Video": "AtlasCloud WAN2.2 Turbo Spicy Image-to-Video",
+    "AtlasCloud WAN2.2 Turbo Spicy Image-to-Video LoRA": "AtlasCloud WAN2.2 Turbo Spicy Image-to-Video LoRA",
     "AtlasCloud WAN2.2 Spicy Image-to-Video LoRA": "AtlasCloud WAN2.2 Spicy Image-to-Video LoRA",
     "AtlasCloud VEO3 Text-to-Video": "AtlasCloud VEO3 Text-to-Video",
     "AtlasCloud Imagen4 Text-to-Image": "AtlasCloud Imagen4 Text-to-Image",

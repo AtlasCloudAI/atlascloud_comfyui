@@ -193,6 +193,16 @@ def test_wan22_turbo_spicy_i2v_node_metadata():
     assert AtlasWan22TurboSpicyImageToVideo.RETURN_TYPES == ("STRING", "STRING")
 
 
+def test_wan22_turbo_spicy_i2v_lora_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.wan22_turbo_spicy_i2v_lora import AtlasWan22TurboSpicyImageToVideoLora
+
+    assert "atlas_client" in AtlasWan22TurboSpicyImageToVideoLora.INPUT_TYPES()["required"]
+    assert "image" in AtlasWan22TurboSpicyImageToVideoLora.INPUT_TYPES()["required"]
+    assert "low_noise_loras_json" in AtlasWan22TurboSpicyImageToVideoLora.INPUT_TYPES()["required"]
+    assert "high_noise_loras_json" in AtlasWan22TurboSpicyImageToVideoLora.INPUT_TYPES()["required"]
+    assert AtlasWan22TurboSpicyImageToVideoLora.RETURN_TYPES == ("STRING", "STRING")
+
+
 def test_seedance_v15_pro_i2v_spicy_node_metadata():
     from src.atlascloud_comfyui.nodes.video.seedance_v15_pro_i2v_spicy import AtlasSeedanceV15ProImageToVideoSpicy
 
