@@ -1,0 +1,12 @@
+{
+  "date": "2026-03-28",
+  "api_total": 258,
+  "api_visual": 155,
+  "repo_supported_model_ids": 182,
+  "repo_supported_visual_model_ids": 155,
+  "missing_visual": [],
+  "missing_total": 103,
+  "missing_total_by_type": {
+    "Text": 103
+  }
+}
