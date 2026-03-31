@@ -158,6 +158,17 @@ from atlascloud_comfyui.nodes.image.qwen_image_edit_plus_20251215 import AtlasQw
 from atlascloud_comfyui.nodes.image.qwen_image_t2i_plus import AtlasQwenImageTextToImagePlus
 from atlascloud_comfyui.nodes.image.qwen_image_t2i_max import AtlasQwenImageTextToImageMax
 
+from atlascloud_comfyui.nodes.image.openai_gpt_image_1_t2i import AtlasOpenAIGPTImage1TextToImage
+from atlascloud_comfyui.nodes.image.openai_gpt_image_1_edit import AtlasOpenAIGPTImage1Edit
+from atlascloud_comfyui.nodes.image.openai_gpt_image_1_mini_t2i import AtlasOpenAIGPTImage1MiniTextToImage
+from atlascloud_comfyui.nodes.image.openai_gpt_image_1_mini_edit import AtlasOpenAIGPTImage1MiniEdit
+from atlascloud_comfyui.nodes.image.openai_gpt_image_15_t2i import AtlasOpenAIGPTImage15TextToImage
+from atlascloud_comfyui.nodes.image.openai_gpt_image_15_edit import AtlasOpenAIGPTImage15Edit
+from atlascloud_comfyui.nodes.image.qwen_image_20_t2i import AtlasQwenImage20TextToImage
+from atlascloud_comfyui.nodes.image.qwen_image_20_edit import AtlasQwenImage20Edit
+from atlascloud_comfyui.nodes.image.qwen_image_20_pro_t2i import AtlasQwenImage20ProTextToImage
+from atlascloud_comfyui.nodes.image.qwen_image_20_pro_edit import AtlasQwenImage20ProEdit
+
 from atlascloud_comfyui.nodes.video.seedance_v1_pro_fast_t2v import AtlasSeedanceV1ProFastTextToVideo
 from atlascloud_comfyui.nodes.video.seedance_v1_pro_fast_i2v import AtlasSeedanceV1ProFastImageToVideo
 from atlascloud_comfyui.nodes.video.wan25_fast_t2v import AtlasWAN25TextToVideoFast
@@ -360,6 +371,17 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Qwen Image Text-to-Image Plus": AtlasQwenImageTextToImagePlus,
     "AtlasCloud Qwen Image Text-to-Image Max": AtlasQwenImageTextToImageMax,
 
+    "AtlasCloud GPT Image-1 Text-to-Image": AtlasOpenAIGPTImage1TextToImage,
+    "AtlasCloud GPT Image-1 Edit": AtlasOpenAIGPTImage1Edit,
+    "AtlasCloud GPT Image-1 Mini Text-to-Image": AtlasOpenAIGPTImage1MiniTextToImage,
+    "AtlasCloud GPT Image-1 Mini Edit": AtlasOpenAIGPTImage1MiniEdit,
+    "AtlasCloud GPT Image-1.5 Text-to-Image": AtlasOpenAIGPTImage15TextToImage,
+    "AtlasCloud GPT Image-1.5 Edit": AtlasOpenAIGPTImage15Edit,
+    "AtlasCloud Qwen Image 2.0 Text-to-Image": AtlasQwenImage20TextToImage,
+    "AtlasCloud Qwen Image 2.0 Edit": AtlasQwenImage20Edit,
+    "AtlasCloud Qwen Image 2.0 Pro Text-to-Image": AtlasQwenImage20ProTextToImage,
+    "AtlasCloud Qwen Image 2.0 Pro Edit": AtlasQwenImage20ProEdit,
+
     "AtlasCloud Seedance V1 Pro Fast Text-to-Video": AtlasSeedanceV1ProFastTextToVideo,
     "AtlasCloud Seedance V1 Pro Fast Image-to-Video": AtlasSeedanceV1ProFastImageToVideo,
     "AtlasCloud Seedance V1 Pro Image-to-Video 1080p": AtlasBytedanceSeedanceV1ProI2V1080p,
@@ -555,6 +577,17 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Qwen Image Edit Plus 20251215": "AtlasCloud Qwen Image Edit Plus 20251215",
     "AtlasCloud Qwen Image Text-to-Image Plus": "AtlasCloud Qwen Image Text-to-Image Plus",
     "AtlasCloud Qwen Image Text-to-Image Max": "AtlasCloud Qwen Image Text-to-Image Max",
+
+    "AtlasCloud GPT Image-1 Text-to-Image": "AtlasCloud GPT Image-1 Text-to-Image",
+    "AtlasCloud GPT Image-1 Edit": "AtlasCloud GPT Image-1 Edit",
+    "AtlasCloud GPT Image-1 Mini Text-to-Image": "AtlasCloud GPT Image-1 Mini Text-to-Image",
+    "AtlasCloud GPT Image-1 Mini Edit": "AtlasCloud GPT Image-1 Mini Edit",
+    "AtlasCloud GPT Image-1.5 Text-to-Image": "AtlasCloud GPT Image-1.5 Text-to-Image",
+    "AtlasCloud GPT Image-1.5 Edit": "AtlasCloud GPT Image-1.5 Edit",
+    "AtlasCloud Qwen Image 2.0 Text-to-Image": "AtlasCloud Qwen Image 2.0 Text-to-Image",
+    "AtlasCloud Qwen Image 2.0 Edit": "AtlasCloud Qwen Image 2.0 Edit",
+    "AtlasCloud Qwen Image 2.0 Pro Text-to-Image": "AtlasCloud Qwen Image 2.0 Pro Text-to-Image",
+    "AtlasCloud Qwen Image 2.0 Pro Edit": "AtlasCloud Qwen Image 2.0 Pro Edit",
 
     "AtlasCloud Seedance V1 Pro Fast Text-to-Video": "AtlasCloud Seedance V1 Pro Fast Text-to-Video",
     "AtlasCloud Seedance V1 Pro Fast Image-to-Video": "AtlasCloud Seedance V1 Pro Fast Image-to-Video",

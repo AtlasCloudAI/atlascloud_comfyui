@@ -1,0 +1,97 @@
+from __future__ import annotations
+
+from typing import Any, Dict, List, Tuple
+
+from ..auth.atlas_client_node import AtlasClientHandle
+
+
+class AtlasQwenImage20ProEdit:
+    CATEGORY = "AtlasCloud/Image"
+    FUNCTION = "run"
+    RETURN_TYPES = ("STRING", "STRING")
+    RETURN_NAMES = ("image_url", "prediction_id")
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "atlas_client": ("ATLAS_CLIENT",),
+                "prompt": ("STRING", {"multiline": True, "tooltip": "Text instruction for editing"}),
+                "images": ("STRING", {"multiline": True, "default": "", "tooltip": "1-6 image URLs/base64, one per line"}),
+            },
+            "optional": {
+                "size": (
+                    "STRING",
+                    {
+                        "default": "1024*1024",
+                        "tooltip": "Image dimensions in width*height format (e.g., 1024*1024, 1280*720)",
+                    },
+                ),
+                "seed": (
+                    "INT",
+                    {
+                        "default": -1,
+                        "min": -1,
+                        "max": 2**31 - 1,
+                        "tooltip": "Random seed (-1 for random)",
+                    },
+                ),
+                "poll_interval_sec": (
+                    "FLOAT",
+                    {"default": 2.0, "min": 0.5, "max": 10.0, "tooltip": "Polling interval (seconds)"},
+                ),
+                "timeout_sec": (
+                    "INT",
+                    {"default": 300, "min": 30, "max": 7200, "tooltip": "Timeout (seconds)"},
+                ),
+            },
+        }
+
+    def run(
+        self,
+        atlas_client: AtlasClientHandle,
+        prompt: str,
+        images: str,
+        size: str = "1024*1024",
+        seed: int = -1,
+        poll_interval_sec: float = 2.0,
+        timeout_sec: int = 300,
+    ) -> Tuple[str, str]:
+        client = atlas_client.client
+
+        p = (prompt or "").strip()
+        if not p:
+            raise RuntimeError("prompt is required")
+
+        image_list: List[str] = [v.strip() for v in (images or "").splitlines() if v.strip()]
+        if not image_list:
+            raise RuntimeError("images is required (1-6 lines)")
+        if len(image_list) > 6:
+            raise RuntimeError("images maxItems is 6")
+
+        payload: Dict[str, Any] = {
+            "model": "qwen/qwen-image-2.0-pro/edit",
+            "prompt": p,
+            "images": image_list,
+            "size": size,
+            "seed": int(seed),
+        }
+
+        prediction_id = client.generate_image(payload)
+        result = client.poll_prediction(prediction_id, poll_interval_sec=poll_interval_sec, timeout_sec=float(timeout_sec))
+
+        outputs = (result.get("data") or {}).get("outputs") or []
+        if not outputs:
+            raise RuntimeError(f"No outputs returned for prediction {prediction_id}: {result}")
+
+        first = outputs[0]
+        if isinstance(first, dict):
+            url = first.get("url") or first.get("image") or first.get("output")
+            if isinstance(url, str) and url.strip():
+                return (url, prediction_id)
+            raise RuntimeError(f"Unexpected output object for prediction {prediction_id}: {first}")
+
+        if not isinstance(first, str):
+            raise RuntimeError(f"Unexpected output type for prediction {prediction_id}: {type(first).__name__} {first!r}")
+
+        return (first, prediction_id)
