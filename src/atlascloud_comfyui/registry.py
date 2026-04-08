@@ -24,6 +24,10 @@ from atlascloud_comfyui.nodes.video.wan26_i2v import AtlasWAN26ImageToVideo
 from atlascloud_comfyui.nodes.video.wan26_v2v import AtlasWAN26VideoToVideo
 from atlascloud_comfyui.nodes.image.wan26_t2i import AtlasWAN26TextToImage
 from atlascloud_comfyui.nodes.image.wan26_image_edit import AtlasWAN26ImageEdit
+from atlascloud_comfyui.nodes.image.alibaba_wan_2_7_t2i import AtlasWan27TextToImage
+from atlascloud_comfyui.nodes.image.alibaba_wan_2_7_edit import AtlasWan27ImageEdit
+from atlascloud_comfyui.nodes.image.alibaba_wan_2_7_pro_t2i import AtlasWan27ProTextToImage
+from atlascloud_comfyui.nodes.image.alibaba_wan_2_7_pro_edit import AtlasWan27ProImageEdit
 
 from atlascloud_comfyui.nodes.video.kling_video_o3_pro_t2v import AtlasKlingVideoO3ProTextToVideo
 from atlascloud_comfyui.nodes.video.kling_video_o3_pro_i2v import AtlasKlingVideoO3ProImageToVideo
@@ -35,6 +39,9 @@ from atlascloud_comfyui.nodes.video.kling_video_o3_std_i2v import AtlasKlingVide
 from atlascloud_comfyui.nodes.video.kling_video_o3_std_r2v import AtlasKlingVideoO3StdReferenceToVideo
 from atlascloud_comfyui.nodes.video.kling_video_o3_std_video_edit import AtlasKlingVideoO3StdVideoEdit
 from atlascloud_comfyui.nodes.video.wan25_t2v import AtlasWAN25TextToVideo
+from atlascloud_comfyui.nodes.video.alibaba_wan_2_2_spicy_video_extend import AtlasWan22SpicyVideoExtend
+from atlascloud_comfyui.nodes.video.atlascloud_wan_2_2_i2v import AtlasAtlascloudWan22ImageToVideo
+from atlascloud_comfyui.nodes.video.atlascloud_wan_2_2_i2v_lora import AtlasAtlascloudWan22ImageToVideoLora
 from atlascloud_comfyui.nodes.video.wan22_t2v_720p import AtlasWAN22T2V720p
 from atlascloud_comfyui.nodes.video.alibaba_wan_2_2_t2v_480p import AtlasAlibabaWan22T2V480p
 from atlascloud_comfyui.nodes.video.alibaba_wan_2_2_i2v_720p import AtlasAlibabaWan22I2V720p
@@ -245,12 +252,19 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud WAN2.5 Text-to-Video": AtlasWAN25TextToVideo,
     "AtlasCloud WAN2.6 Text-to-Video": AtlasWAN26TextToVideo,
     "AtlasCloud WAN2.6 Text-to-Image": AtlasWAN26TextToImage,
+    "AtlasCloud WAN2.7 Text-to-Image": AtlasWan27TextToImage,
+    "AtlasCloud WAN2.7 Image-Edit": AtlasWan27ImageEdit,
+    "AtlasCloud WAN2.7 Pro Text-to-Image": AtlasWan27ProTextToImage,
+    "AtlasCloud WAN2.7 Pro Image-Edit": AtlasWan27ProImageEdit,
     "AtlasCloud WAN2.5 Text-to-Image": AtlasWan25TextToImage,
     "AtlasCloud WAN2.5 Image-Edit": AtlasWan25ImageEdit,
     "AtlasCloud WAN2.6 Image-Edit": AtlasWAN26ImageEdit,
     "AtlasCloud WAN2.6 Image-to-Video": AtlasWAN26ImageToVideo,
     "AtlasCloud WAN2.6 Image-to-Video Flash": AtlasWAN26ImageToVideoFlash,
     "AtlasCloud WAN2.6 Video-to-Video": AtlasWAN26VideoToVideo,
+    "AtlasCloud WAN2.2 Spicy Video Extend": AtlasWan22SpicyVideoExtend,
+    "AtlasCloud WAN2.2 (AtlasCloud) Image-to-Video": AtlasAtlascloudWan22ImageToVideo,
+    "AtlasCloud WAN2.2 (AtlasCloud) Image-to-Video LoRA": AtlasAtlascloudWan22ImageToVideoLora,
 
     "AtlasCloud Kling Video O3 Pro Text-to-Video": AtlasKlingVideoO3ProTextToVideo,
     "AtlasCloud Kling Video O3 Pro Image-to-Video": AtlasKlingVideoO3ProImageToVideo,
@@ -468,12 +482,19 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud WAN2.5 Text-to-Video": "AtlasCloud WAN2.5 Text-to-Video",
     "AtlasCloud WAN2.6 Text-to-Video": "AtlasCloud WAN2.6 Text-to-Video",
     "AtlasCloud WAN2.6 Text-to-Image": "AtlasCloud WAN2.6 Text-to-Image",
+    "AtlasCloud WAN2.7 Text-to-Image": "AtlasCloud WAN2.7 Text-to-Image",
+    "AtlasCloud WAN2.7 Image-Edit": "AtlasCloud WAN2.7 Image-Edit",
+    "AtlasCloud WAN2.7 Pro Text-to-Image": "AtlasCloud WAN2.7 Pro Text-to-Image",
+    "AtlasCloud WAN2.7 Pro Image-Edit": "AtlasCloud WAN2.7 Pro Image-Edit", 
     "AtlasCloud WAN2.5 Text-to-Image": "AtlasCloud WAN2.5 Text-to-Image",
     "AtlasCloud WAN2.5 Image-Edit": "AtlasCloud WAN2.5 Image-Edit",
     "AtlasCloud WAN2.6 Image-Edit": "AtlasCloud WAN2.6 Image-Edit",
     "AtlasCloud WAN2.6 Image-to-Video": "AtlasCloud WAN2.6 Image-to-Video",
     "AtlasCloud WAN2.6 Image-to-Video Flash": "AtlasCloud WAN2.6 Image-to-Video Flash",
     "AtlasCloud WAN2.6 Video-to-Video": "AtlasCloud WAN2.6 Video-to-Video",
+    "AtlasCloud WAN2.2 Spicy Video Extend": "AtlasCloud WAN2.2 Spicy Video Extend",
+    "AtlasCloud WAN2.2 (AtlasCloud) Image-to-Video": "AtlasCloud WAN2.2 (AtlasCloud) Image-to-Video",
+    "AtlasCloud WAN2.2 (AtlasCloud) Image-to-Video LoRA": "AtlasCloud WAN2.2 (AtlasCloud) Image-to-Video LoRA",
 
     "AtlasCloud Kling Video O3 Pro Text-to-Video": "AtlasCloud Kling Video O3 Pro Text-to-Video",
     "AtlasCloud Kling Video O3 Pro Image-to-Video": "AtlasCloud Kling Video O3 Pro Image-to-Video",

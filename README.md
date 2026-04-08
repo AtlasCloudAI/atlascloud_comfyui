@@ -215,12 +215,16 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud WAN2.2 Turbo Spicy Image-to-Video LoRA | atlascloud/wan-2.2-turbo-spicy/image-to-video-lora |
 | AtlasCloud WAN2.2 Spicy Image-to-Video LoRA | alibaba/wan-2.2-spicy/image-to-video-lora |
 | AtlasCloud Hunyuan Image-to-Video | atlascloud/hunyuan-video/i2v |
+| AtlasCloud WAN2.2 (AtlasCloud) Image-to-Video | atlascloud/wan-2.2/image-to-video |
+| AtlasCloud WAN2.2 (AtlasCloud) Image-to-Video LoRA | atlascloud/wan-2.2/image-to-video-lora |
 
 ### Text-to-Image (T2I)
 
 | Node | Model |
 |------|-------|
 | AtlasCloud WAN2.6 Text-to-Image | alibaba/wan-2.6/text-to-image |
+| AtlasCloud WAN2.7 Text-to-Image | alibaba/wan-2.7/text-to-image |
+| AtlasCloud WAN2.7 Pro Text-to-Image | alibaba/wan-2.7-pro/text-to-image |
 | AtlasCloud WAN2.5 Text-to-Image | alibaba/wan-2.5/text-to-image |
 | AtlasCloud Imagen4 Text-to-Image | google/imagen4 |
 | AtlasCloud Imagen4 Fast Text-to-Image | google/imagen4-fast |
@@ -254,6 +258,12 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Qwen Image Text-to-Image Plus | alibaba/qwen-image/text-to-image-plus |
 | AtlasCloud Qwen Image Text-to-Image Max | alibaba/qwen-image/text-to-image-max |
 
+### Video Extend
+
+| Node | Model |
+|------|-------|
+| AtlasCloud WAN2.2 Spicy Video Extend | alibaba/wan-2.2-spicy/video-extend |
+
 ### Video Edit
 
 | Node | Model |
@@ -271,6 +281,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Seedream V5.0 Lite Edit | bytedance/seedream-v5.0-lite/edit |
 | AtlasCloud Seedream V5.0 Lite Edit Sequential | bytedance/seedream-v5.0-lite/edit-sequential |
 | AtlasCloud WAN2.6 Image-Edit | alibaba/wan-2.6/image-edit |
+| AtlasCloud WAN2.7 Image-Edit | alibaba/wan-2.7/image-edit |
+| AtlasCloud WAN2.7 Pro Image-Edit | alibaba/wan-2.7-pro/image-edit |
 | AtlasCloud WAN2.5 Image-Edit | alibaba/wan-2.5/image-edit |
 | AtlasCloud Seedream V4 Edit | bytedance/seedream-v4/edit |
 | AtlasCloud Seedream V4 Edit Sequential | bytedance/seedream-v4/edit-sequential |
