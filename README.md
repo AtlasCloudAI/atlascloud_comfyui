@@ -76,9 +76,11 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud VEO3 Text-to-Video | google/veo3 |
 | AtlasCloud VEO3 Fast Text-to-Video | google/veo3-fast |
 | AtlasCloud VEO3.1 Text-to-Video | google/veo3.1/text-to-video |
+| AtlasCloud VEO3.1 Lite Text-to-Video | google/veo3.1-lite/text-to-video |
 | AtlasCloud VEO3.1 Fast Text-to-Video | google/veo3.1-fast/text-to-video |
 | AtlasCloud VEO2 Text-to-Video | google/veo2 |
 | AtlasCloud WAN2.6 Text-to-Video | alibaba/wan-2.6/text-to-video |
+| AtlasCloud WAN2.7 Text-to-Video | alibaba/wan-2.7/text-to-video |
 | AtlasCloud WAN2.6 Video-to-Video | alibaba/wan-2.6/video-to-video |
 | AtlasCloud Kling Video O3 Pro Text-to-Video | kwaivgi/kling-video-o3-pro/text-to-video |
 | AtlasCloud Kling Video O3 Std Text-to-Video | kwaivgi/kling-video-o3-std/text-to-video |
@@ -119,6 +121,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Seedance V1 Lite T2V 1080p | bytedance/seedance-v1-lite-t2v-1080p |
 | AtlasCloud Seedance V1 Lite T2V 720p | bytedance/seedance-v1-lite-t2v-720p |
 | AtlasCloud Seedance V1.5 Pro Text-to-Video | bytedance/seedance-v1.5-pro/text-to-video |
+| AtlasCloud Seedance 2.0 Text-to-Video | bytedance/seedance-2.0/text-to-video |
+| AtlasCloud Seedance 2.0 Fast Text-to-Video | bytedance/seedance-2.0-fast/text-to-video |
 | AtlasCloud Seedance V1.5 Pro Text-to-Video Fast | bytedance/seedance-v1.5-pro/text-to-video-fast |
 | AtlasCloud Hunyuan Text-to-Video | atlascloud/hunyuan-video/t2v |
 
@@ -130,7 +134,13 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud VEO3 Fast Image-to-Video | google/veo3-fast/image-to-video |
 | AtlasCloud VEO3.1 Fast Image-to-Video | google/veo3.1-fast/image-to-video |
 | AtlasCloud VEO3.1 Reference-to-Video | google/veo3.1/reference-to-video |
+| AtlasCloud Seedance 2.0 Reference-to-Video | bytedance/seedance-2.0/reference-to-video |
+| AtlasCloud Seedance 2.0 Fast Reference-to-Video | bytedance/seedance-2.0-fast/reference-to-video |
+| AtlasCloud Vidu Q3 Reference-to-Video | vidu/q3/reference-to-video |
+| AtlasCloud Vidu Q3-Mix Reference-to-Video | vidu/q3-mix/reference-to-video |
 | AtlasCloud VEO3.1 Image-to-Video | google/veo3.1/image-to-video |
+| AtlasCloud VEO3.1 Lite Image-to-Video | google/veo3.1-lite/image-to-video |
+| AtlasCloud VEO3.1 Lite Start-End Frame-to-Video | google/veo3.1-lite/start-end-frame-to-video |
 | AtlasCloud VEO2 Image-to-Video | google/veo2/image-to-video |
 | AtlasCloud WAN2.5 Image-to-Video | alibaba/wan-2.5/image-to-video |
 | AtlasCloud WAN2.5 Image-to-Video Fast | alibaba/wan-2.5/image-to-video-fast |
@@ -161,6 +171,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Kling V1.6 I2V Standard | kwaivgi/kling-v1.6-i2v-standard |
 | AtlasCloud Kling Effects | kwaivgi/kling-effects |
 | AtlasCloud WAN2.6 Image-to-Video | alibaba/wan-2.6/image-to-video |
+| AtlasCloud WAN2.7 Image-to-Video | alibaba/wan-2.7/image-to-video |
 | AtlasCloud WAN2.6 Image-to-Video Flash | alibaba/wan-2.6/image-to-video-flash |
 | AtlasCloud Kling Video O3 Pro Image-to-Video | kwaivgi/kling-video-o3-pro/image-to-video |
 | AtlasCloud Kling Video O3 Std Image-to-Video | kwaivgi/kling-video-o3-std/image-to-video |
@@ -182,6 +193,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Kling V2.6 Pro Image-to-Video | kwaivgi/kling-v2.6-pro/image-to-video |
 | AtlasCloud Kling Video O1 Image-to-Video | kwaivgi/kling-video-o1/image-to-video |
 | AtlasCloud Seedance V1.5 Pro Image-to-Video | bytedance/seedance-v1.5-pro/image-to-video |
+| AtlasCloud Seedance 2.0 Image-to-Video | bytedance/seedance-2.0/image-to-video |
+| AtlasCloud Seedance 2.0 Fast Image-to-Video | bytedance/seedance-2.0-fast/image-to-video |
 | AtlasCloud Seedance V1.5 Pro Image-to-Video (Spicy) | bytedance/seedance-v1.5-pro/image-to-video-spicy |
 | AtlasCloud Seedance V1 Lite I2V 1080p | bytedance/seedance-v1-lite-i2v-1080p |
 | AtlasCloud Seedance V1 Lite I2V 720p | bytedance/seedance-v1-lite-i2v-720p |
@@ -247,6 +260,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 |------|-------|
 | AtlasCloud Kling Video O3 Pro Video-Edit | kwaivgi/kling-video-o3-pro/video-edit |
 | AtlasCloud Kling Video O3 Std Video-Edit | kwaivgi/kling-video-o3-std/video-edit |
+| AtlasCloud WAN2.7 Video-Edit | alibaba/wan-2.7/video-edit |
 
 ### Image Edit
 

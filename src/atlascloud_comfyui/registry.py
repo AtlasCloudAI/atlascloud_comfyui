@@ -209,6 +209,22 @@ from atlascloud_comfyui.nodes.video.hailuo_02_t2v_standard import AtlasHailuo02T
 from atlascloud_comfyui.nodes.video.seedance_v1_lite_t2v_1080p import AtlasSeedanceV1LiteT2V1080p
 from atlascloud_comfyui.nodes.video.seedance_v1_lite_t2v_720p import AtlasSeedanceV1LiteT2V720p
 from atlascloud_comfyui.nodes.video.seedance_v1_lite_i2v_1080p import AtlasSeedanceV1LiteI2V1080p
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_t2v import AtlasSeedance20TextToVideo
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_i2v import AtlasSeedance20ImageToVideo
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_r2v import AtlasSeedance20ReferenceToVideo
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_t2v import AtlasSeedance20FastTextToVideo
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_i2v import AtlasSeedance20FastImageToVideo
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_r2v import AtlasSeedance20FastReferenceToVideo
+from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_t2v import AtlasWan27TextToVideo
+from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_i2v import AtlasWan27ImageToVideo
+from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_r2v import AtlasWan27ReferenceToVideo
+from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_video_edit import AtlasWan27VideoEdit
+from atlascloud_comfyui.nodes.video.google_veo31_lite_t2v import AtlasVeo31LiteTextToVideo
+from atlascloud_comfyui.nodes.video.google_veo31_lite_i2v import AtlasVeo31LiteImageToVideo
+from atlascloud_comfyui.nodes.video.google_veo31_lite_start_end_frame_t2v import AtlasVeo31LiteStartEndFrameToVideo
+from atlascloud_comfyui.nodes.video.vidu_q3_r2v import AtlasViduQ3ReferenceToVideo
+from atlascloud_comfyui.nodes.video.vidu_q3_mix_r2v import AtlasViduQ3MixReferenceToVideo
+
 from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_lite_t2v_480p import AtlasBytedanceSeedanceV1LiteT2V480p
 from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_lite_i2v_720p import AtlasBytedanceSeedanceV1LiteI2V720p
 from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_lite_i2v_480p import AtlasBytedanceSeedanceV1LiteI2V480p
@@ -264,6 +280,22 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Sora 2 Text-to-Video Pro": AtlasSora2TextToVideoPro,
     "AtlasCloud Seedance V1.5 Pro Text-to-Video": AtlasSeedanceV15ProTextToVideo,
     "AtlasCloud Seedance V1.5 Pro Text-to-Video Fast": AtlasSeedanceV15ProTextToVideoFast,
+    "AtlasCloud Seedance 2.0 Text-to-Video": AtlasSeedance20TextToVideo,
+    "AtlasCloud Seedance 2.0 Image-to-Video": AtlasSeedance20ImageToVideo,
+    "AtlasCloud Seedance 2.0 Reference-to-Video": AtlasSeedance20ReferenceToVideo,
+    "AtlasCloud Seedance 2.0 Fast Text-to-Video": AtlasSeedance20FastTextToVideo,
+    "AtlasCloud Seedance 2.0 Fast Image-to-Video": AtlasSeedance20FastImageToVideo,
+    "AtlasCloud Seedance 2.0 Fast Reference-to-Video": AtlasSeedance20FastReferenceToVideo,
+    "AtlasCloud WAN2.7 Text-to-Video": AtlasWan27TextToVideo,
+    "AtlasCloud WAN2.7 Image-to-Video": AtlasWan27ImageToVideo,
+    "AtlasCloud WAN2.7 Reference-to-Video": AtlasWan27ReferenceToVideo,
+    "AtlasCloud WAN2.7 Video-Edit": AtlasWan27VideoEdit,
+    "AtlasCloud VEO3.1 Lite Text-to-Video": AtlasVeo31LiteTextToVideo,
+    "AtlasCloud VEO3.1 Lite Image-to-Video": AtlasVeo31LiteImageToVideo,
+    "AtlasCloud VEO3.1 Lite Start-End Frame-to-Video": AtlasVeo31LiteStartEndFrameToVideo,
+    "AtlasCloud Vidu Q3 Reference-to-Video": AtlasViduQ3ReferenceToVideo,
+    "AtlasCloud Vidu Q3-Mix Reference-to-Video": AtlasViduQ3MixReferenceToVideo,
+
     "AtlasCloud Seedance V1.5 Pro Image-to-Video": AtlasSeedanceV15ProImageToVideo,
     "AtlasCloud Seedance V1.5 Pro Image-to-Video (Spicy)": AtlasSeedanceV15ProImageToVideoSpicy,
     "AtlasCloud Seedance V1.5 Pro Image-to-Video Fast": AtlasSeedanceV15ProImageToVideoFast,
@@ -470,6 +502,22 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Hailuo 2.3 Pro Text-to-Video": "AtlasCloud Hailuo 2.3 Pro Text-to-Video",
     "AtlasCloud Sora 2 Text-to-Video Pro": "AtlasCloud Sora 2 Text-to-Video Pro",
     "AtlasCloud Seedance V1.5 Pro Text-to-Video": "AtlasCloud Seedance V1.5 Pro Text-to-Video",
+    "AtlasCloud Seedance 2.0 Text-to-Video": "AtlasCloud Seedance 2.0 Text-to-Video",
+    "AtlasCloud Seedance 2.0 Image-to-Video": "AtlasCloud Seedance 2.0 Image-to-Video",
+    "AtlasCloud Seedance 2.0 Reference-to-Video": "AtlasCloud Seedance 2.0 Reference-to-Video",
+    "AtlasCloud Seedance 2.0 Fast Text-to-Video": "AtlasCloud Seedance 2.0 Fast Text-to-Video",
+    "AtlasCloud Seedance 2.0 Fast Image-to-Video": "AtlasCloud Seedance 2.0 Fast Image-to-Video",
+    "AtlasCloud Seedance 2.0 Fast Reference-to-Video": "AtlasCloud Seedance 2.0 Fast Reference-to-Video",
+    "AtlasCloud WAN2.7 Text-to-Video": "AtlasCloud WAN2.7 Text-to-Video",
+    "AtlasCloud WAN2.7 Image-to-Video": "AtlasCloud WAN2.7 Image-to-Video",
+    "AtlasCloud WAN2.7 Reference-to-Video": "AtlasCloud WAN2.7 Reference-to-Video",
+    "AtlasCloud WAN2.7 Video-Edit": "AtlasCloud WAN2.7 Video-Edit",
+    "AtlasCloud VEO3.1 Lite Text-to-Video": "AtlasCloud VEO3.1 Lite Text-to-Video",
+    "AtlasCloud VEO3.1 Lite Image-to-Video": "AtlasCloud VEO3.1 Lite Image-to-Video",
+    "AtlasCloud VEO3.1 Lite Start-End Frame-to-Video": "AtlasCloud VEO3.1 Lite Start-End Frame-to-Video",
+    "AtlasCloud Vidu Q3 Reference-to-Video": "AtlasCloud Vidu Q3 Reference-to-Video",
+    "AtlasCloud Vidu Q3-Mix Reference-to-Video": "AtlasCloud Vidu Q3-Mix Reference-to-Video",
+
     "AtlasCloud Seedance V1.5 Pro Text-to-Video Fast": "AtlasCloud Seedance V1.5 Pro Text-to-Video Fast",
     "AtlasCloud Seedance V1.5 Pro Image-to-Video": "AtlasCloud Seedance V1.5 Pro Image-to-Video",
     "AtlasCloud Seedance V1.5 Pro Image-to-Video (Spicy)": "AtlasCloud Seedance V1.5 Pro Image-to-Video (Spicy)",
