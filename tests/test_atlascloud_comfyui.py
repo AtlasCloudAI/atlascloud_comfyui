@@ -179,6 +179,33 @@ def test_wan22_turbo_spicy_i2v_lora_node_metadata():
     assert "high_noise_loras_json" in AtlasWan22TurboSpicyImageToVideoLora.INPUT_TYPES()["required"]
     assert AtlasWan22TurboSpicyImageToVideoLora.RETURN_TYPES == ("STRING", "STRING")
 
+
+def test_wan22_spicy_video_extend_lora_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.alibaba_wan_2_2_spicy_video_extend_lora import AtlasWan22SpicyVideoExtendLora
+
+    assert "atlas_client" in AtlasWan22SpicyVideoExtendLora.INPUT_TYPES()["required"]
+    assert "video" in AtlasWan22SpicyVideoExtendLora.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasWan22SpicyVideoExtendLora.INPUT_TYPES()["required"]
+    assert AtlasWan22SpicyVideoExtendLora.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_wan25_video_extend_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.alibaba_wan_2_5_video_extend import AtlasWan25VideoExtend
+
+    assert "atlas_client" in AtlasWan25VideoExtend.INPUT_TYPES()["required"]
+    assert "video" in AtlasWan25VideoExtend.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasWan25VideoExtend.INPUT_TYPES()["required"]
+    assert AtlasWan25VideoExtend.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_baidu_ernie_image_turbo_t2i_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.baidu_ernie_image_turbo_t2i import AtlasBaiduERNIEImageTurboTextToImage
+
+    assert "atlas_client" in AtlasBaiduERNIEImageTurboTextToImage.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasBaiduERNIEImageTurboTextToImage.INPUT_TYPES()["required"]
+    assert AtlasBaiduERNIEImageTurboTextToImage.RETURN_TYPES == ("STRING", "STRING")
+    assert "image_url" in AtlasBaiduERNIEImageTurboTextToImage.RETURN_NAMES
+
 def test_seedance_v15_pro_i2v_spicy_node_metadata():
     from src.atlascloud_comfyui.nodes.video.seedance_v15_pro_i2v_spicy import AtlasSeedanceV15ProImageToVideoSpicy
 

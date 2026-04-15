@@ -40,6 +40,8 @@ from atlascloud_comfyui.nodes.video.kling_video_o3_std_r2v import AtlasKlingVide
 from atlascloud_comfyui.nodes.video.kling_video_o3_std_video_edit import AtlasKlingVideoO3StdVideoEdit
 from atlascloud_comfyui.nodes.video.wan25_t2v import AtlasWAN25TextToVideo
 from atlascloud_comfyui.nodes.video.alibaba_wan_2_2_spicy_video_extend import AtlasWan22SpicyVideoExtend
+from atlascloud_comfyui.nodes.video.alibaba_wan_2_2_spicy_video_extend_lora import AtlasWan22SpicyVideoExtendLora
+from atlascloud_comfyui.nodes.video.alibaba_wan_2_5_video_extend import AtlasWan25VideoExtend
 from atlascloud_comfyui.nodes.video.atlascloud_wan_2_2_i2v import AtlasAtlascloudWan22ImageToVideo
 from atlascloud_comfyui.nodes.video.atlascloud_wan_2_2_i2v_lora import AtlasAtlascloudWan22ImageToVideoLora
 from atlascloud_comfyui.nodes.video.wan22_t2v_720p import AtlasWAN22T2V720p
@@ -146,6 +148,7 @@ from atlascloud_comfyui.nodes.image.imagen4_ultra_t2i import AtlasImagen4UltraTe
 from atlascloud_comfyui.nodes.image.imagen3_t2i import AtlasImagen3TextToImage
 from atlascloud_comfyui.nodes.image.imagen3_fast_t2i import AtlasImagen3FastTextToImage
 from atlascloud_comfyui.nodes.image.wan25_t2i import AtlasWan25TextToImage
+from atlascloud_comfyui.nodes.image.baidu_ernie_image_turbo_t2i import AtlasBaiduERNIEImageTurboTextToImage
 from atlascloud_comfyui.nodes.image.wan25_image_edit import AtlasWan25ImageEdit
 from atlascloud_comfyui.nodes.image.nano_banana_t2i import AtlasNanoBananaTextToImage
 from atlascloud_comfyui.nodes.image.nano_banana_t2i_dev import AtlasNanoBananaTextToImageDeveloper
@@ -258,12 +261,15 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud WAN2.7 Pro Text-to-Image": AtlasWan27ProTextToImage,
     "AtlasCloud WAN2.7 Pro Image-Edit": AtlasWan27ProImageEdit,
     "AtlasCloud WAN2.5 Text-to-Image": AtlasWan25TextToImage,
+    "AtlasCloud Baidu ERNIE-Image-Turbo Text-to-Image": AtlasBaiduERNIEImageTurboTextToImage,
     "AtlasCloud WAN2.5 Image-Edit": AtlasWan25ImageEdit,
     "AtlasCloud WAN2.6 Image-Edit": AtlasWAN26ImageEdit,
     "AtlasCloud WAN2.6 Image-to-Video": AtlasWAN26ImageToVideo,
     "AtlasCloud WAN2.6 Image-to-Video Flash": AtlasWAN26ImageToVideoFlash,
     "AtlasCloud WAN2.6 Video-to-Video": AtlasWAN26VideoToVideo,
     "AtlasCloud WAN2.2 Spicy Video Extend": AtlasWan22SpicyVideoExtend,
+    "AtlasCloud WAN2.2 Spicy Video Extend LoRA": AtlasWan22SpicyVideoExtendLora,
+    "AtlasCloud WAN2.5 Video Extend": AtlasWan25VideoExtend,
     "AtlasCloud WAN2.2 (AtlasCloud) Image-to-Video": AtlasAtlascloudWan22ImageToVideo,
     "AtlasCloud WAN2.2 (AtlasCloud) Image-to-Video LoRA": AtlasAtlascloudWan22ImageToVideoLora,
     "AtlasCloud Kling Video O3 Pro Text-to-Video": AtlasKlingVideoO3ProTextToVideo,
@@ -480,12 +486,15 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud WAN2.7 Pro Text-to-Image": "AtlasCloud WAN2.7 Pro Text-to-Image",
     "AtlasCloud WAN2.7 Pro Image-Edit": "AtlasCloud WAN2.7 Pro Image-Edit",
     "AtlasCloud WAN2.5 Text-to-Image": "AtlasCloud WAN2.5 Text-to-Image",
+    "AtlasCloud Baidu ERNIE-Image-Turbo Text-to-Image": "AtlasCloud Baidu ERNIE-Image-Turbo Text-to-Image",
     "AtlasCloud WAN2.5 Image-Edit": "AtlasCloud WAN2.5 Image-Edit",
     "AtlasCloud WAN2.6 Image-Edit": "AtlasCloud WAN2.6 Image-Edit",
     "AtlasCloud WAN2.6 Image-to-Video": "AtlasCloud WAN2.6 Image-to-Video",
     "AtlasCloud WAN2.6 Image-to-Video Flash": "AtlasCloud WAN2.6 Image-to-Video Flash",
     "AtlasCloud WAN2.6 Video-to-Video": "AtlasCloud WAN2.6 Video-to-Video",
     "AtlasCloud WAN2.2 Spicy Video Extend": "AtlasCloud WAN2.2 Spicy Video Extend",
+    "AtlasCloud WAN2.2 Spicy Video Extend LoRA": "AtlasCloud WAN2.2 Spicy Video Extend LoRA",
+    "AtlasCloud WAN2.5 Video Extend": "AtlasCloud WAN2.5 Video Extend",
     "AtlasCloud WAN2.2 (AtlasCloud) Image-to-Video": "AtlasCloud WAN2.2 (AtlasCloud) Image-to-Video",
     "AtlasCloud WAN2.2 (AtlasCloud) Image-to-Video LoRA": "AtlasCloud WAN2.2 (AtlasCloud) Image-to-Video LoRA",
     "AtlasCloud Kling Video O3 Pro Text-to-Video": "AtlasCloud Kling Video O3 Pro Text-to-Video",
