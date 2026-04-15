@@ -245,6 +245,7 @@ from atlascloud_comfyui.nodes.video.kling_v20_t2v_master import AtlasKlingV20T2V
 
 from atlascloud_comfyui.nodes.utils.image_preview import AtlasImagePreviewURL
 from atlascloud_comfyui.nodes.utils.video_previewer import AtlasVideoPreviewer
+from atlascloud_comfyui.nodes.utils.image_to_base64 import AtlasImageToBase64
 
 
 NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
@@ -332,6 +333,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Flux Kontext Dev LoRA Edit": AtlasFluxKontextDevLoraEdit,
     "AtlasCloud Image Preview": AtlasImagePreviewURL,
     "AtlasCloud Video Preview": AtlasVideoPreviewer,
+    "AtlasCloud Image to Base64": AtlasImageToBase64,
     "AtlasCloud Kling V3.0 Pro Text-to-Video": AtlasKlingV30ProTextToVideo,
     "AtlasCloud Kling V3.0 Std Text-to-Video": AtlasKlingV30StdTextToVideo,
     "AtlasCloud Kling V3.0 Std Image-to-Video": AtlasKlingV30StdImageToVideo,
