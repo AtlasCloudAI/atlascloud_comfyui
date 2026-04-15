@@ -258,12 +258,15 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud ZImage Turbo Lora Text-to-Image | z-image/turbo-lora |
 | AtlasCloud Qwen Image Text-to-Image Plus | alibaba/qwen-image/text-to-image-plus |
 | AtlasCloud Qwen Image Text-to-Image Max | alibaba/qwen-image/text-to-image-max |
+| AtlasCloud Baidu ERNIE-Image-Turbo Text-to-Image | baidu/ERNIE-Image-Turbo/text-to-image |
 
 ### Video Extend
 
 | Node | Model |
 |------|-------|
 | AtlasCloud WAN2.2 Spicy Video Extend | alibaba/wan-2.2-spicy/video-extend |
+| AtlasCloud WAN2.2 Spicy Video Extend LoRA | alibaba/wan-2.2-spicy/video-extend-lora |
+| AtlasCloud WAN2.5 Video Extend | alibaba/wan-2.5/video-extend |
 
 ### Video Edit
 
