@@ -124,6 +124,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Seedance 2.0 Text-to-Video | bytedance/seedance-2.0/text-to-video |
 | AtlasCloud Seedance 2.0 Fast Text-to-Video | bytedance/seedance-2.0-fast/text-to-video |
 | AtlasCloud Seedance V1.5 Pro Text-to-Video Fast | bytedance/seedance-v1.5-pro/text-to-video-fast |
+| AtlasCloud Vidu Q1 Text-to-Video | vidu/q1/text-to-video |
+| AtlasCloud Vidu Q2 Text-to-Video | vidu/q2/text-to-video |
 | AtlasCloud Hunyuan Text-to-Video | atlascloud/hunyuan-video/t2v |
 
 ### Image-to-Video (I2V)
@@ -160,6 +162,17 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Vidu Reference-to-Video 2.0 | vidu/reference-to-video-2.0 |
 | AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video | vidu/q2-pro-fast/reference-to-video |
 | AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video (with Audio) | vidu/q2-pro-fast/reference-to-video-with-audio |
+| AtlasCloud Vidu Q1 Image-to-Video | vidu/q1/image-to-video |
+| AtlasCloud Vidu Q1 Start-End-to-Video | vidu/q1/start-end-to-video |
+| AtlasCloud Vidu Q1 Reference-to-Video | vidu/q1/reference-to-video |
+| AtlasCloud Vidu Q2 Reference-to-Video | vidu/q2/reference-to-video |
+| AtlasCloud Vidu Q2-Pro Image-to-Video | vidu/q2-pro/image-to-video |
+| AtlasCloud Vidu Q2-Pro Start-End-to-Video | vidu/q2-pro/start-end-to-video |
+| AtlasCloud Vidu Q2-Pro Reference-to-Video | vidu/q2-pro/reference-to-video |
+| AtlasCloud Vidu Q2-Pro-Fast Image-to-Video | vidu/q2-pro-fast/image-to-video |
+| AtlasCloud Vidu Q2-Pro-Fast Start-End-to-Video | vidu/q2-pro-fast/start-end-to-video |
+| AtlasCloud Vidu Q2-Turbo Image-to-Video | vidu/q2-turbo/image-to-video |
+| AtlasCloud Vidu Q2-Turbo Start-End-to-Video | vidu/q2-turbo/start-end-to-video |
 | AtlasCloud Vidu Start-End-to-Video 2.0 | vidu/start-end-to-video-2.0 |
 | AtlasCloud Kling V2.0 I2V Master | kwaivgi/kling-v2.0-i2v-master |
 | AtlasCloud Kling V2.1 I2V Master | kwaivgi/kling-v2.1-i2v-master |
@@ -218,6 +231,12 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Hunyuan Image-to-Video | atlascloud/hunyuan-video/i2v |
 | AtlasCloud WAN2.2 (AtlasCloud) Image-to-Video | atlascloud/wan-2.2/image-to-video |
 | AtlasCloud WAN2.2 (AtlasCloud) Image-to-Video LoRA | atlascloud/wan-2.2/image-to-video-lora |
+
+### Audio-to-Video (A2V)
+
+| Node | Model |
+|------|-------|
+| AtlasCloud InfiniteTalk Audio-to-Video | atlascloud/infinitetalk |
 
 ### Text-to-Image (T2I)
 

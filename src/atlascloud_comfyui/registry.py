@@ -189,6 +189,7 @@ from atlascloud_comfyui.nodes.video.van25_t2v import AtlasAtlascloudVan25TextToV
 from atlascloud_comfyui.nodes.video.van25_i2v import AtlasAtlascloudVan25ImageToVideo
 from atlascloud_comfyui.nodes.video.van26_t2v import AtlasVan26TextToVideo
 from atlascloud_comfyui.nodes.video.van26_i2v import AtlasVan26ImageToVideo
+from atlascloud_comfyui.nodes.video.atlascloud_infinitetalk_a2v import AtlasInfiniteTalkAudioToVideo
 from atlascloud_comfyui.nodes.video.vidu_reference_to_video_q1 import AtlasViduReferenceToVideoQ1
 from atlascloud_comfyui.nodes.video.vidu_reference_to_video_v2 import AtlasViduReferenceToVideoV2
 from atlascloud_comfyui.nodes.video.vidu_start_end_to_video_v2 import AtlasViduStartEndToVideoV2
@@ -234,6 +235,19 @@ from atlascloud_comfyui.nodes.video.google_veo31_lite_i2v import AtlasVeo31LiteI
 from atlascloud_comfyui.nodes.video.google_veo31_lite_start_end_frame_t2v import AtlasVeo31LiteStartEndFrameToVideo
 from atlascloud_comfyui.nodes.video.vidu_q3_r2v import AtlasViduQ3ReferenceToVideo
 from atlascloud_comfyui.nodes.video.vidu_q3_mix_r2v import AtlasViduQ3MixReferenceToVideo
+from atlascloud_comfyui.nodes.video.vidu_q1_t2v import AtlasViduQ1TextToVideo
+from atlascloud_comfyui.nodes.video.vidu_q1_i2v import AtlasViduQ1ImageToVideo
+from atlascloud_comfyui.nodes.video.vidu_q1_start_end import AtlasViduQ1StartEndToVideo
+from atlascloud_comfyui.nodes.video.vidu_q1_r2v import AtlasViduQ1ReferenceToVideo
+from atlascloud_comfyui.nodes.video.vidu_q2_t2v import AtlasViduQ2TextToVideo
+from atlascloud_comfyui.nodes.video.vidu_q2_r2v import AtlasViduQ2ReferenceToVideo
+from atlascloud_comfyui.nodes.video.vidu_q2_pro_i2v import AtlasViduQ2ProImageToVideo
+from atlascloud_comfyui.nodes.video.vidu_q2_pro_start_end import AtlasViduQ2ProStartEndToVideo
+from atlascloud_comfyui.nodes.video.vidu_q2_pro_r2v import AtlasViduQ2ProReferenceToVideo
+from atlascloud_comfyui.nodes.video.vidu_q2_pro_fast_i2v import AtlasViduQ2ProFastImageToVideo
+from atlascloud_comfyui.nodes.video.vidu_q2_pro_fast_start_end import AtlasViduQ2ProFastStartEndToVideo
+from atlascloud_comfyui.nodes.video.vidu_q2_turbo_i2v import AtlasViduQ2TurboImageToVideo
+from atlascloud_comfyui.nodes.video.vidu_q2_turbo_start_end import AtlasViduQ2TurboStartEndToVideo
 
 from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_lite_t2v_480p import AtlasBytedanceSeedanceV1LiteT2V480p
 from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_lite_i2v_720p import AtlasBytedanceSeedanceV1LiteI2V720p
@@ -444,6 +458,20 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Van-2.5 Image-to-Video": AtlasAtlascloudVan25ImageToVideo,
     "AtlasCloud Van-2.6 Text-to-Video": AtlasVan26TextToVideo,
     "AtlasCloud Van-2.6 Image-to-Video": AtlasVan26ImageToVideo,
+    "AtlasCloud InfiniteTalk Audio-to-Video": AtlasInfiniteTalkAudioToVideo,
+    "AtlasCloud Vidu Q1 Text-to-Video": AtlasViduQ1TextToVideo,
+    "AtlasCloud Vidu Q1 Image-to-Video": AtlasViduQ1ImageToVideo,
+    "AtlasCloud Vidu Q1 Start-End-to-Video": AtlasViduQ1StartEndToVideo,
+    "AtlasCloud Vidu Q1 Reference-to-Video": AtlasViduQ1ReferenceToVideo,
+    "AtlasCloud Vidu Q2 Text-to-Video": AtlasViduQ2TextToVideo,
+    "AtlasCloud Vidu Q2 Reference-to-Video": AtlasViduQ2ReferenceToVideo,
+    "AtlasCloud Vidu Q2-Pro Image-to-Video": AtlasViduQ2ProImageToVideo,
+    "AtlasCloud Vidu Q2-Pro Start-End-to-Video": AtlasViduQ2ProStartEndToVideo,
+    "AtlasCloud Vidu Q2-Pro Reference-to-Video": AtlasViduQ2ProReferenceToVideo,
+    "AtlasCloud Vidu Q2-Pro-Fast Image-to-Video": AtlasViduQ2ProFastImageToVideo,
+    "AtlasCloud Vidu Q2-Pro-Fast Start-End-to-Video": AtlasViduQ2ProFastStartEndToVideo,
+    "AtlasCloud Vidu Q2-Turbo Image-to-Video": AtlasViduQ2TurboImageToVideo,
+    "AtlasCloud Vidu Q2-Turbo Start-End-to-Video": AtlasViduQ2TurboStartEndToVideo,
     "AtlasCloud Vidu Reference-to-Video Q1": AtlasViduReferenceToVideoQ1,
     "AtlasCloud Vidu Reference-to-Video 2.0": AtlasViduReferenceToVideoV2,
     "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video": AtlasViduQ2ProFastReferenceToVideo,
@@ -669,6 +697,20 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Van-2.5 Image-to-Video": "AtlasCloud Van-2.5 Image-to-Video",
     "AtlasCloud Van-2.6 Text-to-Video": "AtlasCloud Van-2.6 Text-to-Video",
     "AtlasCloud Van-2.6 Image-to-Video": "AtlasCloud Van-2.6 Image-to-Video",
+    "AtlasCloud InfiniteTalk Audio-to-Video": "AtlasCloud InfiniteTalk Audio-to-Video",
+    "AtlasCloud Vidu Q1 Text-to-Video": "AtlasCloud Vidu Q1 Text-to-Video",
+    "AtlasCloud Vidu Q1 Image-to-Video": "AtlasCloud Vidu Q1 Image-to-Video",
+    "AtlasCloud Vidu Q1 Start-End-to-Video": "AtlasCloud Vidu Q1 Start-End-to-Video",
+    "AtlasCloud Vidu Q1 Reference-to-Video": "AtlasCloud Vidu Q1 Reference-to-Video",
+    "AtlasCloud Vidu Q2 Text-to-Video": "AtlasCloud Vidu Q2 Text-to-Video",
+    "AtlasCloud Vidu Q2 Reference-to-Video": "AtlasCloud Vidu Q2 Reference-to-Video",
+    "AtlasCloud Vidu Q2-Pro Image-to-Video": "AtlasCloud Vidu Q2-Pro Image-to-Video",
+    "AtlasCloud Vidu Q2-Pro Start-End-to-Video": "AtlasCloud Vidu Q2-Pro Start-End-to-Video",
+    "AtlasCloud Vidu Q2-Pro Reference-to-Video": "AtlasCloud Vidu Q2-Pro Reference-to-Video",
+    "AtlasCloud Vidu Q2-Pro-Fast Image-to-Video": "AtlasCloud Vidu Q2-Pro-Fast Image-to-Video",
+    "AtlasCloud Vidu Q2-Pro-Fast Start-End-to-Video": "AtlasCloud Vidu Q2-Pro-Fast Start-End-to-Video",
+    "AtlasCloud Vidu Q2-Turbo Image-to-Video": "AtlasCloud Vidu Q2-Turbo Image-to-Video",
+    "AtlasCloud Vidu Q2-Turbo Start-End-to-Video": "AtlasCloud Vidu Q2-Turbo Start-End-to-Video",
     "AtlasCloud Vidu Reference-to-Video Q1": "AtlasCloud Vidu Reference-to-Video Q1",
     "AtlasCloud Vidu Reference-to-Video 2.0": "AtlasCloud Vidu Reference-to-Video 2.0",
     "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video": "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video",
