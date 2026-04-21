@@ -238,7 +238,68 @@ def test_seedance_20_r2v_node_metadata():
     assert "atlas_client" in AtlasSeedance20ReferenceToVideo.INPUT_TYPES()["required"]
     assert "reference_images" in AtlasSeedance20ReferenceToVideo.INPUT_TYPES()["required"]
     assert "reference_videos" in AtlasSeedance20ReferenceToVideo.INPUT_TYPES()["required"]
-    assert AtlasSeedance20ReferenceToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_seedance_20_t2v_upscaled_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_t2v_upscaled import (
+        AtlasSeedance20TextToVideoUpscaled,
+    )
+
+    assert "atlas_client" in AtlasSeedance20TextToVideoUpscaled.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasSeedance20TextToVideoUpscaled.INPUT_TYPES()["required"]
+    assert AtlasSeedance20TextToVideoUpscaled.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_seedance_20_i2v_upscaled_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_i2v_upscaled import (
+        AtlasSeedance20ImageToVideoUpscaled,
+    )
+
+    assert "atlas_client" in AtlasSeedance20ImageToVideoUpscaled.INPUT_TYPES()["required"]
+    assert "image" in AtlasSeedance20ImageToVideoUpscaled.INPUT_TYPES()["required"]
+    assert AtlasSeedance20ImageToVideoUpscaled.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_seedance_20_r2v_upscaled_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_r2v_upscaled import (
+        AtlasSeedance20ReferenceToVideoUpscaled,
+    )
+
+    assert "atlas_client" in AtlasSeedance20ReferenceToVideoUpscaled.INPUT_TYPES()["required"]
+    assert "reference_images" in AtlasSeedance20ReferenceToVideoUpscaled.INPUT_TYPES()["required"]
+    assert "reference_videos" in AtlasSeedance20ReferenceToVideoUpscaled.INPUT_TYPES()["required"]
+    assert AtlasSeedance20ReferenceToVideoUpscaled.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_seedance_20_fast_t2v_upscaled_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_t2v_upscaled import (
+        AtlasSeedance20FastTextToVideoUpscaled,
+    )
+
+    assert "atlas_client" in AtlasSeedance20FastTextToVideoUpscaled.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasSeedance20FastTextToVideoUpscaled.INPUT_TYPES()["required"]
+    assert AtlasSeedance20FastTextToVideoUpscaled.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_seedance_20_fast_i2v_upscaled_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_i2v_upscaled import (
+        AtlasSeedance20FastImageToVideoUpscaled,
+    )
+
+    assert "atlas_client" in AtlasSeedance20FastImageToVideoUpscaled.INPUT_TYPES()["required"]
+    assert "image" in AtlasSeedance20FastImageToVideoUpscaled.INPUT_TYPES()["required"]
+    assert AtlasSeedance20FastImageToVideoUpscaled.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_seedance_20_fast_r2v_upscaled_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_r2v_upscaled import (
+        AtlasSeedance20FastReferenceToVideoUpscaled,
+    )
+
+    assert "atlas_client" in AtlasSeedance20FastReferenceToVideoUpscaled.INPUT_TYPES()["required"]
+    assert "reference_images" in AtlasSeedance20FastReferenceToVideoUpscaled.INPUT_TYPES()["required"]
+    assert "reference_videos" in AtlasSeedance20FastReferenceToVideoUpscaled.INPUT_TYPES()["required"]
+    assert AtlasSeedance20FastReferenceToVideoUpscaled.RETURN_TYPES == ("STRING", "STRING")
 
 
 def test_seedance_20_fast_t2v_node_metadata():

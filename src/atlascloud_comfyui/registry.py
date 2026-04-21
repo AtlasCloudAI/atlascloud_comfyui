@@ -226,6 +226,12 @@ from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_r2v import AtlasSeeda
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_t2v import AtlasSeedance20FastTextToVideo
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_i2v import AtlasSeedance20FastImageToVideo
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_r2v import AtlasSeedance20FastReferenceToVideo
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_t2v_upscaled import AtlasSeedance20TextToVideoUpscaled
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_i2v_upscaled import AtlasSeedance20ImageToVideoUpscaled
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_r2v_upscaled import AtlasSeedance20ReferenceToVideoUpscaled
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_t2v_upscaled import AtlasSeedance20FastTextToVideoUpscaled
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_i2v_upscaled import AtlasSeedance20FastImageToVideoUpscaled
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_r2v_upscaled import AtlasSeedance20FastReferenceToVideoUpscaled
 from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_t2v import AtlasWan27TextToVideo
 from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_i2v import AtlasWan27ImageToVideo
 from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_r2v import AtlasWan27ReferenceToVideo
@@ -319,6 +325,12 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Seedance 2.0 Fast Text-to-Video": AtlasSeedance20FastTextToVideo,
     "AtlasCloud Seedance 2.0 Fast Image-to-Video": AtlasSeedance20FastImageToVideo,
     "AtlasCloud Seedance 2.0 Fast Reference-to-Video": AtlasSeedance20FastReferenceToVideo,
+    "AtlasCloud Seedance 2.0 Text-to-Video Upscaled": AtlasSeedance20TextToVideoUpscaled,
+    "AtlasCloud Seedance 2.0 Image-to-Video Upscaled": AtlasSeedance20ImageToVideoUpscaled,
+    "AtlasCloud Seedance 2.0 Reference-to-Video Upscaled": AtlasSeedance20ReferenceToVideoUpscaled,
+    "AtlasCloud Seedance 2.0 Fast Text-to-Video Upscaled": AtlasSeedance20FastTextToVideoUpscaled,
+    "AtlasCloud Seedance 2.0 Fast Image-to-Video Upscaled": AtlasSeedance20FastImageToVideoUpscaled,
+    "AtlasCloud Seedance 2.0 Fast Reference-to-Video Upscaled": AtlasSeedance20FastReferenceToVideoUpscaled,
     "AtlasCloud WAN2.7 Text-to-Video": AtlasWan27TextToVideo,
     "AtlasCloud WAN2.7 Image-to-Video": AtlasWan27ImageToVideo,
     "AtlasCloud WAN2.7 Reference-to-Video": AtlasWan27ReferenceToVideo,
@@ -557,6 +569,12 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Seedance 2.0 Fast Text-to-Video": "AtlasCloud Seedance 2.0 Fast Text-to-Video",
     "AtlasCloud Seedance 2.0 Fast Image-to-Video": "AtlasCloud Seedance 2.0 Fast Image-to-Video",
     "AtlasCloud Seedance 2.0 Fast Reference-to-Video": "AtlasCloud Seedance 2.0 Fast Reference-to-Video",
+    "AtlasCloud Seedance 2.0 Text-to-Video Upscaled": "AtlasCloud Seedance 2.0 Text-to-Video Upscaled",
+    "AtlasCloud Seedance 2.0 Image-to-Video Upscaled": "AtlasCloud Seedance 2.0 Image-to-Video Upscaled",
+    "AtlasCloud Seedance 2.0 Reference-to-Video Upscaled": "AtlasCloud Seedance 2.0 Reference-to-Video Upscaled",
+    "AtlasCloud Seedance 2.0 Fast Text-to-Video Upscaled": "AtlasCloud Seedance 2.0 Fast Text-to-Video Upscaled",
+    "AtlasCloud Seedance 2.0 Fast Image-to-Video Upscaled": "AtlasCloud Seedance 2.0 Fast Image-to-Video Upscaled",
+    "AtlasCloud Seedance 2.0 Fast Reference-to-Video Upscaled": "AtlasCloud Seedance 2.0 Fast Reference-to-Video Upscaled",
     "AtlasCloud WAN2.7 Text-to-Video": "AtlasCloud WAN2.7 Text-to-Video",
     "AtlasCloud WAN2.7 Image-to-Video": "AtlasCloud WAN2.7 Image-to-Video",
     "AtlasCloud WAN2.7 Reference-to-Video": "AtlasCloud WAN2.7 Reference-to-Video",
