@@ -123,6 +123,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Seedance V1.5 Pro Text-to-Video | bytedance/seedance-v1.5-pro/text-to-video |
 | AtlasCloud Seedance 2.0 Text-to-Video | bytedance/seedance-2.0/text-to-video |
 | AtlasCloud Seedance 2.0 Fast Text-to-Video | bytedance/seedance-2.0-fast/text-to-video |
+| AtlasCloud Seedance 2.0 Text-to-Video Upscaled | bytedance/seedance-2.0/text-to-video-upscaled |
+| AtlasCloud Seedance 2.0 Fast Text-to-Video Upscaled | bytedance/seedance-2.0-fast/text-to-video-upscaled |
 | AtlasCloud Seedance V1.5 Pro Text-to-Video Fast | bytedance/seedance-v1.5-pro/text-to-video-fast |
 | AtlasCloud Vidu Q1 Text-to-Video | vidu/q1/text-to-video |
 | AtlasCloud Vidu Q2 Text-to-Video | vidu/q2/text-to-video |
@@ -138,6 +140,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud VEO3.1 Reference-to-Video | google/veo3.1/reference-to-video |
 | AtlasCloud Seedance 2.0 Reference-to-Video | bytedance/seedance-2.0/reference-to-video |
 | AtlasCloud Seedance 2.0 Fast Reference-to-Video | bytedance/seedance-2.0-fast/reference-to-video |
+| AtlasCloud Seedance 2.0 Reference-to-Video Upscaled | bytedance/seedance-2.0/reference-to-video-upscaled |
+| AtlasCloud Seedance 2.0 Fast Reference-to-Video Upscaled | bytedance/seedance-2.0-fast/reference-to-video-upscaled |
 | AtlasCloud Vidu Q3 Reference-to-Video | vidu/q3/reference-to-video |
 | AtlasCloud Vidu Q3-Mix Reference-to-Video | vidu/q3-mix/reference-to-video |
 | AtlasCloud VEO3.1 Image-to-Video | google/veo3.1/image-to-video |
@@ -209,6 +213,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Seedance V1.5 Pro Image-to-Video | bytedance/seedance-v1.5-pro/image-to-video |
 | AtlasCloud Seedance 2.0 Image-to-Video | bytedance/seedance-2.0/image-to-video |
 | AtlasCloud Seedance 2.0 Fast Image-to-Video | bytedance/seedance-2.0-fast/image-to-video |
+| AtlasCloud Seedance 2.0 Image-to-Video Upscaled | bytedance/seedance-2.0/image-to-video-upscaled |
+| AtlasCloud Seedance 2.0 Fast Image-to-Video Upscaled | bytedance/seedance-2.0-fast/image-to-video-upscaled |
 | AtlasCloud Seedance V1.5 Pro Image-to-Video (Spicy) | bytedance/seedance-v1.5-pro/image-to-video-spicy |
 | AtlasCloud Seedance V1 Lite I2V 1080p | bytedance/seedance-v1-lite-i2v-1080p |
 | AtlasCloud Seedance V1 Lite I2V 720p | bytedance/seedance-v1-lite-i2v-720p |
