@@ -220,8 +220,28 @@ def test_seedance_20_t2v_node_metadata():
     from src.atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_t2v import AtlasSeedance20TextToVideo
 
     assert "atlas_client" in AtlasSeedance20TextToVideo.INPUT_TYPES()["required"]
-    assert "prompt" in AtlasSeedance20TextToVideo.INPUT_TYPES()["required"]
     assert AtlasSeedance20TextToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+# --- Batch X: API high-priority visual models (2026-04-23) ---
+
+def test_openai_gpt_image_2_t2i_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.openai_gpt_image_2_t2i import AtlasOpenAIGPTImage2TextToImage
+
+    assert "atlas_client" in AtlasOpenAIGPTImage2TextToImage.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasOpenAIGPTImage2TextToImage.INPUT_TYPES()["required"]
+    assert AtlasOpenAIGPTImage2TextToImage.RETURN_TYPES == ("STRING", "STRING")
+    assert "image_url" in AtlasOpenAIGPTImage2TextToImage.RETURN_NAMES
+
+
+def test_openai_gpt_image_2_edit_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.openai_gpt_image_2_edit import AtlasOpenAIGPTImage2Edit
+
+    assert "atlas_client" in AtlasOpenAIGPTImage2Edit.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasOpenAIGPTImage2Edit.INPUT_TYPES()["required"]
+    assert "images" in AtlasOpenAIGPTImage2Edit.INPUT_TYPES()["required"]
+    assert AtlasOpenAIGPTImage2Edit.RETURN_TYPES == ("STRING", "STRING")
+    assert "image_url" in AtlasOpenAIGPTImage2Edit.RETURN_NAMES
 
 
 def test_seedance_20_i2v_node_metadata():

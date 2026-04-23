@@ -174,6 +174,8 @@ from atlascloud_comfyui.nodes.image.openai_gpt_image_1_mini_t2i import AtlasOpen
 from atlascloud_comfyui.nodes.image.openai_gpt_image_1_mini_edit import AtlasOpenAIGPTImage1MiniEdit
 from atlascloud_comfyui.nodes.image.openai_gpt_image_15_t2i import AtlasOpenAIGPTImage15TextToImage
 from atlascloud_comfyui.nodes.image.openai_gpt_image_15_edit import AtlasOpenAIGPTImage15Edit
+from atlascloud_comfyui.nodes.image.openai_gpt_image_2_t2i import AtlasOpenAIGPTImage2TextToImage
+from atlascloud_comfyui.nodes.image.openai_gpt_image_2_edit import AtlasOpenAIGPTImage2Edit
 from atlascloud_comfyui.nodes.image.qwen_image_20_t2i import AtlasQwenImage20TextToImage
 from atlascloud_comfyui.nodes.image.qwen_image_20_edit import AtlasQwenImage20Edit
 from atlascloud_comfyui.nodes.image.qwen_image_20_pro_t2i import AtlasQwenImage20ProTextToImage
@@ -453,6 +455,8 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud GPT Image-1 Mini Edit": AtlasOpenAIGPTImage1MiniEdit,
     "AtlasCloud GPT Image-1.5 Text-to-Image": AtlasOpenAIGPTImage15TextToImage,
     "AtlasCloud GPT Image-1.5 Edit": AtlasOpenAIGPTImage15Edit,
+    "AtlasCloud GPT Image-2 Text-to-Image": AtlasOpenAIGPTImage2TextToImage,
+    "AtlasCloud GPT Image-2 Edit": AtlasOpenAIGPTImage2Edit,
     "AtlasCloud Qwen Image 2.0 Text-to-Image": AtlasQwenImage20TextToImage,
     "AtlasCloud Qwen Image 2.0 Edit": AtlasQwenImage20Edit,
     "AtlasCloud Qwen Image 2.0 Pro Text-to-Image": AtlasQwenImage20ProTextToImage,
