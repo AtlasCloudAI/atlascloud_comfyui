@@ -244,6 +244,27 @@ def test_openai_gpt_image_2_edit_node_metadata():
     assert "image_url" in AtlasOpenAIGPTImage2Edit.RETURN_NAMES
 
 
+def test_openai_gpt_image_2_developer_t2i_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.openai_gpt_image_2_dev_t2i import (
+        AtlasOpenAIGPTImage2DeveloperTextToImage,
+    )
+
+    assert "atlas_client" in AtlasOpenAIGPTImage2DeveloperTextToImage.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasOpenAIGPTImage2DeveloperTextToImage.INPUT_TYPES()["required"]
+    assert AtlasOpenAIGPTImage2DeveloperTextToImage.RETURN_TYPES == ("STRING", "STRING")
+    assert "image_url" in AtlasOpenAIGPTImage2DeveloperTextToImage.RETURN_NAMES
+
+
+def test_openai_gpt_image_2_developer_edit_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.openai_gpt_image_2_dev_edit import AtlasOpenAIGPTImage2DeveloperEdit
+
+    assert "atlas_client" in AtlasOpenAIGPTImage2DeveloperEdit.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasOpenAIGPTImage2DeveloperEdit.INPUT_TYPES()["required"]
+    assert "images" in AtlasOpenAIGPTImage2DeveloperEdit.INPUT_TYPES()["required"]
+    assert AtlasOpenAIGPTImage2DeveloperEdit.RETURN_TYPES == ("STRING", "STRING")
+    assert "image_url" in AtlasOpenAIGPTImage2DeveloperEdit.RETURN_NAMES
+
+
 def test_seedance_20_i2v_node_metadata():
     from src.atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_i2v import AtlasSeedance20ImageToVideo
 
