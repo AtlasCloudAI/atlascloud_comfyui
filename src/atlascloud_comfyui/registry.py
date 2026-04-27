@@ -240,6 +240,10 @@ from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_t2v import AtlasWan27TextToV
 from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_i2v import AtlasWan27ImageToVideo
 from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_r2v import AtlasWan27ReferenceToVideo
 from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_video_edit import AtlasWan27VideoEdit
+from atlascloud_comfyui.nodes.video.alibaba_happyhorse_1_0_t2v import AtlasHappyHorse10TextToVideo
+from atlascloud_comfyui.nodes.video.alibaba_happyhorse_1_0_i2v import AtlasHappyHorse10ImageToVideo
+from atlascloud_comfyui.nodes.video.alibaba_happyhorse_1_0_r2v import AtlasHappyHorse10ReferenceToVideo
+from atlascloud_comfyui.nodes.video.alibaba_happyhorse_1_0_video_edit import AtlasHappyHorse10VideoEdit
 from atlascloud_comfyui.nodes.video.google_veo31_lite_t2v import AtlasVeo31LiteTextToVideo
 from atlascloud_comfyui.nodes.video.google_veo31_lite_i2v import AtlasVeo31LiteImageToVideo
 from atlascloud_comfyui.nodes.video.google_veo31_lite_start_end_frame_t2v import AtlasVeo31LiteStartEndFrameToVideo
@@ -339,6 +343,10 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud WAN2.7 Image-to-Video": AtlasWan27ImageToVideo,
     "AtlasCloud WAN2.7 Reference-to-Video": AtlasWan27ReferenceToVideo,
     "AtlasCloud WAN2.7 Video-Edit": AtlasWan27VideoEdit,
+    "AtlasCloud HappyHorse 1.0 Text-to-Video": AtlasHappyHorse10TextToVideo,
+    "AtlasCloud HappyHorse 1.0 Image-to-Video": AtlasHappyHorse10ImageToVideo,
+    "AtlasCloud HappyHorse 1.0 Reference-to-Video": AtlasHappyHorse10ReferenceToVideo,
+    "AtlasCloud HappyHorse 1.0 Video-Edit": AtlasHappyHorse10VideoEdit,
     "AtlasCloud VEO3.1 Lite Text-to-Video": AtlasVeo31LiteTextToVideo,
     "AtlasCloud VEO3.1 Lite Image-to-Video": AtlasVeo31LiteImageToVideo,
     "AtlasCloud VEO3.1 Lite Start-End Frame-to-Video": AtlasVeo31LiteStartEndFrameToVideo,
@@ -587,6 +595,10 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud WAN2.7 Image-to-Video": "AtlasCloud WAN2.7 Image-to-Video",
     "AtlasCloud WAN2.7 Reference-to-Video": "AtlasCloud WAN2.7 Reference-to-Video",
     "AtlasCloud WAN2.7 Video-Edit": "AtlasCloud WAN2.7 Video-Edit",
+    "AtlasCloud HappyHorse 1.0 Text-to-Video": "AtlasCloud HappyHorse 1.0 Text-to-Video",
+    "AtlasCloud HappyHorse 1.0 Image-to-Video": "AtlasCloud HappyHorse 1.0 Image-to-Video",
+    "AtlasCloud HappyHorse 1.0 Reference-to-Video": "AtlasCloud HappyHorse 1.0 Reference-to-Video",
+    "AtlasCloud HappyHorse 1.0 Video-Edit": "AtlasCloud HappyHorse 1.0 Video-Edit",
     "AtlasCloud VEO3.1 Lite Text-to-Video": "AtlasCloud VEO3.1 Lite Text-to-Video",
     "AtlasCloud VEO3.1 Lite Image-to-Video": "AtlasCloud VEO3.1 Lite Image-to-Video",
     "AtlasCloud VEO3.1 Lite Start-End Frame-to-Video": "AtlasCloud VEO3.1 Lite Start-End Frame-to-Video",

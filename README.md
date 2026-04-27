@@ -81,6 +81,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud VEO2 Text-to-Video | google/veo2 |
 | AtlasCloud WAN2.6 Text-to-Video | alibaba/wan-2.6/text-to-video |
 | AtlasCloud WAN2.7 Text-to-Video | alibaba/wan-2.7/text-to-video |
+| AtlasCloud HappyHorse 1.0 Text-to-Video | alibaba/happyhorse-1.0/text-to-video |
 | AtlasCloud WAN2.6 Video-to-Video | alibaba/wan-2.6/video-to-video |
 | AtlasCloud Kling Video O3 Pro Text-to-Video | kwaivgi/kling-video-o3-pro/text-to-video |
 | AtlasCloud Kling Video O3 Std Text-to-Video | kwaivgi/kling-video-o3-std/text-to-video |
@@ -189,6 +190,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Kling Effects | kwaivgi/kling-effects |
 | AtlasCloud WAN2.6 Image-to-Video | alibaba/wan-2.6/image-to-video |
 | AtlasCloud WAN2.7 Image-to-Video | alibaba/wan-2.7/image-to-video |
+| AtlasCloud HappyHorse 1.0 Image-to-Video | alibaba/happyhorse-1.0/image-to-video |
+| AtlasCloud HappyHorse 1.0 Reference-to-Video | alibaba/happyhorse-1.0/reference-to-video |
 | AtlasCloud WAN2.7 Reference-to-Video | alibaba/wan-2.7/reference-to-video |
 | AtlasCloud WAN2.6 Image-to-Video Flash | alibaba/wan-2.6/image-to-video-flash |
 | AtlasCloud Kling Video O3 Pro Image-to-Video | kwaivgi/kling-video-o3-pro/image-to-video |
@@ -302,6 +305,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Kling Video O3 Pro Video-Edit | kwaivgi/kling-video-o3-pro/video-edit |
 | AtlasCloud Kling Video O3 Std Video-Edit | kwaivgi/kling-video-o3-std/video-edit |
 | AtlasCloud WAN2.7 Video-Edit | alibaba/wan-2.7/video-edit |
+| AtlasCloud HappyHorse 1.0 Video-Edit | alibaba/happyhorse-1.0/video-edit |
 
 ### Image Edit
 
