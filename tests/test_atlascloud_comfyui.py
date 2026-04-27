@@ -402,6 +402,42 @@ def test_wan27_video_edit_node_metadata():
     assert AtlasWan27VideoEdit.RETURN_TYPES == ("STRING", "STRING")
 
 
+# --- Batch Y: API high-priority visual models (2026-04-27) ---
+
+def test_happyhorse_10_t2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.alibaba_happyhorse_1_0_t2v import AtlasHappyHorse10TextToVideo
+
+    assert "atlas_client" in AtlasHappyHorse10TextToVideo.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasHappyHorse10TextToVideo.INPUT_TYPES()["required"]
+    assert AtlasHappyHorse10TextToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_happyhorse_10_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.alibaba_happyhorse_1_0_i2v import AtlasHappyHorse10ImageToVideo
+
+    assert "atlas_client" in AtlasHappyHorse10ImageToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasHappyHorse10ImageToVideo.INPUT_TYPES()["required"]
+    assert AtlasHappyHorse10ImageToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_happyhorse_10_r2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.alibaba_happyhorse_1_0_r2v import AtlasHappyHorse10ReferenceToVideo
+
+    assert "atlas_client" in AtlasHappyHorse10ReferenceToVideo.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasHappyHorse10ReferenceToVideo.INPUT_TYPES()["required"]
+    assert "images" in AtlasHappyHorse10ReferenceToVideo.INPUT_TYPES()["required"]
+    assert AtlasHappyHorse10ReferenceToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_happyhorse_10_video_edit_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.alibaba_happyhorse_1_0_video_edit import AtlasHappyHorse10VideoEdit
+
+    assert "atlas_client" in AtlasHappyHorse10VideoEdit.INPUT_TYPES()["required"]
+    assert "video" in AtlasHappyHorse10VideoEdit.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasHappyHorse10VideoEdit.INPUT_TYPES()["required"]
+    assert AtlasHappyHorse10VideoEdit.RETURN_TYPES == ("STRING", "STRING")
+
+
 def test_veo31_lite_t2v_node_metadata():
     from src.atlascloud_comfyui.nodes.video.google_veo31_lite_t2v import AtlasVeo31LiteTextToVideo
 
