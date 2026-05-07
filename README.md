@@ -158,6 +158,10 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud WAN2.2 Animate Move | alibaba/wan-2.2/animate-move |
 | AtlasCloud WAN2.2 Image-to-Video 720p | alibaba/wan-2.2/i2v-720p |
 | AtlasCloud WAN2.2 Image-to-Video 480p | alibaba/wan-2.2/i2v-480p |
+| AtlasCloud Wan 2.2 Turbo Infinite Image-to-Video | atlascloud/wan-2.2-turbo/infinite-image-to-video |
+| AtlasCloud Wan 2.2 Turbo Infinite Image-to-Video LoRA | atlascloud/wan-2.2-turbo/infinite-image-to-video-lora |
+| AtlasCloud Wan 2.2 Turbo Spicy Infinite Image-to-Video | atlascloud/wan-2.2-turbo-spicy/infinite-image-to-video |
+| AtlasCloud Wan 2.2 Turbo Spicy Infinite Image-to-Video LoRA | atlascloud/wan-2.2-turbo-spicy/infinite-image-to-video-lora |
 | AtlasCloud Van-2.6 Image-to-Video | atlascloud/van-2.6/image-to-video |
 | AtlasCloud Seedance V1 Pro Fast Image-to-Video | bytedance/seedance-v1-pro-fast/image-to-video |
 | AtlasCloud Seedance V1 Pro I2V 1080p | bytedance/seedance-v1-pro-i2v-1080p |

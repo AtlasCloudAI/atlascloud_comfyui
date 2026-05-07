@@ -189,6 +189,18 @@ from atlascloud_comfyui.nodes.video.wan25_fast_t2v import AtlasWAN25TextToVideoF
 from atlascloud_comfyui.nodes.video.wan25_fast_i2v import AtlasWAN25ImageToVideoFast
 from atlascloud_comfyui.nodes.video.wan22_animate_mix import AtlasWan22AnimateMix
 from atlascloud_comfyui.nodes.video.wan22_animate_move import AtlasWan22AnimateMove
+from atlascloud_comfyui.nodes.video.atlascloud_wan_2_2_turbo_infinite_i2v import (
+    AtlasWan22TurboInfiniteImageToVideo,
+)
+from atlascloud_comfyui.nodes.video.atlascloud_wan_2_2_turbo_infinite_i2v_lora import (
+    AtlasWan22TurboInfiniteImageToVideoLoRA,
+)
+from atlascloud_comfyui.nodes.video.atlascloud_wan_2_2_turbo_spicy_infinite_i2v import (
+    AtlasWan22TurboSpicyInfiniteImageToVideo,
+)
+from atlascloud_comfyui.nodes.video.atlascloud_wan_2_2_turbo_spicy_infinite_i2v_lora import (
+    AtlasWan22TurboSpicyInfiniteImageToVideoLoRA,
+)
 from atlascloud_comfyui.nodes.video.van25_t2v import AtlasAtlascloudVan25TextToVideo
 from atlascloud_comfyui.nodes.video.van25_i2v import AtlasAtlascloudVan25ImageToVideo
 from atlascloud_comfyui.nodes.video.van26_t2v import AtlasVan26TextToVideo
@@ -435,6 +447,10 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud WAN2.2 Image-to-Video 480p": AtlasAlibabaWan22I2V480p,
     "AtlasCloud WAN2.2 Animate Mix": AtlasWan22AnimateMix,
     "AtlasCloud WAN2.2 Animate Move": AtlasWan22AnimateMove,
+    "AtlasCloud Wan 2.2 Turbo Infinite Image-to-Video": AtlasWan22TurboInfiniteImageToVideo,
+    "AtlasCloud Wan 2.2 Turbo Infinite Image-to-Video LoRA": AtlasWan22TurboInfiniteImageToVideoLoRA,
+    "AtlasCloud Wan 2.2 Turbo Spicy Infinite Image-to-Video": AtlasWan22TurboSpicyInfiniteImageToVideo,
+    "AtlasCloud Wan 2.2 Turbo Spicy Infinite Image-to-Video LoRA": AtlasWan22TurboSpicyInfiniteImageToVideoLoRA,
     "AtlasCloud Imagen4 Ultra Text-to-Image": AtlasImagen4UltraTextToImage,
     "AtlasCloud Imagen3 Text-to-Image": AtlasImagen3TextToImage,
     "AtlasCloud Imagen3 Fast Text-to-Image": AtlasImagen3FastTextToImage,
@@ -688,6 +704,10 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud WAN2.2 Image-to-Video 480p": "AtlasCloud WAN2.2 Image-to-Video 480p",
     "AtlasCloud WAN2.2 Animate Mix": "AtlasCloud WAN2.2 Animate Mix",
     "AtlasCloud WAN2.2 Animate Move": "AtlasCloud WAN2.2 Animate Move",
+    "AtlasCloud Wan 2.2 Turbo Infinite Image-to-Video": "AtlasCloud Wan 2.2 Turbo Infinite Image-to-Video",
+    "AtlasCloud Wan 2.2 Turbo Infinite Image-to-Video LoRA": "AtlasCloud Wan 2.2 Turbo Infinite Image-to-Video LoRA",
+    "AtlasCloud Wan 2.2 Turbo Spicy Infinite Image-to-Video": "AtlasCloud Wan 2.2 Turbo Spicy Infinite Image-to-Video",
+    "AtlasCloud Wan 2.2 Turbo Spicy Infinite Image-to-Video LoRA": "AtlasCloud Wan 2.2 Turbo Spicy Infinite Image-to-Video LoRA",
     "AtlasCloud Imagen4 Ultra Text-to-Image": "AtlasCloud Imagen4 Ultra Text-to-Image",
     "AtlasCloud Imagen3 Text-to-Image": "AtlasCloud Imagen3 Text-to-Image",
     "AtlasCloud Imagen3 Fast Text-to-Image": "AtlasCloud Imagen3 Fast Text-to-Image",
