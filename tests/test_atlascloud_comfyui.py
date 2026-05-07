@@ -180,6 +180,52 @@ def test_wan22_turbo_spicy_i2v_lora_node_metadata():
     assert AtlasWan22TurboSpicyImageToVideoLora.RETURN_TYPES == ("STRING", "STRING")
 
 
+# --- Batch: Wan 2.2 Turbo Infinite I2V (2026-05-07) ---
+
+def test_wan22_turbo_infinite_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.atlascloud_wan_2_2_turbo_infinite_i2v import (
+        AtlasWan22TurboInfiniteImageToVideo,
+    )
+
+    assert "atlas_client" in AtlasWan22TurboInfiniteImageToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasWan22TurboInfiniteImageToVideo.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasWan22TurboInfiniteImageToVideo.INPUT_TYPES()["required"]
+    assert AtlasWan22TurboInfiniteImageToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_wan22_turbo_infinite_i2v_lora_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.atlascloud_wan_2_2_turbo_infinite_i2v_lora import (
+        AtlasWan22TurboInfiniteImageToVideoLoRA,
+    )
+
+    assert "atlas_client" in AtlasWan22TurboInfiniteImageToVideoLoRA.INPUT_TYPES()["required"]
+    assert "image" in AtlasWan22TurboInfiniteImageToVideoLoRA.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasWan22TurboInfiniteImageToVideoLoRA.INPUT_TYPES()["required"]
+    assert AtlasWan22TurboInfiniteImageToVideoLoRA.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_wan22_turbo_spicy_infinite_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.atlascloud_wan_2_2_turbo_spicy_infinite_i2v import (
+        AtlasWan22TurboSpicyInfiniteImageToVideo,
+    )
+
+    assert "atlas_client" in AtlasWan22TurboSpicyInfiniteImageToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasWan22TurboSpicyInfiniteImageToVideo.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasWan22TurboSpicyInfiniteImageToVideo.INPUT_TYPES()["required"]
+    assert AtlasWan22TurboSpicyInfiniteImageToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_wan22_turbo_spicy_infinite_i2v_lora_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.atlascloud_wan_2_2_turbo_spicy_infinite_i2v_lora import (
+        AtlasWan22TurboSpicyInfiniteImageToVideoLoRA,
+    )
+
+    assert "atlas_client" in AtlasWan22TurboSpicyInfiniteImageToVideoLoRA.INPUT_TYPES()["required"]
+    assert "image" in AtlasWan22TurboSpicyInfiniteImageToVideoLoRA.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasWan22TurboSpicyInfiniteImageToVideoLoRA.INPUT_TYPES()["required"]
+    assert AtlasWan22TurboSpicyInfiniteImageToVideoLoRA.RETURN_TYPES == ("STRING", "STRING")
+
+
 def test_wan22_spicy_video_extend_lora_node_metadata():
     from src.atlascloud_comfyui.nodes.video.alibaba_wan_2_2_spicy_video_extend_lora import AtlasWan22SpicyVideoExtendLora
 
