@@ -1037,3 +1037,12 @@ def test_qwen_image_20_pro_edit_node_metadata():
     assert "atlas_client" in AtlasQwenImage20ProEdit.INPUT_TYPES()["required"]
     assert "images" in AtlasQwenImage20ProEdit.INPUT_TYPES()["required"]
     assert AtlasQwenImage20ProEdit.RETURN_TYPES == ("STRING", "STRING")
+
+def test_wan22_turbo_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.wan22_turbo_i2v import AtlasWan22TurboImageToVideo
+
+    assert "atlas_client" in AtlasWan22TurboImageToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasWan22TurboImageToVideo.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasWan22TurboImageToVideo.INPUT_TYPES()["required"]
+    assert AtlasWan22TurboImageToVideo.RETURN_TYPES == ("STRING", "STRING")
+    assert "video_url" in AtlasWan22TurboImageToVideo.RETURN_NAMES
