@@ -180,6 +180,16 @@ def test_wan22_turbo_spicy_i2v_lora_node_metadata():
     assert AtlasWan22TurboSpicyImageToVideoLora.RETURN_TYPES == ("STRING", "STRING")
 
 
+def test_wan26_spicy_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.atlascloud_wan_2_6_spicy_i2v import AtlasWan26SpicyImageToVideo
+
+    assert "atlas_client" in AtlasWan26SpicyImageToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasWan26SpicyImageToVideo.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasWan26SpicyImageToVideo.INPUT_TYPES()["required"]
+    assert "resolution" in AtlasWan26SpicyImageToVideo.INPUT_TYPES()["required"]
+    assert AtlasWan26SpicyImageToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
 # --- Batch: Wan 2.2 Turbo Infinite I2V (2026-05-07) ---
 
 def test_wan22_turbo_infinite_i2v_node_metadata():
