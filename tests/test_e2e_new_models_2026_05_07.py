@@ -29,10 +29,15 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 _HAS_KEY = bool(os.getenv("ATLASCLOUD_API_KEY", "").strip())
 _OPT_IN = bool(os.getenv("ATLASCLOUD_RUN_WAN22_INFINITE_E2E", "").strip())
 
-skip_no_key = pytest.mark.skipif(not _HAS_KEY, reason="ATLASCLOUD_API_KEY not set")
+_SKIP_E2E = os.getenv("ATLASCLOUD_RUN_E2E", "").strip() != "1"
+
+skip_no_key = pytest.mark.skipif(
+    (not _HAS_KEY) or _SKIP_E2E,
+    reason="E2E disabled (set ATLASCLOUD_RUN_E2E=1) or ATLASCLOUD_API_KEY not set",
+)
 skip_no_opt_in = pytest.mark.skipif(
-    not _OPT_IN,
-    reason="Set ATLASCLOUD_RUN_WAN22_INFINITE_E2E=1 to run (avoid queue/credit hangs by default)",
+    (not _OPT_IN) or _SKIP_E2E,
+    reason="Set ATLASCLOUD_RUN_WAN22_INFINITE_E2E=1 and ATLASCLOUD_RUN_E2E=1 to run (avoid queue/credit hangs by default)",
 )
 
 from atlascloud_comfyui.client.atlas_client import AtlasClient

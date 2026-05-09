@@ -193,6 +193,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Kling V1.6 I2V Standard | kwaivgi/kling-v1.6-i2v-standard |
 | AtlasCloud Kling Effects | kwaivgi/kling-effects |
 | AtlasCloud WAN2.6 Image-to-Video | alibaba/wan-2.6/image-to-video |
+| AtlasCloud WAN2.6 Spicy Image-to-Video | atlascloud/wan-2.6-spicy/image-to-video |
 | AtlasCloud WAN2.7 Image-to-Video | alibaba/wan-2.7/image-to-video |
 | AtlasCloud HappyHorse 1.0 Image-to-Video | alibaba/happyhorse-1.0/image-to-video |
 | AtlasCloud HappyHorse 1.0 Reference-to-Video | alibaba/happyhorse-1.0/reference-to-video |
