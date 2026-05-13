@@ -220,6 +220,12 @@ from atlascloud_comfyui.nodes.video.kling_v21_i2v_master import AtlasKlingV21I2V
 from atlascloud_comfyui.nodes.video.kling_v21_i2v_pro_start_end_frame import AtlasKlingV21I2VProStartEndFrame
 from atlascloud_comfyui.nodes.video.kwaivgi_kling_v2_1_i2v_pro import AtlasKwaivgiKlingV21I2VPro
 from atlascloud_comfyui.nodes.video.kwaivgi_kling_v2_1_i2v_standard import AtlasKwaivgiKlingV21I2VStandard
+
+from atlascloud_comfyui.nodes.video.atlascloud_video_upscaler_v2v import AtlasVideoUpscalerVideoToVideo
+from atlascloud_comfyui.nodes.video.veed_fabric_10_fast_i2v import AtlasVeedFabric10FastImageToVideo
+from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_quality_t2i import AtlasGrokImagineImageQualityTextToImage
+from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_quality_edit import AtlasGrokImagineImageQualityEdit
+
 from atlascloud_comfyui.nodes.video.kling_v16_multi_i2v_pro import AtlasKlingV16MultiI2VPro
 from atlascloud_comfyui.nodes.video.kling_v16_multi_i2v_standard import AtlasKlingV16MultiI2VStandard
 from atlascloud_comfyui.nodes.video.kling_v16_i2v_standard import AtlasKlingV16I2VStandard
@@ -525,6 +531,13 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video": AtlasViduQ2ProFastReferenceToVideo,
     "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video (with Audio)": AtlasViduQ2ProFastReferenceToVideoWithAudio,
     "AtlasCloud Vidu Start-End-to-Video 2.0": AtlasViduStartEndToVideoV2,
+
+    "AtlasCloud Video Upscaler (Video-to-Video)": AtlasVideoUpscalerVideoToVideo,
+    "AtlasCloud Veed Fabric 1.0 Fast Image-to-Video": AtlasVeedFabric10FastImageToVideo,
+
+    "AtlasCloud Grok Imagine IQ Text-to-Image": AtlasGrokImagineImageQualityTextToImage,
+    "AtlasCloud Grok Imagine IQ Edit": AtlasGrokImagineImageQualityEdit,
+
     "AtlasCloud Kling V2.0 I2V Master": AtlasKlingV20I2VMaster,
     "AtlasCloud VEO3 Fast Image-to-Video": AtlasVeo3FastImageToVideo,
     "AtlasCloud Kling V2.1 T2V Master": AtlasKlingV21T2VMaster,
@@ -782,6 +795,13 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video": "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video",
     "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video (with Audio)": "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video (with Audio)",
     "AtlasCloud Vidu Start-End-to-Video 2.0": "AtlasCloud Vidu Start-End-to-Video 2.0",
+
+    "AtlasCloud Video Upscaler (Video-to-Video)": "AtlasCloud Video Upscaler (Video-to-Video)",
+    "AtlasCloud Veed Fabric 1.0 Fast Image-to-Video": "AtlasCloud Veed Fabric 1.0 Fast Image-to-Video",
+
+    "AtlasCloud Grok Imagine IQ Text-to-Image": "AtlasCloud Grok Imagine IQ Text-to-Image",
+    "AtlasCloud Grok Imagine IQ Edit": "AtlasCloud Grok Imagine IQ Edit",
+
     "AtlasCloud Kling V2.0 I2V Master": "AtlasCloud Kling V2.0 I2V Master",
     "AtlasCloud VEO3 Fast Image-to-Video": "AtlasCloud VEO3 Fast Image-to-Video",
     "AtlasCloud Kling V2.1 T2V Master": "AtlasCloud Kling V2.1 T2V Master",
