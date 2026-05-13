@@ -156,6 +156,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Kling V2.1 I2V Standard | kwaivgi/kling-v2.1-i2v-standard |
 | AtlasCloud WAN2.2 Animate Mix | alibaba/wan-2.2/animate-mix |
 | AtlasCloud WAN2.2 Animate Move | alibaba/wan-2.2/animate-move |
+| AtlasCloud Veed Fabric 1.0 Fast Image-to-Video | veed/fabric-1.0/fast/image-to-video |
+| AtlasCloud Video Upscaler (Video-to-Video) | atlascloud/video-upscaler |
 | AtlasCloud WAN2.2 Image-to-Video 720p | alibaba/wan-2.2/i2v-720p |
 | AtlasCloud WAN2.2 Image-to-Video 480p | alibaba/wan-2.2/i2v-480p |
 | AtlasCloud Wan 2.2 Turbo Infinite Image-to-Video | atlascloud/wan-2.2-turbo/infinite-image-to-video |
@@ -292,6 +294,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud ZImage Turbo Lora Text-to-Image | z-image/turbo-lora |
 | AtlasCloud Qwen Image Text-to-Image Plus | alibaba/qwen-image/text-to-image-plus |
 | AtlasCloud Qwen Image Text-to-Image Max | alibaba/qwen-image/text-to-image-max |
+| AtlasCloud Grok Imagine IQ Text-to-Image | xai/grok-imagine-image-quality/text-to-image |
 | AtlasCloud Baidu ERNIE-Image-Turbo Text-to-Image | baidu/ERNIE-Image-Turbo/text-to-image |
 | AtlasCloud GPT Image-2 Text-to-Image | openai/gpt-image-2/text-to-image |
 | AtlasCloud GPT Image-2 Developer Text-to-Image | openai/gpt-image-2-developer/text-to-image |
@@ -340,6 +343,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Flux Kontext Dev Edit | black-forest-labs/flux-kontext-dev |
 | AtlasCloud Flux Kontext Dev LoRA Edit | black-forest-labs/flux-kontext-dev-lora |
 | AtlasCloud Qwen Image Edit Plus 20251215 | alibaba/qwen-image/edit-plus-20251215 |
+| AtlasCloud Grok Imagine IQ Edit | xai/grok-imagine-image-quality/edit |
 | AtlasCloud GPT Image-2 Edit | openai/gpt-image-2/edit |
 | AtlasCloud GPT Image-2 Developer Edit | openai/gpt-image-2-developer/edit |
 

@@ -190,6 +190,44 @@ def test_wan26_spicy_i2v_node_metadata():
     assert AtlasWan26SpicyImageToVideo.RETURN_TYPES == ("STRING", "STRING")
 
 
+# --- Batch: 2026-05-13 (NEW) ---
+
+def test_video_upscaler_v2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.atlascloud_video_upscaler_v2v import AtlasVideoUpscalerVideoToVideo
+
+    assert "atlas_client" in AtlasVideoUpscalerVideoToVideo.INPUT_TYPES()["required"]
+    assert "video" in AtlasVideoUpscalerVideoToVideo.INPUT_TYPES()["required"]
+    assert AtlasVideoUpscalerVideoToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_veed_fabric_10_fast_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.veed_fabric_10_fast_i2v import AtlasVeedFabric10FastImageToVideo
+
+    assert "atlas_client" in AtlasVeedFabric10FastImageToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasVeedFabric10FastImageToVideo.INPUT_TYPES()["required"]
+    assert "audio" in AtlasVeedFabric10FastImageToVideo.INPUT_TYPES()["required"]
+    assert AtlasVeedFabric10FastImageToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_grok_imagine_iq_t2i_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.xai_grok_imagine_image_quality_t2i import (
+        AtlasGrokImagineImageQualityTextToImage,
+    )
+
+    assert "atlas_client" in AtlasGrokImagineImageQualityTextToImage.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasGrokImagineImageQualityTextToImage.INPUT_TYPES()["required"]
+    assert AtlasGrokImagineImageQualityTextToImage.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_grok_imagine_iq_edit_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.xai_grok_imagine_image_quality_edit import AtlasGrokImagineImageQualityEdit
+
+    assert "atlas_client" in AtlasGrokImagineImageQualityEdit.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasGrokImagineImageQualityEdit.INPUT_TYPES()["required"]
+    assert "image_urls" in AtlasGrokImagineImageQualityEdit.INPUT_TYPES()["required"]
+    assert AtlasGrokImagineImageQualityEdit.RETURN_TYPES == ("STRING", "STRING")
+
+
 # --- Batch: Wan 2.2 Turbo Infinite I2V (2026-05-07) ---
 
 def test_wan22_turbo_infinite_i2v_node_metadata():
