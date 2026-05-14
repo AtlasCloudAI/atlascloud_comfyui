@@ -200,6 +200,15 @@ def test_video_upscaler_v2v_node_metadata():
     assert AtlasVideoUpscalerVideoToVideo.RETURN_TYPES == ("STRING", "STRING")
 
 
+def test_veed_fabric_10_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.veed_fabric_10_i2v import AtlasVeedFabric10ImageToVideo
+
+    assert "atlas_client" in AtlasVeedFabric10ImageToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasVeedFabric10ImageToVideo.INPUT_TYPES()["required"]
+    assert "audio" in AtlasVeedFabric10ImageToVideo.INPUT_TYPES()["required"]
+    assert AtlasVeedFabric10ImageToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
 def test_veed_fabric_10_fast_i2v_node_metadata():
     from src.atlascloud_comfyui.nodes.video.veed_fabric_10_fast_i2v import AtlasVeedFabric10FastImageToVideo
 
