@@ -156,6 +156,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Kling V2.1 I2V Standard | kwaivgi/kling-v2.1-i2v-standard |
 | AtlasCloud WAN2.2 Animate Mix | alibaba/wan-2.2/animate-mix |
 | AtlasCloud WAN2.2 Animate Move | alibaba/wan-2.2/animate-move |
+| AtlasCloud Veed Fabric 1.0 Image-to-Video | veed/fabric-1.0/image-to-video |
 | AtlasCloud Veed Fabric 1.0 Fast Image-to-Video | veed/fabric-1.0/fast/image-to-video |
 | AtlasCloud Video Upscaler (Video-to-Video) | atlascloud/video-upscaler |
 | AtlasCloud WAN2.2 Image-to-Video 720p | alibaba/wan-2.2/i2v-720p |

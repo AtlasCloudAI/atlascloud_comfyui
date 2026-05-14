@@ -223,6 +223,7 @@ from atlascloud_comfyui.nodes.video.kwaivgi_kling_v2_1_i2v_standard import Atlas
 
 from atlascloud_comfyui.nodes.video.atlascloud_video_upscaler_v2v import AtlasVideoUpscalerVideoToVideo
 from atlascloud_comfyui.nodes.video.veed_fabric_10_fast_i2v import AtlasVeedFabric10FastImageToVideo
+from atlascloud_comfyui.nodes.video.veed_fabric_10_i2v import AtlasVeedFabric10ImageToVideo
 from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_quality_t2i import AtlasGrokImagineImageQualityTextToImage
 from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_quality_edit import AtlasGrokImagineImageQualityEdit
 
@@ -533,6 +534,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Vidu Start-End-to-Video 2.0": AtlasViduStartEndToVideoV2,
 
     "AtlasCloud Video Upscaler (Video-to-Video)": AtlasVideoUpscalerVideoToVideo,
+    "AtlasCloud Veed Fabric 1.0 Image-to-Video": AtlasVeedFabric10ImageToVideo,
     "AtlasCloud Veed Fabric 1.0 Fast Image-to-Video": AtlasVeedFabric10FastImageToVideo,
 
     "AtlasCloud Grok Imagine IQ Text-to-Image": AtlasGrokImagineImageQualityTextToImage,
@@ -797,6 +799,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Vidu Start-End-to-Video 2.0": "AtlasCloud Vidu Start-End-to-Video 2.0",
 
     "AtlasCloud Video Upscaler (Video-to-Video)": "AtlasCloud Video Upscaler (Video-to-Video)",
+    "AtlasCloud Veed Fabric 1.0 Image-to-Video": "AtlasCloud Veed Fabric 1.0 Image-to-Video",
     "AtlasCloud Veed Fabric 1.0 Fast Image-to-Video": "AtlasCloud Veed Fabric 1.0 Fast Image-to-Video",
 
     "AtlasCloud Grok Imagine IQ Text-to-Image": "AtlasCloud Grok Imagine IQ Text-to-Image",
