@@ -1,12 +1,12 @@
 {
-  "date": "2026-03-28",
-  "api_total": 258,
-  "api_visual": 155,
-  "repo_supported_model_ids": 182,
-  "repo_supported_visual_model_ids": 155,
+  "date": "2026-05-20",
+  "api_total": 316,
+  "api_visual": 209,
+  "repo_supported_model_ids": 256,
+  "repo_supported_visual_model_ids": 209,
   "missing_visual": [],
-  "missing_total": 103,
+  "missing_total": 107,
   "missing_total_by_type": {
-    "Text": 103
+    "Text": 107
   }
 }
