@@ -8,7 +8,7 @@ from __future__ import annotations
 
 
 def test_vidu_q3_t2v_node_metadata():
-    from src.atlascloud_comfyui.nodes.video.vidu_q3_t2v import AtlasViduQ3TextToVideo
+    from src.atlascloud_comfyui.nodes.deprecated.video.vidu_q3_t2v import AtlasViduQ3TextToVideo
 
     assert "atlas_client" in AtlasViduQ3TextToVideo.INPUT_TYPES()["required"]
     assert "prompt" in AtlasViduQ3TextToVideo.INPUT_TYPES()["required"]
@@ -16,7 +16,7 @@ def test_vidu_q3_t2v_node_metadata():
 
 
 def test_vidu_q3_i2v_v2_node_metadata():
-    from src.atlascloud_comfyui.nodes.video.vidu_q3_i2v_v2 import AtlasViduQ3ImageToVideoV2
+    from src.atlascloud_comfyui.nodes.deprecated.video.vidu_q3_i2v_v2 import AtlasViduQ3ImageToVideoV2
 
     assert "atlas_client" in AtlasViduQ3ImageToVideoV2.INPUT_TYPES()["required"]
     assert "image" in AtlasViduQ3ImageToVideoV2.INPUT_TYPES()["required"]

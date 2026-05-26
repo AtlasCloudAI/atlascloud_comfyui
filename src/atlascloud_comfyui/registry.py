@@ -44,33 +44,33 @@ from atlascloud_comfyui.nodes.video.alibaba_wan_2_2_spicy_video_extend_lora impo
 from atlascloud_comfyui.nodes.video.alibaba_wan_2_5_video_extend import AtlasWan25VideoExtend
 from atlascloud_comfyui.nodes.video.atlascloud_wan_2_2_i2v import AtlasAtlascloudWan22ImageToVideo
 from atlascloud_comfyui.nodes.video.atlascloud_wan_2_2_i2v_lora import AtlasAtlascloudWan22ImageToVideoLora
-from atlascloud_comfyui.nodes.video.wan22_t2v_720p import AtlasWAN22T2V720p
-from atlascloud_comfyui.nodes.video.alibaba_wan_2_2_t2v_480p import AtlasAlibabaWan22T2V480p
-from atlascloud_comfyui.nodes.video.alibaba_wan_2_2_i2v_720p import AtlasAlibabaWan22I2V720p
-from atlascloud_comfyui.nodes.video.alibaba_wan_2_2_i2v_480p import AtlasAlibabaWan22I2V480p
+from atlascloud_comfyui.nodes.deprecated.video.wan22_t2v_720p import AtlasWAN22T2V720p
+from atlascloud_comfyui.nodes.deprecated.video.alibaba_wan_2_2_t2v_480p import AtlasAlibabaWan22T2V480p
+from atlascloud_comfyui.nodes.deprecated.video.alibaba_wan_2_2_i2v_720p import AtlasAlibabaWan22I2V720p
+from atlascloud_comfyui.nodes.deprecated.video.alibaba_wan_2_2_i2v_480p import AtlasAlibabaWan22I2V480p
 from atlascloud_comfyui.nodes.video.veo31_t2v import AtlasVeo31TextToVideo
 from atlascloud_comfyui.nodes.video.kling_v26_pro_t2v import AtlasKlingV26ProTextToVideo
 from atlascloud_comfyui.nodes.video.kling_video_o1_t2v import AtlasKlingVideoO1TextToVideo
 from atlascloud_comfyui.nodes.video.seedance_v1_pro_t2v_1080p import AtlasSeedanceV1ProT2V1080p
 from atlascloud_comfyui.nodes.video.hailuo_23_t2v_pro import AtlasHailuo23T2VPro
-from atlascloud_comfyui.nodes.video.sora2_t2v_pro import AtlasSora2TextToVideoPro
+from atlascloud_comfyui.nodes.deprecated.video.sora2_t2v_pro import AtlasSora2TextToVideoPro
 from atlascloud_comfyui.nodes.video.seedance_v15_pro_t2v import AtlasSeedanceV15ProTextToVideo
 from atlascloud_comfyui.nodes.video.kling_v30_pro_t2v import AtlasKlingV30ProTextToVideo
 from atlascloud_comfyui.nodes.video.kling_v30_std_t2v import AtlasKlingV30StdTextToVideo
 from atlascloud_comfyui.nodes.video.kling_v30_std_i2v import AtlasKlingV30StdImageToVideo
 from atlascloud_comfyui.nodes.video.kling_v30_pro_i2v import AtlasKlingV30ProImageToVideo
-from atlascloud_comfyui.nodes.video.veo3_t2v import AtlasVeo3TextToVideo
-from atlascloud_comfyui.nodes.video.luma_ray2_t2v import AtlasLumaRay2TextToVideo
-from atlascloud_comfyui.nodes.video.luma_ray2_i2v import AtlasLumaRay2ImageToVideo
-from atlascloud_comfyui.nodes.video.pika_v22_t2v import AtlasPikaV22TextToVideo
-from atlascloud_comfyui.nodes.video.pixverse_v45_t2v import AtlasPixVerseV45TextToVideo
+from atlascloud_comfyui.nodes.deprecated.video.veo3_t2v import AtlasVeo3TextToVideo
+from atlascloud_comfyui.nodes.deprecated.video.luma_ray2_t2v import AtlasLumaRay2TextToVideo
+from atlascloud_comfyui.nodes.deprecated.video.luma_ray2_i2v import AtlasLumaRay2ImageToVideo
+from atlascloud_comfyui.nodes.deprecated.video.pika_v22_t2v import AtlasPikaV22TextToVideo
+from atlascloud_comfyui.nodes.deprecated.video.pixverse_v45_t2v import AtlasPixVerseV45TextToVideo
 from atlascloud_comfyui.nodes.video.hailuo_02_t2v_pro import AtlasHailuo02T2VPro
-from atlascloud_comfyui.nodes.video.sora2_i2v import AtlasSora2ImageToVideo
+from atlascloud_comfyui.nodes.deprecated.video.sora2_i2v import AtlasSora2ImageToVideo
 from atlascloud_comfyui.nodes.video.kling_v25_turbo_pro_t2v import AtlasKlingV25TurboProTextToVideo
-from atlascloud_comfyui.nodes.video.hunyuan_t2v import AtlasHunyuanTextToVideo
+from atlascloud_comfyui.nodes.deprecated.video.hunyuan_t2v import AtlasHunyuanTextToVideo
 from atlascloud_comfyui.nodes.video.vidu_q3_i2v import AtlasViduQ3ImageToVideo
-from atlascloud_comfyui.nodes.video.vidu_q3_i2v_v2 import AtlasViduQ3ImageToVideoV2
-from atlascloud_comfyui.nodes.video.vidu_q3_t2v import AtlasViduQ3TextToVideo
+from atlascloud_comfyui.nodes.deprecated.video.vidu_q3_i2v_v2 import AtlasViduQ3ImageToVideoV2
+from atlascloud_comfyui.nodes.deprecated.video.vidu_q3_t2v import AtlasViduQ3TextToVideo
 from atlascloud_comfyui.nodes.video.vidu_q3_pro_t2v import AtlasViduQ3ProTextToVideo
 from atlascloud_comfyui.nodes.video.vidu_q3_pro_i2v import AtlasViduQ3ProImageToVideo
 from atlascloud_comfyui.nodes.video.vidu_q3_turbo_t2v import AtlasViduQ3TurboTextToVideo
@@ -82,27 +82,27 @@ from atlascloud_comfyui.nodes.video.wan22_turbo_spicy_i2v import AtlasWan22Turbo
 from atlascloud_comfyui.nodes.video.wan22_spicy_i2v_lora import AtlasWan22SpicyImageToVideoLora
 from atlascloud_comfyui.nodes.video.wan22_turbo_spicy_i2v_lora import AtlasWan22TurboSpicyImageToVideoLora
 from atlascloud_comfyui.nodes.video.wan22_turbo_i2v import AtlasWan22TurboImageToVideo
-from atlascloud_comfyui.nodes.video.veo3_fast_t2v import AtlasVeo3FastTextToVideo
+from atlascloud_comfyui.nodes.deprecated.video.veo3_fast_t2v import AtlasVeo3FastTextToVideo
 from atlascloud_comfyui.nodes.video.veo31_i2v import AtlasVeo31ImageToVideo
 from atlascloud_comfyui.nodes.video.google_veo31_fast_t2v import AtlasVeo31FastTextToVideo
 from atlascloud_comfyui.nodes.video.google_veo31_fast_i2v import AtlasVeo31FastImageToVideo
 from atlascloud_comfyui.nodes.video.google_veo31_r2v import AtlasVeo31ReferenceToVideo
 from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_t2v_dev import AtlasGeminiOmniFlashTextToVideoDev
 from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_i2v_dev import AtlasGeminiOmniFlashImageToVideoDev
-from atlascloud_comfyui.nodes.video.veo3_i2v import AtlasVeo3ImageToVideo
-from atlascloud_comfyui.nodes.video.veo2_t2v import AtlasVeo2TextToVideo
-from atlascloud_comfyui.nodes.video.veo2_i2v import AtlasVeo2ImageToVideo
-from atlascloud_comfyui.nodes.video.luma_ray2_flash_t2v import AtlasLumaRay2FlashTextToVideo
-from atlascloud_comfyui.nodes.video.pika_v20_turbo_t2v import AtlasPikaV20TurboTextToVideo
-from atlascloud_comfyui.nodes.video.pika_v21_i2v import AtlasPikaV21ImageToVideo
-from atlascloud_comfyui.nodes.video.pixverse_v45_i2v import AtlasPixVerseV45ImageToVideo
+from atlascloud_comfyui.nodes.deprecated.video.veo3_i2v import AtlasVeo3ImageToVideo
+from atlascloud_comfyui.nodes.deprecated.video.veo2_t2v import AtlasVeo2TextToVideo
+from atlascloud_comfyui.nodes.deprecated.video.veo2_i2v import AtlasVeo2ImageToVideo
+from atlascloud_comfyui.nodes.deprecated.video.luma_ray2_flash_t2v import AtlasLumaRay2FlashTextToVideo
+from atlascloud_comfyui.nodes.deprecated.video.pika_v20_turbo_t2v import AtlasPikaV20TurboTextToVideo
+from atlascloud_comfyui.nodes.deprecated.video.pika_v21_i2v import AtlasPikaV21ImageToVideo
+from atlascloud_comfyui.nodes.deprecated.video.pixverse_v45_i2v import AtlasPixVerseV45ImageToVideo
 from atlascloud_comfyui.nodes.video.hailuo_02_i2v_pro import AtlasHailuo02I2VPro
 from atlascloud_comfyui.nodes.video.minimax_hailuo_02_i2v_standard import AtlasMinimaxHailuo02I2VStandard
 from atlascloud_comfyui.nodes.video.hailuo_02_i2v_standard import AtlasHailuo02I2VStandard
-from atlascloud_comfyui.nodes.video.sora2_i2v_pro import AtlasSora2ImageToVideoPro
-from atlascloud_comfyui.nodes.video.sora2_t2v import AtlasSora2TextToVideo
+from atlascloud_comfyui.nodes.deprecated.video.sora2_i2v_pro import AtlasSora2ImageToVideoPro
+from atlascloud_comfyui.nodes.deprecated.video.sora2_t2v import AtlasSora2TextToVideo
 from atlascloud_comfyui.nodes.video.kling_v25_turbo_pro_i2v import AtlasKlingV25TurboProImageToVideo
-from atlascloud_comfyui.nodes.video.hunyuan_i2v import AtlasHunyuanImageToVideo
+from atlascloud_comfyui.nodes.deprecated.video.hunyuan_i2v import AtlasHunyuanImageToVideo
 from atlascloud_comfyui.nodes.video.wan25_i2v import AtlasWAN25ImageToVideo
 
 from atlascloud_comfyui.nodes.video.kling_v26_pro_avatar import AtlasKlingV26ProAvatar
@@ -124,7 +124,7 @@ from atlascloud_comfyui.nodes.image.seedream_v4_t2i import AtlasSeedreamV4TextTo
 from atlascloud_comfyui.nodes.image.seedream_v4_sequential_t2i import AtlasSeedreamV4SequentialTextToImage
 from atlascloud_comfyui.nodes.image.seedream_v4_edit import AtlasSeedreamV4Edit
 from atlascloud_comfyui.nodes.image.seedream_v4_edit_sequential import AtlasSeedreamV4EditSequential
-from atlascloud_comfyui.nodes.image.zimage_turbo_lora_t2i import AtlasZImageTurboLoraTextToImage
+from atlascloud_comfyui.nodes.deprecated.image.zimage_turbo_lora_t2i import AtlasZImageTurboLoraTextToImage
 from atlascloud_comfyui.nodes.image.zimage_turbo_t2i import AtlasZImageTurboTextToImage
 from atlascloud_comfyui.nodes.image.qwen_image_edit import AtlasQwenImageEdit
 from atlascloud_comfyui.nodes.image.qwen_image_edit_alibaba import AtlasAlibabaQwenImageEdit
@@ -134,13 +134,13 @@ from atlascloud_comfyui.nodes.image.nano_banana_pro_t2i_ultra import AtlasNanoBa
 from atlascloud_comfyui.nodes.image.nano_banana_pro_t2i import AtlasNanoBananaProTextToImage
 from atlascloud_comfyui.nodes.image.nano_banana_pro_edit import AtlasNanoBananaProEdit
 from atlascloud_comfyui.nodes.image.nano_banana_pro_edit_ultra import AtlasNanoBananaProEditUltra
-from atlascloud_comfyui.nodes.image.flux2_flex_t2i import AtlasFlux2FlexTextToImage
+from atlascloud_comfyui.nodes.deprecated.image.flux2_flex_t2i import AtlasFlux2FlexTextToImage
 from atlascloud_comfyui.nodes.image.flux_dev_t2i import AtlasFluxDevTextToImage
 from atlascloud_comfyui.nodes.image.flux_dev_lora_t2i import AtlasFluxDevLoraTextToImage
 from atlascloud_comfyui.nodes.image.nano_banana2_t2i import AtlasNanoBanana2TextToImage
-from atlascloud_comfyui.nodes.image.nano_banana2_t2i_dev import AtlasNanoBanana2TextToImageDev
+from atlascloud_comfyui.nodes.deprecated.image.nano_banana2_t2i_dev import AtlasNanoBanana2TextToImageDev
 from atlascloud_comfyui.nodes.image.nano_banana2_edit import AtlasNanoBanana2Edit
-from atlascloud_comfyui.nodes.image.nano_banana2_edit_dev import AtlasNanoBanana2EditDev
+from atlascloud_comfyui.nodes.deprecated.image.nano_banana2_edit_dev import AtlasNanoBanana2EditDev
 from atlascloud_comfyui.nodes.image.seedream_v50_lite_t2i import AtlasSeedreamV50LiteTextToImage
 from atlascloud_comfyui.nodes.image.seedream_v50_lite_edit import AtlasSeedreamV50LiteEdit
 from atlascloud_comfyui.nodes.image.seedream_v50_lite_sequential_t2i import AtlasSeedreamV50LiteSequentialTextToImage
@@ -154,19 +154,19 @@ from atlascloud_comfyui.nodes.image.wan25_t2i import AtlasWan25TextToImage
 from atlascloud_comfyui.nodes.image.baidu_ernie_image_turbo_t2i import AtlasBaiduERNIEImageTurboTextToImage
 from atlascloud_comfyui.nodes.image.wan25_image_edit import AtlasWan25ImageEdit
 from atlascloud_comfyui.nodes.image.nano_banana_t2i import AtlasNanoBananaTextToImage
-from atlascloud_comfyui.nodes.image.nano_banana_t2i_dev import AtlasNanoBananaTextToImageDeveloper
+from atlascloud_comfyui.nodes.deprecated.image.nano_banana_t2i_dev import AtlasNanoBananaTextToImageDeveloper
 from atlascloud_comfyui.nodes.image.nano_banana_edit import AtlasNanoBananaEdit
-from atlascloud_comfyui.nodes.image.nano_banana_edit_dev import AtlasNanoBananaEditDeveloper
-from atlascloud_comfyui.nodes.image.nano_banana_pro_t2i_dev import AtlasNanoBananaProTextToImageDeveloper
-from atlascloud_comfyui.nodes.image.nano_banana_pro_edit_dev import AtlasNanoBananaProEditDeveloper
+from atlascloud_comfyui.nodes.deprecated.image.nano_banana_edit_dev import AtlasNanoBananaEditDeveloper
+from atlascloud_comfyui.nodes.deprecated.image.nano_banana_pro_t2i_dev import AtlasNanoBananaProTextToImageDeveloper
+from atlascloud_comfyui.nodes.deprecated.image.nano_banana_pro_edit_dev import AtlasNanoBananaProEditDeveloper
 from atlascloud_comfyui.nodes.image.flux_kontext_dev_edit import AtlasFluxKontextDevEdit
 from atlascloud_comfyui.nodes.image.flux_kontext_dev_lora_edit import AtlasFluxKontextDevLoraEdit
 from atlascloud_comfyui.nodes.image.flux_schnell_t2i import AtlasFluxSchnellTextToImage
-from atlascloud_comfyui.nodes.image.ideogram_v3_quality_t2i import AtlasIdeogramV3QualityTextToImage
-from atlascloud_comfyui.nodes.image.ideogram_v3_turbo_t2i import AtlasIdeogramV3TurboTextToImage
-from atlascloud_comfyui.nodes.image.luma_photon_t2i import AtlasLumaPhotonTextToImage
-from atlascloud_comfyui.nodes.image.luma_photon_flash_t2i import AtlasLumaPhotonFlashTextToImage
-from atlascloud_comfyui.nodes.image.recraft_v3_t2i import AtlasRecraftV3TextToImage
+from atlascloud_comfyui.nodes.deprecated.image.ideogram_v3_quality_t2i import AtlasIdeogramV3QualityTextToImage
+from atlascloud_comfyui.nodes.deprecated.image.ideogram_v3_turbo_t2i import AtlasIdeogramV3TurboTextToImage
+from atlascloud_comfyui.nodes.deprecated.image.luma_photon_t2i import AtlasLumaPhotonTextToImage
+from atlascloud_comfyui.nodes.deprecated.image.luma_photon_flash_t2i import AtlasLumaPhotonFlashTextToImage
+from atlascloud_comfyui.nodes.deprecated.image.recraft_v3_t2i import AtlasRecraftV3TextToImage
 from atlascloud_comfyui.nodes.image.qwen_image_edit_plus_20251215 import AtlasQwenImageEditPlus20251215
 from atlascloud_comfyui.nodes.image.qwen_image_t2i_plus import AtlasQwenImageTextToImagePlus
 from atlascloud_comfyui.nodes.image.qwen_image_t2i_max import AtlasQwenImageTextToImageMax
@@ -179,8 +179,8 @@ from atlascloud_comfyui.nodes.image.openai_gpt_image_15_t2i import AtlasOpenAIGP
 from atlascloud_comfyui.nodes.image.openai_gpt_image_15_edit import AtlasOpenAIGPTImage15Edit
 from atlascloud_comfyui.nodes.image.openai_gpt_image_2_t2i import AtlasOpenAIGPTImage2TextToImage
 from atlascloud_comfyui.nodes.image.openai_gpt_image_2_edit import AtlasOpenAIGPTImage2Edit
-from atlascloud_comfyui.nodes.image.openai_gpt_image_2_dev_t2i import AtlasOpenAIGPTImage2DeveloperTextToImage
-from atlascloud_comfyui.nodes.image.openai_gpt_image_2_dev_edit import AtlasOpenAIGPTImage2DeveloperEdit
+from atlascloud_comfyui.nodes.deprecated.image.openai_gpt_image_2_dev_t2i import AtlasOpenAIGPTImage2DeveloperTextToImage
+from atlascloud_comfyui.nodes.deprecated.image.openai_gpt_image_2_dev_edit import AtlasOpenAIGPTImage2DeveloperEdit
 from atlascloud_comfyui.nodes.image.qwen_image_20_t2i import AtlasQwenImage20TextToImage
 from atlascloud_comfyui.nodes.image.qwen_image_20_edit import AtlasQwenImage20Edit
 from atlascloud_comfyui.nodes.image.qwen_image_20_pro_t2i import AtlasQwenImage20ProTextToImage
@@ -213,10 +213,12 @@ from atlascloud_comfyui.nodes.video.atlascloud_infinitetalk_a2v import AtlasInfi
 from atlascloud_comfyui.nodes.video.vidu_reference_to_video_q1 import AtlasViduReferenceToVideoQ1
 from atlascloud_comfyui.nodes.video.vidu_reference_to_video_v2 import AtlasViduReferenceToVideoV2
 from atlascloud_comfyui.nodes.video.vidu_start_end_to_video_v2 import AtlasViduStartEndToVideoV2
-from atlascloud_comfyui.nodes.video.vidu_q2_pro_fast_reference_to_video import AtlasViduQ2ProFastReferenceToVideo
-from atlascloud_comfyui.nodes.video.vidu_q2_pro_fast_reference_to_video_with_audio import AtlasViduQ2ProFastReferenceToVideoWithAudio
+from atlascloud_comfyui.nodes.deprecated.video.vidu_q2_pro_fast_reference_to_video import AtlasViduQ2ProFastReferenceToVideo
+from atlascloud_comfyui.nodes.deprecated.video.vidu_q2_pro_fast_reference_to_video_with_audio import (
+    AtlasViduQ2ProFastReferenceToVideoWithAudio,
+)
 from atlascloud_comfyui.nodes.video.kling_v20_i2v_master import AtlasKlingV20I2VMaster
-from atlascloud_comfyui.nodes.video.veo3_fast_i2v import AtlasVeo3FastImageToVideo
+from atlascloud_comfyui.nodes.deprecated.video.veo3_fast_i2v import AtlasVeo3FastImageToVideo
 from atlascloud_comfyui.nodes.video.kling_v21_t2v_master import AtlasKlingV21T2VMaster
 from atlascloud_comfyui.nodes.video.kling_v21_i2v_master import AtlasKlingV21I2VMaster
 from atlascloud_comfyui.nodes.video.kling_v21_i2v_pro_start_end_frame import AtlasKlingV21I2VProStartEndFrame
@@ -244,21 +246,21 @@ from atlascloud_comfyui.nodes.video.hailuo_02_fast import AtlasHailuo02Fast
 from atlascloud_comfyui.nodes.video.hailuo_02_pro import AtlasHailuo02Pro
 from atlascloud_comfyui.nodes.video.hailuo_02_t2v_standard import AtlasHailuo02T2VStandard
 
-from atlascloud_comfyui.nodes.video.seedance_v1_lite_t2v_1080p import AtlasSeedanceV1LiteT2V1080p
-from atlascloud_comfyui.nodes.video.seedance_v1_lite_t2v_720p import AtlasSeedanceV1LiteT2V720p
-from atlascloud_comfyui.nodes.video.seedance_v1_lite_i2v_1080p import AtlasSeedanceV1LiteI2V1080p
+from atlascloud_comfyui.nodes.deprecated.video.seedance_v1_lite_t2v_1080p import AtlasSeedanceV1LiteT2V1080p
+from atlascloud_comfyui.nodes.deprecated.video.seedance_v1_lite_t2v_720p import AtlasSeedanceV1LiteT2V720p
+from atlascloud_comfyui.nodes.deprecated.video.seedance_v1_lite_i2v_1080p import AtlasSeedanceV1LiteI2V1080p
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_t2v import AtlasSeedance20TextToVideo
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_i2v import AtlasSeedance20ImageToVideo
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_r2v import AtlasSeedance20ReferenceToVideo
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_t2v import AtlasSeedance20FastTextToVideo
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_i2v import AtlasSeedance20FastImageToVideo
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_r2v import AtlasSeedance20FastReferenceToVideo
-from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_t2v_upscaled import AtlasSeedance20TextToVideoUpscaled
-from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_i2v_upscaled import AtlasSeedance20ImageToVideoUpscaled
-from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_r2v_upscaled import AtlasSeedance20ReferenceToVideoUpscaled
-from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_t2v_upscaled import AtlasSeedance20FastTextToVideoUpscaled
-from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_i2v_upscaled import AtlasSeedance20FastImageToVideoUpscaled
-from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_r2v_upscaled import AtlasSeedance20FastReferenceToVideoUpscaled
+from atlascloud_comfyui.nodes.deprecated.video.bytedance_seedance_2_0_t2v_upscaled import AtlasSeedance20TextToVideoUpscaled
+from atlascloud_comfyui.nodes.deprecated.video.bytedance_seedance_2_0_i2v_upscaled import AtlasSeedance20ImageToVideoUpscaled
+from atlascloud_comfyui.nodes.deprecated.video.bytedance_seedance_2_0_r2v_upscaled import AtlasSeedance20ReferenceToVideoUpscaled
+from atlascloud_comfyui.nodes.deprecated.video.bytedance_seedance_2_0_fast_t2v_upscaled import AtlasSeedance20FastTextToVideoUpscaled
+from atlascloud_comfyui.nodes.deprecated.video.bytedance_seedance_2_0_fast_i2v_upscaled import AtlasSeedance20FastImageToVideoUpscaled
+from atlascloud_comfyui.nodes.deprecated.video.bytedance_seedance_2_0_fast_r2v_upscaled import AtlasSeedance20FastReferenceToVideoUpscaled
 from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_t2v import AtlasWan27TextToVideo
 from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_i2v import AtlasWan27ImageToVideo
 from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_r2v import AtlasWan27ReferenceToVideo
@@ -286,9 +288,9 @@ from atlascloud_comfyui.nodes.video.vidu_q2_pro_fast_start_end import AtlasViduQ
 from atlascloud_comfyui.nodes.video.vidu_q2_turbo_i2v import AtlasViduQ2TurboImageToVideo
 from atlascloud_comfyui.nodes.video.vidu_q2_turbo_start_end import AtlasViduQ2TurboStartEndToVideo
 
-from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_lite_t2v_480p import AtlasBytedanceSeedanceV1LiteT2V480p
-from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_lite_i2v_720p import AtlasBytedanceSeedanceV1LiteI2V720p
-from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_lite_i2v_480p import AtlasBytedanceSeedanceV1LiteI2V480p
+from atlascloud_comfyui.nodes.deprecated.video.bytedance_seedance_v1_lite_t2v_480p import AtlasBytedanceSeedanceV1LiteT2V480p
+from atlascloud_comfyui.nodes.deprecated.video.bytedance_seedance_v1_lite_i2v_720p import AtlasBytedanceSeedanceV1LiteI2V720p
+from atlascloud_comfyui.nodes.deprecated.video.bytedance_seedance_v1_lite_i2v_480p import AtlasBytedanceSeedanceV1LiteI2V480p
 from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_pro_t2v_720p import AtlasBytedanceSeedanceV1ProT2V720p
 from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_pro_t2v_480p import AtlasBytedanceSeedanceV1ProT2V480p
 from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_pro_i2v_1080p import AtlasBytedanceSeedanceV1ProI2V1080p
@@ -536,14 +538,11 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video": AtlasViduQ2ProFastReferenceToVideo,
     "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video (with Audio)": AtlasViduQ2ProFastReferenceToVideoWithAudio,
     "AtlasCloud Vidu Start-End-to-Video 2.0": AtlasViduStartEndToVideoV2,
-
     "AtlasCloud Video Upscaler (Video-to-Video)": AtlasVideoUpscalerVideoToVideo,
     "AtlasCloud Veed Fabric 1.0 Image-to-Video": AtlasVeedFabric10ImageToVideo,
     "AtlasCloud Veed Fabric 1.0 Fast Image-to-Video": AtlasVeedFabric10FastImageToVideo,
-
     "AtlasCloud Grok Imagine IQ Text-to-Image": AtlasGrokImagineImageQualityTextToImage,
     "AtlasCloud Grok Imagine IQ Edit": AtlasGrokImagineImageQualityEdit,
-
     "AtlasCloud Kling V2.0 I2V Master": AtlasKlingV20I2VMaster,
     "AtlasCloud VEO3 Fast Image-to-Video": AtlasVeo3FastImageToVideo,
     "AtlasCloud Kling V2.1 T2V Master": AtlasKlingV21T2VMaster,
@@ -767,7 +766,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud GPT Image-1.5 Edit": "AtlasCloud GPT Image-1.5 Edit",
     "AtlasCloud GPT Image-2 Developer Text-to-Image": "AtlasCloud GPT Image-2 Developer Text-to-Image",
     "AtlasCloud GPT Image-2 Developer Edit": "AtlasCloud GPT Image-2 Developer Edit",
-    "AtlasCloud Qwen Image 2.0 Text-to-Image": "AtlasCloud Qwen Image 2.0 Text-to-Image", 
+    "AtlasCloud Qwen Image 2.0 Text-to-Image": "AtlasCloud Qwen Image 2.0 Text-to-Image",
     "AtlasCloud Qwen Image 2.0 Edit": "AtlasCloud Qwen Image 2.0 Edit",
     "AtlasCloud Qwen Image 2.0 Pro Text-to-Image": "AtlasCloud Qwen Image 2.0 Pro Text-to-Image",
     "AtlasCloud Qwen Image 2.0 Pro Edit": "AtlasCloud Qwen Image 2.0 Pro Edit",
@@ -803,14 +802,11 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video": "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video",
     "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video (with Audio)": "AtlasCloud Vidu Q2-Pro-Fast Reference-to-Video (with Audio)",
     "AtlasCloud Vidu Start-End-to-Video 2.0": "AtlasCloud Vidu Start-End-to-Video 2.0",
-
     "AtlasCloud Video Upscaler (Video-to-Video)": "AtlasCloud Video Upscaler (Video-to-Video)",
     "AtlasCloud Veed Fabric 1.0 Image-to-Video": "AtlasCloud Veed Fabric 1.0 Image-to-Video",
     "AtlasCloud Veed Fabric 1.0 Fast Image-to-Video": "AtlasCloud Veed Fabric 1.0 Fast Image-to-Video",
-
     "AtlasCloud Grok Imagine IQ Text-to-Image": "AtlasCloud Grok Imagine IQ Text-to-Image",
     "AtlasCloud Grok Imagine IQ Edit": "AtlasCloud Grok Imagine IQ Edit",
-
     "AtlasCloud Kling V2.0 I2V Master": "AtlasCloud Kling V2.0 I2V Master",
     "AtlasCloud VEO3 Fast Image-to-Video": "AtlasCloud VEO3 Fast Image-to-Video",
     "AtlasCloud Kling V2.1 T2V Master": "AtlasCloud Kling V2.1 T2V Master",

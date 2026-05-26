@@ -44,7 +44,7 @@ def test_kwaivgi_kling_v1_6_i2v_pro_node_metadata():
 
 
 def test_alibaba_wan_2_2_i2v_480p_node_metadata():
-    from src.atlascloud_comfyui.nodes.video.alibaba_wan_2_2_i2v_480p import AtlasAlibabaWan22I2V480p
+    from src.atlascloud_comfyui.nodes.deprecated.video.alibaba_wan_2_2_i2v_480p import AtlasAlibabaWan22I2V480p
 
     required = AtlasAlibabaWan22I2V480p.INPUT_TYPES()["required"]
     assert "atlas_client" in required
@@ -54,7 +54,7 @@ def test_alibaba_wan_2_2_i2v_480p_node_metadata():
 
 
 def test_alibaba_wan_2_2_i2v_720p_node_metadata():
-    from src.atlascloud_comfyui.nodes.video.alibaba_wan_2_2_i2v_720p import AtlasAlibabaWan22I2V720p
+    from src.atlascloud_comfyui.nodes.deprecated.video.alibaba_wan_2_2_i2v_720p import AtlasAlibabaWan22I2V720p
 
     required = AtlasAlibabaWan22I2V720p.INPUT_TYPES()["required"]
     assert "atlas_client" in required
@@ -64,7 +64,7 @@ def test_alibaba_wan_2_2_i2v_720p_node_metadata():
 
 
 def test_alibaba_wan_2_2_t2v_480p_node_metadata():
-    from src.atlascloud_comfyui.nodes.video.alibaba_wan_2_2_t2v_480p import AtlasAlibabaWan22T2V480p
+    from src.atlascloud_comfyui.nodes.deprecated.video.alibaba_wan_2_2_t2v_480p import AtlasAlibabaWan22T2V480p
 
     required = AtlasAlibabaWan22T2V480p.INPUT_TYPES()["required"]
     assert "atlas_client" in required
@@ -118,7 +118,7 @@ def test_bytedance_seedance_v1_pro_i2v_1080p_node_metadata():
 
 
 def test_bytedance_seedance_v1_lite_t2v_480p_node_metadata():
-    from src.atlascloud_comfyui.nodes.video.bytedance_seedance_v1_lite_t2v_480p import AtlasBytedanceSeedanceV1LiteT2V480p
+    from src.atlascloud_comfyui.nodes.deprecated.video.bytedance_seedance_v1_lite_t2v_480p import AtlasBytedanceSeedanceV1LiteT2V480p
 
     required = AtlasBytedanceSeedanceV1LiteT2V480p.INPUT_TYPES()["required"]
     assert "atlas_client" in required
@@ -127,7 +127,7 @@ def test_bytedance_seedance_v1_lite_t2v_480p_node_metadata():
 
 
 def test_bytedance_seedance_v1_lite_i2v_720p_node_metadata():
-    from src.atlascloud_comfyui.nodes.video.bytedance_seedance_v1_lite_i2v_720p import AtlasBytedanceSeedanceV1LiteI2V720p
+    from src.atlascloud_comfyui.nodes.deprecated.video.bytedance_seedance_v1_lite_i2v_720p import AtlasBytedanceSeedanceV1LiteI2V720p
 
     required = AtlasBytedanceSeedanceV1LiteI2V720p.INPUT_TYPES()["required"]
     assert "atlas_client" in required
@@ -136,7 +136,7 @@ def test_bytedance_seedance_v1_lite_i2v_720p_node_metadata():
 
 
 def test_bytedance_seedance_v1_lite_i2v_480p_node_metadata():
-    from src.atlascloud_comfyui.nodes.video.bytedance_seedance_v1_lite_i2v_480p import AtlasBytedanceSeedanceV1LiteI2V480p
+    from src.atlascloud_comfyui.nodes.deprecated.video.bytedance_seedance_v1_lite_i2v_480p import AtlasBytedanceSeedanceV1LiteI2V480p
 
     required = AtlasBytedanceSeedanceV1LiteI2V480p.INPUT_TYPES()["required"]
     assert "atlas_client" in required
