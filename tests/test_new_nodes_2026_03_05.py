@@ -120,7 +120,7 @@ def test_kling_effects_node_metadata():
 
 
 def test_seedance_v1_lite_t2v_1080p_node_metadata():
-    from src.atlascloud_comfyui.nodes.video.seedance_v1_lite_t2v_1080p import AtlasSeedanceV1LiteT2V1080p
+    from src.atlascloud_comfyui.nodes.deprecated.video.seedance_v1_lite_t2v_1080p import AtlasSeedanceV1LiteT2V1080p
 
     required = AtlasSeedanceV1LiteT2V1080p.INPUT_TYPES()["required"]
     assert "atlas_client" in required
@@ -129,7 +129,7 @@ def test_seedance_v1_lite_t2v_1080p_node_metadata():
 
 
 def test_seedance_v1_lite_t2v_720p_node_metadata():
-    from src.atlascloud_comfyui.nodes.video.seedance_v1_lite_t2v_720p import AtlasSeedanceV1LiteT2V720p
+    from src.atlascloud_comfyui.nodes.deprecated.video.seedance_v1_lite_t2v_720p import AtlasSeedanceV1LiteT2V720p
 
     required = AtlasSeedanceV1LiteT2V720p.INPUT_TYPES()["required"]
     assert "atlas_client" in required
@@ -139,7 +139,7 @@ def test_seedance_v1_lite_t2v_720p_node_metadata():
 
 
 def test_seedance_v1_lite_i2v_1080p_node_metadata():
-    from src.atlascloud_comfyui.nodes.video.seedance_v1_lite_i2v_1080p import AtlasSeedanceV1LiteI2V1080p
+    from src.atlascloud_comfyui.nodes.deprecated.video.seedance_v1_lite_i2v_1080p import AtlasSeedanceV1LiteI2V1080p
 
     required = AtlasSeedanceV1LiteI2V1080p.INPUT_TYPES()["required"]
     assert "atlas_client" in required
