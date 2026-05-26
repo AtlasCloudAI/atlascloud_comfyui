@@ -268,6 +268,12 @@ from atlascloud_comfyui.nodes.video.alibaba_happyhorse_1_0_video_edit import Atl
 from atlascloud_comfyui.nodes.video.google_veo31_lite_t2v import AtlasVeo31LiteTextToVideo
 from atlascloud_comfyui.nodes.video.google_veo31_lite_i2v import AtlasVeo31LiteImageToVideo
 from atlascloud_comfyui.nodes.video.google_veo31_lite_start_end_frame_t2v import AtlasVeo31LiteStartEndFrameToVideo
+from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_t2v_dev import (
+    AtlasGeminiOmniFlashDeveloperTextToVideo,
+)
+from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_i2v_dev import (
+    AtlasGeminiOmniFlashDeveloperImageToVideo,
+)
 from atlascloud_comfyui.nodes.video.vidu_q3_r2v import AtlasViduQ3ReferenceToVideo
 from atlascloud_comfyui.nodes.video.vidu_q3_mix_r2v import AtlasViduQ3MixReferenceToVideo
 from atlascloud_comfyui.nodes.video.vidu_q1_t2v import AtlasViduQ1TextToVideo
@@ -309,6 +315,8 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud WAN2.7 Image-Edit": AtlasWan27ImageEdit,
     "AtlasCloud WAN2.7 Pro Text-to-Image": AtlasWan27ProTextToImage,
     "AtlasCloud WAN2.7 Pro Image-Edit": AtlasWan27ProImageEdit,
+    "AtlasCloud Gemini Omni Flash Developer Text-to-Video": AtlasGeminiOmniFlashDeveloperTextToVideo,
+    "AtlasCloud Gemini Omni Flash Developer Image-to-Video": AtlasGeminiOmniFlashDeveloperImageToVideo,
     "AtlasCloud WAN2.5 Text-to-Image": AtlasWan25TextToImage,
     "AtlasCloud Baidu ERNIE-Image-Turbo Text-to-Image": AtlasBaiduERNIEImageTurboTextToImage,
     "AtlasCloud WAN2.5 Image-Edit": AtlasWan25ImageEdit,
