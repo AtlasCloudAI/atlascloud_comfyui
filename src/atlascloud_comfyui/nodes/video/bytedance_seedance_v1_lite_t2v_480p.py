@@ -1,5 +1,12 @@
 from __future__ import annotations
 
+# NOTE: This node targets a model id that is no longer present in AtlasCloud /api/v1/models
+# It is kept for backward compatibility with existing ComfyUI workflows.
+DEPRECATED_MODEL_ID = True
+DEPRECATION_REASON = "Model id not returned by AtlasCloud /api/v1/models; likely deprecated or removed upstream."
+
+import os
+
 from typing import Any, Dict, Tuple
 
 from ..auth.atlas_client_node import AtlasClientHandle
@@ -16,12 +23,18 @@ class AtlasBytedanceSeedanceV1LiteT2V480p:
         return {
             "required": {
                 "atlas_client": ("ATLAS_CLIENT",),
-                "prompt": ("STRING", {"multiline": True, "tooltip": 'Text prompt for video generation; Positive text prompt; Cannot exceed 2000 characters'}),
-                "duration": ("INT", {"default": 5, "tooltip": 'Generate video duration length seconds.'}),
+                "prompt": (
+                    "STRING",
+                    {"multiline": True, "tooltip": "Text prompt for video generation; Positive text prompt; Cannot exceed 2000 characters"},
+                ),
+                "duration": ("INT", {"default": 5, "tooltip": "Generate video duration length seconds."}),
             },
             "optional": {
-                "aspect_ratio": (['21:9', '16:9', '4:3', '1:1', '3:4', '9:16'], {"default": '16:9', "tooltip": 'The aspect ratio of the generated video'}),
-                "seed": ("INT", {"default": -1, "tooltip": 'The seed for random number generation.'}),
+                "aspect_ratio": (
+                    ["21:9", "16:9", "4:3", "1:1", "3:4", "9:16"],
+                    {"default": "16:9", "tooltip": "The aspect ratio of the generated video"},
+                ),
+                "seed": ("INT", {"default": -1, "tooltip": "The seed for random number generation."}),
                 "poll_interval_sec": ("FLOAT", {"default": 2.0, "min": 0.5, "max": 10.0, "tooltip": "Polling interval (seconds)"}),
                 "timeout_sec": ("INT", {"default": 900, "min": 30, "max": 7200, "tooltip": "Timeout (seconds)"}),
             },
@@ -32,11 +45,18 @@ class AtlasBytedanceSeedanceV1LiteT2V480p:
         atlas_client: AtlasClientHandle,
         prompt: str,
         duration: int,
-        aspect_ratio: str = '16:9',
+        aspect_ratio: str = "16:9",
         seed: int = -1,
         poll_interval_sec: float = 2.0,
         timeout_sec: int = 900,
     ) -> Tuple[str, str]:
+        # Deprecated model guard
+        if os.getenv("ATLAS_ALLOW_DEPRECATED_MODELS", "").lower() not in ("1", "true", "yes"):
+            raise RuntimeError(
+                "Deprecated model id: bytedance/seedance-v1-lite-t2v-480p. This node is kept for backward compatibility, but the model is not returned by AtlasCloud /api/v1/models. "
+                "Set ATLAS_ALLOW_DEPRECATED_MODELS=1 to force execution at your own risk."
+            )
+
         client = atlas_client.client
 
         payload: Dict[str, Any] = {
@@ -60,8 +80,6 @@ class AtlasBytedanceSeedanceV1LiteT2V480p:
 
         first = outputs[0]
         if not isinstance(first, str):
-            raise RuntimeError(
-                f"Unexpected output type for prediction {prediction_id}: {type(first).__name__} {first!r}"
-            )
+            raise RuntimeError(f"Unexpected output type for prediction {prediction_id}: {type(first).__name__} {first!r}")
 
         return (first, prediction_id)

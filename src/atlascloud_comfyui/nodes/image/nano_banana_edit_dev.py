@@ -1,5 +1,12 @@
 from __future__ import annotations
 
+# NOTE: This node targets a model id that is no longer present in AtlasCloud /api/v1/models
+# It is kept for backward compatibility with existing ComfyUI workflows.
+DEPRECATED_MODEL_ID = True
+DEPRECATION_REASON = "Model id not returned by AtlasCloud /api/v1/models; likely deprecated or removed upstream."
+
+import os
+
 from typing import Any, Dict, List, Tuple
 
 from ..auth.atlas_client_node import AtlasClientHandle
@@ -54,6 +61,13 @@ class AtlasNanoBananaEditDeveloper:
         poll_interval_sec: float = 2.0,
         timeout_sec: int = 300,
     ) -> Tuple[str, str]:
+        # Deprecated model guard
+        if os.getenv("ATLAS_ALLOW_DEPRECATED_MODELS", "").lower() not in ("1", "true", "yes"):
+            raise RuntimeError(
+                "Deprecated model id: google/nano-banana/edit-developer. This node is kept for backward compatibility, but the model is not returned by AtlasCloud /api/v1/models. "
+                "Set ATLAS_ALLOW_DEPRECATED_MODELS=1 to force execution at your own risk."
+            )
+
         image_list: List[str] = [v.strip() for v in (images or "").splitlines() if v.strip()]
         if not image_list:
             raise RuntimeError("images is required (1-10 lines)")
