@@ -87,6 +87,8 @@ from atlascloud_comfyui.nodes.video.veo31_i2v import AtlasVeo31ImageToVideo
 from atlascloud_comfyui.nodes.video.google_veo31_fast_t2v import AtlasVeo31FastTextToVideo
 from atlascloud_comfyui.nodes.video.google_veo31_fast_i2v import AtlasVeo31FastImageToVideo
 from atlascloud_comfyui.nodes.video.google_veo31_r2v import AtlasVeo31ReferenceToVideo
+from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_t2v_dev import AtlasGeminiOmniFlashTextToVideoDev
+from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_i2v_dev import AtlasGeminiOmniFlashImageToVideoDev
 from atlascloud_comfyui.nodes.video.veo3_i2v import AtlasVeo3ImageToVideo
 from atlascloud_comfyui.nodes.video.veo2_t2v import AtlasVeo2TextToVideo
 from atlascloud_comfyui.nodes.video.veo2_i2v import AtlasVeo2ImageToVideo
@@ -436,6 +438,8 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud VEO3 Fast Text-to-Video": AtlasVeo3FastTextToVideo,
     "AtlasCloud VEO3.1 Fast Text-to-Video": AtlasVeo31FastTextToVideo,
     "AtlasCloud VEO3.1 Fast Image-to-Video": AtlasVeo31FastImageToVideo,
+    "AtlasCloud Gemini Omni Flash Text-to-Video Developer": AtlasGeminiOmniFlashTextToVideoDev,
+    "AtlasCloud Gemini Omni Flash Image-to-Video Developer": AtlasGeminiOmniFlashImageToVideoDev,
     "AtlasCloud VEO3.1 Reference-to-Video": AtlasVeo31ReferenceToVideo,
     "AtlasCloud VEO3.1 Image-to-Video": AtlasVeo31ImageToVideo,
     "AtlasCloud VEO3 Image-to-Video": AtlasVeo3ImageToVideo,
@@ -703,6 +707,8 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud VEO3 Fast Text-to-Video": "AtlasCloud VEO3 Fast Text-to-Video",
     "AtlasCloud VEO3.1 Fast Text-to-Video": "AtlasCloud VEO3.1 Fast Text-to-Video",
     "AtlasCloud VEO3.1 Fast Image-to-Video": "AtlasCloud VEO3.1 Fast Image-to-Video",
+    "AtlasCloud Gemini Omni Flash Text-to-Video Developer": "AtlasCloud Gemini Omni Flash Text-to-Video Developer",
+    "AtlasCloud Gemini Omni Flash Image-to-Video Developer": "AtlasCloud Gemini Omni Flash Image-to-Video Developer",
     "AtlasCloud VEO3.1 Reference-to-Video": "AtlasCloud VEO3.1 Reference-to-Video",
     "AtlasCloud VEO3.1 Image-to-Video": "AtlasCloud VEO3.1 Image-to-Video",
     "AtlasCloud VEO3 Image-to-Video": "AtlasCloud VEO3 Image-to-Video",
