@@ -1,5 +1,12 @@
 from __future__ import annotations
 
+# NOTE: This node targets a model id that is no longer present in AtlasCloud /api/v1/models
+# It is kept for backward compatibility with existing ComfyUI workflows.
+DEPRECATED_MODEL_ID = True
+DEPRECATION_REASON = "Model id not returned by AtlasCloud /api/v1/models; likely deprecated or removed upstream."
+
+import os
+
 from typing import Any, Dict, Tuple
 
 from ..auth.atlas_client_node import AtlasClientHandle
@@ -15,18 +22,41 @@ class AtlasSeedanceV1LiteI2V1080p:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                'atlas_client': ('ATLAS_CLIENT',),
-                'image': ('STRING', {'default': 'https://static.atlascloud.ai/media/images/1750082346497865541_Xl0XTQMK.jpg', 'tooltip': 'Input image supports both URL and Base64 format; The image file size cannot exceed 30MB, and the image resolution should not be less than 300*300px.'}),
+                "atlas_client": ("ATLAS_CLIENT",),
+                "image": (
+                    "STRING",
+                    {
+                        "default": "https://static.atlascloud.ai/media/images/1750082346497865541_Xl0XTQMK.jpg",
+                        "tooltip": "Input image supports both URL and Base64 format; The image file size cannot exceed 30MB, and the image resolution should not be less than 300*300px.",
+                    },
+                ),
             },
             "optional": {
-                'poll_interval_sec': ('FLOAT', {'default': 2.0, 'min': 0.5, 'max': 10.0, 'tooltip': 'Polling interval (seconds)'}),
-                'timeout_sec': ('INT', {'default': 900, 'min': 30, 'max': 7200, 'tooltip': 'Timeout (seconds)'}),
-                'prompt': ('STRING', {'multiline': True, 'tooltip': 'Text prompt for video generation; Positive text prompt; Cannot exceed 2000 characters.'}),
-                'duration': ('INT', {'default': 5, 'min': 1, 'max': 120, 'tooltip': 'The duration of the generated media in seconds.'}),
-                'aspect_ratio': (['21:9', '16:9', '4:3', '1:1', '3:4', '9:16'], {'default': '16:9', 'tooltip': 'The aspect ratio of the generated video.'}),
-                'camera_fixed': ('BOOLEAN', {'default': False, 'tooltip': 'Whether to fix the camera position.'}),
-                'seed': ('INT', {'default': -1, 'min': -1, 'max': 2147483647, 'tooltip': 'The random seed to use for the generation. -1 means a random seed will be used.'}),
-                'last_image': ('STRING', {'default': '', 'tooltip': 'URL of the ending image.'}),
+                "poll_interval_sec": ("FLOAT", {"default": 2.0, "min": 0.5, "max": 10.0, "tooltip": "Polling interval (seconds)"}),
+                "timeout_sec": ("INT", {"default": 900, "min": 30, "max": 7200, "tooltip": "Timeout (seconds)"}),
+                "prompt": (
+                    "STRING",
+                    {
+                        "multiline": True,
+                        "tooltip": "Text prompt for video generation; Positive text prompt; Cannot exceed 2000 characters.",
+                    },
+                ),
+                "duration": ("INT", {"default": 5, "min": 1, "max": 120, "tooltip": "The duration of the generated media in seconds."}),
+                "aspect_ratio": (
+                    ["21:9", "16:9", "4:3", "1:1", "3:4", "9:16"],
+                    {"default": "16:9", "tooltip": "The aspect ratio of the generated video."},
+                ),
+                "camera_fixed": ("BOOLEAN", {"default": False, "tooltip": "Whether to fix the camera position."}),
+                "seed": (
+                    "INT",
+                    {
+                        "default": -1,
+                        "min": -1,
+                        "max": 2147483647,
+                        "tooltip": "The random seed to use for the generation. -1 means a random seed will be used.",
+                    },
+                ),
+                "last_image": ("STRING", {"default": "", "tooltip": "URL of the ending image."}),
             },
         }
 
@@ -34,15 +64,22 @@ class AtlasSeedanceV1LiteI2V1080p:
         self,
         atlas_client: AtlasClientHandle,
         image: str,
-        prompt: str = 'Slow zoom on twitching paws dreaming, cut to wide shot as owner gently places a chew toy beside it',
+        prompt: str = "Slow zoom on twitching paws dreaming, cut to wide shot as owner gently places a chew toy beside it",
         duration: int = 5,
-        aspect_ratio: str = '16:9',
+        aspect_ratio: str = "16:9",
         camera_fixed: bool = False,
         seed: int = -1,
-        last_image: str = '',
+        last_image: str = "",
         poll_interval_sec: float = 2.0,
         timeout_sec: int = 900,
     ) -> Tuple[str, str]:
+        # Deprecated model guard
+        if os.getenv("ATLAS_ALLOW_DEPRECATED_MODELS", "").lower() not in ("1", "true", "yes"):
+            raise RuntimeError(
+                "Deprecated model id: bytedance/seedance-v1-lite-i2v-1080p. This node is kept for backward compatibility, but the model is not returned by AtlasCloud /api/v1/models. "
+                "Set ATLAS_ALLOW_DEPRECATED_MODELS=1 to force execution at your own risk."
+            )
+
         image = (image or "").strip()
         if not image:
             raise RuntimeError("image is required for AtlasCloud Seedance v1 Lite I2V 1080p")

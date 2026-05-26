@@ -1,5 +1,12 @@
 from __future__ import annotations
 
+# NOTE: This node targets a model id that is no longer present in AtlasCloud /api/v1/models
+# It is kept for backward compatibility with existing ComfyUI workflows.
+DEPRECATED_MODEL_ID = True
+DEPRECATION_REASON = "Model id not returned by AtlasCloud /api/v1/models; likely deprecated or removed upstream."
+
+import os
+
 from typing import Any, Dict, List, Tuple
 
 from ..auth.atlas_client_node import AtlasClientHandle
@@ -39,9 +46,9 @@ class AtlasSeedance20FastReferenceToVideoUpscaled:
                     [-1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
                     {"default": 5, "tooltip": "Duration (seconds), or -1 for auto"},
                 ),
-                "resolution": (['1080p', '2k'], {"default": "1080p", "tooltip": "Resolution"}),
+                "resolution": (["1080p", "2k"], {"default": "1080p", "tooltip": "Resolution"}),
                 "ratio": (
-                    ['16:9', '4:3', '1:1', '3:4', '9:16', '21:9', 'adaptive'],
+                    ["16:9", "4:3", "1:1", "3:4", "9:16", "21:9", "adaptive"],
                     {"default": "adaptive", "tooltip": "Aspect ratio (adaptive = auto)"},
                 ),
                 "generate_audio": ("BOOLEAN", {"default": True, "tooltip": "Generate audio"}),
@@ -72,6 +79,13 @@ class AtlasSeedance20FastReferenceToVideoUpscaled:
         poll_interval_sec: float = 2.0,
         timeout_sec: int = 900,
     ) -> Tuple[str, str]:
+        # Deprecated model guard
+        if os.getenv("ATLAS_ALLOW_DEPRECATED_MODELS", "").lower() not in ("1", "true", "yes"):
+            raise RuntimeError(
+                "Deprecated model id: bytedance/seedance-2.0-fast/reference-to-video-upscaled. This node is kept for backward compatibility, but the model is not returned by AtlasCloud /api/v1/models. "
+                "Set ATLAS_ALLOW_DEPRECATED_MODELS=1 to force execution at your own risk."
+            )
+
         ref_imgs: List[str] = [v.strip() for v in (reference_images or "").splitlines() if v.strip()]
         ref_vids: List[str] = [v.strip() for v in (reference_videos or "").splitlines() if v.strip()]
         if not ref_imgs and not ref_vids:
@@ -114,8 +128,6 @@ class AtlasSeedance20FastReferenceToVideoUpscaled:
 
         first = outputs[0]
         if not isinstance(first, str):
-            raise RuntimeError(
-                f"Unexpected output type for prediction {prediction_id}: {type(first).__name__} {first!r}"
-            )
+            raise RuntimeError(f"Unexpected output type for prediction {prediction_id}: {type(first).__name__} {first!r}")
 
         return (first, prediction_id)

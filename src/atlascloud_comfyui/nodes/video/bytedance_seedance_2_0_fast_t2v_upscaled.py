@@ -1,5 +1,12 @@
 from __future__ import annotations
 
+# NOTE: This node targets a model id that is no longer present in AtlasCloud /api/v1/models
+# It is kept for backward compatibility with existing ComfyUI workflows.
+DEPRECATED_MODEL_ID = True
+DEPRECATION_REASON = "Model id not returned by AtlasCloud /api/v1/models; likely deprecated or removed upstream."
+
+import os
+
 from typing import Any, Dict, Tuple
 
 from ..auth.atlas_client_node import AtlasClientHandle
@@ -30,9 +37,9 @@ class AtlasSeedance20FastTextToVideoUpscaled:
                     [-1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
                     {"default": 5, "tooltip": "Duration (seconds), or -1 for auto"},
                 ),
-                "resolution": (['1080p', '2k'], {"default": "1080p", "tooltip": "Resolution"}),
+                "resolution": (["1080p", "2k"], {"default": "1080p", "tooltip": "Resolution"}),
                 "ratio": (
-                    ['16:9', '4:3', '1:1', '3:4', '9:16', '21:9'],
+                    ["16:9", "4:3", "1:1", "3:4", "9:16", "21:9"],
                     {"default": "16:9", "tooltip": "Aspect ratio"},
                 ),
                 "generate_audio": ("BOOLEAN", {"default": True, "tooltip": "Generate audio"}),
@@ -41,7 +48,6 @@ class AtlasSeedance20FastTextToVideoUpscaled:
                     "BOOLEAN",
                     {"default": False, "tooltip": "Return last frame (if supported)"},
                 ),
-
                 "poll_interval_sec": (
                     "FLOAT",
                     {"default": 2.0, "min": 0.5, "max": 10.0, "tooltip": "Polling interval (seconds)"},
@@ -63,10 +69,16 @@ class AtlasSeedance20FastTextToVideoUpscaled:
         generate_audio: bool = True,
         watermark: bool = False,
         return_last_frame: bool = False,
-
         poll_interval_sec: float = 2.0,
         timeout_sec: int = 900,
     ) -> Tuple[str, str]:
+        # Deprecated model guard
+        if os.getenv("ATLAS_ALLOW_DEPRECATED_MODELS", "").lower() not in ("1", "true", "yes"):
+            raise RuntimeError(
+                "Deprecated model id: bytedance/seedance-2.0-fast/text-to-video-upscaled. This node is kept for backward compatibility, but the model is not returned by AtlasCloud /api/v1/models. "
+                "Set ATLAS_ALLOW_DEPRECATED_MODELS=1 to force execution at your own risk."
+            )
+
         prompt = (prompt or "").strip()
         if not prompt:
             raise RuntimeError("prompt is required for AtlasCloud Seedance 2.0 Fast Text-to-Video Upscaled")
@@ -82,7 +94,6 @@ class AtlasSeedance20FastTextToVideoUpscaled:
             "generate_audio": bool(generate_audio),
             "watermark": bool(watermark),
             "return_last_frame": bool(return_last_frame),
-
         }
 
         prediction_id = client.generate_video(payload)
@@ -98,8 +109,6 @@ class AtlasSeedance20FastTextToVideoUpscaled:
 
         first = outputs[0]
         if not isinstance(first, str):
-            raise RuntimeError(
-                f"Unexpected output type for prediction {prediction_id}: {type(first).__name__} {first!r}"
-            )
+            raise RuntimeError(f"Unexpected output type for prediction {prediction_id}: {type(first).__name__} {first!r}")
 
         return (first, prediction_id)
