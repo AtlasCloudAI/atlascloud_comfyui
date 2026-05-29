@@ -79,6 +79,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud VEO3.1 Lite Text-to-Video | google/veo3.1-lite/text-to-video |
 | AtlasCloud VEO3.1 Fast Text-to-Video | google/veo3.1-fast/text-to-video |
 | AtlasCloud Gemini Omni Flash Text-to-Video Developer | google/gemini-omni-flash/text-to-video-developer |
+| AtlasCloud Grok Imagine Video Text-to-Video | xai/grok-imagine-video/text-to-video |
 | AtlasCloud VEO2 Text-to-Video | google/veo2 |
 | AtlasCloud WAN2.6 Text-to-Video | alibaba/wan-2.6/text-to-video |
 | AtlasCloud WAN2.7 Text-to-Video | alibaba/wan-2.7/text-to-video |
@@ -140,6 +141,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud VEO3 Fast Image-to-Video | google/veo3-fast/image-to-video |
 | AtlasCloud VEO3.1 Fast Image-to-Video | google/veo3.1-fast/image-to-video |
 | AtlasCloud Gemini Omni Flash Image-to-Video Developer | google/gemini-omni-flash/image-to-video-developer |
+| AtlasCloud Grok Imagine Video Image-to-Video | xai/grok-imagine-video/image-to-video |
+| AtlasCloud Grok Imagine Video Reference-to-Video | xai/grok-imagine-video/reference-to-video |
 | AtlasCloud VEO3.1 Reference-to-Video | google/veo3.1/reference-to-video |
 | AtlasCloud Seedance 2.0 Reference-to-Video | bytedance/seedance-2.0/reference-to-video |
 | AtlasCloud Seedance 2.0 Fast Reference-to-Video | bytedance/seedance-2.0-fast/reference-to-video |
@@ -294,6 +297,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Flux Dev Text-to-Image | black-forest-labs/flux-dev |
 | AtlasCloud Flux Dev LoRA Text-to-Image | black-forest-labs/flux-dev-lora |
 | AtlasCloud Flux Schnell Text-to-Image | black-forest-labs/flux-schnell |
+| AtlasCloud FLUX.2 Pro Text-to-Image | black-forest-labs/flux-2-pro/text-to-image |
 | AtlasCloud ZImage Turbo Lora Text-to-Image | z-image/turbo-lora |
 | AtlasCloud Qwen Image Text-to-Image Plus | alibaba/qwen-image/text-to-image-plus |
 | AtlasCloud Qwen Image Text-to-Image Max | alibaba/qwen-image/text-to-image-max |
