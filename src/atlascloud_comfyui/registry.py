@@ -89,6 +89,10 @@ from atlascloud_comfyui.nodes.video.google_veo31_fast_i2v import AtlasVeo31FastI
 from atlascloud_comfyui.nodes.video.google_veo31_r2v import AtlasVeo31ReferenceToVideo
 from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_t2v_dev import AtlasGeminiOmniFlashTextToVideoDev
 from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_i2v_dev import AtlasGeminiOmniFlashImageToVideoDev
+from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_t2v import AtlasGrokImagineVideoTextToVideo
+from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_i2v import AtlasGrokImagineVideoImageToVideo
+from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_r2v import AtlasGrokImagineVideoReferenceToVideo
+from atlascloud_comfyui.nodes.image.flux2_pro_t2i import AtlasFlux2ProTextToImage
 from atlascloud_comfyui.nodes.deprecated.video.veo3_i2v import AtlasVeo3ImageToVideo
 from atlascloud_comfyui.nodes.deprecated.video.veo2_t2v import AtlasVeo2TextToVideo
 from atlascloud_comfyui.nodes.deprecated.video.veo2_i2v import AtlasVeo2ImageToVideo
@@ -567,6 +571,10 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Seedance V1 Lite T2V 720p": AtlasSeedanceV1LiteT2V720p,
     "AtlasCloud Seedance V1 Lite I2V 1080p": AtlasSeedanceV1LiteI2V1080p,
     "AtlasCloud Kling V2.0 T2V Master": AtlasKlingV20T2VMaster,
+    "AtlasCloud Grok Imagine Video Text-to-Video": AtlasGrokImagineVideoTextToVideo,
+    "AtlasCloud Grok Imagine Video Image-to-Video": AtlasGrokImagineVideoImageToVideo,
+    "AtlasCloud Grok Imagine Video Reference-to-Video": AtlasGrokImagineVideoReferenceToVideo,
+    "AtlasCloud FLUX.2 Pro Text-to-Image": AtlasFlux2ProTextToImage,
 }
 
 
@@ -831,6 +839,10 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Seedance V1 Lite T2V 720p": "AtlasCloud Seedance V1 Lite T2V 720p",
     "AtlasCloud Seedance V1 Lite I2V 1080p": "AtlasCloud Seedance V1 Lite I2V 1080p",
     "AtlasCloud Kling V2.0 T2V Master": "AtlasCloud Kling V2.0 T2V Master",
+    "AtlasCloud Grok Imagine Video Text-to-Video": "AtlasCloud Grok Imagine Video Text-to-Video",
+    "AtlasCloud Grok Imagine Video Image-to-Video": "AtlasCloud Grok Imagine Video Image-to-Video",
+    "AtlasCloud Grok Imagine Video Reference-to-Video": "AtlasCloud Grok Imagine Video Reference-to-Video",
+    "AtlasCloud FLUX.2 Pro Text-to-Image": "AtlasCloud FLUX.2 Pro Text-to-Image",
 }
 
 
