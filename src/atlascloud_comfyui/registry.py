@@ -93,6 +93,10 @@ from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_t2v import AtlasGrokI
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_i2v import AtlasGrokImagineVideoImageToVideo
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_r2v import AtlasGrokImagineVideoReferenceToVideo
 from atlascloud_comfyui.nodes.image.flux2_pro_t2i import AtlasFlux2ProTextToImage
+from atlascloud_comfyui.nodes.image.flux2_flex_edit import AtlasFlux2FlexEdit
+from atlascloud_comfyui.nodes.image.flux2_pro_edit import AtlasFlux2ProEdit
+from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_edit_video import AtlasGrokImagineVideoEdit
+from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_extend_video import AtlasGrokImagineVideoExtend
 from atlascloud_comfyui.nodes.deprecated.video.veo3_i2v import AtlasVeo3ImageToVideo
 from atlascloud_comfyui.nodes.deprecated.video.veo2_t2v import AtlasVeo2TextToVideo
 from atlascloud_comfyui.nodes.deprecated.video.veo2_i2v import AtlasVeo2ImageToVideo
@@ -575,6 +579,10 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Grok Imagine Video Image-to-Video": AtlasGrokImagineVideoImageToVideo,
     "AtlasCloud Grok Imagine Video Reference-to-Video": AtlasGrokImagineVideoReferenceToVideo,
     "AtlasCloud FLUX.2 Pro Text-to-Image": AtlasFlux2ProTextToImage,
+    "AtlasCloud FLUX.2 Flex Edit": AtlasFlux2FlexEdit,
+    "AtlasCloud FLUX.2 Pro Edit": AtlasFlux2ProEdit,
+    "AtlasCloud Grok Imagine Video Edit": AtlasGrokImagineVideoEdit,
+    "AtlasCloud Grok Imagine Video Extend": AtlasGrokImagineVideoExtend,
 }
 
 
@@ -843,6 +851,10 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Grok Imagine Video Image-to-Video": "AtlasCloud Grok Imagine Video Image-to-Video",
     "AtlasCloud Grok Imagine Video Reference-to-Video": "AtlasCloud Grok Imagine Video Reference-to-Video",
     "AtlasCloud FLUX.2 Pro Text-to-Image": "AtlasCloud FLUX.2 Pro Text-to-Image",
+    "AtlasCloud FLUX.2 Flex Edit": "AtlasCloud FLUX.2 Flex Edit",
+    "AtlasCloud FLUX.2 Pro Edit": "AtlasCloud FLUX.2 Pro Edit",
+    "AtlasCloud Grok Imagine Video Edit": "AtlasCloud Grok Imagine Video Edit",
+    "AtlasCloud Grok Imagine Video Extend": "AtlasCloud Grok Imagine Video Extend",
 }
 
 
