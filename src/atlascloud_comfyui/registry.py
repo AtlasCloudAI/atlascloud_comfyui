@@ -91,6 +91,7 @@ from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_t2v_dev import Atla
 from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_i2v_dev import AtlasGeminiOmniFlashImageToVideoDev
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_t2v import AtlasGrokImagineVideoTextToVideo
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_i2v import AtlasGrokImagineVideoImageToVideo
+from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_v15_i2v import AtlasGrokImagineVideoV15ImageToVideo
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_r2v import AtlasGrokImagineVideoReferenceToVideo
 from atlascloud_comfyui.nodes.image.flux2_pro_t2i import AtlasFlux2ProTextToImage
 from atlascloud_comfyui.nodes.image.flux2_flex_edit import AtlasFlux2FlexEdit
@@ -577,6 +578,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Kling V2.0 T2V Master": AtlasKlingV20T2VMaster,
     "AtlasCloud Grok Imagine Video Text-to-Video": AtlasGrokImagineVideoTextToVideo,
     "AtlasCloud Grok Imagine Video Image-to-Video": AtlasGrokImagineVideoImageToVideo,
+    "AtlasCloud Grok Imagine Video v1.5 Image-to-Video": AtlasGrokImagineVideoV15ImageToVideo,
     "AtlasCloud Grok Imagine Video Reference-to-Video": AtlasGrokImagineVideoReferenceToVideo,
     "AtlasCloud FLUX.2 Pro Text-to-Image": AtlasFlux2ProTextToImage,
     "AtlasCloud FLUX.2 Flex Edit": AtlasFlux2FlexEdit,
@@ -849,6 +851,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Kling V2.0 T2V Master": "AtlasCloud Kling V2.0 T2V Master",
     "AtlasCloud Grok Imagine Video Text-to-Video": "AtlasCloud Grok Imagine Video Text-to-Video",
     "AtlasCloud Grok Imagine Video Image-to-Video": "AtlasCloud Grok Imagine Video Image-to-Video",
+    "AtlasCloud Grok Imagine Video v1.5 Image-to-Video": "AtlasCloud Grok Imagine Video v1.5 Image-to-Video",
     "AtlasCloud Grok Imagine Video Reference-to-Video": "AtlasCloud Grok Imagine Video Reference-to-Video",
     "AtlasCloud FLUX.2 Pro Text-to-Image": "AtlasCloud FLUX.2 Pro Text-to-Image",
     "AtlasCloud FLUX.2 Flex Edit": "AtlasCloud FLUX.2 Flex Edit",

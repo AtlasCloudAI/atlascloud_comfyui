@@ -142,6 +142,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud VEO3.1 Fast Image-to-Video | google/veo3.1-fast/image-to-video |
 | AtlasCloud Gemini Omni Flash Image-to-Video Developer | google/gemini-omni-flash/image-to-video-developer |
 | AtlasCloud Grok Imagine Video Image-to-Video | xai/grok-imagine-video/image-to-video |
+| AtlasCloud Grok Imagine Video v1.5 Image-to-Video | xai/grok-imagine-video-v1.5/image-to-video |
 | AtlasCloud Grok Imagine Video Reference-to-Video | xai/grok-imagine-video/reference-to-video |
 | AtlasCloud Grok Imagine Video Edit | xai/grok-imagine-video/edit-video |
 | AtlasCloud Grok Imagine Video Extend | xai/grok-imagine-video/extend-video |
