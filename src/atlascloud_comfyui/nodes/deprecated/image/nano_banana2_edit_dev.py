@@ -64,7 +64,9 @@ class AtlasNanoBanana2EditDev:
         if not image:
             raise RuntimeError("image is required (URL or base64)")
 
-        images = [img.strip() for img in image.split(",") if img.strip()]
+        # Split on newlines, NOT commas: base64 data URLs ("data:image/png;base64,...")
+        # contain a comma, so comma-splitting corrupts them into invalid fragments.
+        images = [img.strip() for img in image.splitlines() if img.strip()]
 
         payload: Dict[str, Any] = {
             "model": "google/nano-banana-2/edit-developer",
