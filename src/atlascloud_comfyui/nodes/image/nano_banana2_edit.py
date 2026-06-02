@@ -16,7 +16,7 @@ class AtlasNanoBanana2Edit:
         return {
             "required": {
                 "atlas_client": ("ATLAS_CLIENT",),
-                "image": ("STRING", {"default": "", "tooltip": "Input image URL or base64 (up to 14 reference images, comma-separated)"}),
+                "image": ("STRING", {"default": "", "tooltip": "Input image URL or base64 (up to 14 reference images, ONE PER LINE)"}),
                 "prompt": ("STRING", {"multiline": True, "tooltip": "Text prompt for editing"}),
                 "aspect_ratio": (
                     ["1:1", "3:2", "2:3", "3:4", "4:3", "4:5", "5:4", "9:16", "16:9", "21:9"],
@@ -50,7 +50,9 @@ class AtlasNanoBanana2Edit:
         if not image:
             raise RuntimeError("image is required (URL or base64)")
 
-        images = [img.strip() for img in image.split(",") if img.strip()]
+        # Split on newlines, NOT commas: base64 data URLs ("data:image/png;base64,...")
+        # contain a comma, so comma-splitting corrupts them into invalid fragments.
+        images = [img.strip() for img in image.splitlines() if img.strip()]
 
         payload: Dict[str, Any] = {
             "model": "google/nano-banana-2/edit",
