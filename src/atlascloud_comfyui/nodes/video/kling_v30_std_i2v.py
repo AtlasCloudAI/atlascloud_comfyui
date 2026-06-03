@@ -3,12 +3,14 @@ from __future__ import annotations
 from typing import Any, Dict, Tuple
 
 
-def _require_http_url(url: str, field_name: str) -> str:
-    s = (url or "").strip()
+def _require_image(value: str, field_name: str) -> str:
+    # Accept an http(s) URL OR a base64 data URL / raw base64. The backend
+    # (kwaivgi/kling-v3.0-std/image-to-video) accepts base64 just like the
+    # Pro variant — verified by direct API call — so do NOT force http-only,
+    # otherwise the standard LoadImage -> Image to Base64 -> node flow breaks.
+    s = (value or "").strip()
     if not s:
         raise RuntimeError(f"{field_name} is required")
-    if not (s.startswith("http://") or s.startswith("https://")):
-        raise RuntimeError(f"{field_name} must start with http:// or https://")
     return s
 
 
@@ -23,14 +25,14 @@ class AtlasKlingV30StdImageToVideo:
         return {
             "required": {
                 "atlas_client": ("ATLAS_CLIENT", {"tooltip": "Connect from 'AtlasCloud Client (API Key/Base URL)' node"}),
-                "image_url": ("STRING", {"default": "", "tooltip": "Start image URL (http/https)."}),
+                "image_url": ("STRING", {"default": "", "tooltip": "Start image: URL or base64 (data URL)."}),
                 "prompt": ("STRING", {"default": "", "multiline": True, "tooltip": "Prompt"}),
                 "duration": ([5, 10], {"default": 5, "tooltip": "Duration (seconds)"}),
                 "cfg_scale": ("FLOAT", {"default": 0.5, "min": 0.0, "max": 1.0, "step": 0.01, "tooltip": "CFG scale"}),
                 "sound": ("BOOLEAN", {"default": False, "tooltip": "Generate sound/audio (if supported)"}),
             },
             "optional": {
-                "end_image_url": ("STRING", {"default": "", "tooltip": "Optional end image URL (http/https)."}),
+                "end_image_url": ("STRING", {"default": "", "tooltip": "Optional end image: URL or base64 (data URL)."}),
                 "negative_prompt": ("STRING", {"default": "", "multiline": True, "tooltip": "Negative prompt (optional)"}),
                 "timeout_sec": ("INT", {"default": 900, "min": 30, "max": 7200, "tooltip": "Polling timeout (seconds)"}),
                 "poll_interval_sec": ("FLOAT", {"default": 2.0, "min": 0.5, "max": 10.0, "tooltip": "Polling interval (seconds)"}),
@@ -58,7 +60,7 @@ class AtlasKlingV30StdImageToVideo:
         if not prompt:
             raise RuntimeError("prompt is required")
 
-        image_url = _require_http_url(image_url, "image_url")
+        image_url = _require_image(image_url, "image_url")
 
         payload: Dict[str, Any] = {
             "model": "kwaivgi/kling-v3.0-std/image-to-video",
@@ -75,7 +77,7 @@ class AtlasKlingV30StdImageToVideo:
 
         endu = (end_image_url or "").strip()
         if endu:
-            payload["end_image"] = _require_http_url(endu, "end_image_url")
+            payload["end_image"] = _require_image(endu, "end_image_url")
 
         prediction_id = client.generate_video(payload)
         result = client.poll_prediction(
