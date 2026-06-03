@@ -141,6 +141,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud VEO3 Fast Image-to-Video | google/veo3-fast/image-to-video |
 | AtlasCloud VEO3.1 Fast Image-to-Video | google/veo3.1-fast/image-to-video |
 | AtlasCloud Gemini Omni Flash Image-to-Video Developer | google/gemini-omni-flash/image-to-video-developer |
+| AtlasCloud Gemini Omni Flash Reference-to-Video Developer | google/gemini-omni-flash/reference-to-video-developer |
 | AtlasCloud Grok Imagine Video Image-to-Video | xai/grok-imagine-video/image-to-video |
 | AtlasCloud Grok Imagine Video v1.5 Image-to-Video | xai/grok-imagine-video-v1.5/image-to-video |
 | AtlasCloud Grok Imagine Video Reference-to-Video | xai/grok-imagine-video/reference-to-video |
@@ -334,6 +335,8 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 |------|-------|
 | AtlasCloud Nano Banana 2 Edit | google/nano-banana-2/edit |
 | AtlasCloud Nano Banana 2 Edit Developer | google/nano-banana-2/edit-developer |
+| AtlasCloud Nano Banana 2 Reference-to-Image | google/nano-banana-2/reference-to-image |
+| AtlasCloud Nano Banana 2 Reference-to-Image Developer | google/nano-banana-2/reference-to-image-developer |
 | AtlasCloud Seedream V5.0 Lite Edit | bytedance/seedream-v5.0-lite/edit |
 | AtlasCloud Seedream V5.0 Lite Edit Sequential | bytedance/seedream-v5.0-lite/edit-sequential |
 | AtlasCloud WAN2.6 Image-Edit | alibaba/wan-2.6/image-edit |
