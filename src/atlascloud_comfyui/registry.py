@@ -89,6 +89,7 @@ from atlascloud_comfyui.nodes.video.google_veo31_fast_i2v import AtlasVeo31FastI
 from atlascloud_comfyui.nodes.video.google_veo31_r2v import AtlasVeo31ReferenceToVideo
 from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_t2v_dev import AtlasGeminiOmniFlashTextToVideoDev
 from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_i2v_dev import AtlasGeminiOmniFlashImageToVideoDev
+from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_r2v_dev import AtlasGeminiOmniFlashReferenceToVideoDev
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_t2v import AtlasGrokImagineVideoTextToVideo
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_i2v import AtlasGrokImagineVideoImageToVideo
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_v15_i2v import AtlasGrokImagineVideoV15ImageToVideo
@@ -149,6 +150,8 @@ from atlascloud_comfyui.nodes.image.flux_dev_lora_t2i import AtlasFluxDevLoraTex
 from atlascloud_comfyui.nodes.image.nano_banana2_t2i import AtlasNanoBanana2TextToImage
 from atlascloud_comfyui.nodes.deprecated.image.nano_banana2_t2i_dev import AtlasNanoBanana2TextToImageDev
 from atlascloud_comfyui.nodes.image.nano_banana2_edit import AtlasNanoBanana2Edit
+from atlascloud_comfyui.nodes.image.nano_banana2_r2i import AtlasNanoBanana2ReferenceToImage
+from atlascloud_comfyui.nodes.image.nano_banana2_r2i_dev import AtlasNanoBanana2ReferenceToImageDev
 from atlascloud_comfyui.nodes.deprecated.image.nano_banana2_edit_dev import AtlasNanoBanana2EditDev
 from atlascloud_comfyui.nodes.image.seedream_v50_lite_t2i import AtlasSeedreamV50LiteTextToImage
 from atlascloud_comfyui.nodes.image.seedream_v50_lite_edit import AtlasSeedreamV50LiteEdit
@@ -419,6 +422,8 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Nano Banana 2 Text-to-Image Developer": AtlasNanoBanana2TextToImageDev,
     "AtlasCloud Nano Banana 2 Edit": AtlasNanoBanana2Edit,
     "AtlasCloud Nano Banana 2 Edit Developer": AtlasNanoBanana2EditDev,
+    "AtlasCloud Nano Banana 2 Reference-to-Image": AtlasNanoBanana2ReferenceToImage,
+    "AtlasCloud Nano Banana 2 Reference-to-Image Developer": AtlasNanoBanana2ReferenceToImageDev,
     "AtlasCloud Seedream V5.0 Lite Text-to-Image": AtlasSeedreamV50LiteTextToImage,
     "AtlasCloud Seedream V5.0 Lite Sequential Text-to-Image": AtlasSeedreamV50LiteSequentialTextToImage,
     "AtlasCloud Seedream V5.0 Lite Edit": AtlasSeedreamV50LiteEdit,
@@ -453,6 +458,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud VEO3.1 Fast Image-to-Video": AtlasVeo31FastImageToVideo,
     "AtlasCloud Gemini Omni Flash Text-to-Video Developer": AtlasGeminiOmniFlashTextToVideoDev,
     "AtlasCloud Gemini Omni Flash Image-to-Video Developer": AtlasGeminiOmniFlashImageToVideoDev,
+    "AtlasCloud Gemini Omni Flash Reference-to-Video Developer": AtlasGeminiOmniFlashReferenceToVideoDev,
     "AtlasCloud VEO3.1 Reference-to-Video": AtlasVeo31ReferenceToVideo,
     "AtlasCloud VEO3.1 Image-to-Video": AtlasVeo31ImageToVideo,
     "AtlasCloud VEO3 Image-to-Video": AtlasVeo3ImageToVideo,
@@ -695,6 +701,8 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Nano Banana 2 Text-to-Image Developer": "AtlasCloud Nano Banana 2 Text-to-Image Developer",
     "AtlasCloud Nano Banana 2 Edit": "AtlasCloud Nano Banana 2 Edit",
     "AtlasCloud Nano Banana 2 Edit Developer": "AtlasCloud Nano Banana 2 Edit Developer",
+    "AtlasCloud Nano Banana 2 Reference-to-Image": "AtlasCloud Nano Banana 2 Reference-to-Image",
+    "AtlasCloud Nano Banana 2 Reference-to-Image Developer": "AtlasCloud Nano Banana 2 Reference-to-Image Developer",
     "AtlasCloud Seedream V5.0 Lite Text-to-Image": "AtlasCloud Seedream V5.0 Lite Text-to-Image",
     "AtlasCloud Seedream V5.0 Lite Sequential Text-to-Image": "AtlasCloud Seedream V5.0 Lite Sequential Text-to-Image",
     "AtlasCloud Seedream V5.0 Lite Edit": "AtlasCloud Seedream V5.0 Lite Edit",
@@ -729,6 +737,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud VEO3.1 Fast Image-to-Video": "AtlasCloud VEO3.1 Fast Image-to-Video",
     "AtlasCloud Gemini Omni Flash Text-to-Video Developer": "AtlasCloud Gemini Omni Flash Text-to-Video Developer",
     "AtlasCloud Gemini Omni Flash Image-to-Video Developer": "AtlasCloud Gemini Omni Flash Image-to-Video Developer",
+    "AtlasCloud Gemini Omni Flash Reference-to-Video Developer": "AtlasCloud Gemini Omni Flash Reference-to-Video Developer",
     "AtlasCloud VEO3.1 Reference-to-Video": "AtlasCloud VEO3.1 Reference-to-Video",
     "AtlasCloud VEO3.1 Image-to-Video": "AtlasCloud VEO3.1 Image-to-Video",
     "AtlasCloud VEO3 Image-to-Video": "AtlasCloud VEO3 Image-to-Video",
