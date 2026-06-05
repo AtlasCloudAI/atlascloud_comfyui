@@ -4,47 +4,64 @@ from atlascloud_comfyui.nodes.utils.image_encode import comfy_image_to_data_url_
 
 
 class AtlasMultiImageToBase64:
-    """Convert up to 8 IMAGE inputs (each may be a batch) into a newline-separated
-    list of base64 data URLs — ready to feed multi-image inputs like Seedance 2.0
-    Reference-to-Video `reference_images`, Kling Reference-to-Video `images`, or
-    Nano Banana / GPT edit `images` (all of which split on newlines).
+    """Build a newline-separated reference list for multi-image inputs like
+    Seedance 2.0 Reference-to-Video `reference_images`, Kling R2V `images`,
+    Nano Banana / GPT edit `images` (all split on newlines).
 
-    Connect one Load Image per reference. Empty/unconnected inputs are skipped.
-    Batched IMAGE inputs are expanded frame-by-frame, one base64 per line.
+    Accepts BOTH kinds of source, treated uniformly:
+      - `image_1..image_8` (IMAGE): local/uploaded images -> encoded to base64
+      - `refs` (STRING, multiline): existing references passed THROUGH as-is,
+        one per line — `asset://atlas-asset-...`, http(s) URLs, or base64.
+        AtlasCloud accepts asset:// and URL refs directly (the backend
+        resolves/auto-registers them), so there is NO need to download an
+        asset/URL back into an image just to re-encode it.
+
+    Output `references` is the combined newline-separated list (refs first,
+    then encoded images), ready to wire into the reference/images field.
     """
 
     CATEGORY = "AtlasCloud/Utils"
     FUNCTION = "run"
     RETURN_TYPES = ("STRING", "INT")
-    RETURN_NAMES = ("images_base64", "count")
+    RETURN_NAMES = ("references", "count")
 
     MAX_IMAGES = 8
 
     @classmethod
     def INPUT_TYPES(cls):
-        required = {"image_1": ("IMAGE", {"tooltip": "Reference image 1 (required)"})}
         optional = {
-            f"image_{i}": ("IMAGE", {"tooltip": f"Reference image {i} (optional)"})
-            for i in range(2, cls.MAX_IMAGES + 1)
+            "refs": ("STRING", {
+                "default": "", "multiline": True,
+                "tooltip": "Existing references, one per line: asset://... , http(s) URL, or base64. Passed through as-is.",
+            }),
         }
-        return {"required": required, "optional": optional}
+        optional.update({
+            f"image_{i}": ("IMAGE", {"tooltip": f"Local/uploaded image {i} (encoded to base64)"})
+            for i in range(1, cls.MAX_IMAGES + 1)
+        })
+        return {"required": {}, "optional": optional}
 
-    def run(self, image_1, **kwargs):
-        ordered = [image_1] + [kwargs.get(f"image_{i}") for i in range(2, self.MAX_IMAGES + 1)]
-        urls = []
-        for img in ordered:
+    def run(self, refs: str = "", **kwargs):
+        out = []
+        # 1) pass-through refs (asset:// / URL / base64), one per line
+        for line in (refs or "").splitlines():
+            s = line.strip()
+            if s:
+                out.append(s)
+        # 2) encode local IMAGE inputs to base64 (batches expand per-frame)
+        for i in range(1, self.MAX_IMAGES + 1):
+            img = kwargs.get(f"image_{i}")
             if img is None:
                 continue
-            # img: torch tensor [B,H,W,3]; expand each frame to its own base64
             try:
                 batch = img.shape[0]
             except Exception:
                 batch = 1
             for b in range(batch):
-                urls.append(comfy_image_to_data_url_png(img[b : b + 1]))
-        if not urls:
-            raise RuntimeError("At least one image is required")
-        return ("\n".join(urls), len(urls))
+                out.append(comfy_image_to_data_url_png(img[b : b + 1]))
+        if not out:
+            raise RuntimeError("Provide at least one reference: connect an image or fill `refs`")
+        return ("\n".join(out), len(out))
 
 
 NODE_CLASS_MAPPINGS = {"AtlasCloud Multi Image to Base64": AtlasMultiImageToBase64}
