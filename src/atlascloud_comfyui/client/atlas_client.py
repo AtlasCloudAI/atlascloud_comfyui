@@ -4,6 +4,7 @@ import os
 import time
 from dataclasses import dataclass, field
 from typing import Any, Dict, Optional
+from urllib.parse import urlsplit, urlunsplit
 
 
 class AtlasError(RuntimeError):
@@ -51,6 +52,15 @@ class AtlasClient:
             "X-Atlas-Source": "github-readme",
         }
 
+    def _console_base_url(self) -> str:
+        parts = urlsplit(self.base_url)
+        host = parts.netloc
+        if host.startswith("api."):
+            host = "console." + host[len("api.") :]
+        elif host == "atlascloud.ai":
+            host = "console.atlascloud.ai"
+        return urlunsplit((parts.scheme or "https", host, "", "", "")).rstrip("/")
+
     def generate_video(self, payload: Dict[str, Any]) -> str:
         # ✅ runtime import so CI can import nodes without requests installed
         import requests
@@ -78,6 +88,80 @@ class AtlasClient:
             return data["data"]["id"]
         except Exception as e:
             raise AtlasError(f"Unexpected generateImage response: {data}") from e
+
+    def upload_media_bytes(self, content: bytes, *, filename: str, mime_type: str = "application/octet-stream") -> Dict[str, Any]:
+        import requests
+
+        url = f"{self.base_url}/api/v1/model/uploadMedia"
+        headers = self._auth_headers()
+        files = {"file": (filename, content, mime_type)}
+        r = requests.post(url, headers=headers, files=files, timeout=120)
+        r.raise_for_status()
+        data = r.json()
+        payload = data.get("data")
+        if not isinstance(payload, dict):
+            raise AtlasError(f"Unexpected uploadMedia response: {data}")
+        return payload
+
+    def register_seedance_asset(self, *, url: str, asset_type: str = "Image") -> Dict[str, Any]:
+        import requests
+
+        body = {"type": asset_type, "url": url}
+        endpoint = f"{self._console_base_url()}/api/v1/sd/assets"
+        headers = {"Content-Type": "application/json", **self._auth_headers()}
+        r = requests.post(endpoint, headers=headers, json=body, timeout=120)
+        r.raise_for_status()
+        data = r.json()
+        payload = data.get("data")
+        if not isinstance(payload, dict):
+            raise AtlasError(f"Unexpected asset register response: {data}")
+        return payload
+
+    def get_seedance_asset(self, asset_id: str) -> Dict[str, Any]:
+        import requests
+
+        endpoint = f"{self._console_base_url()}/api/v1/sd/assets/{asset_id}"
+        r = requests.get(endpoint, headers=self._auth_headers(), timeout=60)
+        r.raise_for_status()
+        data = r.json()
+        payload = data.get("data")
+        if not isinstance(payload, dict):
+            raise AtlasError(f"Unexpected asset lookup response: {data}")
+        return payload
+
+    def wait_for_seedance_asset_active(
+        self,
+        asset_id: str,
+        *,
+        poll_interval_sec: float = 2.0,
+        timeout_sec: float = 300.0,
+    ) -> Dict[str, Any]:
+        start = time.time()
+        last_status: Optional[str] = None
+        last_error: Optional[str] = None
+
+        while True:
+            elapsed = time.time() - start
+            if elapsed > float(timeout_sec):
+                extra = f" last_status={last_status!r} last_error={last_error!r}" if last_status or last_error else ""
+                raise AtlasError(f"Timed out waiting for asset {asset_id} to become Active.{extra}")
+
+            payload = self.get_seedance_asset(asset_id)
+            status = str(payload.get("status") or "").strip()
+            last_status = status
+
+            if status.lower() == "active":
+                return payload
+            if status.lower() == "failed":
+                last_error = (
+                    str(payload.get("error_message") or "").strip()
+                    or str(payload.get("error") or "").strip()
+                    or "Asset preprocessing failed"
+                )
+                code = str(payload.get("error_code") or "").strip()
+                raise AtlasError(f"{last_error} (error_code={code})" if code else last_error)
+
+            time.sleep(float(poll_interval_sec))
 
     def poll_prediction(
         self,
