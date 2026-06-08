@@ -308,6 +308,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Qwen Image Text-to-Image Plus | alibaba/qwen-image/text-to-image-plus |
 | AtlasCloud Qwen Image Text-to-Image Max | alibaba/qwen-image/text-to-image-max |
 | AtlasCloud Grok Imagine IQ Text-to-Image | xai/grok-imagine-image-quality/text-to-image |
+| AtlasCloud Grok Imagine Text-to-Image | xai/grok-imagine-image/text-to-image |
 | AtlasCloud Baidu ERNIE-Image-Turbo Text-to-Image | baidu/ERNIE-Image-Turbo/text-to-image |
 | AtlasCloud GPT Image-2 Text-to-Image | openai/gpt-image-2/text-to-image |
 | AtlasCloud GPT Image-2 Developer Text-to-Image | openai/gpt-image-2-developer/text-to-image |
@@ -359,6 +360,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Flux Kontext Dev LoRA Edit | black-forest-labs/flux-kontext-dev-lora |
 | AtlasCloud Qwen Image Edit Plus 20251215 | alibaba/qwen-image/edit-plus-20251215 |
 | AtlasCloud Grok Imagine IQ Edit | xai/grok-imagine-image-quality/edit |
+| AtlasCloud Grok Imagine Edit | xai/grok-imagine-image/edit |
 | AtlasCloud GPT Image-2 Edit | openai/gpt-image-2/edit |
 | AtlasCloud GPT Image-2 Developer Edit | openai/gpt-image-2-developer/edit |
 

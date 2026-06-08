@@ -242,6 +242,8 @@ from atlascloud_comfyui.nodes.video.veed_fabric_10_fast_i2v import AtlasVeedFabr
 from atlascloud_comfyui.nodes.video.veed_fabric_10_i2v import AtlasVeedFabric10ImageToVideo
 from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_quality_t2i import AtlasGrokImagineImageQualityTextToImage
 from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_quality_edit import AtlasGrokImagineImageQualityEdit
+from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_t2i import AtlasGrokImagineImageTextToImage
+from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_edit import AtlasGrokImagineImageEdit
 
 from atlascloud_comfyui.nodes.video.kling_v16_multi_i2v_pro import AtlasKlingV16MultiI2VPro
 from atlascloud_comfyui.nodes.video.kling_v16_multi_i2v_standard import AtlasKlingV16MultiI2VStandard
@@ -562,6 +564,8 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Veed Fabric 1.0 Fast Image-to-Video": AtlasVeedFabric10FastImageToVideo,
     "AtlasCloud Grok Imagine IQ Text-to-Image": AtlasGrokImagineImageQualityTextToImage,
     "AtlasCloud Grok Imagine IQ Edit": AtlasGrokImagineImageQualityEdit,
+    "AtlasCloud Grok Imagine Text-to-Image": AtlasGrokImagineImageTextToImage,
+    "AtlasCloud Grok Imagine Edit": AtlasGrokImagineImageEdit,
     "AtlasCloud Kling V2.0 I2V Master": AtlasKlingV20I2VMaster,
     "AtlasCloud VEO3 Fast Image-to-Video": AtlasVeo3FastImageToVideo,
     "AtlasCloud Kling V2.1 T2V Master": AtlasKlingV21T2VMaster,
@@ -840,6 +844,8 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Veed Fabric 1.0 Fast Image-to-Video": "AtlasCloud Veed Fabric 1.0 Fast Image-to-Video",
     "AtlasCloud Grok Imagine IQ Text-to-Image": "AtlasCloud Grok Imagine IQ Text-to-Image",
     "AtlasCloud Grok Imagine IQ Edit": "AtlasCloud Grok Imagine IQ Edit",
+    "AtlasCloud Grok Imagine Text-to-Image": "AtlasCloud Grok Imagine Text-to-Image",
+    "AtlasCloud Grok Imagine Edit": "AtlasCloud Grok Imagine Edit",
     "AtlasCloud Kling V2.0 I2V Master": "AtlasCloud Kling V2.0 I2V Master",
     "AtlasCloud VEO3 Fast Image-to-Video": "AtlasCloud VEO3 Fast Image-to-Video",
     "AtlasCloud Kling V2.1 T2V Master": "AtlasCloud Kling V2.1 T2V Master",

@@ -261,6 +261,25 @@ def test_grok_imagine_iq_edit_node_metadata():
     assert AtlasGrokImagineImageQualityEdit.RETURN_TYPES == ("STRING", "STRING")
 
 
+def test_grok_imagine_t2i_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.xai_grok_imagine_image_t2i import (
+        AtlasGrokImagineImageTextToImage,
+    )
+
+    assert "atlas_client" in AtlasGrokImagineImageTextToImage.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasGrokImagineImageTextToImage.INPUT_TYPES()["required"]
+    assert AtlasGrokImagineImageTextToImage.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_grok_imagine_edit_node_metadata():
+    from src.atlascloud_comfyui.nodes.image.xai_grok_imagine_image_edit import AtlasGrokImagineImageEdit
+
+    assert "atlas_client" in AtlasGrokImagineImageEdit.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasGrokImagineImageEdit.INPUT_TYPES()["required"]
+    assert "image_urls" in AtlasGrokImagineImageEdit.INPUT_TYPES()["required"]
+    assert AtlasGrokImagineImageEdit.RETURN_TYPES == ("STRING", "STRING")
+
+
 # --- Batch: Wan 2.2 Turbo Infinite I2V (2026-05-07) ---
 
 
