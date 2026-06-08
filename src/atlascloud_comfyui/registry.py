@@ -317,6 +317,8 @@ from atlascloud_comfyui.nodes.utils.image_preview import AtlasImagePreviewURL
 from atlascloud_comfyui.nodes.utils.video_previewer import AtlasVideoPreviewer
 from atlascloud_comfyui.nodes.utils.image_to_base64 import AtlasImageToBase64
 from atlascloud_comfyui.nodes.utils.multi_image_to_base64 import AtlasMultiImageToBase64
+from atlascloud_comfyui.nodes.utils.upload_videos_to_asset import AtlasUploadVideosToAsset
+from atlascloud_comfyui.nodes.utils.upload_audio_to_asset import AtlasUploadAudioToAsset
 from atlascloud_comfyui.nodes.utils.multi_image_to_seedance_assets import AtlasMultiImageToSeedanceAssets
 
 
@@ -417,6 +419,8 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Video Preview": AtlasVideoPreviewer,
     "AtlasCloud Image to Base64": AtlasImageToBase64,
     "AtlasCloud Multi Image to Base64": AtlasMultiImageToBase64,
+    "AtlasCloud Upload Videos to Asset": AtlasUploadVideosToAsset,
+    "AtlasCloud Upload Audio to Asset": AtlasUploadAudioToAsset,
     "AtlasCloud Multi Image to Seedance Assets": AtlasMultiImageToSeedanceAssets,
     "AtlasCloud Kling V3.0 Pro Text-to-Video": AtlasKlingV30ProTextToVideo,
     "AtlasCloud Kling V3.0 Std Text-to-Video": AtlasKlingV30StdTextToVideo,
@@ -699,6 +703,8 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Video Preview": "AtlasCloud Video Preview",
     "AtlasCloud Image to Base64": "AtlasCloud Image to Base64",
     "AtlasCloud Multi Image to Base64": "AtlasCloud Multi Image to Base64",
+    "AtlasCloud Upload Videos to Asset": "AtlasCloud Upload Videos to Asset",
+    "AtlasCloud Upload Audio to Asset": "AtlasCloud Upload Audio to Asset",
     "AtlasCloud Multi Image to Seedance Assets": "AtlasCloud Multi Image to Seedance Assets",
     "AtlasCloud Kling V3.0 Pro Text-to-Video": "AtlasCloud Kling V3.0 Pro Text-to-Video",
     "AtlasCloud Kling V3.0 Std Text-to-Video": "AtlasCloud Kling V3.0 Std Text-to-Video",
