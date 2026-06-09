@@ -1,8 +1,33 @@
-# AtlasCloud_ComfyUI
+# atlascloud_comfyui
 
-AtlasCloud official custom nodes v1.0.0 for **ComfyUI**.
-[AtlasCloud Website](https://atlascloud.ai/?utm_source=github&utm_medium=readme&utm_campaign=comfyui/)
-With these nodes you can call AtlasCloud’s hosted models directly inside ComfyUI workflows.
+> Use Atlas Cloud's 300+ AI models inside ComfyUI. Drop-in nodes for Sora 2, Veo 3.1, Kling 3, Seedance 2, Nano Banana Pro, GPT Image 2, Flux 2, and more.
+
+<p>
+  <a href="https://github.com/AtlasCloudAI/atlascloud_comfyui/blob/main/LICENSE"><img src="https://img.shields.io/github/license/AtlasCloudAI/atlascloud_comfyui?style=flat&colorA=18181B&colorB=28CF8D" alt="license" /></a>
+  <a href="https://github.com/AtlasCloudAI/atlascloud_comfyui/stargazers"><img src="https://img.shields.io/github/stars/AtlasCloudAI/atlascloud_comfyui?style=flat&colorA=18181B&colorB=28CF8D" alt="stars" /></a>
+  <a href="https://github.com/AtlasCloudAI/atlascloud_comfyui/pulls"><img src="https://img.shields.io/badge/PRs-welcome-28CF8D.svg?style=flat&colorA=18181B" alt="PRs welcome" /></a>
+  <img src="https://img.shields.io/badge/models-300%2B-28CF8D.svg?style=flat&colorA=18181B" alt="300+ models" />
+</p>
+
+> **[→ Get your free Atlas Cloud API key](https://www.atlascloud.ai/console/api-keys?utm_source=github&utm_campaign=atlascloud_comfyui)** — one key, 300+ models, no local GPU or model weights needed.
+
+<!-- TODO(hero): add a node-graph / sample-output screenshot or GIF here as the first-screen hero. -->
+
+## Supported Models
+
+- 🎬 **Video** — Sora 2 · Veo 3.1 · Kling 3 · Seedance 2 · WAN 2.x · Hailuo · Vidu
+- 🎨 **Image** — Nano Banana Pro · GPT Image 2 · Flux 2 · Seedream 5 · Imagen 4 · Qwen-Image
+- ✏️ **Edit & more** — image edit · image-to-video · video extend · video edit · audio-to-video
+- 💬 **Catalog** — [300+ models](https://www.atlascloud.ai/models?utm_source=github&utm_campaign=atlascloud_comfyui) total, all via one API
+
+See the full **[node catalog by task type](#available-nodes)** below.
+
+## Quickstart (5 minutes)
+
+1. Install the nodes (see [Installation](#installation)).
+2. Drag [`examples/01-text-to-image.json`](examples/01-text-to-image.json) onto the ComfyUI canvas.
+3. Open the **AtlasCloud Client** node and paste your [API key](https://www.atlascloud.ai/console/api-keys?utm_source=github&utm_campaign=atlascloud_comfyui).
+4. Hit **Run** — your first image renders through Atlas Cloud. More graphs in [`examples/`](examples/).
 
 ---
 
@@ -368,6 +393,20 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 
 ---
 
+## Example Workflows
+
+Three ready-to-run graphs live in [`examples/`](examples/) — drag a `.json` onto the canvas, paste your API key into the **AtlasCloud Client** node, and run (no local GPU needed):
+
+| Workflow | What it does | Models | Nodes |
+|----------|--------------|--------|-------|
+| [`01-text-to-image.json`](examples/01-text-to-image.json) | Prompt → image | Nano Banana Pro | 3 |
+| [`02-image-to-video.json`](examples/02-image-to-video.json) | Image → ~5s video | Seedance 2 | 5 |
+| [`03-multi-reference-video.json`](examples/03-multi-reference-video.json) | Up to 8 reference images → video | Seedance 2 Reference-to-Video | 7 |
+
+See [`examples/README.md`](examples/README.md) for setup details.
+
+---
+
 ## Troubleshooting
 
 ### Nodes not showing up
@@ -416,6 +455,15 @@ Please include:
 -   the error traceback from logs
 
 ---
+
+## More Atlas Cloud Tools
+
+- 🧰 **Prefer the terminal?** → Install [atlascloud-cli](https://github.com/AtlasCloudAI/cli)
+- 🤖 **Use it in Claude Code / Cursor?** → Install the [Atlas Cloud MCP Server](https://github.com/AtlasCloudAI/mcp-server)
+- 🎬 **As a Claude Code / Codex / Gemini CLI Skill?** → Install [atlas-cloud-skills](https://github.com/AtlasCloudAI/atlas-cloud-skills)
+- 🔁 **n8n nodes** → [n8n-nodes-atlascloud](https://github.com/AtlasCloudAI/n8n-nodes-atlascloud)
+- 💬 **Join our Discord** → [discord.gg/MWmMr4q9es](https://discord.gg/MWmMr4q9es)
+- 🌐 **Website** → [atlascloud.ai](https://www.atlascloud.ai?utm_source=github&utm_campaign=atlascloud_comfyui)
 
 ## License
 

@@ -1,0 +1,257 @@
+{
+  "id": "Seedance2.0 图生视频",
+  "last_node_id": 5,
+  "last_link_id": 4,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "AtlasCloud Client",
+      "pos": [
+        40,
+        200
+      ],
+      "size": [
+        390,
+        240
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "atlas_client",
+          "type": "ATLAS_CLIENT",
+          "links": [
+            2
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AtlasCloud Client"
+      },
+      "widgets_values": [
+        "PASTE_YOUR_ATLASCLOUD_API_KEY",
+        "https://api.atlascloud.ai"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        40,
+        420
+      ],
+      "size": [
+        390,
+        240
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "videoframe_9033.png"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "AtlasCloud Image to Base64",
+      "pos": [
+        320,
+        420
+      ],
+      "size": [
+        390,
+        240
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_base64",
+          "type": "STRING",
+          "links": [
+            3
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AtlasCloud Image to Base64"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 4,
+      "type": "AtlasCloud Seedance 2.0 Image-to-Video",
+      "pos": [
+        640,
+        160
+      ],
+      "size": [
+        390,
+        240
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "atlas_client",
+          "type": "ATLAS_CLIENT",
+          "link": 2
+        },
+        {
+          "name": "image",
+          "type": "STRING",
+          "link": 3,
+          "widget": {
+            "name": "image"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video_url",
+          "type": "STRING",
+          "links": [
+            4
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "prediction_id",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AtlasCloud Seedance 2.0 Image-to-Video"
+      },
+      "widgets_values": [
+        "",
+        "the motorcycle racer leans deeper into the corner and accelerates out of it, dynamic racing motion, speed and energy, cinematic",
+        5,
+        "720p",
+        "adaptive",
+        true,
+        "",
+        false,
+        false,
+        2.0,
+        900
+      ]
+    },
+    {
+      "id": 5,
+      "type": "AtlasCloud Video Preview",
+      "pos": [
+        1080,
+        160
+      ],
+      "size": [
+        390,
+        240
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video_url",
+          "type": "STRING",
+          "link": 4,
+          "widget": {
+            "name": "video_url"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "local_video_path",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AtlasCloud Video Preview"
+      },
+      "widgets_values": [
+        "",
+        "atlas_videos",
+        "AtlasVideo",
+        120,
+        false
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      2,
+      1,
+      0,
+      4,
+      0,
+      "ATLAS_CLIENT"
+    ],
+    [
+      3,
+      3,
+      0,
+      4,
+      1,
+      "STRING"
+    ],
+    [
+      4,
+      4,
+      0,
+      5,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
