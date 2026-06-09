@@ -36,12 +36,16 @@ class AtlasUploadVideosToAsset:
 
     NONE = "(none)"
 
+    PLACEHOLDER = "(upload a video file)"
+
     @classmethod
     def INPUT_TYPES(cls):
         vids = _input_videos()
+        # EMPTY combo => frontend can't instantiate the node. Keep a placeholder
+        # for the required slot so it stays addable even with no videos yet.
         required = {
             "atlas_client": ("ATLAS_CLIENT", {"tooltip": "Connect from AtlasCloud Client"}),
-            "video_1": (vids, {"video_upload": True, "tooltip": "Upload reference video 1"}),
+            "video_1": (vids or [cls.PLACEHOLDER], {"video_upload": True, "tooltip": "Upload reference video 1"}),
         }
         # optional slots default to "(none)" so they are skipped unless a file is picked
         optional = {f"video_{i}": ([cls.NONE] + vids, {"video_upload": True, "tooltip": f"Upload reference video {i} (optional)"})
@@ -72,7 +76,7 @@ class AtlasUploadVideosToAsset:
         names = [video_1] + [kwargs.get(f"video_{i}") for i in range(2, self.MAX + 1)]
         urls = []
         for nm in names:
-            if not nm or nm == self.NONE:
+            if not nm or nm == self.NONE or nm == self.PLACEHOLDER:
                 continue
             path = os.path.join(d, nm)
             if not os.path.isfile(path):
