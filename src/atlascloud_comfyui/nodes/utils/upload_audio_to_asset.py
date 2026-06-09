@@ -29,9 +29,15 @@ class AtlasUploadAudioToAsset:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("audio_url",)
 
+    PLACEHOLDER = "(upload an audio file)"
+
     @classmethod
     def INPUT_TYPES(cls):
-        auds = _input_audios()
+        # An EMPTY combo list makes ComfyUI's frontend fail to instantiate the
+        # node ("can search it but can't add it"). Always keep at least one
+        # placeholder entry so the node is addable even when the input dir has
+        # no audio yet; the audio_upload control still lets the user upload one.
+        auds = _input_audios() or [cls.PLACEHOLDER]
         return {
             "required": {
                 "atlas_client": ("ATLAS_CLIENT", {"tooltip": "Connect from AtlasCloud Client"}),
@@ -51,8 +57,8 @@ class AtlasUploadAudioToAsset:
     def run(self, atlas_client: AtlasClientHandle, audio):
         import folder_paths
         d = folder_paths.get_input_directory()
-        if not audio:
-            raise RuntimeError("Upload an audio file")
+        if not audio or audio == self.PLACEHOLDER:
+            raise RuntimeError("请先用本节点的上传按钮上传一个音频文件")
         path = os.path.join(d, audio)
         if not os.path.isfile(path):
             raise RuntimeError(f"audio not found in input dir: {audio}")
