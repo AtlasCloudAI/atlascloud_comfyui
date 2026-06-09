@@ -100,6 +100,12 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud Pika V2.2 Text-to-Video | pika/v2.2-t2v |
 | AtlasCloud Pika V2.0 Turbo Text-to-Video | pika/v2.0-turbo-t2v |
 | AtlasCloud PixVerse V4.5 Text-to-Video | pixverse/pixverse-v4.5-t2v |
+| AtlasCloud PixVerse C1 Text-to-Video | pixverse/c1/text-to-video |
+| AtlasCloud PixVerse C1 Image-to-Video | pixverse/c1/image-to-video |
+| AtlasCloud PixVerse C1 Reference-to-Video | pixverse/c1/reference-to-video |
+| AtlasCloud PixVerse V6 Text-to-Video | pixverse/v6/text-to-video |
+| AtlasCloud PixVerse V6 Image-to-Video | pixverse/v6/image-to-video |
+| AtlasCloud PixVerse V6 Reference-to-Video | pixverse/v6/reference-to-video |
 | AtlasCloud Hailuo 02 T2V Pro | minimax/hailuo-02/t2v-pro |
 | AtlasCloud Hailuo 02 T2V Standard | minimax/hailuo-02/t2v-standard |
 | AtlasCloud Hailuo 02 Pro | minimax/hailuo-02/pro |
