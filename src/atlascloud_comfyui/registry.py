@@ -288,6 +288,13 @@ from atlascloud_comfyui.nodes.video.google_veo31_lite_i2v import AtlasVeo31LiteI
 from atlascloud_comfyui.nodes.video.google_veo31_lite_start_end_frame_t2v import AtlasVeo31LiteStartEndFrameToVideo
 from atlascloud_comfyui.nodes.video.vidu_q3_r2v import AtlasViduQ3ReferenceToVideo
 from atlascloud_comfyui.nodes.video.vidu_q3_mix_r2v import AtlasViduQ3MixReferenceToVideo
+
+from atlascloud_comfyui.nodes.video.pixverse_c1_t2v import AtlasPixVerseC1TextToVideo
+from atlascloud_comfyui.nodes.video.pixverse_c1_i2v import AtlasPixVerseC1ImageToVideo
+from atlascloud_comfyui.nodes.video.pixverse_c1_r2v import AtlasPixVerseC1ReferenceToVideo
+from atlascloud_comfyui.nodes.video.pixverse_v6_t2v import AtlasPixVerseV6TextToVideo
+from atlascloud_comfyui.nodes.video.pixverse_v6_i2v import AtlasPixVerseV6ImageToVideo
+from atlascloud_comfyui.nodes.video.pixverse_v6_r2v import AtlasPixVerseV6ReferenceToVideo
 from atlascloud_comfyui.nodes.video.vidu_q1_t2v import AtlasViduQ1TextToVideo
 from atlascloud_comfyui.nodes.video.vidu_q1_i2v import AtlasViduQ1ImageToVideo
 from atlascloud_comfyui.nodes.video.vidu_q1_start_end import AtlasViduQ1StartEndToVideo
@@ -457,6 +464,12 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Luma Ray 2 Image-to-Video": AtlasLumaRay2ImageToVideo,
     "AtlasCloud Pika V2.2 Text-to-Video": AtlasPikaV22TextToVideo,
     "AtlasCloud PixVerse V4.5 Text-to-Video": AtlasPixVerseV45TextToVideo,
+    "AtlasCloud PixVerse C1 Text-to-Video": AtlasPixVerseC1TextToVideo,
+    "AtlasCloud PixVerse C1 Image-to-Video": AtlasPixVerseC1ImageToVideo,
+    "AtlasCloud PixVerse C1 Reference-to-Video": AtlasPixVerseC1ReferenceToVideo,
+    "AtlasCloud PixVerse V6 Text-to-Video": AtlasPixVerseV6TextToVideo,
+    "AtlasCloud PixVerse V6 Image-to-Video": AtlasPixVerseV6ImageToVideo,
+    "AtlasCloud PixVerse V6 Reference-to-Video": AtlasPixVerseV6ReferenceToVideo,
     "AtlasCloud Hailuo 02 T2V Pro": AtlasHailuo02T2VPro,
     "AtlasCloud Sora 2 Image-to-Video": AtlasSora2ImageToVideo,
     "AtlasCloud Kling V2.5 Turbo Pro Text-to-Video": AtlasKlingV25TurboProTextToVideo,
@@ -741,6 +754,12 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Luma Ray 2 Image-to-Video": "AtlasCloud Luma Ray 2 Image-to-Video",
     "AtlasCloud Pika V2.2 Text-to-Video": "AtlasCloud Pika V2.2 Text-to-Video",
     "AtlasCloud PixVerse V4.5 Text-to-Video": "AtlasCloud PixVerse V4.5 Text-to-Video",
+    "AtlasCloud PixVerse C1 Text-to-Video": "AtlasCloud PixVerse C1 Text-to-Video",
+    "AtlasCloud PixVerse C1 Image-to-Video": "AtlasCloud PixVerse C1 Image-to-Video",
+    "AtlasCloud PixVerse C1 Reference-to-Video": "AtlasCloud PixVerse C1 Reference-to-Video",
+    "AtlasCloud PixVerse V6 Text-to-Video": "AtlasCloud PixVerse V6 Text-to-Video",
+    "AtlasCloud PixVerse V6 Image-to-Video": "AtlasCloud PixVerse V6 Image-to-Video",
+    "AtlasCloud PixVerse V6 Reference-to-Video": "AtlasCloud PixVerse V6 Reference-to-Video",
     "AtlasCloud Hailuo 02 T2V Pro": "AtlasCloud Hailuo 02 T2V Pro",
     "AtlasCloud Sora 2 Image-to-Video": "AtlasCloud Sora 2 Image-to-Video",
     "AtlasCloud Kling V2.5 Turbo Pro Text-to-Video": "AtlasCloud Kling V2.5 Turbo Pro Text-to-Video",

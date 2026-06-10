@@ -1,27 +1,43 @@
 from __future__ import annotations
 
-import os
+import io
+import wave
 
 from atlascloud_comfyui.nodes.auth.atlas_client_node import AtlasClientHandle
 
-_AUDIO_EXTS = (".mp3", ".wav", ".m4a", ".aac", ".flac", ".ogg")
-_MIME = {".mp3": "audio/mpeg", ".wav": "audio/wav", ".m4a": "audio/mp4",
-         ".aac": "audio/aac", ".flac": "audio/flac", ".ogg": "audio/ogg"}
 
+def _audio_to_wav_bytes(audio) -> bytes:
+    """ComfyUI AUDIO ({waveform:[B,C,T] float tensor, sample_rate:int}) -> wav bytes.
+    Uses stdlib wave + numpy only (no torchaudio dependency)."""
+    import numpy as np
 
-def _input_audios():
-    try:
-        import folder_paths
-        d = folder_paths.get_input_directory()
-        return sorted([f for f in os.listdir(d) if f.lower().endswith(_AUDIO_EXTS)])
-    except Exception:
-        return []
+    waveform = audio["waveform"]
+    sr = int(audio["sample_rate"])
+    arr = waveform[0].detach().cpu().numpy()  # [C, T]
+    if arr.ndim == 1:
+        arr = arr[None, :]
+    arr = np.clip(arr, -1.0, 1.0)
+    pcm = (arr * 32767.0).astype(np.int16)        # [C, T]
+    interleaved = pcm.T.reshape(-1)               # [T, C] -> flat
+    buf = io.BytesIO()
+    with wave.open(buf, "wb") as w:
+        w.setnchannels(arr.shape[0])
+        w.setsampwidth(2)
+        w.setframerate(sr)
+        w.writeframes(interleaved.tobytes())
+    return buf.getvalue()
 
 
 class AtlasUploadAudioToAsset:
-    """Upload a LOCAL audio file (with the ComfyUI upload button) and return its
-    public URL — ready to wire into Seedance 2.0 Reference-to-Video
-    `reference_audio` (voice/timbre reference). Seedance accepts an audio URL.
+    """Upload a reference audio (voice/timbre) to AtlasCloud and return its URL,
+    ready for Seedance 2.0 Reference-to-Video `reference_audio`.
+
+    IMPORTANT: takes an AUDIO input (connect a core **Load Audio** node), NOT a
+    built-in `audio_upload` widget. The frontend's audio_upload control attaches
+    an `audioUI` preview widget whose `updateUIWidget` crashes on custom nodes
+    ("Cannot read properties of undefined (reading 'element')"), making the node
+    un-instantiable. Using Load Audio for the upload UI avoids that entirely and
+    is rock solid (it's a core node).
     """
 
     CATEGORY = "AtlasCloud/Utils"
@@ -31,34 +47,18 @@ class AtlasUploadAudioToAsset:
 
     @classmethod
     def INPUT_TYPES(cls):
-        auds = _input_audios()
         return {
             "required": {
                 "atlas_client": ("ATLAS_CLIENT", {"tooltip": "Connect from AtlasCloud Client"}),
-                "audio": (auds, {"audio_upload": True, "tooltip": "Upload reference audio (voice/timbre)"}),
+                "audio": ("AUDIO", {"tooltip": "Connect a core 'Load Audio' node (which has the upload button)"}),
             }
         }
 
-    @classmethod
-    def IS_CHANGED(cls, atlas_client=None, audio=None):
-        try:
-            import folder_paths
-            d = folder_paths.get_input_directory()
-            return f"{audio}:{os.path.getmtime(os.path.join(d, audio))}" if audio else "none"
-        except Exception:
-            return float("nan")
-
     def run(self, atlas_client: AtlasClientHandle, audio):
-        import folder_paths
-        d = folder_paths.get_input_directory()
-        if not audio:
-            raise RuntimeError("Upload an audio file")
-        path = os.path.join(d, audio)
-        if not os.path.isfile(path):
-            raise RuntimeError(f"audio not found in input dir: {audio}")
-        content = open(path, "rb").read()
-        mime = _MIME.get(os.path.splitext(audio)[1].lower(), "audio/mpeg")
-        up = atlas_client.client.upload_media_bytes(content, filename=audio, mime_type=mime)
+        if not audio or "waveform" not in audio:
+            raise RuntimeError("Connect a Load Audio node to the `audio` input")
+        content = _audio_to_wav_bytes(audio)
+        up = atlas_client.client.upload_media_bytes(content, filename="ref_audio.wav", mime_type="audio/wav")
         url = (up.get("download_url") or up.get("url") or "").strip()
         if not url:
             raise RuntimeError(f"uploadMedia returned no download_url: {up}")
