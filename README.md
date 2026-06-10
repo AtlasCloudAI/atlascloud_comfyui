@@ -106,6 +106,9 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 | AtlasCloud PixVerse V6 Text-to-Video | pixverse/v6/text-to-video |
 | AtlasCloud PixVerse V6 Image-to-Video | pixverse/v6/image-to-video |
 | AtlasCloud PixVerse V6 Reference-to-Video | pixverse/v6/reference-to-video |
+| AtlasCloud PixVerse V6 Video-Extend | pixverse/v6/video-extend |
+| AtlasCloud PixVerse C1 Start-End-to-Video | pixverse/c1/start-end-to-video |
+| AtlasCloud PixVerse V6 Start-End-to-Video | pixverse/v6/start-end-to-video |
 | AtlasCloud Hailuo 02 T2V Pro | minimax/hailuo-02/t2v-pro |
 | AtlasCloud Hailuo 02 T2V Standard | minimax/hailuo-02/t2v-standard |
 | AtlasCloud Hailuo 02 Pro | minimax/hailuo-02/pro |
@@ -145,6 +148,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 |------|-------|
 | AtlasCloud VEO3 Image-to-Video | google/veo3/image-to-video |
 | AtlasCloud VEO3 Fast Image-to-Video | google/veo3-fast/image-to-video |
+| AtlasCloud Midjourney V8.1 Image-to-Video | midjourney/v8.1/image-to-video |
 | AtlasCloud VEO3.1 Fast Image-to-Video | google/veo3.1-fast/image-to-video |
 | AtlasCloud Gemini Omni Flash Image-to-Video Developer | google/gemini-omni-flash/image-to-video-developer |
 | AtlasCloud Gemini Omni Flash Reference-to-Video Developer | google/gemini-omni-flash/reference-to-video-developer |
@@ -275,6 +279,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 
 | Node | Model |
 |------|-------|
+| AtlasCloud Midjourney V8.1 Text-to-Image | midjourney/v8.1/text-to-image |
 | AtlasCloud WAN2.6 Text-to-Image | alibaba/wan-2.6/text-to-image |
 | AtlasCloud WAN2.7 Text-to-Image | alibaba/wan-2.7/text-to-image |
 | AtlasCloud WAN2.7 Pro Text-to-Image | alibaba/wan-2.7-pro/text-to-image |

@@ -295,6 +295,11 @@ from atlascloud_comfyui.nodes.video.pixverse_c1_r2v import AtlasPixVerseC1Refere
 from atlascloud_comfyui.nodes.video.pixverse_v6_t2v import AtlasPixVerseV6TextToVideo
 from atlascloud_comfyui.nodes.video.pixverse_v6_i2v import AtlasPixVerseV6ImageToVideo
 from atlascloud_comfyui.nodes.video.pixverse_v6_r2v import AtlasPixVerseV6ReferenceToVideo
+from atlascloud_comfyui.nodes.video.pixverse_v6_video_extend import AtlasPixVerseV6VideoExtend
+from atlascloud_comfyui.nodes.video.pixverse_c1_start_end import AtlasPixVerseC1StartEndToVideo
+from atlascloud_comfyui.nodes.video.pixverse_v6_start_end import AtlasPixVerseV6StartEndToVideo
+from atlascloud_comfyui.nodes.video.midjourney_v81_i2v import AtlasMidjourneyV81ImageToVideo
+from atlascloud_comfyui.nodes.image.midjourney_v81_t2i import AtlasMidjourneyV81TextToImage
 from atlascloud_comfyui.nodes.video.vidu_q1_t2v import AtlasViduQ1TextToVideo
 from atlascloud_comfyui.nodes.video.vidu_q1_i2v import AtlasViduQ1ImageToVideo
 from atlascloud_comfyui.nodes.video.vidu_q1_start_end import AtlasViduQ1StartEndToVideo
@@ -470,6 +475,11 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud PixVerse V6 Text-to-Video": AtlasPixVerseV6TextToVideo,
     "AtlasCloud PixVerse V6 Image-to-Video": AtlasPixVerseV6ImageToVideo,
     "AtlasCloud PixVerse V6 Reference-to-Video": AtlasPixVerseV6ReferenceToVideo,
+    "AtlasCloud PixVerse V6 Video-Extend": AtlasPixVerseV6VideoExtend,
+    "AtlasCloud PixVerse C1 Start-End-to-Video": AtlasPixVerseC1StartEndToVideo,
+    "AtlasCloud PixVerse V6 Start-End-to-Video": AtlasPixVerseV6StartEndToVideo,
+    "AtlasCloud Midjourney V8.1 Image-to-Video": AtlasMidjourneyV81ImageToVideo,
+    "AtlasCloud Midjourney V8.1 Text-to-Image": AtlasMidjourneyV81TextToImage,
     "AtlasCloud Hailuo 02 T2V Pro": AtlasHailuo02T2VPro,
     "AtlasCloud Sora 2 Image-to-Video": AtlasSora2ImageToVideo,
     "AtlasCloud Kling V2.5 Turbo Pro Text-to-Video": AtlasKlingV25TurboProTextToVideo,
@@ -760,6 +770,11 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud PixVerse V6 Text-to-Video": "AtlasCloud PixVerse V6 Text-to-Video",
     "AtlasCloud PixVerse V6 Image-to-Video": "AtlasCloud PixVerse V6 Image-to-Video",
     "AtlasCloud PixVerse V6 Reference-to-Video": "AtlasCloud PixVerse V6 Reference-to-Video",
+    "AtlasCloud PixVerse V6 Video-Extend": "AtlasCloud PixVerse V6 Video-Extend",
+    "AtlasCloud PixVerse C1 Start-End-to-Video": "AtlasCloud PixVerse C1 Start-End-to-Video",
+    "AtlasCloud PixVerse V6 Start-End-to-Video": "AtlasCloud PixVerse V6 Start-End-to-Video",
+    "AtlasCloud Midjourney V8.1 Image-to-Video": "AtlasCloud Midjourney V8.1 Image-to-Video",
+    "AtlasCloud Midjourney V8.1 Text-to-Image": "AtlasCloud Midjourney V8.1 Text-to-Image",
     "AtlasCloud Hailuo 02 T2V Pro": "AtlasCloud Hailuo 02 T2V Pro",
     "AtlasCloud Sora 2 Image-to-Video": "AtlasCloud Sora 2 Image-to-Video",
     "AtlasCloud Kling V2.5 Turbo Pro Text-to-Video": "AtlasCloud Kling V2.5 Turbo Pro Text-to-Video",
