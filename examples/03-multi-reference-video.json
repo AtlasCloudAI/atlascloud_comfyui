@@ -23,7 +23,7 @@
           "name": "atlas_client",
           "type": "ATLAS_CLIENT",
           "links": [
-            4
+            3
           ],
           "slot_index": 0
         }
@@ -152,7 +152,7 @@
     },
     {
       "id": 5,
-      "type": "AtlasCloud Multi Image to Seedance Assets",
+      "type": "AtlasCloud Multi Image to Base64",
       "pos": [
         440,
         620
@@ -188,7 +188,7 @@
       ],
       "outputs": [
         {
-          "name": "asset_references",
+          "name": "references",
           "type": "STRING",
           "links": [
             5
@@ -203,7 +203,7 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "AtlasCloud Multi Image to Seedance Assets"
+        "Node name for S&R": "AtlasCloud Multi Image to Base64"
       },
       "widgets_values": [
         "",
@@ -323,7 +323,7 @@
       1,
       2,
       0,
-      5,
+      4,
       0,
       "IMAGE"
     ],

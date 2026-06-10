@@ -15,12 +15,25 @@
 
 ## Supported Models
 
-- 🎬 **Video** — Sora 2 · Veo 3.1 · Kling 3 · Seedance 2 · WAN 2.x · Hailuo · Vidu
-- 🎨 **Image** — Nano Banana Pro · GPT Image 2 · Flux 2 · Seedream 5 · Imagen 4 · Qwen-Image
-- ✏️ **Edit & more** — image edit · image-to-video · video extend · video edit · audio-to-video
-- 💬 **Catalog** — [300+ models](https://www.atlascloud.ai/models?utm_source=github&utm_campaign=atlascloud_comfyui) total, all via one API
+- 🎬 **Video** — Seedance 2.0 · Kling 3 · Sora 2 · Veo 3.1 · HappyHorse 1 · Grok Imagine 1.5 · Wan 2.7
+- 🎨 **Image** — Nano Banana 2/Pro · GPT Image 2 · Flux 2 · Seedream 5
+- 💬 **LLM** — Claude · GPT · DeepSeek · MiniMax · Kimi · GLM · Qwen
+- 🔊 **Audio** — Grok TTS
+- 📚 **Explore more** — [300+ models »](https://www.atlascloud.ai/models?utm_source=github&utm_campaign=atlascloud_comfyui)
 
-See the full **[node catalog by task type](#available-nodes)** below.
+This node pack focuses on **image / video / edit** — see the full **[node catalog by task type](#available-nodes)** below.
+
+## Contents
+
+- [Supported Models](#supported-models)
+- [Quickstart](#quickstart-5-minutes)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Available Nodes](#available-nodes)
+- [Example Workflows](#example-workflows)
+- [Troubleshooting](#troubleshooting)
+- [More Atlas Cloud Tools](#more-atlas-cloud-tools)
+- [License](#license)
 
 ## Quickstart (5 minutes)
 
@@ -37,7 +50,7 @@ See the full **[node catalog by task type](#available-nodes)** below.
 
 -   Python dependencies are handled by ComfyUI’s own environment (recommended)
 
--   An **AtlasCloud API Key** [AtlasCloud Website](https://atlascloud.ai/?utm_source=github&utm_medium=readme&utm_campaign=comfyui/)
+-   An **Atlas Cloud API Key** — [get one free](https://www.atlascloud.ai/console/api-keys?utm_source=github&utm_campaign=atlascloud_comfyui)
 
 > Tip: If you’re using **ComfyUI Desktop**, you should install dependencies into ComfyUI’s bundled venv (not your system Python).
 
@@ -458,9 +471,10 @@ Please include:
 
 ## More Atlas Cloud Tools
 
-- 🧰 **Prefer the terminal?** → Install [atlascloud-cli](https://github.com/AtlasCloudAI/cli)
-- 🤖 **Use it in Claude Code / Cursor?** → Install the [Atlas Cloud MCP Server](https://github.com/AtlasCloudAI/mcp-server)
-- 🎬 **As a Claude Code / Codex / Gemini CLI Skill?** → Install [atlas-cloud-skills](https://github.com/AtlasCloudAI/atlas-cloud-skills)
+- 🧰 **Want to use it from the terminal?** → Install [atlascloud-cli](https://github.com/AtlasCloudAI/cli)
+- 🤖 **Want to use it in Claude Code / Cursor?** → Install the [Atlas Cloud MCP Server](https://github.com/AtlasCloudAI/mcp-server)
+- 🎬 **Want it as a Claude Code / Codex / Gemini CLI Skill?** → Install [atlas-cloud-skills](https://github.com/AtlasCloudAI/atlas-cloud-skills)
+- 🎨 **ComfyUI nodes** → [atlascloud_comfyui](https://github.com/AtlasCloudAI/atlascloud_comfyui)
 - 🔁 **n8n nodes** → [n8n-nodes-atlascloud](https://github.com/AtlasCloudAI/n8n-nodes-atlascloud)
 - 💬 **Join our Discord** → [discord.gg/MWmMr4q9es](https://discord.gg/MWmMr4q9es)
 - 🌐 **Website** → [atlascloud.ai](https://www.atlascloud.ai?utm_source=github&utm_campaign=atlascloud_comfyui)
