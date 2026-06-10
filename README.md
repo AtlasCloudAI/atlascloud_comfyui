@@ -11,8 +11,6 @@
 
 > **[→ Get your free Atlas Cloud API key](https://www.atlascloud.ai/console/api-keys?utm_source=github&utm_campaign=atlascloud_comfyui)** — one key, 300+ models, no local GPU or model weights needed.
 
-<!-- TODO(hero): add a node-graph / sample-output screenshot or GIF here as the first-screen hero. -->
-
 ## Supported Models
 
 - 🎬 **Video** — Seedance 2.0 · Kling 3 · Sora 2 · Veo 3.1 · HappyHorse 1 · Grok Imagine 1.5 · Wan 2.7
@@ -69,7 +67,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 
 3. Clone the repo:
     ```
-    git clone https://github.com/AtlascloudAI/atlascloud_comfyui.git
+    git clone https://github.com/AtlasCloudAI/atlascloud_comfyui.git
     ```
 4. Install dependencies into ComfyUI Desktop venv:
 
@@ -78,7 +76,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
     ~/Documents/ComfyUI/.venv/bin/python -m pip install -r requirements.txt
     ```
 
-5. Launch ComfyUI Desktop again. You should see AtlasCloud nodes under:
+5. Launch ComfyUI Desktop again. You should see Atlas Cloud nodes under:
    **Node Library → AtlasCloud**
 
 ### Option B — ComfyUI Source Installation (Recommended)
@@ -87,7 +85,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
    `cd /path/to/ComfyUI/custom_nodes`
 
 2. Clone the repo:
-   `git clone https://github.com/AtlascloudAI/atlascloud_comfyui.git`
+   `git clone https://github.com/AtlasCloudAI/atlascloud_comfyui.git`
 3. Install dependencies using the same Python environment you use to run ComfyUI:
     ```
     cd atlascloud_comfyui
@@ -99,11 +97,11 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 
 ## Available Nodes
 
-> Note: Some nodes are kept for **backward compatibility** even if their model id is no longer returned by AtlasCloud `/api/v1/models`. These nodes are marked as **Deprecated** and will raise an error at runtime unless you set `ATLAS_ALLOW_DEPRECATED_MODELS=1`.
+> Note: Some nodes are kept for **backward compatibility** even if their model id is no longer returned by Atlas Cloud `/api/v1/models`. These nodes are marked as **Deprecated** and will raise an error at runtime unless you set `ATLAS_ALLOW_DEPRECATED_MODELS=1`.
 
 ### Common
 
--   **AtlasCloud Client** — Stores your API key and base URL for all AtlasCloud nodes.
+-   **AtlasCloud Client** — Stores your API key and base URL for all Atlas Cloud nodes.
 -   **Image Previewer** — Preview generated images in ComfyUI.
 -   **Video Previewer** — Preview generated videos in ComfyUI.
 
@@ -515,3 +513,6 @@ Please include:
 | `pixverse/pixverse-v4.5-t2v` | Deprecated (not in `/api/v1/models`) |
 | `recraft-ai/recraft-v3` | Deprecated (not in `/api/v1/models`) |
 | `z-image/turbo-lora` | Deprecated (not in `/api/v1/models`) |
+
+<!-- TODO(hero): add a node-graph screenshot or output GIF showing atlascloud_comfyui in action. -->
+
