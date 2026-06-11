@@ -49,7 +49,7 @@ class AtlasSeedance20FastTextToVideo:
             },
         }
 
-    def run(
+    async def run(
         self,
         atlas_client: AtlasClientHandle,
         prompt: str,
@@ -61,6 +61,33 @@ class AtlasSeedance20FastTextToVideo:
         return_last_frame: bool = False,
         poll_interval_sec: float = 2.0,
         timeout_sec: int = 900,
+    ) -> Tuple[str, str]:
+        # ⚡ async 节点:把阻塞的"提交 + 轮询"丢到线程池,本协程立即让出事件循环。
+        # 这样同一个工作流里多个【相互独立】的视频节点会被 ComfyUI【并发】调度,
+        # 在云端同时生成,总耗时 ≈ 最慢的那一个,而不是逐个排队相加。
+        import asyncio
+
+        loop = asyncio.get_event_loop()
+        return await loop.run_in_executor(
+            None,
+            self._run_sync,
+            atlas_client, prompt, int(duration), resolution, ratio,
+            bool(generate_audio), bool(watermark), bool(return_last_frame),
+            float(poll_interval_sec), float(timeout_sec),
+        )
+
+    def _run_sync(
+        self,
+        atlas_client: AtlasClientHandle,
+        prompt: str,
+        duration: int,
+        resolution: str,
+        ratio: str,
+        generate_audio: bool,
+        watermark: bool,
+        return_last_frame: bool,
+        poll_interval_sec: float,
+        timeout_sec: int,
     ) -> Tuple[str, str]:
         prompt = (prompt or "").strip()
         if not prompt:
@@ -79,11 +106,24 @@ class AtlasSeedance20FastTextToVideo:
             "return_last_frame": bool(return_last_frame),
         }
 
+        import time
+
+        _t0 = time.time()
+        _tag = (prompt[:32] + "…") if len(prompt) > 32 else prompt
+        print(f"[AtlasParallel] ⏱ SUBMIT   prompt={_tag!r}", flush=True)
         prediction_id = client.generate_video(payload)
+        print(
+            f"[AtlasParallel] ↑ SUBMITTED pid={prediction_id} (+{time.time() - _t0:.1f}s) prompt={_tag!r}",
+            flush=True,
+        )
         result = client.poll_prediction(
             prediction_id,
             poll_interval_sec=float(poll_interval_sec),
             timeout_sec=float(timeout_sec),
+        )
+        print(
+            f"[AtlasParallel] ✅ DONE     pid={prediction_id} total={time.time() - _t0:.1f}s prompt={_tag!r}",
+            flush=True,
         )
 
         outputs = (result.get("data") or {}).get("outputs") or []

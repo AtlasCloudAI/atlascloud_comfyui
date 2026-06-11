@@ -1,0 +1,45 @@
+{
+  "1": {
+    "class_type": "AtlasCloud Client",
+    "inputs": {
+      "api_key": "<把这里换成你们的 AtlasCloud apikey>",
+      "base_url": "https://api.atlascloud.ai"
+    }
+  },
+  "2": {
+    "class_type": "AtlasCloud Seedance 2.0 Fast Text-to-Video",
+    "inputs": {
+      "atlas_client": ["1", 0],
+      "prompt": "a red sports car driving on a coastal highway at sunset, cinematic",
+      "duration": 5,
+      "resolution": "480p",
+      "ratio": "16:9",
+      "generate_audio": false
+    }
+  },
+  "3": {
+    "class_type": "AtlasCloud Seedance 2.0 Fast Text-to-Video",
+    "inputs": {
+      "atlas_client": ["1", 0],
+      "prompt": "a giant panda eating bamboo in a misty forest, soft morning light",
+      "duration": 5,
+      "resolution": "480p",
+      "ratio": "16:9",
+      "generate_audio": false
+    }
+  },
+  "4": {
+    "class_type": "AtlasCloud Seedance 2.0 Fast Text-to-Video",
+    "inputs": {
+      "atlas_client": ["1", 0],
+      "prompt": "a futuristic city skyline with flying cars at night, neon lights",
+      "duration": 5,
+      "resolution": "480p",
+      "ratio": "16:9",
+      "generate_audio": false
+    }
+  },
+  "5": { "class_type": "PreviewAny", "inputs": { "source": ["2", 0] } },
+  "6": { "class_type": "PreviewAny", "inputs": { "source": ["3", 0] } },
+  "7": { "class_type": "PreviewAny", "inputs": { "source": ["4", 0] } }
+}
