@@ -1,8 +1,44 @@
-# AtlasCloud_ComfyUI
+# atlascloud_comfyui
 
-AtlasCloud official custom nodes v1.0.0 for **ComfyUI**.
-[AtlasCloud Website](https://atlascloud.ai/?utm_source=github&utm_medium=readme&utm_campaign=comfyui/)
-With these nodes you can call AtlasCloud’s hosted models directly inside ComfyUI workflows.
+> Use Atlas Cloud's 300+ AI models inside ComfyUI. Drop-in nodes for Sora 2, Veo 3.1, Kling 3, Seedance 2, Nano Banana Pro, GPT Image 2, Flux 2, and more.
+
+<p>
+  <a href="https://github.com/AtlasCloudAI/atlascloud_comfyui/blob/main/LICENSE"><img src="https://img.shields.io/github/license/AtlasCloudAI/atlascloud_comfyui?style=flat&colorA=18181B&colorB=28CF8D" alt="license" /></a>
+  <a href="https://github.com/AtlasCloudAI/atlascloud_comfyui/stargazers"><img src="https://img.shields.io/github/stars/AtlasCloudAI/atlascloud_comfyui?style=flat&colorA=18181B&colorB=28CF8D" alt="stars" /></a>
+  <a href="https://github.com/AtlasCloudAI/atlascloud_comfyui/pulls"><img src="https://img.shields.io/badge/PRs-welcome-28CF8D.svg?style=flat&colorA=18181B" alt="PRs welcome" /></a>
+  <img src="https://img.shields.io/badge/models-300%2B-28CF8D.svg?style=flat&colorA=18181B" alt="300+ models" />
+</p>
+
+> **[→ Get your free Atlas Cloud API key](https://www.atlascloud.ai/console/api-keys?utm_source=github&utm_campaign=atlascloud_comfyui)** — one key, 300+ models, no local GPU or model weights needed.
+
+## Supported Models
+
+- 🎬 **Video** — Seedance 2.0 · Kling 3 · Sora 2 · Veo 3.1 · HappyHorse 1 · Grok Imagine 1.5 · Wan 2.7
+- 🎨 **Image** — Nano Banana 2/Pro · GPT Image 2 · Flux 2 · Seedream 5
+- 💬 **LLM** — Claude · GPT · DeepSeek · MiniMax · Kimi · GLM · Qwen
+- 🔊 **Audio** — Grok TTS
+- 📚 **Explore more** — [300+ models »](https://www.atlascloud.ai/models?utm_source=github&utm_campaign=atlascloud_comfyui)
+
+This node pack focuses on **image / video / edit** — see the full **[node catalog by task type](#available-nodes)** below.
+
+## Contents
+
+- [Supported Models](#supported-models)
+- [Quickstart](#quickstart-5-minutes)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Available Nodes](#available-nodes)
+- [Example Workflows](#example-workflows)
+- [Troubleshooting](#troubleshooting)
+- [More Atlas Cloud Tools](#more-atlas-cloud-tools)
+- [License](#license)
+
+## Quickstart (5 minutes)
+
+1. Install the nodes (see [Installation](#installation)).
+2. Drag [`examples/01-text-to-image.json`](examples/01-text-to-image.json) onto the ComfyUI canvas.
+3. Open the **AtlasCloud Client** node and paste your [API key](https://www.atlascloud.ai/console/api-keys?utm_source=github&utm_campaign=atlascloud_comfyui).
+4. Hit **Run** — your first image renders through Atlas Cloud. More graphs in [`examples/`](examples/).
 
 ---
 
@@ -12,7 +48,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 
 -   Python dependencies are handled by ComfyUI’s own environment (recommended)
 
--   An **AtlasCloud API Key** [AtlasCloud Website](https://atlascloud.ai/?utm_source=github&utm_medium=readme&utm_campaign=comfyui/)
+-   An **Atlas Cloud API Key** — [get one free](https://www.atlascloud.ai/console/api-keys?utm_source=github&utm_campaign=atlascloud_comfyui)
 
 > Tip: If you’re using **ComfyUI Desktop**, you should install dependencies into ComfyUI’s bundled venv (not your system Python).
 
@@ -31,7 +67,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 
 3. Clone the repo:
     ```
-    git clone https://github.com/AtlascloudAI/atlascloud_comfyui.git
+    git clone https://github.com/AtlasCloudAI/atlascloud_comfyui.git
     ```
 4. Install dependencies into ComfyUI Desktop venv:
 
@@ -40,7 +76,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
     ~/Documents/ComfyUI/.venv/bin/python -m pip install -r requirements.txt
     ```
 
-5. Launch ComfyUI Desktop again. You should see AtlasCloud nodes under:
+5. Launch ComfyUI Desktop again. You should see Atlas Cloud nodes under:
    **Node Library → AtlasCloud**
 
 ### Option B — ComfyUI Source Installation (Recommended)
@@ -49,7 +85,7 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
    `cd /path/to/ComfyUI/custom_nodes`
 
 2. Clone the repo:
-   `git clone https://github.com/AtlascloudAI/atlascloud_comfyui.git`
+   `git clone https://github.com/AtlasCloudAI/atlascloud_comfyui.git`
 3. Install dependencies using the same Python environment you use to run ComfyUI:
     ```
     cd atlascloud_comfyui
@@ -61,11 +97,11 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 
 ## Available Nodes
 
-> Note: Some nodes are kept for **backward compatibility** even if their model id is no longer returned by AtlasCloud `/api/v1/models`. These nodes are marked as **Deprecated** and will raise an error at runtime unless you set `ATLAS_ALLOW_DEPRECATED_MODELS=1`.
+> Note: Some nodes are kept for **backward compatibility** even if their model id is no longer returned by Atlas Cloud `/api/v1/models`. These nodes are marked as **Deprecated** and will raise an error at runtime unless you set `ATLAS_ALLOW_DEPRECATED_MODELS=1`.
 
 ### Common
 
--   **AtlasCloud Client** — Stores your API key and base URL for all AtlasCloud nodes.
+-   **AtlasCloud Client** — Stores your API key and base URL for all Atlas Cloud nodes.
 -   **Image Previewer** — Preview generated images in ComfyUI.
 -   **Video Previewer** — Preview generated videos in ComfyUI.
 
@@ -383,6 +419,20 @@ With these nodes you can call AtlasCloud’s hosted models directly inside Comfy
 
 ---
 
+## Example Workflows
+
+Three ready-to-run graphs live in [`examples/`](examples/) — drag a `.json` onto the canvas, paste your API key into the **AtlasCloud Client** node, and run (no local GPU needed):
+
+| Workflow | What it does | Models | Nodes |
+|----------|--------------|--------|-------|
+| [`01-text-to-image.json`](examples/01-text-to-image.json) | Prompt → image | Nano Banana Pro | 3 |
+| [`02-image-to-video.json`](examples/02-image-to-video.json) | Image → ~5s video | Seedance 2 | 5 |
+| [`03-multi-reference-video.json`](examples/03-multi-reference-video.json) | Up to 8 reference images → video | Seedance 2 Reference-to-Video | 7 |
+
+See [`examples/README.md`](examples/README.md) for setup details.
+
+---
+
 ## Troubleshooting
 
 ### Nodes not showing up
@@ -432,6 +482,16 @@ Please include:
 
 ---
 
+## More Atlas Cloud Tools
+
+- 🧰 **Want to use it from the terminal?** → Install [atlascloud-cli](https://github.com/AtlasCloudAI/cli)
+- 🤖 **Want to use it in Claude Code / Cursor?** → Install the [Atlas Cloud MCP Server](https://github.com/AtlasCloudAI/mcp-server)
+- 🎬 **Want it as a Claude Code / Codex / Gemini CLI Skill?** → Install [atlas-cloud-skills](https://github.com/AtlasCloudAI/atlas-cloud-skills)
+- 🎨 **ComfyUI nodes** → [atlascloud_comfyui](https://github.com/AtlasCloudAI/atlascloud_comfyui)
+- 🔁 **n8n nodes** → [n8n-nodes-atlascloud](https://github.com/AtlasCloudAI/n8n-nodes-atlascloud)
+- 💬 **Join our Discord** → [discord.gg/MWmMr4q9es](https://discord.gg/MWmMr4q9es)
+- 🌐 **Website** → [atlascloud.ai](https://www.atlascloud.ai?utm_source=github&utm_campaign=atlascloud_comfyui)
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
@@ -462,3 +522,6 @@ Please include:
 | `pixverse/pixverse-v4.5-t2v` | Deprecated (not in `/api/v1/models`) |
 | `recraft-ai/recraft-v3` | Deprecated (not in `/api/v1/models`) |
 | `z-image/turbo-lora` | Deprecated (not in `/api/v1/models`) |
+
+<!-- TODO(hero): add a node-graph screenshot or output GIF showing atlascloud_comfyui in action. -->
+

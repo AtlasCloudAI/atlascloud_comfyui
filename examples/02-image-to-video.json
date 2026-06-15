@@ -1,18 +1,18 @@
 {
-  "id": "Seedance2.0 全能参考(多图)",
-  "last_node_id": 7,
-  "last_link_id": 7,
+  "id": "Seedance2.0 图生视频",
+  "last_node_id": 5,
+  "last_link_id": 4,
   "nodes": [
     {
       "id": 1,
       "type": "AtlasCloud Client",
       "pos": [
         40,
-        360
+        200
       ],
       "size": [
-        380,
-        200
+        390,
+        240
       ],
       "flags": {},
       "order": 0,
@@ -23,7 +23,7 @@
           "name": "atlas_client",
           "type": "ATLAS_CLIENT",
           "links": [
-            3
+            2
           ],
           "slot_index": 0
         }
@@ -41,11 +41,11 @@
       "type": "LoadImage",
       "pos": [
         40,
-        560
+        420
       ],
       "size": [
-        380,
-        200
+        390,
+        240
       ],
       "flags": {},
       "order": 1,
@@ -71,172 +71,71 @@
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "ref_moto.png"
+        "videoframe_9033.png"
       ]
     },
     {
       "id": 3,
-      "type": "LoadImage",
+      "type": "AtlasCloud Image to Base64",
       "pos": [
-        40,
-        760
+        320,
+        420
       ],
       "size": [
-        380,
-        200
+        390,
+        240
       ],
       "flags": {},
       "order": 2,
       "mode": 0,
-      "inputs": [],
-      "outputs": [
+      "inputs": [
         {
-          "name": "IMAGE",
+          "name": "image",
           "type": "IMAGE",
-          "links": [
-            2
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [],
-          "slot_index": 1
+          "link": 1
         }
       ],
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "ref_helmet.png"
-      ]
-    },
-    {
-      "id": 4,
-      "type": "LoadImage",
-      "pos": [
-        40,
-        960
-      ],
-      "size": [
-        380,
-        200
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
       "outputs": [
         {
-          "name": "IMAGE",
-          "type": "IMAGE",
+          "name": "image_base64",
+          "type": "STRING",
           "links": [
             3
           ],
           "slot_index": 0
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [],
-          "slot_index": 1
         }
       ],
       "properties": {
-        "Node name for S&R": "LoadImage"
+        "Node name for S&R": "AtlasCloud Image to Base64"
       },
-      "widgets_values": [
-        "ref_track.png"
-      ]
+      "widgets_values": []
     },
     {
-      "id": 5,
-      "type": "AtlasCloud Multi Image to Base64",
+      "id": 4,
+      "type": "AtlasCloud Seedance 2.0 Image-to-Video",
       "pos": [
-        440,
-        620
+        640,
+        160
       ],
       "size": [
-        380,
-        200
+        390,
+        240
       ],
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [
         {
           "name": "atlas_client",
           "type": "ATLAS_CLIENT",
-          "link": 7
-        },
-        {
-          "name": "image_1",
-          "type": "IMAGE",
-          "link": 1
-        },
-        {
-          "name": "image_2",
-          "type": "IMAGE",
           "link": 2
         },
         {
-          "name": "image_3",
-          "type": "IMAGE",
-          "link": 3
-        }
-      ],
-      "outputs": [
-        {
-          "name": "references",
+          "name": "image",
           "type": "STRING",
-          "links": [
-            5
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "count",
-          "type": "INT",
-          "links": [],
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "AtlasCloud Multi Image to Base64"
-      },
-      "widgets_values": [
-        "",
-        2.0,
-        300
-      ]
-    },
-    {
-      "id": 6,
-      "type": "AtlasCloud Seedance 2.0 Reference-to-Video",
-      "pos": [
-        820,
-        300
-      ],
-      "size": [
-        380,
-        200
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "atlas_client",
-          "type": "ATLAS_CLIENT",
-          "link": 4
-        },
-        {
-          "name": "reference_images",
-          "type": "STRING",
-          "link": 5,
+          "link": 3,
           "widget": {
-            "name": "reference_images"
+            "name": "image"
           }
         }
       ],
@@ -245,7 +144,7 @@
           "name": "video_url",
           "type": "STRING",
           "links": [
-            6
+            4
           ],
           "slot_index": 0
         },
@@ -257,17 +156,16 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "AtlasCloud Seedance 2.0 Reference-to-Video"
+        "Node name for S&R": "AtlasCloud Seedance 2.0 Image-to-Video"
       },
       "widgets_values": [
         "",
-        "",
-        "a cinematic motorcycle racing scene that combines these references — the bike, the helmet and the track — dynamic action, high speed",
-        "",
+        "the motorcycle racer leans deeper into the corner and accelerates out of it, dynamic racing motion, speed and energy, cinematic",
         5,
         "720p",
         "adaptive",
         true,
+        "",
         false,
         false,
         2.0,
@@ -275,24 +173,24 @@
       ]
     },
     {
-      "id": 7,
+      "id": 5,
       "type": "AtlasCloud Video Preview",
       "pos": [
-        1260,
-        300
+        1080,
+        160
       ],
       "size": [
-        380,
-        200
+        390,
+        240
       ],
       "flags": {},
-      "order": 6,
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
           "name": "video_url",
           "type": "STRING",
-          "link": 6,
+          "link": 4,
           "widget": {
             "name": "video_url"
           }
@@ -323,55 +221,31 @@
       1,
       2,
       0,
-      4,
+      3,
       0,
       "IMAGE"
     ],
     [
       2,
-      3,
-      0,
-      5,
-      1,
-      "IMAGE"
-    ],
-    [
-      3,
-      4,
-      0,
-      5,
-      2,
-      "IMAGE"
-    ],
-    [
-      4,
       1,
       0,
-      6,
+      4,
       0,
       "ATLAS_CLIENT"
     ],
     [
-      7,
-      1,
+      3,
+      3,
       0,
-      5,
-      0,
-      "ATLAS_CLIENT"
-    ],
-    [
-      5,
-      5,
-      0,
-      6,
+      4,
       1,
       "STRING"
     ],
     [
-      6,
-      6,
+      4,
+      4,
       0,
-      7,
+      5,
       0,
       "STRING"
     ]
