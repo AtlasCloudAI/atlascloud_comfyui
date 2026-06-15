@@ -25,6 +25,7 @@ class AtlasNanoBananaProEditUltra:
                 "resolution": (["4k", "8k"], {"default": "4k", "tooltip": "Resolution preset"}),
             },
             "optional": {
+                "seed": ("INT", {"default": -1, "min": -1, "max": 4294967295, "tooltip": "Random seed; -1 = random each run"}),
                 "output_format": (["jpg", "png"], {"default": "jpg", "tooltip": "Output image format"}),
                 "enable_base64_output": ("BOOLEAN", {"default": False, "tooltip": "Return base64 instead of URL if supported"}),
                 "enable_sync_mode": ("BOOLEAN", {"default": False, "tooltip": "If true, server may try to return result synchronously"}),
@@ -43,6 +44,7 @@ class AtlasNanoBananaProEditUltra:
         output_format: str = "jpg",
         enable_base64_output: bool = False,
         enable_sync_mode: bool = False,
+        seed: int = -1,
         poll_interval_sec: float = 2.0,
         timeout_sec: int = 300,
     ) -> Tuple[str, str]:
@@ -68,6 +70,9 @@ class AtlasNanoBananaProEditUltra:
             "enable_base64_output": bool(enable_base64_output),
             "enable_sync_mode": bool(enable_sync_mode),
         }
+
+        if seed >= 0:
+            payload["seed"] = seed
 
         prediction_id = client.generate_image(payload)
         result = client.poll_prediction(prediction_id, poll_interval_sec=poll_interval_sec, timeout_sec=float(timeout_sec))

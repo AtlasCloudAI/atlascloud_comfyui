@@ -27,6 +27,7 @@ class AtlasNanoBanana2Edit:
                 "enable_base64_output": ("BOOLEAN", {"default": False, "tooltip": "Return base64 instead of URL if supported"}),
             },
             "optional": {
+                "seed": ("INT", {"default": -1, "min": -1, "max": 4294967295, "tooltip": "Random seed; -1 = random each run"}),
                 "poll_interval_sec": ("FLOAT", {"default": 2.0, "min": 0.5, "max": 10.0, "tooltip": "Polling interval (seconds)"}),
                 "timeout_sec": ("INT", {"default": 300, "min": 30, "max": 7200, "tooltip": "Timeout (seconds)"}),
             },
@@ -41,6 +42,7 @@ class AtlasNanoBanana2Edit:
         resolution: str,
         output_format: str,
         enable_base64_output: bool,
+        seed: int = -1,
         poll_interval_sec: float = 2.0,
         timeout_sec: int = 300,
     ) -> Tuple[str, str]:
@@ -63,6 +65,9 @@ class AtlasNanoBanana2Edit:
             "output_format": output_format,
             "enable_base64_output": enable_base64_output,
         }
+
+        if seed >= 0:
+            payload["seed"] = seed
 
         prediction_id = client.generate_image(payload)
         result = client.poll_prediction(
