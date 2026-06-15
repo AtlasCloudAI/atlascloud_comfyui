@@ -34,9 +34,9 @@ class AtlasSeedance20FastReferenceToVideo:
                         "tooltip": "Prompt (optional)",
                     },
                 ),
-                "reference_audio": (
+                "reference_audios": (
                     "STRING",
-                    {"default": "", "tooltip": "Optional reference audio URL"},
+                    {"multiline": True, "default": "", "tooltip": "Reference audio URLs, one per line (up to 3)"},
                 ),
                 "duration": (
                     [-1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
@@ -67,7 +67,7 @@ class AtlasSeedance20FastReferenceToVideo:
         reference_images: str,
         reference_videos: str,
         prompt: str = "The character in image 1 dances gracefully to the music",
-        reference_audio: str = "",
+        reference_audios: str = "",
         duration: int = 5,
         resolution: str = "720p",
         ratio: str = "adaptive",
@@ -98,9 +98,9 @@ class AtlasSeedance20FastReferenceToVideo:
         if p:
             payload["prompt"] = p
 
-        ra = (reference_audio or "").strip()
-        if ra:
-            payload["reference_audio"] = ra
+        ref_auds = [v.strip() for v in (reference_audios or "").splitlines() if v.strip()]
+        if ref_auds:
+            payload["reference_audios"] = ref_auds
 
         if ref_imgs:
             payload["reference_images"] = ref_imgs
