@@ -154,6 +154,10 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Sora 2 Text-to-Video | openai/sora-2/text-to-video |
 | AtlasCloud Sora 2 Text-to-Video Pro | openai/sora-2/text-to-video-pro |
 | AtlasCloud Kling V3.0 Pro Text-to-Video | kwaivgi/kling-v3.0-pro/text-to-video |
+| AtlasCloud Kling V3.0 4K Text-to-Video | kwaivgi/kling-v3.0-4k/text-to-video |
+| AtlasCloud Kling V3.0 4K Image-to-Video | kwaivgi/kling-v3.0-4k/image-to-video |
+| AtlasCloud Kling Video O3 4K Text-to-Video | kwaivgi/kling-video-o3-4k/text-to-video |
+| AtlasCloud Kling Video O3 4K Image-to-Video | kwaivgi/kling-video-o3-4k/image-to-video |
 | AtlasCloud Kling V3.0 Std Text-to-Video | kwaivgi/kling-v3.0-std/text-to-video |
 | AtlasCloud Kling V2.6 Pro Text-to-Video | kwaivgi/kling-v2.6-pro/text-to-video |
 | AtlasCloud Kling V2.6 Pro Avatar | kwaivgi/kling-v2.6-pro/avatar |
@@ -316,6 +320,10 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | Node | Model |
 |------|-------|
 | AtlasCloud Midjourney V8.1 Text-to-Image | midjourney/v8.1/text-to-image |
+| AtlasCloud Midjourney V8.1 Image-to-Image | midjourney/v8.1/image-to-image |
+| AtlasCloud Midjourney V8.1 Blend | midjourney/v8.1/blend |
+| AtlasCloud Midjourney V8.1 Remove Background | midjourney/v8.1/remove-background |
+| AtlasCloud Midjourney V8.1 Style Transfer | midjourney/v8.1/style-transfer |
 | AtlasCloud WAN2.6 Text-to-Image | alibaba/wan-2.6/text-to-image |
 | AtlasCloud WAN2.7 Text-to-Image | alibaba/wan-2.7/text-to-image |
 | AtlasCloud WAN2.7 Pro Text-to-Image | alibaba/wan-2.7-pro/text-to-image |

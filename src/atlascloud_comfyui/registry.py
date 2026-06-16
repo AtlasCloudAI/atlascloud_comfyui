@@ -300,6 +300,14 @@ from atlascloud_comfyui.nodes.video.pixverse_c1_start_end import AtlasPixVerseC1
 from atlascloud_comfyui.nodes.video.pixverse_v6_start_end import AtlasPixVerseV6StartEndToVideo
 from atlascloud_comfyui.nodes.video.midjourney_v81_i2v import AtlasMidjourneyV81ImageToVideo
 from atlascloud_comfyui.nodes.image.midjourney_v81_t2i import AtlasMidjourneyV81TextToImage
+from atlascloud_comfyui.nodes.image.midjourney_v81_i2i import AtlasMidjourneyV81ImageToImage
+from atlascloud_comfyui.nodes.image.midjourney_v81_blend import AtlasMidjourneyV81Blend
+from atlascloud_comfyui.nodes.image.midjourney_v81_remove_bg import AtlasMidjourneyV81RemoveBackground
+from atlascloud_comfyui.nodes.image.midjourney_v81_style_transfer import AtlasMidjourneyV81StyleTransfer
+from atlascloud_comfyui.nodes.video.kling_v30_4k_i2v import AtlasKlingV304KImageToVideo
+from atlascloud_comfyui.nodes.video.kling_v30_4k_t2v import AtlasKlingV304KTextToVideo
+from atlascloud_comfyui.nodes.video.kling_video_o3_4k_i2v import AtlasKlingVideoO34KImageToVideo
+from atlascloud_comfyui.nodes.video.kling_video_o3_4k_t2v import AtlasKlingVideoO34KTextToVideo
 from atlascloud_comfyui.nodes.image.mai_image_25_t2i import AtlasMAIImage25TextToImage
 from atlascloud_comfyui.nodes.image.mai_image_25_flash_t2i import AtlasMAIImage25FlashTextToImage
 from atlascloud_comfyui.nodes.image.mai_image_25_edit import AtlasMAIImage25Edit
@@ -490,6 +498,14 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud PixVerse V6 Start-End-to-Video": AtlasPixVerseV6StartEndToVideo,
     "AtlasCloud Midjourney V8.1 Image-to-Video": AtlasMidjourneyV81ImageToVideo,
     "AtlasCloud Midjourney V8.1 Text-to-Image": AtlasMidjourneyV81TextToImage,
+    "AtlasCloud Midjourney V8.1 Image-to-Image": AtlasMidjourneyV81ImageToImage,
+    "AtlasCloud Midjourney V8.1 Blend": AtlasMidjourneyV81Blend,
+    "AtlasCloud Midjourney V8.1 Remove Background": AtlasMidjourneyV81RemoveBackground,
+    "AtlasCloud Midjourney V8.1 Style Transfer": AtlasMidjourneyV81StyleTransfer,
+    "AtlasCloud Kling V3.0 4K Image-to-Video": AtlasKlingV304KImageToVideo,
+    "AtlasCloud Kling V3.0 4K Text-to-Video": AtlasKlingV304KTextToVideo,
+    "AtlasCloud Kling Video O3 4K Image-to-Video": AtlasKlingVideoO34KImageToVideo,
+    "AtlasCloud Kling Video O3 4K Text-to-Video": AtlasKlingVideoO34KTextToVideo,
     "AtlasCloud Hailuo 02 T2V Pro": AtlasHailuo02T2VPro,
     "AtlasCloud Sora 2 Image-to-Video": AtlasSora2ImageToVideo,
     "AtlasCloud Kling V2.5 Turbo Pro Text-to-Video": AtlasKlingV25TurboProTextToVideo,
@@ -789,6 +805,14 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud PixVerse V6 Start-End-to-Video": "AtlasCloud PixVerse V6 Start-End-to-Video",
     "AtlasCloud Midjourney V8.1 Image-to-Video": "AtlasCloud Midjourney V8.1 Image-to-Video",
     "AtlasCloud Midjourney V8.1 Text-to-Image": "AtlasCloud Midjourney V8.1 Text-to-Image",
+    "AtlasCloud Midjourney V8.1 Image-to-Image": "AtlasCloud Midjourney V8.1 Image-to-Image",
+    "AtlasCloud Midjourney V8.1 Blend": "AtlasCloud Midjourney V8.1 Blend",
+    "AtlasCloud Midjourney V8.1 Remove Background": "AtlasCloud Midjourney V8.1 Remove Background",
+    "AtlasCloud Midjourney V8.1 Style Transfer": "AtlasCloud Midjourney V8.1 Style Transfer",
+    "AtlasCloud Kling V3.0 4K Image-to-Video": "AtlasCloud Kling V3.0 4K Image-to-Video",
+    "AtlasCloud Kling V3.0 4K Text-to-Video": "AtlasCloud Kling V3.0 4K Text-to-Video",
+    "AtlasCloud Kling Video O3 4K Image-to-Video": "AtlasCloud Kling Video O3 4K Image-to-Video",
+    "AtlasCloud Kling Video O3 4K Text-to-Video": "AtlasCloud Kling Video O3 4K Text-to-Video",
     "AtlasCloud Hailuo 02 T2V Pro": "AtlasCloud Hailuo 02 T2V Pro",
     "AtlasCloud Sora 2 Image-to-Video": "AtlasCloud Sora 2 Image-to-Video",
     "AtlasCloud Kling V2.5 Turbo Pro Text-to-Video": "AtlasCloud Kling V2.5 Turbo Pro Text-to-Video",
