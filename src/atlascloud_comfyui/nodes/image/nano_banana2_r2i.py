@@ -20,7 +20,8 @@ class AtlasNanoBanana2ReferenceToImage:
                 "video_url": ("STRING", {"default": "", "tooltip": "Source video clip URL (HTTP <=15MB or YouTube URL)"}),
             },
             "optional": {
-                "seed": ("INT", {"default": -1, "min": -1, "max": 4294967295, "tooltip": "Random seed; -1 = random each run"}),
+                "randomize_seed": ("BOOLEAN", {"default": True, "tooltip": "开启后每次生成随机结果；关闭后使用下方固定 seed"}),
+                "seed": ("INT", {"default": 0, "min": 0, "max": 4294967295, "tooltip": "固定 seed（仅在随机开关关闭时生效）"}),
                 "video_start": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 86400.0, "tooltip": "Trim start (seconds)"}),
                 "video_ends": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 86400.0, "tooltip": "Trim end (seconds); 0 = whole video"}),
                 "video_fps": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 24.0, "tooltip": "FPS of the video clip"}),
@@ -54,7 +55,8 @@ class AtlasNanoBanana2ReferenceToImage:
         enable_web_search: bool = False,
         enable_image_search: bool = False,
         enable_base64_output: bool = False,
-        seed: int = -1,
+        randomize_seed: bool = True,
+        seed: int = 0,
         poll_interval_sec: float = 2.0,
         timeout_sec: int = 300,
     ) -> Tuple[str, str]:
@@ -94,7 +96,7 @@ class AtlasNanoBanana2ReferenceToImage:
         if image_list:
             payload["images"] = image_list
 
-        if seed >= 0:
+        if not randomize_seed:
             payload["seed"] = seed
 
         prediction_id = client.generate_image(payload)

@@ -39,6 +39,8 @@ class AtlasSeedance20FastImageToVideo:
                     ["16:9", "4:3", "1:1", "3:4", "9:16", "21:9", "adaptive"],
                     {"default": "adaptive", "tooltip": "Aspect ratio (adaptive = auto)"},
                 ),
+                "randomize_seed": ("BOOLEAN", {"default": True, "tooltip": "开启后每次生成随机结果；关闭后使用下方固定 seed"}),
+                "seed": ("INT", {"default": 0, "min": 0, "max": 4294967295, "tooltip": "固定 seed（仅在随机开关关闭时生效）"}),
                 "generate_audio": ("BOOLEAN", {"default": True, "tooltip": "Generate audio"}),
                 "last_image": (
                     "STRING",
@@ -62,6 +64,8 @@ class AtlasSeedance20FastImageToVideo:
         atlas_client: AtlasClientHandle,
         image: str,
         prompt: str = "The scene comes alive with gentle motion and cinematic lighting",
+        randomize_seed: bool = True,
+        seed: int = 0,
         duration: int = 5,
         resolution: str = "720p",
         ratio: str = "adaptive",
@@ -88,6 +92,9 @@ class AtlasSeedance20FastImageToVideo:
             "watermark": bool(watermark),
             "return_last_frame": bool(return_last_frame),
         }
+
+        if not randomize_seed:
+            payload["seed"] = seed
 
         p = (prompt or "").strip()
         if p:
