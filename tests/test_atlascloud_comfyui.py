@@ -213,6 +213,16 @@ def test_wan26_spicy_i2v_node_metadata():
     assert AtlasWan26SpicyImageToVideo.RETURN_TYPES == ("STRING", "STRING")
 
 
+def test_wan27_spicy_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.atlascloud_wan_2_7_spicy_i2v import AtlasWan27SpicyImageToVideo
+
+    assert "atlas_client" in AtlasWan27SpicyImageToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasWan27SpicyImageToVideo.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasWan27SpicyImageToVideo.INPUT_TYPES()["required"]
+    assert "resolution" in AtlasWan27SpicyImageToVideo.INPUT_TYPES()["required"]
+    assert AtlasWan27SpicyImageToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
 # --- Batch: 2026-05-13 (NEW) ---
 
 

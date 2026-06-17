@@ -217,6 +217,7 @@ from atlascloud_comfyui.nodes.video.atlascloud_wan_2_2_turbo_spicy_infinite_i2v_
     AtlasWan22TurboSpicyInfiniteImageToVideoLoRA,
 )
 from atlascloud_comfyui.nodes.video.atlascloud_wan_2_6_spicy_i2v import AtlasWan26SpicyImageToVideo
+from atlascloud_comfyui.nodes.video.atlascloud_wan_2_7_spicy_i2v import AtlasWan27SpicyImageToVideo
 from atlascloud_comfyui.nodes.video.van25_t2v import AtlasAtlascloudVan25TextToVideo
 from atlascloud_comfyui.nodes.video.van25_i2v import AtlasAtlascloudVan25ImageToVideo
 from atlascloud_comfyui.nodes.video.van26_t2v import AtlasVan26TextToVideo
@@ -542,6 +543,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Wan 2.2 Turbo Spicy Infinite Image-to-Video": AtlasWan22TurboSpicyInfiniteImageToVideo,
     "AtlasCloud Wan 2.2 Turbo Spicy Infinite Image-to-Video LoRA": AtlasWan22TurboSpicyInfiniteImageToVideoLoRA,
     "AtlasCloud WAN2.6 Spicy Image-to-Video": AtlasWan26SpicyImageToVideo,
+    "AtlasCloud WAN2.7 Spicy Image-to-Video": AtlasWan27SpicyImageToVideo,
     "AtlasCloud Imagen4 Ultra Text-to-Image": AtlasImagen4UltraTextToImage,
     "AtlasCloud Imagen3 Text-to-Image": AtlasImagen3TextToImage,
     "AtlasCloud Imagen3 Fast Text-to-Image": AtlasImagen3FastTextToImage,
@@ -849,6 +851,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Wan 2.2 Turbo Spicy Infinite Image-to-Video": "AtlasCloud Wan 2.2 Turbo Spicy Infinite Image-to-Video",
     "AtlasCloud Wan 2.2 Turbo Spicy Infinite Image-to-Video LoRA": "AtlasCloud Wan 2.2 Turbo Spicy Infinite Image-to-Video LoRA",
     "AtlasCloud WAN2.6 Spicy Image-to-Video": "AtlasCloud WAN2.6 Spicy Image-to-Video",
+    "AtlasCloud WAN2.7 Spicy Image-to-Video": "AtlasCloud WAN2.7 Spicy Image-to-Video",
     "AtlasCloud Imagen4 Ultra Text-to-Image": "AtlasCloud Imagen4 Ultra Text-to-Image",
     "AtlasCloud Imagen3 Text-to-Image": "AtlasCloud Imagen3 Text-to-Image",
     "AtlasCloud Imagen3 Fast Text-to-Image": "AtlasCloud Imagen3 Fast Text-to-Image",
