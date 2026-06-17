@@ -27,7 +27,8 @@ class AtlasNanoBananaProTextToImageUltra:
                 "enable_sync_mode": ("BOOLEAN", {"default": False, "tooltip": "If true, server may try to return result synchronously"}),
             },
             "optional": {
-                "seed": ("INT", {"default": -1, "min": -1, "max": 4294967295, "tooltip": "Random seed; -1 = random each run"}),
+                "randomize_seed": ("BOOLEAN", {"default": True, "tooltip": "开启后每次生成随机结果；关闭后使用下方固定 seed"}),
+                "seed": ("INT", {"default": 0, "min": 0, "max": 4294967295, "tooltip": "固定 seed（仅在随机开关关闭时生效）"}),
                 "poll_interval_sec": ("FLOAT", {"default": 2.0, "min": 0.5, "max": 10.0, "tooltip": "Polling interval (seconds)"}),
                 "timeout_sec": ("INT", {"default": 300, "min": 30, "max": 7200, "tooltip": "Timeout (seconds)"}),
             },
@@ -43,7 +44,8 @@ class AtlasNanoBananaProTextToImageUltra:
         enable_base64_output: bool,
         enable_sync_mode: bool,
         negative_prompt: str = "",
-        seed: int = -1,
+        randomize_seed: bool = True,
+        seed: int = 0,
         poll_interval_sec: float = 2.0,
         timeout_sec: int = 300,
     ) -> Tuple[str, str]:
