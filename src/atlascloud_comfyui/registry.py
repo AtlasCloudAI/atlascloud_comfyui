@@ -309,6 +309,8 @@ from atlascloud_comfyui.nodes.video.kling_v30_4k_i2v import AtlasKlingV304KImage
 from atlascloud_comfyui.nodes.video.kling_v30_4k_t2v import AtlasKlingV304KTextToVideo
 from atlascloud_comfyui.nodes.video.kling_video_o3_4k_i2v import AtlasKlingVideoO34KImageToVideo
 from atlascloud_comfyui.nodes.video.kling_video_o3_4k_t2v import AtlasKlingVideoO34KTextToVideo
+from atlascloud_comfyui.nodes.video.kling_v30_turbo_i2v import AtlasKlingV30TurboImageToVideo
+from atlascloud_comfyui.nodes.video.kling_v30_turbo_t2v import AtlasKlingV30TurboTextToVideo
 from atlascloud_comfyui.nodes.image.mai_image_25_t2i import AtlasMAIImage25TextToImage
 from atlascloud_comfyui.nodes.image.mai_image_25_flash_t2i import AtlasMAIImage25FlashTextToImage
 from atlascloud_comfyui.nodes.image.mai_image_25_edit import AtlasMAIImage25Edit
@@ -505,6 +507,8 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Midjourney V8.1 Style Transfer": AtlasMidjourneyV81StyleTransfer,
     "AtlasCloud Kling V3.0 4K Image-to-Video": AtlasKlingV304KImageToVideo,
     "AtlasCloud Kling V3.0 4K Text-to-Video": AtlasKlingV304KTextToVideo,
+    "AtlasCloud Kling V3.0 Turbo Image-to-Video": AtlasKlingV30TurboImageToVideo,
+    "AtlasCloud Kling V3.0 Turbo Text-to-Video": AtlasKlingV30TurboTextToVideo,
     "AtlasCloud Kling Video O3 4K Image-to-Video": AtlasKlingVideoO34KImageToVideo,
     "AtlasCloud Kling Video O3 4K Text-to-Video": AtlasKlingVideoO34KTextToVideo,
     "AtlasCloud Hailuo 02 T2V Pro": AtlasHailuo02T2VPro,
@@ -813,6 +817,8 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Midjourney V8.1 Style Transfer": "AtlasCloud Midjourney V8.1 Style Transfer",
     "AtlasCloud Kling V3.0 4K Image-to-Video": "AtlasCloud Kling V3.0 4K Image-to-Video",
     "AtlasCloud Kling V3.0 4K Text-to-Video": "AtlasCloud Kling V3.0 4K Text-to-Video",
+    "AtlasCloud Kling V3.0 Turbo Image-to-Video": "AtlasCloud Kling V3.0 Turbo Image-to-Video",
+    "AtlasCloud Kling V3.0 Turbo Text-to-Video": "AtlasCloud Kling V3.0 Turbo Text-to-Video",
     "AtlasCloud Kling Video O3 4K Image-to-Video": "AtlasCloud Kling Video O3 4K Image-to-Video",
     "AtlasCloud Kling Video O3 4K Text-to-Video": "AtlasCloud Kling Video O3 4K Text-to-Video",
     "AtlasCloud Hailuo 02 T2V Pro": "AtlasCloud Hailuo 02 T2V Pro",

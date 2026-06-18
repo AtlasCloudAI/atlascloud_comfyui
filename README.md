@@ -156,6 +156,8 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Kling V3.0 Pro Text-to-Video | kwaivgi/kling-v3.0-pro/text-to-video |
 | AtlasCloud Kling V3.0 4K Text-to-Video | kwaivgi/kling-v3.0-4k/text-to-video |
 | AtlasCloud Kling V3.0 4K Image-to-Video | kwaivgi/kling-v3.0-4k/image-to-video |
+| AtlasCloud Kling V3.0 Turbo Text-to-Video | kwaivgi/kling-v3.0-turbo/text-to-video |
+| AtlasCloud Kling V3.0 Turbo Image-to-Video | kwaivgi/kling-v3.0-turbo/image-to-video |
 | AtlasCloud Kling Video O3 4K Text-to-Video | kwaivgi/kling-video-o3-4k/text-to-video |
 | AtlasCloud Kling Video O3 4K Image-to-Video | kwaivgi/kling-video-o3-4k/image-to-video |
 | AtlasCloud Kling V3.0 Std Text-to-Video | kwaivgi/kling-v3.0-std/text-to-video |
