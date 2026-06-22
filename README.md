@@ -120,6 +120,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud WAN2.6 Text-to-Video | alibaba/wan-2.6/text-to-video |
 | AtlasCloud WAN2.7 Text-to-Video | alibaba/wan-2.7/text-to-video |
 | AtlasCloud HappyHorse 1.0 Text-to-Video | alibaba/happyhorse-1.0/text-to-video |
+| AtlasCloud HappyHorse 1.1 Text-to-Video | alibaba/happyhorse-1.1/text-to-video |
 | AtlasCloud WAN2.6 Video-to-Video | alibaba/wan-2.6/video-to-video |
 | AtlasCloud Kling Video O3 Pro Text-to-Video | kwaivgi/kling-video-o3-pro/text-to-video |
 | AtlasCloud Kling Video O3 Std Text-to-Video | kwaivgi/kling-video-o3-std/text-to-video |
@@ -261,7 +262,9 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud WAN2.7 Spicy Image-to-Video | atlascloud/wan-2.7-spicy/image-to-video |
 | AtlasCloud WAN2.7 Image-to-Video | alibaba/wan-2.7/image-to-video |
 | AtlasCloud HappyHorse 1.0 Image-to-Video | alibaba/happyhorse-1.0/image-to-video |
+| AtlasCloud HappyHorse 1.1 Image-to-Video | alibaba/happyhorse-1.1/image-to-video |
 | AtlasCloud HappyHorse 1.0 Reference-to-Video | alibaba/happyhorse-1.0/reference-to-video |
+| AtlasCloud HappyHorse 1.1 Reference-to-Video | alibaba/happyhorse-1.1/reference-to-video |
 | AtlasCloud WAN2.7 Reference-to-Video | alibaba/wan-2.7/reference-to-video |
 | AtlasCloud WAN2.6 Image-to-Video Flash | alibaba/wan-2.6/image-to-video-flash |
 | AtlasCloud Kling Video O3 Pro Image-to-Video | kwaivgi/kling-video-o3-pro/image-to-video |

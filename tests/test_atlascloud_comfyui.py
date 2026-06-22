@@ -599,6 +599,31 @@ def test_happyhorse_10_video_edit_node_metadata():
     assert AtlasHappyHorse10VideoEdit.RETURN_TYPES == ("STRING", "STRING")
 
 
+def test_happyhorse_11_t2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.alibaba_happyhorse_1_1_t2v import AtlasHappyHorse11TextToVideo
+
+    assert "atlas_client" in AtlasHappyHorse11TextToVideo.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasHappyHorse11TextToVideo.INPUT_TYPES()["required"]
+    assert AtlasHappyHorse11TextToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_happyhorse_11_i2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.alibaba_happyhorse_1_1_i2v import AtlasHappyHorse11ImageToVideo
+
+    assert "atlas_client" in AtlasHappyHorse11ImageToVideo.INPUT_TYPES()["required"]
+    assert "image" in AtlasHappyHorse11ImageToVideo.INPUT_TYPES()["required"]
+    assert AtlasHappyHorse11ImageToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
+def test_happyhorse_11_r2v_node_metadata():
+    from src.atlascloud_comfyui.nodes.video.alibaba_happyhorse_1_1_r2v import AtlasHappyHorse11ReferenceToVideo
+
+    assert "atlas_client" in AtlasHappyHorse11ReferenceToVideo.INPUT_TYPES()["required"]
+    assert "prompt" in AtlasHappyHorse11ReferenceToVideo.INPUT_TYPES()["required"]
+    assert "images" in AtlasHappyHorse11ReferenceToVideo.INPUT_TYPES()["required"]
+    assert AtlasHappyHorse11ReferenceToVideo.RETURN_TYPES == ("STRING", "STRING")
+
+
 def test_veo31_lite_t2v_node_metadata():
     from src.atlascloud_comfyui.nodes.video.google_veo31_lite_t2v import AtlasVeo31LiteTextToVideo
 
