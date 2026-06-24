@@ -192,6 +192,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud VEO3 Image-to-Video | google/veo3/image-to-video |
 | AtlasCloud VEO3 Fast Image-to-Video | google/veo3-fast/image-to-video |
 | AtlasCloud Midjourney V8.1 Image-to-Video | midjourney/v8.1/image-to-video |
+| AtlasCloud Youchuan V8.1 Image-to-Video | youchuan/v8.1/image-to-video |
 | AtlasCloud VEO3.1 Fast Image-to-Video | google/veo3.1-fast/image-to-video |
 | AtlasCloud Gemini Omni Flash Image-to-Video Developer | google/gemini-omni-flash/image-to-video-developer |
 | AtlasCloud Gemini Omni Flash Reference-to-Video Developer | google/gemini-omni-flash/reference-to-video-developer |
@@ -330,6 +331,11 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Midjourney V8.1 Blend | midjourney/v8.1/blend |
 | AtlasCloud Midjourney V8.1 Remove Background | midjourney/v8.1/remove-background |
 | AtlasCloud Midjourney V8.1 Style Transfer | midjourney/v8.1/style-transfer |
+| AtlasCloud Youchuan V8.1 Text-to-Image | youchuan/v8.1/text-to-image |
+| AtlasCloud Youchuan V8.1 Image-to-Image | youchuan/v8.1/image-to-image |
+| AtlasCloud Youchuan V8.1 Blend | youchuan/v8.1/blend |
+| AtlasCloud Youchuan V8.1 Remove Background | youchuan/v8.1/remove-background |
+| AtlasCloud Youchuan V8.1 Style Transfer | youchuan/v8.1/style-transfer |
 | AtlasCloud WAN2.6 Text-to-Image | alibaba/wan-2.6/text-to-image |
 | AtlasCloud WAN2.7 Text-to-Image | alibaba/wan-2.7/text-to-image |
 | AtlasCloud WAN2.7 Pro Text-to-Image | alibaba/wan-2.7-pro/text-to-image |

@@ -308,6 +308,12 @@ from atlascloud_comfyui.nodes.image.midjourney_v81_i2i import AtlasMidjourneyV81
 from atlascloud_comfyui.nodes.image.midjourney_v81_blend import AtlasMidjourneyV81Blend
 from atlascloud_comfyui.nodes.image.midjourney_v81_remove_bg import AtlasMidjourneyV81RemoveBackground
 from atlascloud_comfyui.nodes.image.midjourney_v81_style_transfer import AtlasMidjourneyV81StyleTransfer
+from atlascloud_comfyui.nodes.video.youchuan_v81_i2v import AtlasYouchuanV81ImageToVideo
+from atlascloud_comfyui.nodes.image.youchuan_v81_t2i import AtlasYouchuanV81TextToImage
+from atlascloud_comfyui.nodes.image.youchuan_v81_i2i import AtlasYouchuanV81ImageToImage
+from atlascloud_comfyui.nodes.image.youchuan_v81_blend import AtlasYouchuanV81Blend
+from atlascloud_comfyui.nodes.image.youchuan_v81_remove_bg import AtlasYouchuanV81RemoveBackground
+from atlascloud_comfyui.nodes.image.youchuan_v81_style_transfer import AtlasYouchuanV81StyleTransfer
 from atlascloud_comfyui.nodes.video.kling_v30_4k_i2v import AtlasKlingV304KImageToVideo
 from atlascloud_comfyui.nodes.video.kling_v30_4k_t2v import AtlasKlingV304KTextToVideo
 from atlascloud_comfyui.nodes.video.kling_video_o3_4k_i2v import AtlasKlingVideoO34KImageToVideo
@@ -511,6 +517,12 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Midjourney V8.1 Blend": AtlasMidjourneyV81Blend,
     "AtlasCloud Midjourney V8.1 Remove Background": AtlasMidjourneyV81RemoveBackground,
     "AtlasCloud Midjourney V8.1 Style Transfer": AtlasMidjourneyV81StyleTransfer,
+    "AtlasCloud Youchuan V8.1 Image-to-Video": AtlasYouchuanV81ImageToVideo,
+    "AtlasCloud Youchuan V8.1 Text-to-Image": AtlasYouchuanV81TextToImage,
+    "AtlasCloud Youchuan V8.1 Image-to-Image": AtlasYouchuanV81ImageToImage,
+    "AtlasCloud Youchuan V8.1 Blend": AtlasYouchuanV81Blend,
+    "AtlasCloud Youchuan V8.1 Remove Background": AtlasYouchuanV81RemoveBackground,
+    "AtlasCloud Youchuan V8.1 Style Transfer": AtlasYouchuanV81StyleTransfer,
     "AtlasCloud Kling V3.0 4K Image-to-Video": AtlasKlingV304KImageToVideo,
     "AtlasCloud Kling V3.0 4K Text-to-Video": AtlasKlingV304KTextToVideo,
     "AtlasCloud Kling V3.0 Turbo Image-to-Video": AtlasKlingV30TurboImageToVideo,
@@ -824,6 +836,12 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Midjourney V8.1 Blend": "AtlasCloud Midjourney V8.1 Blend",
     "AtlasCloud Midjourney V8.1 Remove Background": "AtlasCloud Midjourney V8.1 Remove Background",
     "AtlasCloud Midjourney V8.1 Style Transfer": "AtlasCloud Midjourney V8.1 Style Transfer",
+    "AtlasCloud Youchuan V8.1 Image-to-Video": "AtlasCloud Youchuan V8.1 Image-to-Video",
+    "AtlasCloud Youchuan V8.1 Text-to-Image": "AtlasCloud Youchuan V8.1 Text-to-Image",
+    "AtlasCloud Youchuan V8.1 Image-to-Image": "AtlasCloud Youchuan V8.1 Image-to-Image",
+    "AtlasCloud Youchuan V8.1 Blend": "AtlasCloud Youchuan V8.1 Blend",
+    "AtlasCloud Youchuan V8.1 Remove Background": "AtlasCloud Youchuan V8.1 Remove Background",
+    "AtlasCloud Youchuan V8.1 Style Transfer": "AtlasCloud Youchuan V8.1 Style Transfer",
     "AtlasCloud Kling V3.0 4K Image-to-Video": "AtlasCloud Kling V3.0 4K Image-to-Video",
     "AtlasCloud Kling V3.0 4K Text-to-Video": "AtlasCloud Kling V3.0 4K Text-to-Video",
     "AtlasCloud Kling V3.0 Turbo Image-to-Video": "AtlasCloud Kling V3.0 Turbo Image-to-Video",
