@@ -204,6 +204,11 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud VEO3.1 Reference-to-Video | google/veo3.1/reference-to-video |
 | AtlasCloud Seedance 2.0 Reference-to-Video | bytedance/seedance-2.0/reference-to-video |
 | AtlasCloud Seedance 2.0 Fast Reference-to-Video | bytedance/seedance-2.0-fast/reference-to-video |
+| AtlasCloud Seedance 2.0 Mini Text-to-Video | bytedance/seedance-2.0-mini/text-to-video |
+| AtlasCloud Seedance 2.0 Mini Image-to-Video | bytedance/seedance-2.0-mini/image-to-video |
+| AtlasCloud Seedance 2.0 Mini Reference-to-Video | bytedance/seedance-2.0-mini/reference-to-video |
+| AtlasCloud Avatar Omni Human 1.5 | bytedance/avatar-omni-human-v1.5 |
+| AtlasCloud Image Upscaler | atlascloud/image-upscaler |
 | AtlasCloud Seedance 2.0 Reference-to-Video Upscaled | bytedance/seedance-2.0/reference-to-video-upscaled |
 | AtlasCloud Seedance 2.0 Fast Reference-to-Video Upscaled | bytedance/seedance-2.0-fast/reference-to-video-upscaled |
 | AtlasCloud Vidu Q3 Reference-to-Video | vidu/q3/reference-to-video |
