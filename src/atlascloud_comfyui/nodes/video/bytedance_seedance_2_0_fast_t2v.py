@@ -35,6 +35,8 @@ class AtlasSeedance20FastTextToVideo:
                     ["16:9", "4:3", "1:1", "3:4", "9:16", "21:9", "adaptive"],
                     {"default": "adaptive", "tooltip": "Aspect ratio (adaptive = auto)"},
                 ),
+                "randomize_seed": ("BOOLEAN", {"default": True, "tooltip": "开启后每次生成随机结果；关闭后使用下方固定 seed"}),
+                "seed": ("INT", {"default": 0, "min": 0, "max": 4294967295, "tooltip": "固定 seed（仅在随机开关关闭时生效）"}),
                 "generate_audio": ("BOOLEAN", {"default": True, "tooltip": "Generate audio"}),
                 "watermark": ("BOOLEAN", {"default": False, "tooltip": "Add watermark"}),
                 "return_last_frame": ("BOOLEAN", {"default": False, "tooltip": "Return last frame (if supported)"}),
@@ -53,6 +55,8 @@ class AtlasSeedance20FastTextToVideo:
         self,
         atlas_client: AtlasClientHandle,
         prompt: str,
+        randomize_seed: bool = True,
+        seed: int = 0,
         duration: int = 5,
         resolution: str = "720p",
         ratio: str = "adaptive",
@@ -71,7 +75,8 @@ class AtlasSeedance20FastTextToVideo:
         return await loop.run_in_executor(
             None,
             self._run_sync,
-            atlas_client, prompt, int(duration), resolution, ratio,
+            atlas_client, prompt, bool(randomize_seed), int(seed),
+            int(duration), resolution, ratio,
             bool(generate_audio), bool(watermark), bool(return_last_frame),
             float(poll_interval_sec), float(timeout_sec),
         )
@@ -80,6 +85,8 @@ class AtlasSeedance20FastTextToVideo:
         self,
         atlas_client: AtlasClientHandle,
         prompt: str,
+        randomize_seed: bool,
+        seed: int,
         duration: int,
         resolution: str,
         ratio: str,
@@ -105,6 +112,9 @@ class AtlasSeedance20FastTextToVideo:
             "watermark": bool(watermark),
             "return_last_frame": bool(return_last_frame),
         }
+
+        if not randomize_seed:
+            payload["seed"] = seed
 
         import time
 

@@ -47,6 +47,8 @@ class AtlasSeedance20ReferenceToVideo:
                     ["16:9", "4:3", "1:1", "3:4", "9:16", "21:9", "adaptive"],
                     {"default": "adaptive", "tooltip": "Aspect ratio (adaptive = auto)"},
                 ),
+                "randomize_seed": ("BOOLEAN", {"default": True, "tooltip": "开启后每次生成随机结果；关闭后使用下方固定 seed"}),
+                "seed": ("INT", {"default": 0, "min": 0, "max": 4294967295, "tooltip": "固定 seed（仅在随机开关关闭时生效）"}),
                 "generate_audio": ("BOOLEAN", {"default": True, "tooltip": "Generate audio"}),
                 "watermark": ("BOOLEAN", {"default": False, "tooltip": "Add watermark"}),
                 "return_last_frame": ("BOOLEAN", {"default": False, "tooltip": "Return last frame (if supported)"}),
@@ -68,6 +70,8 @@ class AtlasSeedance20ReferenceToVideo:
         reference_videos: str,
         prompt: str = "The character in image 1 dances gracefully to the music",
         reference_audios: str = "",
+        randomize_seed: bool = True,
+        seed: int = 0,
         duration: int = 5,
         resolution: str = "720p",
         ratio: str = "adaptive",
@@ -93,6 +97,9 @@ class AtlasSeedance20ReferenceToVideo:
             "watermark": bool(watermark),
             "return_last_frame": bool(return_last_frame),
         }
+
+        if not randomize_seed:
+            payload["seed"] = seed
 
         p = (prompt or "").strip()
         if p:
