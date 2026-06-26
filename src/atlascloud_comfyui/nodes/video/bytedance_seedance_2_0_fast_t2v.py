@@ -30,7 +30,7 @@ class AtlasSeedance20FastTextToVideo:
                     [-1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
                     {"default": 5, "tooltip": "Duration (seconds), or -1 for auto"},
                 ),
-                "resolution": (["480p", "720p"], {"default": "720p", "tooltip": "Resolution"}),
+                "resolution": (["480p", "720p", "1080p-SR"], {"default": "720p", "tooltip": "Resolution (1080p-SR = 1080p 超分)"}),
                 "ratio": (
                     ["16:9", "4:3", "1:1", "3:4", "9:16", "21:9", "adaptive"],
                     {"default": "adaptive", "tooltip": "Aspect ratio (adaptive = auto)"},
