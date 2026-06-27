@@ -3,8 +3,11 @@ from __future__ import annotations
 import os
 import time
 from dataclasses import dataclass, field
+import inspect
 from typing import Any, Dict, Optional
 from urllib.parse import urlsplit, urlunsplit
+
+from ..history import LocalHistoryRecorder
 
 
 class AtlasError(RuntimeError):
@@ -15,6 +18,7 @@ class AtlasError(RuntimeError):
 class AtlasClient:
     api_key: str
     base_url: str = "https://api.atlascloud.ai"
+    history: LocalHistoryRecorder = field(init=False, repr=False)
 
     # Used for tracking on "generate" endpoints only (NOT for polling).
     tracking_params: Dict[str, str] = field(
@@ -28,6 +32,7 @@ class AtlasClient:
     def __post_init__(self) -> None:
         # Normalize base_url to avoid double slashes.
         self.base_url = (self.base_url or "").strip().rstrip("/")
+        self.history = LocalHistoryRecorder.from_env()
 
     @classmethod
     def from_env(cls, *, base_url: Optional[str] = None) -> "AtlasClient":
@@ -61,33 +66,70 @@ class AtlasClient:
             host = "console.atlascloud.ai"
         return urlunsplit((parts.scheme or "https", host, "", "", "")).rstrip("/")
 
-    def generate_video(self, payload: Dict[str, Any]) -> str:
-        # ✅ runtime import so CI can import nodes without requests installed
+    def history_directory(self) -> str:
+        return self.history.history_dir()
+
+    def _infer_node_context(self) -> Dict[str, Any]:
+        for frame_info in inspect.stack()[2:]:
+            filename = (frame_info.filename or "").replace("\\", "/")
+            if "/src/atlascloud_comfyui/nodes/" not in filename:
+                continue
+            self_obj = frame_info.frame.f_locals.get("self")
+            node_class = self_obj.__class__.__name__ if self_obj is not None else None
+            return {
+                "node_class": node_class or "",
+                "function": frame_info.function,
+                "file_path": frame_info.filename,
+            }
+        return {}
+
+    def _record_submission_error(self, request_kind: str, payload: Dict[str, Any], node_context: Dict[str, Any], error: Exception) -> None:
+        self.history.record_submission_error(
+            request_kind=request_kind,
+            payload=payload,
+            error_message=str(error),
+            node_context=node_context,
+            tracking_params=self.tracking_params,
+            base_url=self.base_url,
+        )
+
+    def _generate(self, endpoint: str, payload: Dict[str, Any], *, request_kind: str) -> str:
         import requests
 
-        url = f"{self.base_url}/api/v1/model/generateVideo"
+        url = f"{self.base_url}{endpoint}"
         headers = {"Content-Type": "application/json", **self._auth_headers()}
-        r = requests.post(url, headers=headers, json=payload, params=self.tracking_params, timeout=120)
-        r.raise_for_status()
-        data = r.json()
+        node_context = self._infer_node_context()
+
         try:
-            return data["data"]["id"]
-        except Exception as e:
-            raise AtlasError(f"Unexpected generateVideo response: {data}") from e
+            r = requests.post(url, headers=headers, json=payload, params=self.tracking_params, timeout=120)
+            r.raise_for_status()
+            data = r.json()
+            prediction_id = data["data"]["id"]
+        except Exception as exc:
+            self._record_submission_error(request_kind, payload, node_context, exc)
+            raise
+
+        self.history.record_submission(
+            prediction_id=prediction_id,
+            request_kind=request_kind,
+            payload=payload,
+            node_context=node_context,
+            tracking_params=self.tracking_params,
+            base_url=self.base_url,
+        )
+        return prediction_id
+
+    def generate_video(self, payload: Dict[str, Any]) -> str:
+        try:
+            return self._generate("/api/v1/model/generateVideo", payload, request_kind="video")
+        except KeyError as e:
+            raise AtlasError("Unexpected generateVideo response: missing data.id") from e
 
     def generate_image(self, payload: Dict[str, Any]) -> str:
-        # ✅ runtime import so CI can import nodes without requests installed
-        import requests
-
-        url = f"{self.base_url}/api/v1/model/generateImage"
-        headers = {"Content-Type": "application/json", **self._auth_headers()}
-        r = requests.post(url, headers=headers, json=payload, params=self.tracking_params, timeout=120)
-        r.raise_for_status()
-        data = r.json()
         try:
-            return data["data"]["id"]
-        except Exception as e:
-            raise AtlasError(f"Unexpected generateImage response: {data}") from e
+            return self._generate("/api/v1/model/generateImage", payload, request_kind="image")
+        except KeyError as e:
+            raise AtlasError("Unexpected generateImage response: missing data.id") from e
 
     def upload_media_bytes(self, content: bytes, *, filename: str, mime_type: str = "application/octet-stream") -> Dict[str, Any]:
         import requests
@@ -209,6 +251,10 @@ class AtlasClient:
 
             if elapsed > float(timeout_sec):
                 extra = f" last_http={last_http} last_body={last_body!r}" if last_http else ""
+                self.history.record_failure(
+                    prediction_id,
+                    error_message=f"Timed out waiting for prediction {prediction_id}.{extra}",
+                )
                 raise AtlasError(f"Timed out waiting for prediction {prediction_id}.{extra}")
 
             data: Optional[Dict[str, Any]] = None
@@ -223,9 +269,37 @@ class AtlasClient:
                         timeout=60,
                     )
 
+                    response_json: Optional[Dict[str, Any]] = None
+                    try:
+                        parsed = r.json()
+                        if isinstance(parsed, dict):
+                            response_json = parsed
+                    except Exception:
+                        response_json = None
+
+                    response_status = str(((response_json or {}).get("data") or {}).get("status") or "").strip().lower()
+                    if response_status in ("completed", "succeeded"):
+                        data = response_json
+                        got_response = True
+                        break
+                    if response_status == "failed":
+                        err = (response_json.get("data") or {}).get("error") or "Generation failed"
+                        code = (response_json.get("data") or {}).get("error_code")
+                        got_response = True
+                        self.history.record_failure(
+                            prediction_id,
+                            error_message=f"{err} (error_code={code})" if code else str(err),
+                            response_data=response_json,
+                        )
+                        raise AtlasError(f"{err} (error_code={code})" if code else str(err))
+
                     # ✅ 401/403/422：不可重试，立即抛出，避免认证失败等错误被隐藏到超时
                     if r.status_code in (401, 403, 422):
                         body = (r.text or "")[:800]
+                        self.history.record_failure(
+                            prediction_id,
+                            error_message=f"Prediction query failed (http={r.status_code}) url={url} body={body}",
+                        )
                         raise AtlasError(f"Prediction query failed (http={r.status_code}) url={url} body={body}")
 
                     # ✅ 400/404：很多异步系统刚创建会短暂查不到，warmup 内继续轮询
@@ -236,6 +310,10 @@ class AtlasClient:
                         if elapsed <= float(warmup_grace_sec):
                             continue  # try next candidate / keep polling
                         # warmup 过了仍然 400/404 才报错，并打印 body
+                        self.history.record_failure(
+                            prediction_id,
+                            error_message=f"Prediction query failed (http={r.status_code}) url={url} body={last_body}",
+                        )
                         raise AtlasError(f"Prediction query failed (http={r.status_code}) url={url} body={last_body}")
 
                     r.raise_for_status()
@@ -250,6 +328,10 @@ class AtlasClient:
                     last_body = (getattr(resp, "text", "") or "")[:800] if resp is not None else repr(e)
                     # 401/403/422 不可重试，立即抛出，避免认证失败等错误被隐藏到超时
                     if last_http in (401, 403, 422):
+                        self.history.record_failure(
+                            prediction_id,
+                            error_message=f"Prediction query failed (http={last_http}) url={url} body={last_body}",
+                        )
                         raise AtlasError(f"Prediction query failed (http={last_http}) url={url} body={last_body}")
                     continue
 
@@ -258,15 +340,23 @@ class AtlasClient:
                 continue
 
             status = (data.get("data") or {}).get("status")
+            if status:
+                self.history.record_poll_status(prediction_id, str(status), response_data=data)
 
             if status in ("completed", "succeeded"):
                 if pbar:
                     pbar.update(100 - last_pct)
+                self.history.record_completion(prediction_id, response_data=data)
                 return data
 
             if status == "failed":
                 err = (data.get("data") or {}).get("error") or "Generation failed"
                 code = (data.get("data") or {}).get("error_code")
+                self.history.record_failure(
+                    prediction_id,
+                    error_message=f"{err} (error_code={code})" if code else str(err),
+                    response_data=data,
+                )
                 raise AtlasError(f"{err} (error_code={code})" if code else err)
 
             time.sleep(float(poll_interval_sec))

@@ -35,3 +35,10 @@ except Exception as e:
     print("[AtlasCloud] Failed to import registry:", repr(e))
     NODE_CLASS_MAPPINGS = {}
     NODE_DISPLAY_NAME_MAPPINGS = {}
+
+try:
+    from atlascloud_comfyui.history.api import register_history_routes
+
+    register_history_routes()
+except Exception as e:
+    print("[AtlasCloud] Failed to register history routes:", repr(e))
