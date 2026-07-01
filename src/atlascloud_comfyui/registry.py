@@ -153,6 +153,10 @@ from atlascloud_comfyui.nodes.image.nano_banana2_edit import AtlasNanoBanana2Edi
 from atlascloud_comfyui.nodes.image.nano_banana2_r2i import AtlasNanoBanana2ReferenceToImage
 from atlascloud_comfyui.nodes.image.nano_banana2_r2i_dev import AtlasNanoBanana2ReferenceToImageDev
 from atlascloud_comfyui.nodes.deprecated.image.nano_banana2_edit_dev import AtlasNanoBanana2EditDev
+from atlascloud_comfyui.nodes.image.nano_banana2_lite_t2i import AtlasNanoBanana2LiteTextToImage
+from atlascloud_comfyui.nodes.image.nano_banana2_lite_t2i_dev import AtlasNanoBanana2LiteTextToImageDev
+from atlascloud_comfyui.nodes.image.nano_banana2_lite_edit import AtlasNanoBanana2LiteEdit
+from atlascloud_comfyui.nodes.image.nano_banana2_lite_edit_dev import AtlasNanoBanana2LiteEditDev
 from atlascloud_comfyui.nodes.image.seedream_v50_lite_t2i import AtlasSeedreamV50LiteTextToImage
 from atlascloud_comfyui.nodes.image.seedream_v50_lite_edit import AtlasSeedreamV50LiteEdit
 from atlascloud_comfyui.nodes.image.seedream_v50_lite_sequential_t2i import AtlasSeedreamV50LiteSequentialTextToImage
@@ -487,6 +491,10 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Nano Banana 2 Edit Developer": AtlasNanoBanana2EditDev,
     "AtlasCloud Nano Banana 2 Reference-to-Image": AtlasNanoBanana2ReferenceToImage,
     "AtlasCloud Nano Banana 2 Reference-to-Image Developer": AtlasNanoBanana2ReferenceToImageDev,
+    "AtlasCloud Nano Banana 2 Lite Text-to-Image": AtlasNanoBanana2LiteTextToImage,
+    "AtlasCloud Nano Banana 2 Lite Text-to-Image Developer": AtlasNanoBanana2LiteTextToImageDev,
+    "AtlasCloud Nano Banana 2 Lite Edit": AtlasNanoBanana2LiteEdit,
+    "AtlasCloud Nano Banana 2 Lite Edit Developer": AtlasNanoBanana2LiteEditDev,
     "AtlasCloud Seedream V5.0 Lite Text-to-Image": AtlasSeedreamV50LiteTextToImage,
     "AtlasCloud Seedream V5.0 Lite Sequential Text-to-Image": AtlasSeedreamV50LiteSequentialTextToImage,
     "AtlasCloud Seedream V5.0 Lite Edit": AtlasSeedreamV50LiteEdit,
@@ -811,6 +819,10 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Nano Banana 2 Edit Developer": "AtlasCloud Nano Banana 2 Edit Developer",
     "AtlasCloud Nano Banana 2 Reference-to-Image": "AtlasCloud Nano Banana 2 Reference-to-Image",
     "AtlasCloud Nano Banana 2 Reference-to-Image Developer": "AtlasCloud Nano Banana 2 Reference-to-Image Developer",
+    "AtlasCloud Nano Banana 2 Lite Text-to-Image": "AtlasCloud Nano Banana 2 Lite Text-to-Image",
+    "AtlasCloud Nano Banana 2 Lite Text-to-Image Developer": "AtlasCloud Nano Banana 2 Lite Text-to-Image Developer",
+    "AtlasCloud Nano Banana 2 Lite Edit": "AtlasCloud Nano Banana 2 Lite Edit",
+    "AtlasCloud Nano Banana 2 Lite Edit Developer": "AtlasCloud Nano Banana 2 Lite Edit Developer",
     "AtlasCloud Seedream V5.0 Lite Text-to-Image": "AtlasCloud Seedream V5.0 Lite Text-to-Image",
     "AtlasCloud Seedream V5.0 Lite Sequential Text-to-Image": "AtlasCloud Seedream V5.0 Lite Sequential Text-to-Image",
     "AtlasCloud Seedream V5.0 Lite Edit": "AtlasCloud Seedream V5.0 Lite Edit",
