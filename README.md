@@ -352,6 +352,8 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Imagen3 Fast Text-to-Image | google/imagen3-fast |
 | AtlasCloud Nano Banana 2 Text-to-Image | google/nano-banana-2/text-to-image |
 | AtlasCloud Nano Banana 2 Text-to-Image Developer | google/nano-banana-2/text-to-image-developer |
+| AtlasCloud Nano Banana 2 Lite Text-to-Image | google/nano-banana-2-lite/text-to-image |
+| AtlasCloud Nano Banana 2 Lite Text-to-Image Developer | google/nano-banana-2-lite/text-to-image-developer |
 | AtlasCloud Nano Banana Pro Text-to-Image Ultra | google/nano-banana-pro/text-to-image-ultra |
 | AtlasCloud Nano Banana Pro Text-to-Image | google/nano-banana-pro/text-to-image |
 | AtlasCloud Nano Banana Pro Text-to-Image Developer | google/nano-banana-pro/text-to-image-developer |
@@ -410,6 +412,8 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 |------|-------|
 | AtlasCloud Nano Banana 2 Edit | google/nano-banana-2/edit |
 | AtlasCloud Nano Banana 2 Edit Developer | google/nano-banana-2/edit-developer |
+| AtlasCloud Nano Banana 2 Lite Edit | google/nano-banana-2-lite/edit |
+| AtlasCloud Nano Banana 2 Lite Edit Developer | google/nano-banana-2-lite/edit-developer |
 | AtlasCloud Nano Banana 2 Reference-to-Image | google/nano-banana-2/reference-to-image |
 | AtlasCloud Nano Banana 2 Reference-to-Image Developer | google/nano-banana-2/reference-to-image-developer |
 | AtlasCloud Seedream V5.0 Lite Edit | bytedance/seedream-v5.0-lite/edit |
