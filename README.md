@@ -115,6 +115,10 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud VEO3.1 Lite Text-to-Video | google/veo3.1-lite/text-to-video |
 | AtlasCloud VEO3.1 Fast Text-to-Video | google/veo3.1-fast/text-to-video |
 | AtlasCloud Gemini Omni Flash Text-to-Video Developer | google/gemini-omni-flash/text-to-video-developer |
+| AtlasCloud Gemini Omni Flash Text-to-Video | google/gemini-omni-flash/text-to-video |
+| AtlasCloud Gemini Omni Flash Image-to-Video | google/gemini-omni-flash/image-to-video |
+| AtlasCloud Gemini Omni Flash Reference-to-Video | google/gemini-omni-flash/reference-to-video |
+| AtlasCloud Gemini Omni Flash Video Edit | google/gemini-omni-flash/video-edit |
 | AtlasCloud Grok Imagine Video Text-to-Video | xai/grok-imagine-video/text-to-video |
 | AtlasCloud VEO2 Text-to-Video | google/veo2 |
 | AtlasCloud WAN2.6 Text-to-Video | alibaba/wan-2.6/text-to-video |
