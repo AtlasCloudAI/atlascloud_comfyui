@@ -258,6 +258,13 @@ from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_quality_edit import A
 from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_t2i import AtlasGrokImagineImageTextToImage
 from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_edit import AtlasGrokImagineImageEdit
 
+from atlascloud_comfyui.nodes.image.seedream_v50_pro_t2i import AtlasSeedreamV50ProTextToImage
+from atlascloud_comfyui.nodes.image.seedream_v50_pro_edit import AtlasSeedreamV50ProEdit
+from atlascloud_comfyui.nodes.image.nvidia_cosmos_3_super_t2i import AtlasCosmos3SuperTextToImage
+from atlascloud_comfyui.nodes.video.nvidia_cosmos_3_super_i2v import AtlasCosmos3SuperImageToVideo
+from atlascloud_comfyui.nodes.image.ideogram_v4_turbo_t2i import AtlasIdeogramV4TurboTextToImage
+from atlascloud_comfyui.nodes.image.ideogram_v4_quality_t2i import AtlasIdeogramV4QualityTextToImage
+
 from atlascloud_comfyui.nodes.video.kling_v16_multi_i2v_pro import AtlasKlingV16MultiI2VPro
 from atlascloud_comfyui.nodes.video.kling_v16_multi_i2v_standard import AtlasKlingV16MultiI2VStandard
 from atlascloud_comfyui.nodes.video.kling_v16_i2v_standard import AtlasKlingV16I2VStandard
@@ -710,6 +717,12 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud FLUX.2 Pro Edit": AtlasFlux2ProEdit,
     "AtlasCloud Grok Imagine Video Edit": AtlasGrokImagineVideoEdit,
     "AtlasCloud Grok Imagine Video Extend": AtlasGrokImagineVideoExtend,
+    "AtlasCloud Seedream V5.0 Pro Text-to-Image": AtlasSeedreamV50ProTextToImage,
+    "AtlasCloud Seedream V5.0 Pro Edit": AtlasSeedreamV50ProEdit,
+    "AtlasCloud Cosmos 3 Super Text-to-Image": AtlasCosmos3SuperTextToImage,
+    "AtlasCloud Cosmos 3 Super Image-to-Video": AtlasCosmos3SuperImageToVideo,
+    "AtlasCloud Ideogram V4 Turbo Text-to-Image": AtlasIdeogramV4TurboTextToImage,
+    "AtlasCloud Ideogram V4 Quality Text-to-Image": AtlasIdeogramV4QualityTextToImage,
 }
 
 
@@ -1044,6 +1057,12 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud HiDream O1 1.5 Edit": "AtlasCloud HiDream O1 1.5 Edit",
     "AtlasCloud Sync Lipsync v3": "AtlasCloud Sync Lipsync v3",
     "AtlasCloud VEED Lipsync": "AtlasCloud VEED Lipsync",
+    "AtlasCloud Seedream V5.0 Pro Text-to-Image": "AtlasCloud Seedream V5.0 Pro Text-to-Image",
+    "AtlasCloud Seedream V5.0 Pro Edit": "AtlasCloud Seedream V5.0 Pro Edit",
+    "AtlasCloud Cosmos 3 Super Text-to-Image": "AtlasCloud Cosmos 3 Super Text-to-Image",
+    "AtlasCloud Cosmos 3 Super Image-to-Video": "AtlasCloud Cosmos 3 Super Image-to-Video",
+    "AtlasCloud Ideogram V4 Turbo Text-to-Image": "AtlasCloud Ideogram V4 Turbo Text-to-Image",
+    "AtlasCloud Ideogram V4 Quality Text-to-Image": "AtlasCloud Ideogram V4 Quality Text-to-Image",
 }
 
 
