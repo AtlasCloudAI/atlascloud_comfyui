@@ -117,6 +117,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Gemini Omni Flash Text-to-Video Developer | google/gemini-omni-flash/text-to-video-developer |
 | AtlasCloud Gemini Omni Flash Text-to-Video | google/gemini-omni-flash/text-to-video |
 | AtlasCloud Gemini Omni Flash Image-to-Video | google/gemini-omni-flash/image-to-video |
+| AtlasCloud Cosmos 3 Super Image-to-Video | nvidia/cosmos-3-super/image-to-video |
 | AtlasCloud Gemini Omni Flash Reference-to-Video | google/gemini-omni-flash/reference-to-video |
 | AtlasCloud Gemini Omni Flash Video Edit | google/gemini-omni-flash/video-edit |
 | AtlasCloud Grok Imagine Video Text-to-Video | xai/grok-imagine-video/text-to-video |
@@ -368,6 +369,8 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Nano Banana Text-to-Image Developer | google/nano-banana/text-to-image-developer |
 | AtlasCloud Seedream V5.0 Lite Text-to-Image | bytedance/seedream-v5.0-lite |
 | AtlasCloud Seedream V5.0 Lite Sequential Text-to-Image | bytedance/seedream-v5.0-lite/sequential |
+| AtlasCloud Seedream V5.0 Pro Text-to-Image | bytedance/seedream-v5.0-pro/text-to-image |
+| AtlasCloud Cosmos 3 Super Text-to-Image | nvidia/cosmos-3-super/text-to-image |
 | AtlasCloud Seedream V4 Text-to-Image | bytedance/seedream-v4 |
 | AtlasCloud Seedream V4 Sequential Text-to-Image | bytedance/seedream-v4/sequential |
 | AtlasCloud Seedream V4.5 Text-to-Image | bytedance/seedream-v4.5 |
@@ -375,6 +378,8 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud ZImage Turbo Text-to-Image | z-image/turbo |
 | AtlasCloud Ideogram V3 Quality Text-to-Image | ideogram-ai/ideogram-v3-quality |
 | AtlasCloud Ideogram V3 Turbo Text-to-Image | ideogram-ai/ideogram-v3-turbo |
+| AtlasCloud Ideogram V4 Quality Text-to-Image | ideogram/v4/Quality/text-to-image |
+| AtlasCloud Ideogram V4 Turbo Text-to-Image | ideogram/v4/turbo/text-to-image |
 | AtlasCloud Luma Photon Text-to-Image | luma/photon |
 | AtlasCloud Luma Photon Flash Text-to-Image | luma/photon-flash |
 | AtlasCloud Recraft V3 Text-to-Image | recraft-ai/recraft-v3 |
@@ -426,6 +431,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Nano Banana 2 Reference-to-Image Developer | google/nano-banana-2/reference-to-image-developer |
 | AtlasCloud Seedream V5.0 Lite Edit | bytedance/seedream-v5.0-lite/edit |
 | AtlasCloud Seedream V5.0 Lite Edit Sequential | bytedance/seedream-v5.0-lite/edit-sequential |
+| AtlasCloud Seedream V5.0 Pro Edit | bytedance/seedream-v5.0-pro/edit |
 | AtlasCloud WAN2.6 Image-Edit | alibaba/wan-2.6/image-edit |
 | AtlasCloud WAN2.7 Image-Edit | alibaba/wan-2.7/image-edit |
 | AtlasCloud WAN2.7 Pro Image-Edit | alibaba/wan-2.7-pro/image-edit |
