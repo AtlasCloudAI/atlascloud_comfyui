@@ -45,7 +45,7 @@ class AtlasIdeogramV4QualityTextToImage:
         client = atlas_client.client
 
         payload: Dict[str, Any] = {
-            "model": "ideogram/v4/Quality/text-to-image",
+            "model": "ideogram/v4/quality/text-to-image",
             "prompt": prompt,
             "image_size": image_size,
             "output_format": output_format,

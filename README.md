@@ -378,7 +378,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud ZImage Turbo Text-to-Image | z-image/turbo |
 | AtlasCloud Ideogram V3 Quality Text-to-Image | ideogram-ai/ideogram-v3-quality |
 | AtlasCloud Ideogram V3 Turbo Text-to-Image | ideogram-ai/ideogram-v3-turbo |
-| AtlasCloud Ideogram V4 Quality Text-to-Image | ideogram/v4/Quality/text-to-image |
+| AtlasCloud Ideogram V4 Quality Text-to-Image | ideogram/v4/quality/text-to-image |
 | AtlasCloud Ideogram V4 Turbo Text-to-Image | ideogram/v4/turbo/text-to-image |
 | AtlasCloud Luma Photon Text-to-Image | luma/photon |
 | AtlasCloud Luma Photon Flash Text-to-Image | luma/photon-flash |

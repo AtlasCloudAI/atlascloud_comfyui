@@ -114,7 +114,7 @@ def test_new_nodes_2026_07_09_model_ids():
         AtlasCosmos3SuperTextToImage: "nvidia/cosmos-3-super/text-to-image",
         AtlasCosmos3SuperImageToVideo: "nvidia/cosmos-3-super/image-to-video",
         AtlasIdeogramV4TurboTextToImage: "ideogram/v4/turbo/text-to-image",
-        AtlasIdeogramV4QualityTextToImage: "ideogram/v4/Quality/text-to-image",
+        AtlasIdeogramV4QualityTextToImage: "ideogram/v4/quality/text-to-image",
     }
     for cls, model_id in expected.items():
         src = inspect.getsource(cls.run)
