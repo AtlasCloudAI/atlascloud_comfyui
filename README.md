@@ -457,6 +457,9 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Grok Imagine Edit | xai/grok-imagine-image/edit |
 | AtlasCloud GPT Image-2 Edit | openai/gpt-image-2/edit |
 | AtlasCloud GPT Image-2 Developer Edit | openai/gpt-image-2-developer/edit |
+| AtlasCloud LTX 2.3 Quality Text-to-Video | ltx-2.3-quality/text-to-video |
+| AtlasCloud LTX 2.3 Quality Image-to-Video | ltx-2.3-quality/image-to-video |
+| AtlasCloud LTX 2.3 Quality Extend Video | ltx-2.3-quality/extend-video |
 
 > Nodes are continuously expanded as new models are added to AtlasCloud.
 
