@@ -265,6 +265,10 @@ from atlascloud_comfyui.nodes.video.nvidia_cosmos_3_super_i2v import AtlasCosmos
 from atlascloud_comfyui.nodes.image.ideogram_v4_turbo_t2i import AtlasIdeogramV4TurboTextToImage
 from atlascloud_comfyui.nodes.image.ideogram_v4_quality_t2i import AtlasIdeogramV4QualityTextToImage
 
+from atlascloud_comfyui.nodes.video.ltx_2_3_quality_t2v import AtlasLtx23QualityTextToVideo
+from atlascloud_comfyui.nodes.video.ltx_2_3_quality_i2v import AtlasLtx23QualityImageToVideo
+from atlascloud_comfyui.nodes.video.ltx_2_3_quality_extend_video import AtlasLtx23QualityExtendVideo
+
 from atlascloud_comfyui.nodes.video.kling_v16_multi_i2v_pro import AtlasKlingV16MultiI2VPro
 from atlascloud_comfyui.nodes.video.kling_v16_multi_i2v_standard import AtlasKlingV16MultiI2VStandard
 from atlascloud_comfyui.nodes.video.kling_v16_i2v_standard import AtlasKlingV16I2VStandard
@@ -723,6 +727,9 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Cosmos 3 Super Image-to-Video": AtlasCosmos3SuperImageToVideo,
     "AtlasCloud Ideogram V4 Turbo Text-to-Image": AtlasIdeogramV4TurboTextToImage,
     "AtlasCloud Ideogram V4 Quality Text-to-Image": AtlasIdeogramV4QualityTextToImage,
+    "AtlasCloud LTX 2.3 Quality Text-to-Video": AtlasLtx23QualityTextToVideo,
+    "AtlasCloud LTX 2.3 Quality Image-to-Video": AtlasLtx23QualityImageToVideo,
+    "AtlasCloud LTX 2.3 Quality Extend Video": AtlasLtx23QualityExtendVideo,
 }
 
 
@@ -1063,6 +1070,9 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Cosmos 3 Super Image-to-Video": "AtlasCloud Cosmos 3 Super Image-to-Video",
     "AtlasCloud Ideogram V4 Turbo Text-to-Image": "AtlasCloud Ideogram V4 Turbo Text-to-Image",
     "AtlasCloud Ideogram V4 Quality Text-to-Image": "AtlasCloud Ideogram V4 Quality Text-to-Image",
+    "AtlasCloud LTX 2.3 Quality Text-to-Video": "AtlasCloud LTX 2.3 Quality Text-to-Video",
+    "AtlasCloud LTX 2.3 Quality Image-to-Video": "AtlasCloud LTX 2.3 Quality Image-to-Video",
+    "AtlasCloud LTX 2.3 Quality Extend Video": "AtlasCloud LTX 2.3 Quality Extend Video",
 }
 
 
