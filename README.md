@@ -214,6 +214,9 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Seedance 2.0 Mini Reference-to-Video | bytedance/seedance-2.0-mini/reference-to-video |
 | AtlasCloud Avatar Omni Human 1.5 | bytedance/avatar-omni-human-v1.5 |
 | AtlasCloud Image Upscaler | atlascloud/image-upscaler |
+| AtlasCloud Face Swap (Image) | atlascloud/face-swap-image |
+| AtlasCloud Photo Cleanup | atlascloud/photo-cleanup |
+| AtlasCloud Face Swap (Video) | atlascloud/face-swap-video |
 | AtlasCloud Seedance 2.0 Reference-to-Video Upscaled | bytedance/seedance-2.0/reference-to-video-upscaled |
 | AtlasCloud Seedance 2.0 Fast Reference-to-Video Upscaled | bytedance/seedance-2.0-fast/reference-to-video-upscaled |
 | AtlasCloud Vidu Q3 Reference-to-Video | vidu/q3/reference-to-video |

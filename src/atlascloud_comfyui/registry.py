@@ -298,6 +298,9 @@ from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_mini_i2v import Atlas
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_mini_r2v import AtlasSeedance20MiniReferenceToVideo
 from atlascloud_comfyui.nodes.video.bytedance_avatar_omni_human_v15 import AtlasAvatarOmniHumanV15
 from atlascloud_comfyui.nodes.image.atlascloud_image_upscaler import AtlasImageUpscaler
+from atlascloud_comfyui.nodes.image.atlascloud_face_swap_image import AtlasFaceSwapImage
+from atlascloud_comfyui.nodes.image.atlascloud_photo_cleanup import AtlasPhotoCleanup
+from atlascloud_comfyui.nodes.video.atlascloud_face_swap_video import AtlasFaceSwapVideo
 from atlascloud_comfyui.nodes.deprecated.video.bytedance_seedance_2_0_t2v_upscaled import AtlasSeedance20TextToVideoUpscaled
 from atlascloud_comfyui.nodes.deprecated.video.bytedance_seedance_2_0_i2v_upscaled import AtlasSeedance20ImageToVideoUpscaled
 from atlascloud_comfyui.nodes.deprecated.video.bytedance_seedance_2_0_r2v_upscaled import AtlasSeedance20ReferenceToVideoUpscaled
@@ -450,6 +453,9 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Seedance 2.0 Mini Reference-to-Video": AtlasSeedance20MiniReferenceToVideo,
     "AtlasCloud Avatar Omni Human 1.5": AtlasAvatarOmniHumanV15,
     "AtlasCloud Image Upscaler": AtlasImageUpscaler,
+    "AtlasCloud Face Swap (Image)": AtlasFaceSwapImage,
+    "AtlasCloud Photo Cleanup": AtlasPhotoCleanup,
+    "AtlasCloud Face Swap (Video)": AtlasFaceSwapVideo,
     "AtlasCloud Seedance 2.0 Text-to-Video Upscaled": AtlasSeedance20TextToVideoUpscaled,
     "AtlasCloud Seedance 2.0 Image-to-Video Upscaled": AtlasSeedance20ImageToVideoUpscaled,
     "AtlasCloud Seedance 2.0 Reference-to-Video Upscaled": AtlasSeedance20ReferenceToVideoUpscaled,
@@ -795,6 +801,9 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Seedance 2.0 Mini Reference-to-Video": "AtlasCloud Seedance 2.0 Mini Reference-to-Video",
     "AtlasCloud Avatar Omni Human 1.5": "AtlasCloud Avatar Omni Human 1.5",
     "AtlasCloud Image Upscaler": "AtlasCloud Image Upscaler",
+    "AtlasCloud Face Swap (Image)": "AtlasCloud Face Swap (Image)",
+    "AtlasCloud Photo Cleanup": "AtlasCloud Photo Cleanup",
+    "AtlasCloud Face Swap (Video)": "AtlasCloud Face Swap (Video)",
     "AtlasCloud Seedance 2.0 Text-to-Video Upscaled": "AtlasCloud Seedance 2.0 Text-to-Video Upscaled",
     "AtlasCloud Seedance 2.0 Image-to-Video Upscaled": "AtlasCloud Seedance 2.0 Image-to-Video Upscaled",
     "AtlasCloud Seedance 2.0 Reference-to-Video Upscaled": "AtlasCloud Seedance 2.0 Reference-to-Video Upscaled",
