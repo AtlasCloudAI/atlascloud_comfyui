@@ -389,6 +389,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Flux2 Flex Text-to-Image | flux2/flex |
 | AtlasCloud Flux Dev Text-to-Image | black-forest-labs/flux-dev |
 | AtlasCloud Flux Dev LoRA Text-to-Image | black-forest-labs/flux-dev-lora |
+| AtlasCloud Krea-2 Turbo Text-to-Image | krea-2-turbo/text-to-image |
 | AtlasCloud Flux Schnell Text-to-Image | black-forest-labs/flux-schnell |
 | AtlasCloud FLUX.2 Pro Text-to-Image | black-forest-labs/flux-2-pro/text-to-image |
 | AtlasCloud FLUX.2 Flex Edit | black-forest-labs/flux-2-flex/edit |

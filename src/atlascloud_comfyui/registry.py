@@ -151,6 +151,7 @@ from atlascloud_comfyui.nodes.image.nano_banana_pro_edit_ultra import AtlasNanoB
 from atlascloud_comfyui.nodes.deprecated.image.flux2_flex_t2i import AtlasFlux2FlexTextToImage
 from atlascloud_comfyui.nodes.image.flux_dev_t2i import AtlasFluxDevTextToImage
 from atlascloud_comfyui.nodes.image.flux_dev_lora_t2i import AtlasFluxDevLoraTextToImage
+from atlascloud_comfyui.nodes.image.krea_2_turbo_t2i import AtlasKrea2TurboTextToImage
 from atlascloud_comfyui.nodes.image.nano_banana2_t2i import AtlasNanoBanana2TextToImage
 from atlascloud_comfyui.nodes.deprecated.image.nano_banana2_t2i_dev import AtlasNanoBanana2TextToImageDev
 from atlascloud_comfyui.nodes.image.nano_banana2_edit import AtlasNanoBanana2Edit
@@ -495,6 +496,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Flux2 Flex Text-to-Image": AtlasFlux2FlexTextToImage,
     "AtlasCloud Flux Dev Text-to-Image": AtlasFluxDevTextToImage,
     "AtlasCloud Flux Dev LoRA Text-to-Image": AtlasFluxDevLoraTextToImage,
+    "AtlasCloud Krea-2 Turbo Text-to-Image": AtlasKrea2TurboTextToImage,
     "AtlasCloud Flux Schnell Text-to-Image": AtlasFluxSchnellTextToImage,
     "AtlasCloud Flux Kontext Dev Edit": AtlasFluxKontextDevEdit,
     "AtlasCloud Flux Kontext Dev LoRA Edit": AtlasFluxKontextDevLoraEdit,
@@ -845,6 +847,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Flux2 Flex Text-to-Image": "AtlasCloud Flux2 Flex Text-to-Image",
     "AtlasCloud Flux Dev Text-to-Image": "AtlasCloud Flux Dev Text-to-Image",
     "AtlasCloud Flux Dev LoRA Text-to-Image": "AtlasCloud Flux Dev LoRA Text-to-Image",
+    "AtlasCloud Krea-2 Turbo Text-to-Image": "AtlasCloud Krea-2 Turbo Text-to-Image",
     "AtlasCloud Flux Schnell Text-to-Image": "AtlasCloud Flux Schnell Text-to-Image",
     "AtlasCloud Flux Kontext Dev Edit": "AtlasCloud Flux Kontext Dev Edit",
     "AtlasCloud Flux Kontext Dev LoRA Edit": "AtlasCloud Flux Kontext Dev LoRA Edit",
