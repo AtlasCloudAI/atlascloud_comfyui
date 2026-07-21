@@ -164,6 +164,9 @@ from atlascloud_comfyui.nodes.image.nano_banana2_lite_edit import AtlasNanoBanan
 from atlascloud_comfyui.nodes.image.nano_banana2_lite_edit_dev import AtlasNanoBanana2LiteEditDev
 from atlascloud_comfyui.nodes.image.hidream_o1_15_t2i import AtlasHiDreamO115TextToImage
 from atlascloud_comfyui.nodes.image.hidream_o1_15_edit import AtlasHiDreamO115Edit
+from atlascloud_comfyui.nodes.image.reve_21_t2i import AtlasReve21TextToImage
+from atlascloud_comfyui.nodes.image.reve_21_edit import AtlasReve21Edit
+from atlascloud_comfyui.nodes.image.reve_21_remix import AtlasReve21Remix
 from atlascloud_comfyui.nodes.video.sync_lipsync_v3 import AtlasSyncLipsyncV3
 from atlascloud_comfyui.nodes.video.veed_lipsync import AtlasVeedLipsync
 from atlascloud_comfyui.nodes.image.seedream_v50_lite_t2i import AtlasSeedreamV50LiteTextToImage
@@ -524,6 +527,9 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Nano Banana 2 Lite Edit Developer": AtlasNanoBanana2LiteEditDev,
     "AtlasCloud HiDream O1 1.5 Text-to-Image": AtlasHiDreamO115TextToImage,
     "AtlasCloud HiDream O1 1.5 Edit": AtlasHiDreamO115Edit,
+    "AtlasCloud Reve 2.1 Text-to-Image": AtlasReve21TextToImage,
+    "AtlasCloud Reve 2.1 Edit": AtlasReve21Edit,
+    "AtlasCloud Reve 2.1 Remix": AtlasReve21Remix,
     "AtlasCloud Sync Lipsync v3": AtlasSyncLipsyncV3,
     "AtlasCloud VEED Lipsync": AtlasVeedLipsync,
     "AtlasCloud Seedream V5.0 Lite Text-to-Image": AtlasSeedreamV50LiteTextToImage,
@@ -1074,6 +1080,9 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Grok Imagine Video Extend": "AtlasCloud Grok Imagine Video Extend",
     "AtlasCloud HiDream O1 1.5 Text-to-Image": "AtlasCloud HiDream O1 1.5 Text-to-Image",
     "AtlasCloud HiDream O1 1.5 Edit": "AtlasCloud HiDream O1 1.5 Edit",
+    "AtlasCloud Reve 2.1 Text-to-Image": "AtlasCloud Reve 2.1 Text-to-Image",
+    "AtlasCloud Reve 2.1 Edit": "AtlasCloud Reve 2.1 Edit",
+    "AtlasCloud Reve 2.1 Remix": "AtlasCloud Reve 2.1 Remix",
     "AtlasCloud Sync Lipsync v3": "AtlasCloud Sync Lipsync v3",
     "AtlasCloud VEED Lipsync": "AtlasCloud VEED Lipsync",
     "AtlasCloud Seedream V5.0 Pro Text-to-Image": "AtlasCloud Seedream V5.0 Pro Text-to-Image",
