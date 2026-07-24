@@ -162,6 +162,7 @@ from atlascloud_comfyui.nodes.image.nano_banana2_lite_t2i import AtlasNanoBanana
 from atlascloud_comfyui.nodes.image.nano_banana2_lite_t2i_dev import AtlasNanoBanana2LiteTextToImageDev
 from atlascloud_comfyui.nodes.image.nano_banana2_lite_edit import AtlasNanoBanana2LiteEdit
 from atlascloud_comfyui.nodes.image.nano_banana2_lite_edit_dev import AtlasNanoBanana2LiteEditDev
+from atlascloud_comfyui.nodes.image.nano_banana2_lite_r2i import AtlasNanoBanana2LiteReferenceToImage
 from atlascloud_comfyui.nodes.image.hidream_o1_15_t2i import AtlasHiDreamO115TextToImage
 from atlascloud_comfyui.nodes.image.hidream_o1_15_edit import AtlasHiDreamO115Edit
 from atlascloud_comfyui.nodes.image.reve_21_t2i import AtlasReve21TextToImage
@@ -525,6 +526,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Nano Banana 2 Lite Text-to-Image Developer": AtlasNanoBanana2LiteTextToImageDev,
     "AtlasCloud Nano Banana 2 Lite Edit": AtlasNanoBanana2LiteEdit,
     "AtlasCloud Nano Banana 2 Lite Edit Developer": AtlasNanoBanana2LiteEditDev,
+    "AtlasCloud Nano Banana 2 Lite Reference-to-Image": AtlasNanoBanana2LiteReferenceToImage,
     "AtlasCloud HiDream O1 1.5 Text-to-Image": AtlasHiDreamO115TextToImage,
     "AtlasCloud HiDream O1 1.5 Edit": AtlasHiDreamO115Edit,
     "AtlasCloud Reve 2.1 Text-to-Image": AtlasReve21TextToImage,
@@ -877,6 +879,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Nano Banana 2 Lite Text-to-Image Developer": "AtlasCloud Nano Banana 2 Lite Text-to-Image Developer",
     "AtlasCloud Nano Banana 2 Lite Edit": "AtlasCloud Nano Banana 2 Lite Edit",
     "AtlasCloud Nano Banana 2 Lite Edit Developer": "AtlasCloud Nano Banana 2 Lite Edit Developer",
+    "AtlasCloud Nano Banana 2 Lite Reference-to-Image": "AtlasCloud Nano Banana 2 Lite Reference-to-Image",
     "AtlasCloud Seedream V5.0 Lite Text-to-Image": "AtlasCloud Seedream V5.0 Lite Text-to-Image",
     "AtlasCloud Seedream V5.0 Lite Sequential Text-to-Image": "AtlasCloud Seedream V5.0 Lite Sequential Text-to-Image",
     "AtlasCloud Seedream V5.0 Lite Edit": "AtlasCloud Seedream V5.0 Lite Edit",
