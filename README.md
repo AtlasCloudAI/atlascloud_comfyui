@@ -430,6 +430,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Nano Banana 2 Edit Developer | google/nano-banana-2/edit-developer |
 | AtlasCloud Nano Banana 2 Lite Edit | google/nano-banana-2-lite/edit |
 | AtlasCloud Nano Banana 2 Lite Edit Developer | google/nano-banana-2-lite/edit-developer |
+| AtlasCloud Nano Banana 2 Lite Reference-to-Image | google/nano-banana-2-lite/reference-to-image |
 | AtlasCloud HiDream O1 1.5 Edit | hidream-o1-1.5/edit |
 | AtlasCloud Reve 2.1 Text-to-Image | reve-ai/reve-2.1/text-to-image |
 | AtlasCloud Reve 2.1 Edit | reve-ai/reve-2.1/edit |
