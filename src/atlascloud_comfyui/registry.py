@@ -350,6 +350,12 @@ from atlascloud_comfyui.nodes.image.youchuan_v81_i2i import AtlasYouchuanV81Imag
 from atlascloud_comfyui.nodes.image.youchuan_v81_blend import AtlasYouchuanV81Blend
 from atlascloud_comfyui.nodes.image.youchuan_v81_remove_bg import AtlasYouchuanV81RemoveBackground
 from atlascloud_comfyui.nodes.image.youchuan_v81_style_transfer import AtlasYouchuanV81StyleTransfer
+from atlascloud_comfyui.nodes.video.youchuan_v82_i2v import AtlasYouchuanV82ImageToVideo
+from atlascloud_comfyui.nodes.image.youchuan_v82_t2i import AtlasYouchuanV82TextToImage
+from atlascloud_comfyui.nodes.image.youchuan_v82_i2i import AtlasYouchuanV82ImageToImage
+from atlascloud_comfyui.nodes.image.youchuan_v82_blend import AtlasYouchuanV82Blend
+from atlascloud_comfyui.nodes.image.youchuan_v82_remove_bg import AtlasYouchuanV82RemoveBackground
+from atlascloud_comfyui.nodes.image.youchuan_v82_style_transfer import AtlasYouchuanV82StyleTransfer
 from atlascloud_comfyui.nodes.video.kling_v30_4k_i2v import AtlasKlingV304KImageToVideo
 from atlascloud_comfyui.nodes.video.kling_v30_4k_t2v import AtlasKlingV304KTextToVideo
 from atlascloud_comfyui.nodes.video.kling_video_o3_4k_i2v import AtlasKlingVideoO34KImageToVideo
@@ -580,6 +586,12 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Youchuan V8.1 Blend": AtlasYouchuanV81Blend,
     "AtlasCloud Youchuan V8.1 Remove Background": AtlasYouchuanV81RemoveBackground,
     "AtlasCloud Youchuan V8.1 Style Transfer": AtlasYouchuanV81StyleTransfer,
+    "AtlasCloud Youchuan V8.2 Image-to-Video": AtlasYouchuanV82ImageToVideo,
+    "AtlasCloud Youchuan V8.2 Text-to-Image": AtlasYouchuanV82TextToImage,
+    "AtlasCloud Youchuan V8.2 Image-to-Image": AtlasYouchuanV82ImageToImage,
+    "AtlasCloud Youchuan V8.2 Blend": AtlasYouchuanV82Blend,
+    "AtlasCloud Youchuan V8.2 Remove Background": AtlasYouchuanV82RemoveBackground,
+    "AtlasCloud Youchuan V8.2 Style Transfer": AtlasYouchuanV82StyleTransfer,
     "AtlasCloud Kling V3.0 4K Image-to-Video": AtlasKlingV304KImageToVideo,
     "AtlasCloud Kling V3.0 4K Text-to-Video": AtlasKlingV304KTextToVideo,
     "AtlasCloud Kling V3.0 Turbo Image-to-Video": AtlasKlingV30TurboImageToVideo,
@@ -926,6 +938,12 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Youchuan V8.1 Blend": "AtlasCloud Youchuan V8.1 Blend",
     "AtlasCloud Youchuan V8.1 Remove Background": "AtlasCloud Youchuan V8.1 Remove Background",
     "AtlasCloud Youchuan V8.1 Style Transfer": "AtlasCloud Youchuan V8.1 Style Transfer",
+    "AtlasCloud Youchuan V8.2 Image-to-Video": "AtlasCloud Youchuan V8.2 Image-to-Video",
+    "AtlasCloud Youchuan V8.2 Text-to-Image": "AtlasCloud Youchuan V8.2 Text-to-Image",
+    "AtlasCloud Youchuan V8.2 Image-to-Image": "AtlasCloud Youchuan V8.2 Image-to-Image",
+    "AtlasCloud Youchuan V8.2 Blend": "AtlasCloud Youchuan V8.2 Blend",
+    "AtlasCloud Youchuan V8.2 Remove Background": "AtlasCloud Youchuan V8.2 Remove Background",
+    "AtlasCloud Youchuan V8.2 Style Transfer": "AtlasCloud Youchuan V8.2 Style Transfer",
     "AtlasCloud Kling V3.0 4K Image-to-Video": "AtlasCloud Kling V3.0 4K Image-to-Video",
     "AtlasCloud Kling V3.0 4K Text-to-Video": "AtlasCloud Kling V3.0 4K Text-to-Video",
     "AtlasCloud Kling V3.0 Turbo Image-to-Video": "AtlasCloud Kling V3.0 Turbo Image-to-Video",
