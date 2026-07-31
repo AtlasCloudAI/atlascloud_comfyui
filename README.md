@@ -276,6 +276,12 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud WAN2.6 Spicy Image-to-Video | atlascloud/wan-2.6-spicy/image-to-video |
 | AtlasCloud WAN2.7 Spicy Image-to-Video | atlascloud/wan-2.7-spicy/image-to-video |
 | AtlasCloud WAN2.7 Spicy Reference-to-Video | atlascloud/wan-2.7-spicy/reference-to-video |
+| AtlasCloud MiniMax H3 Text-to-Video | minimax/h3/text-to-video |
+| AtlasCloud MiniMax H3 Image-to-Video | minimax/h3/image-to-video |
+| AtlasCloud MiniMax H3 Reference-to-Video | minimax/h3/reference-to-video |
+| AtlasCloud Tencent Image Upscaler | tencent/image/upscaler |
+| AtlasCloud Tencent Video Upscaler | tencent/video/upscaler |
+| AtlasCloud BytePlus Video Upscaler | byteplus/video/upscaler |
 | AtlasCloud WAN2.7 Image-to-Video | alibaba/wan-2.7/image-to-video |
 | AtlasCloud HappyHorse 1.0 Image-to-Video | alibaba/happyhorse-1.0/image-to-video |
 | AtlasCloud HappyHorse 1.1 Image-to-Video | alibaba/happyhorse-1.1/image-to-video |

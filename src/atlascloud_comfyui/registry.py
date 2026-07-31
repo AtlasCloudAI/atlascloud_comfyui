@@ -236,6 +236,12 @@ from atlascloud_comfyui.nodes.video.atlascloud_wan_2_2_turbo_spicy_infinite_i2v_
 from atlascloud_comfyui.nodes.video.atlascloud_wan_2_6_spicy_i2v import AtlasWan26SpicyImageToVideo
 from atlascloud_comfyui.nodes.video.atlascloud_wan_2_7_spicy_i2v import AtlasWan27SpicyImageToVideo
 from atlascloud_comfyui.nodes.video.atlascloud_wan_2_7_spicy_r2v import AtlasWan27SpicyReferenceToVideo
+from atlascloud_comfyui.nodes.video.minimax_h3_t2v import AtlasMinimaxH3TextToVideo
+from atlascloud_comfyui.nodes.video.minimax_h3_i2v import AtlasMinimaxH3ImageToVideo
+from atlascloud_comfyui.nodes.video.minimax_h3_r2v import AtlasMinimaxH3ReferenceToVideo
+from atlascloud_comfyui.nodes.video.byteplus_video_upscaler import AtlasBytePlusVideoUpscaler
+from atlascloud_comfyui.nodes.video.tencent_video_upscaler import AtlasTencentVideoUpscaler
+from atlascloud_comfyui.nodes.image.tencent_image_upscaler import AtlasTencentImageUpscaler
 from atlascloud_comfyui.nodes.video.van25_t2v import AtlasAtlascloudVan25TextToVideo
 from atlascloud_comfyui.nodes.video.van25_i2v import AtlasAtlascloudVan25ImageToVideo
 from atlascloud_comfyui.nodes.video.van26_t2v import AtlasVan26TextToVideo
@@ -641,6 +647,12 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud WAN2.6 Spicy Image-to-Video": AtlasWan26SpicyImageToVideo,
     "AtlasCloud WAN2.7 Spicy Image-to-Video": AtlasWan27SpicyImageToVideo,
     "AtlasCloud WAN2.7 Spicy Reference-to-Video": AtlasWan27SpicyReferenceToVideo,
+    "AtlasCloud MiniMax H3 Text-to-Video": AtlasMinimaxH3TextToVideo,
+    "AtlasCloud MiniMax H3 Image-to-Video": AtlasMinimaxH3ImageToVideo,
+    "AtlasCloud MiniMax H3 Reference-to-Video": AtlasMinimaxH3ReferenceToVideo,
+    "AtlasCloud Tencent Image Upscaler": AtlasTencentImageUpscaler,
+    "AtlasCloud Tencent Video Upscaler": AtlasTencentVideoUpscaler,
+    "AtlasCloud BytePlus Video Upscaler": AtlasBytePlusVideoUpscaler,
     "AtlasCloud Imagen4 Ultra Text-to-Image": AtlasImagen4UltraTextToImage,
     "AtlasCloud Imagen3 Text-to-Image": AtlasImagen3TextToImage,
     "AtlasCloud Imagen3 Fast Text-to-Image": AtlasImagen3FastTextToImage,
@@ -994,6 +1006,12 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud WAN2.6 Spicy Image-to-Video": "AtlasCloud WAN2.6 Spicy Image-to-Video",
     "AtlasCloud WAN2.7 Spicy Image-to-Video": "AtlasCloud WAN2.7 Spicy Image-to-Video",
     "AtlasCloud WAN2.7 Spicy Reference-to-Video": "AtlasCloud WAN2.7 Spicy Reference-to-Video",
+    "AtlasCloud MiniMax H3 Text-to-Video": "AtlasCloud MiniMax H3 Text-to-Video",
+    "AtlasCloud MiniMax H3 Image-to-Video": "AtlasCloud MiniMax H3 Image-to-Video",
+    "AtlasCloud MiniMax H3 Reference-to-Video": "AtlasCloud MiniMax H3 Reference-to-Video",
+    "AtlasCloud Tencent Image Upscaler": "AtlasCloud Tencent Image Upscaler",
+    "AtlasCloud Tencent Video Upscaler": "AtlasCloud Tencent Video Upscaler",
+    "AtlasCloud BytePlus Video Upscaler": "AtlasCloud BytePlus Video Upscaler",
     "AtlasCloud Imagen4 Ultra Text-to-Image": "AtlasCloud Imagen4 Ultra Text-to-Image",
     "AtlasCloud Imagen3 Text-to-Image": "AtlasCloud Imagen3 Text-to-Image",
     "AtlasCloud Imagen3 Fast Text-to-Image": "AtlasCloud Imagen3 Fast Text-to-Image",
