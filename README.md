@@ -205,6 +205,8 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Grok Imagine Video Image-to-Video | xai/grok-imagine-video/image-to-video |
 | AtlasCloud Grok Imagine Video v1.5 Image-to-Video | xai/grok-imagine-video-v1.5/image-to-video |
 | AtlasCloud Grok Imagine Video Reference-to-Video | xai/grok-imagine-video/reference-to-video |
+| AtlasCloud Grok Imagine Video v1.5 Text-to-Video | xai/grok-imagine-video-v1.5/text-to-video |
+| AtlasCloud Grok Imagine Video v1.5 Reference-to-Video | xai/grok-imagine-video-v1.5/reference-to-video |
 | AtlasCloud Grok Imagine Video Edit | xai/grok-imagine-video/edit-video |
 | AtlasCloud Grok Imagine Video Extend | xai/grok-imagine-video/extend-video |
 | AtlasCloud VEO3.1 Reference-to-Video | google/veo3.1/reference-to-video |

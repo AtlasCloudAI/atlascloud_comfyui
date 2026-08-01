@@ -98,6 +98,8 @@ from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_t2v import AtlasGrokI
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_i2v import AtlasGrokImagineVideoImageToVideo
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_v15_i2v import AtlasGrokImagineVideoV15ImageToVideo
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_r2v import AtlasGrokImagineVideoReferenceToVideo
+from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_v15_t2v import AtlasGrokImagineVideoV15TextToVideo
+from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_v15_r2v import AtlasGrokImagineVideoV15ReferenceToVideo
 from atlascloud_comfyui.nodes.image.flux2_pro_t2i import AtlasFlux2ProTextToImage
 from atlascloud_comfyui.nodes.image.flux2_flex_edit import AtlasFlux2FlexEdit
 from atlascloud_comfyui.nodes.image.flux2_pro_edit import AtlasFlux2ProEdit
@@ -758,6 +760,8 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Grok Imagine Video Image-to-Video": AtlasGrokImagineVideoImageToVideo,
     "AtlasCloud Grok Imagine Video v1.5 Image-to-Video": AtlasGrokImagineVideoV15ImageToVideo,
     "AtlasCloud Grok Imagine Video Reference-to-Video": AtlasGrokImagineVideoReferenceToVideo,
+    "AtlasCloud Grok Imagine Video v1.5 Text-to-Video": AtlasGrokImagineVideoV15TextToVideo,
+    "AtlasCloud Grok Imagine Video v1.5 Reference-to-Video": AtlasGrokImagineVideoV15ReferenceToVideo,
     "AtlasCloud FLUX.2 Pro Text-to-Image": AtlasFlux2ProTextToImage,
     "AtlasCloud FLUX.2 Flex Edit": AtlasFlux2FlexEdit,
     "AtlasCloud FLUX.2 Pro Edit": AtlasFlux2ProEdit,
@@ -1115,6 +1119,8 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Grok Imagine Video Image-to-Video": "AtlasCloud Grok Imagine Video Image-to-Video",
     "AtlasCloud Grok Imagine Video v1.5 Image-to-Video": "AtlasCloud Grok Imagine Video v1.5 Image-to-Video",
     "AtlasCloud Grok Imagine Video Reference-to-Video": "AtlasCloud Grok Imagine Video Reference-to-Video",
+    "AtlasCloud Grok Imagine Video v1.5 Text-to-Video": "AtlasCloud Grok Imagine Video v1.5 Text-to-Video",
+    "AtlasCloud Grok Imagine Video v1.5 Reference-to-Video": "AtlasCloud Grok Imagine Video v1.5 Reference-to-Video",
     "AtlasCloud FLUX.2 Pro Text-to-Image": "AtlasCloud FLUX.2 Pro Text-to-Image",
     "AtlasCloud FLUX.2 Flex Edit": "AtlasCloud FLUX.2 Flex Edit",
     "AtlasCloud FLUX.2 Pro Edit": "AtlasCloud FLUX.2 Pro Edit",
