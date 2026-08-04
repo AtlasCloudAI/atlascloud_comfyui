@@ -32,17 +32,17 @@ dev = [
 ]
 
 [project.urls]
-Repository = "https://github.com/AtlascloudAI/atlascloud_comfyui"
-BugTracker = "https://github.com/AtlascloudAI/atlascloud_comfyui/issues"
-Documentation = "https://github.com/AtlascloudAI/atlascloud_comfyui/wiki"
+Repository = "https://github.com/AtlasCloudAI/atlascloud_comfyui"
+BugTracker = "https://github.com/AtlasCloudAI/atlascloud_comfyui/issues"
+Documentation = "https://github.com/AtlasCloudAI/atlascloud_comfyui/wiki"
 
 
 [tool.comfy]
-PublisherId = "YC0101"
+PublisherId = "atlascloud"
 DisplayName = "AtlasCloud_ComfyUI"
 Icon = ""
 Tags = []
-Repository = "https://github.com/AtlascloudAI/atlascloud_comfyui"
+Repository = "https://github.com/AtlasCloudAI/atlascloud_comfyui"
 
 includes = ["src/atlascloud_comfyui"]
 
