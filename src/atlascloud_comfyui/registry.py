@@ -216,6 +216,8 @@ from atlascloud_comfyui.nodes.image.qwen_image_20_t2i import AtlasQwenImage20Tex
 from atlascloud_comfyui.nodes.image.qwen_image_20_edit import AtlasQwenImage20Edit
 from atlascloud_comfyui.nodes.image.qwen_image_20_pro_t2i import AtlasQwenImage20ProTextToImage
 from atlascloud_comfyui.nodes.image.qwen_image_20_pro_edit import AtlasQwenImage20ProEdit
+from atlascloud_comfyui.nodes.image.qwen_image_30_t2i import AtlasQwenImage30TextToImage
+from atlascloud_comfyui.nodes.image.qwen_image_30_edit import AtlasQwenImage30Edit
 
 from atlascloud_comfyui.nodes.video.seedance_v1_pro_fast_t2v import AtlasSeedanceV1ProFastTextToVideo
 from atlascloud_comfyui.nodes.video.seedance_v1_pro_fast_i2v import AtlasSeedanceV1ProFastImageToVideo
@@ -693,6 +695,8 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Qwen Image 2.0 Edit": AtlasQwenImage20Edit,
     "AtlasCloud Qwen Image 2.0 Pro Text-to-Image": AtlasQwenImage20ProTextToImage,
     "AtlasCloud Qwen Image 2.0 Pro Edit": AtlasQwenImage20ProEdit,
+    "AtlasCloud Qwen Image 3.0 Text-to-Image": AtlasQwenImage30TextToImage,
+    "AtlasCloud Qwen Image 3.0 Edit": AtlasQwenImage30Edit,
     "AtlasCloud Seedance V1 Pro Fast Text-to-Video": AtlasSeedanceV1ProFastTextToVideo,
     "AtlasCloud Seedance V1 Pro Fast Image-to-Video": AtlasSeedanceV1ProFastImageToVideo,
     "AtlasCloud Seedance V1 Pro Image-to-Video 1080p": AtlasBytedanceSeedanceV1ProI2V1080p,
@@ -1052,6 +1056,8 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Qwen Image 2.0 Edit": "AtlasCloud Qwen Image 2.0 Edit",
     "AtlasCloud Qwen Image 2.0 Pro Text-to-Image": "AtlasCloud Qwen Image 2.0 Pro Text-to-Image",
     "AtlasCloud Qwen Image 2.0 Pro Edit": "AtlasCloud Qwen Image 2.0 Pro Edit",
+    "AtlasCloud Qwen Image 3.0 Text-to-Image": "AtlasCloud Qwen Image 3.0 Text-to-Image",
+    "AtlasCloud Qwen Image 3.0 Edit": "AtlasCloud Qwen Image 3.0 Edit",
     "AtlasCloud Seedance V1 Pro Fast Text-to-Video": "AtlasCloud Seedance V1 Pro Fast Text-to-Video",
     "AtlasCloud Seedance V1 Pro Fast Image-to-Video": "AtlasCloud Seedance V1 Pro Fast Image-to-Video",
     "AtlasCloud Seedance V1 Pro Image-to-Video 1080p": "AtlasCloud Seedance V1 Pro Image-to-Video 1080p",
