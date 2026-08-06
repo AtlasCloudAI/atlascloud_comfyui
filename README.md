@@ -485,6 +485,13 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud LTX 2.3 Quality Text-to-Video | ltx-2.3-quality/text-to-video |
 | AtlasCloud LTX 2.3 Quality Image-to-Video | ltx-2.3-quality/image-to-video |
 | AtlasCloud LTX 2.3 Quality Extend Video | ltx-2.3-quality/extend-video |
+| AtlasCloud FLUX 3 Text-to-Video | black-forest-labs/flux-3/text-to-video |
+| AtlasCloud FLUX 3 Image-to-Video | black-forest-labs/flux-3/image-to-video |
+| AtlasCloud FLUX 3 First & Last Frame to Video | black-forest-labs/flux-3/first-last-frame-to-video |
+| AtlasCloud FLUX 3 Keyframes to Video | black-forest-labs/flux-3/keyframes-to-video |
+| AtlasCloud FLUX 3 Extend Video | black-forest-labs/flux-3/extend-video |
+| AtlasCloud Kling V3.0 Pro Motion Control | kwaivgi/kling-v3.0-pro/motion-control |
+| AtlasCloud Kling V3.0 Std Motion Control | kwaivgi/kling-v3.0-std/motion-control |
 
 > Nodes are continuously expanded as new models are added to AtlasCloud.
 

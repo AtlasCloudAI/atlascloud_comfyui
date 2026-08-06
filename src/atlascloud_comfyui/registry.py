@@ -285,6 +285,14 @@ from atlascloud_comfyui.nodes.video.ltx_2_3_quality_t2v import AtlasLtx23Quality
 from atlascloud_comfyui.nodes.video.ltx_2_3_quality_i2v import AtlasLtx23QualityImageToVideo
 from atlascloud_comfyui.nodes.video.ltx_2_3_quality_extend_video import AtlasLtx23QualityExtendVideo
 
+from atlascloud_comfyui.nodes.video.flux3_t2v import AtlasFlux3TextToVideo
+from atlascloud_comfyui.nodes.video.flux3_i2v import AtlasFlux3ImageToVideo
+from atlascloud_comfyui.nodes.video.flux3_first_last_frame_to_video import AtlasFlux3FirstLastFrameToVideo
+from atlascloud_comfyui.nodes.video.flux3_keyframes_to_video import AtlasFlux3KeyframesToVideo
+from atlascloud_comfyui.nodes.video.flux3_extend_video import AtlasFlux3ExtendVideo
+from atlascloud_comfyui.nodes.video.kling_v30_pro_motion_control import AtlasKlingV30ProMotionControl
+from atlascloud_comfyui.nodes.video.kling_v30_std_motion_control import AtlasKlingV30StdMotionControl
+
 from atlascloud_comfyui.nodes.video.kling_v16_multi_i2v_pro import AtlasKlingV16MultiI2VPro
 from atlascloud_comfyui.nodes.video.kling_v16_multi_i2v_standard import AtlasKlingV16MultiI2VStandard
 from atlascloud_comfyui.nodes.video.kling_v16_i2v_standard import AtlasKlingV16I2VStandard
@@ -780,6 +788,13 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud LTX 2.3 Quality Text-to-Video": AtlasLtx23QualityTextToVideo,
     "AtlasCloud LTX 2.3 Quality Image-to-Video": AtlasLtx23QualityImageToVideo,
     "AtlasCloud LTX 2.3 Quality Extend Video": AtlasLtx23QualityExtendVideo,
+    "AtlasCloud FLUX 3 Text-to-Video": AtlasFlux3TextToVideo,
+    "AtlasCloud FLUX 3 Image-to-Video": AtlasFlux3ImageToVideo,
+    "AtlasCloud FLUX 3 First & Last Frame to Video": AtlasFlux3FirstLastFrameToVideo,
+    "AtlasCloud FLUX 3 Keyframes to Video": AtlasFlux3KeyframesToVideo,
+    "AtlasCloud FLUX 3 Extend Video": AtlasFlux3ExtendVideo,
+    "AtlasCloud Kling V3.0 Pro Motion Control": AtlasKlingV30ProMotionControl,
+    "AtlasCloud Kling V3.0 Std Motion Control": AtlasKlingV30StdMotionControl,
 }
 
 
@@ -1148,6 +1163,13 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud LTX 2.3 Quality Text-to-Video": "AtlasCloud LTX 2.3 Quality Text-to-Video",
     "AtlasCloud LTX 2.3 Quality Image-to-Video": "AtlasCloud LTX 2.3 Quality Image-to-Video",
     "AtlasCloud LTX 2.3 Quality Extend Video": "AtlasCloud LTX 2.3 Quality Extend Video",
+    "AtlasCloud FLUX 3 Text-to-Video": "AtlasCloud FLUX 3 Text-to-Video",
+    "AtlasCloud FLUX 3 Image-to-Video": "AtlasCloud FLUX 3 Image-to-Video",
+    "AtlasCloud FLUX 3 First & Last Frame to Video": "AtlasCloud FLUX 3 First & Last Frame to Video",
+    "AtlasCloud FLUX 3 Keyframes to Video": "AtlasCloud FLUX 3 Keyframes to Video",
+    "AtlasCloud FLUX 3 Extend Video": "AtlasCloud FLUX 3 Extend Video",
+    "AtlasCloud Kling V3.0 Pro Motion Control": "AtlasCloud Kling V3.0 Pro Motion Control",
+    "AtlasCloud Kling V3.0 Std Motion Control": "AtlasCloud Kling V3.0 Std Motion Control",
 }
 
 
