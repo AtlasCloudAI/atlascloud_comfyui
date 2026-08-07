@@ -215,6 +215,9 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Seedance 2.0 Mini Text-to-Video | bytedance/seedance-2.0-mini/text-to-video |
 | AtlasCloud Seedance 2.0 Mini Image-to-Video | bytedance/seedance-2.0-mini/image-to-video |
 | AtlasCloud Seedance 2.0 Mini Reference-to-Video | bytedance/seedance-2.0-mini/reference-to-video |
+| AtlasCloud Seedance 2.5 Text-to-Video | bytedance/seedance-2.5/text-to-video |
+| AtlasCloud Seedance 2.5 Image-to-Video | bytedance/seedance-2.5/image-to-video |
+| AtlasCloud Seedance 2.5 Reference-to-Video | bytedance/seedance-2.5/reference-to-video |
 | AtlasCloud Avatar Omni Human 1.5 | bytedance/avatar-omni-human-v1.5 |
 | AtlasCloud Image Upscaler | atlascloud/image-upscaler |
 | AtlasCloud Face Swap (Image) | atlascloud/face-swap-image |
@@ -456,6 +459,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Seedream V5.0 Lite Edit | bytedance/seedream-v5.0-lite/edit |
 | AtlasCloud Seedream V5.0 Lite Edit Sequential | bytedance/seedream-v5.0-lite/edit-sequential |
 | AtlasCloud Seedream V5.0 Pro Edit | bytedance/seedream-v5.0-pro/edit |
+| AtlasCloud Seedream V5.0 Pro Layer Decomposition | bytedance/seedream-v5.0-pro/layer-decomposition |
 | AtlasCloud WAN2.6 Image-Edit | alibaba/wan-2.6/image-edit |
 | AtlasCloud WAN2.7 Image-Edit | alibaba/wan-2.7/image-edit |
 | AtlasCloud WAN2.7 Pro Image-Edit | alibaba/wan-2.7-pro/image-edit |

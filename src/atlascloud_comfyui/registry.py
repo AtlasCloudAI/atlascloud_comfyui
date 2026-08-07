@@ -276,6 +276,7 @@ from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_edit import AtlasGrok
 
 from atlascloud_comfyui.nodes.image.seedream_v50_pro_t2i import AtlasSeedreamV50ProTextToImage
 from atlascloud_comfyui.nodes.image.seedream_v50_pro_edit import AtlasSeedreamV50ProEdit
+from atlascloud_comfyui.nodes.image.seedream_v50_pro_layer_decomposition import AtlasSeedreamV50ProLayerDecomposition
 from atlascloud_comfyui.nodes.image.nvidia_cosmos_3_super_t2i import AtlasCosmos3SuperTextToImage
 from atlascloud_comfyui.nodes.video.nvidia_cosmos_3_super_i2v import AtlasCosmos3SuperImageToVideo
 from atlascloud_comfyui.nodes.image.ideogram_v4_turbo_t2i import AtlasIdeogramV4TurboTextToImage
@@ -320,6 +321,9 @@ from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_fast_r2v import Atlas
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_mini_t2v import AtlasSeedance20MiniTextToVideo
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_mini_i2v import AtlasSeedance20MiniImageToVideo
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_mini_r2v import AtlasSeedance20MiniReferenceToVideo
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_5_t2v import AtlasSeedance25TextToVideo
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_5_i2v import AtlasSeedance25ImageToVideo
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_5_r2v import AtlasSeedance25ReferenceToVideo
 from atlascloud_comfyui.nodes.video.bytedance_avatar_omni_human_v15 import AtlasAvatarOmniHumanV15
 from atlascloud_comfyui.nodes.image.atlascloud_image_upscaler import AtlasImageUpscaler
 from atlascloud_comfyui.nodes.image.atlascloud_face_swap_image import AtlasFaceSwapImage
@@ -481,6 +485,9 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Seedance 2.0 Mini Text-to-Video": AtlasSeedance20MiniTextToVideo,
     "AtlasCloud Seedance 2.0 Mini Image-to-Video": AtlasSeedance20MiniImageToVideo,
     "AtlasCloud Seedance 2.0 Mini Reference-to-Video": AtlasSeedance20MiniReferenceToVideo,
+    "AtlasCloud Seedance 2.5 Text-to-Video": AtlasSeedance25TextToVideo,
+    "AtlasCloud Seedance 2.5 Image-to-Video": AtlasSeedance25ImageToVideo,
+    "AtlasCloud Seedance 2.5 Reference-to-Video": AtlasSeedance25ReferenceToVideo,
     "AtlasCloud Avatar Omni Human 1.5": AtlasAvatarOmniHumanV15,
     "AtlasCloud Image Upscaler": AtlasImageUpscaler,
     "AtlasCloud Face Swap (Image)": AtlasFaceSwapImage,
@@ -781,6 +788,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Grok Imagine Video Extend": AtlasGrokImagineVideoExtend,
     "AtlasCloud Seedream V5.0 Pro Text-to-Image": AtlasSeedreamV50ProTextToImage,
     "AtlasCloud Seedream V5.0 Pro Edit": AtlasSeedreamV50ProEdit,
+    "AtlasCloud Seedream V5.0 Pro Layer Decomposition": AtlasSeedreamV50ProLayerDecomposition,
     "AtlasCloud Cosmos 3 Super Text-to-Image": AtlasCosmos3SuperTextToImage,
     "AtlasCloud Cosmos 3 Super Image-to-Video": AtlasCosmos3SuperImageToVideo,
     "AtlasCloud Ideogram V4 Turbo Text-to-Image": AtlasIdeogramV4TurboTextToImage,
@@ -858,6 +866,9 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Seedance 2.0 Mini Text-to-Video": "AtlasCloud Seedance 2.0 Mini Text-to-Video",
     "AtlasCloud Seedance 2.0 Mini Image-to-Video": "AtlasCloud Seedance 2.0 Mini Image-to-Video",
     "AtlasCloud Seedance 2.0 Mini Reference-to-Video": "AtlasCloud Seedance 2.0 Mini Reference-to-Video",
+    "AtlasCloud Seedance 2.5 Text-to-Video": "AtlasCloud Seedance 2.5 Text-to-Video",
+    "AtlasCloud Seedance 2.5 Image-to-Video": "AtlasCloud Seedance 2.5 Image-to-Video",
+    "AtlasCloud Seedance 2.5 Reference-to-Video": "AtlasCloud Seedance 2.5 Reference-to-Video",
     "AtlasCloud Avatar Omni Human 1.5": "AtlasCloud Avatar Omni Human 1.5",
     "AtlasCloud Image Upscaler": "AtlasCloud Image Upscaler",
     "AtlasCloud Face Swap (Image)": "AtlasCloud Face Swap (Image)",
@@ -1156,6 +1167,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud VEED Lipsync": "AtlasCloud VEED Lipsync",
     "AtlasCloud Seedream V5.0 Pro Text-to-Image": "AtlasCloud Seedream V5.0 Pro Text-to-Image",
     "AtlasCloud Seedream V5.0 Pro Edit": "AtlasCloud Seedream V5.0 Pro Edit",
+    "AtlasCloud Seedream V5.0 Pro Layer Decomposition": "AtlasCloud Seedream V5.0 Pro Layer Decomposition",
     "AtlasCloud Cosmos 3 Super Text-to-Image": "AtlasCloud Cosmos 3 Super Text-to-Image",
     "AtlasCloud Cosmos 3 Super Image-to-Video": "AtlasCloud Cosmos 3 Super Image-to-Video",
     "AtlasCloud Ideogram V4 Turbo Text-to-Image": "AtlasCloud Ideogram V4 Turbo Text-to-Image",
