@@ -11,6 +11,12 @@
 
 > **[→ Get your free Atlas Cloud API key](https://www.atlascloud.ai/console/api-keys?utm_source=github&utm_campaign=atlascloud_comfyui)** — one key, 300+ models, no local GPU or model weights needed.
 
+<p align="center">
+  <img src="docs/images/text-to-image-workflow.png" alt="AtlasCloud nodes in ComfyUI — Client feeds an API key into a Nano Banana Pro Text-to-Image node, whose output lands in an Image Preview node showing the rendered image" width="900" />
+  <br />
+  <sub><a href="examples/01-text-to-image.json"><code>examples/01-text-to-image.json</code></a> — paste your key into <b>AtlasCloud Client</b>, hit <b>Run</b>. Three nodes, no local GPU.</sub>
+</p>
+
 ## Supported Models
 
 - 🎬 **Video** — Seedance 2.0 · Kling 3 · Sora 2 · Veo 3.1 · HappyHorse 1 · Grok Imagine 1.5 · Wan 2.7
