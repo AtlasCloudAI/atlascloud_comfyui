@@ -8,8 +8,8 @@ from ..auth.atlas_client_node import AtlasClientHandle
 class AtlasSeedance20ReferenceToVideo:
     CATEGORY = "AtlasCloud/Video"
     FUNCTION = "run"
-    RETURN_TYPES = ("STRING", "STRING")
-    RETURN_NAMES = ("video_url", "prediction_id")
+    RETURN_TYPES = ("STRING", "STRING", "DICT")
+    RETURN_NAMES = ("video_url", "prediction_id", "payload")
 
     @classmethod
     def INPUT_TYPES(cls):
@@ -132,4 +132,4 @@ class AtlasSeedance20ReferenceToVideo:
                 f"Unexpected output type for prediction {prediction_id}: {type(first).__name__} {first!r}"
             )
 
-        return (first, prediction_id)
+        return (first, prediction_id, payload)
