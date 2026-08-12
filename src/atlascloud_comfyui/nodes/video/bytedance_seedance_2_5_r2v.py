@@ -41,6 +41,7 @@ class AtlasSeedance25ReferenceToVideo:
                     {"multiline": True, "default": "", "tooltip": "Reference audio URLs, one per line"},
                 ),
                 "duration": (
+                    "INT",
                     _DURATIONS,
                     {"default": 5, "tooltip": "Duration (seconds), or -1 for auto (required for video-editing mode)"},
                 ),
