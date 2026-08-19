@@ -422,6 +422,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Qwen Image Text-to-Image Plus | alibaba/qwen-image/text-to-image-plus |
 | AtlasCloud Qwen Image Text-to-Image Max | alibaba/qwen-image/text-to-image-max |
 | AtlasCloud Qwen Image 3.0 Text-to-Image | qwen-image-3.0/text-to-image |
+| AtlasCloud Qwen Image 3.0 Pro Text-to-Image | qwen-image-3.0-pro/text-to-image |
 | AtlasCloud Grok Imagine IQ Text-to-Image | xai/grok-imagine-image-quality/text-to-image |
 | AtlasCloud Grok Imagine Text-to-Image | xai/grok-imagine-image/text-to-image |
 | AtlasCloud Grok Imagine Image 2.0 Text-to-Image | xai/grok-imagine-image-2.0/text-to-image |
@@ -489,6 +490,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Flux Kontext Dev LoRA Edit | black-forest-labs/flux-kontext-dev-lora |
 | AtlasCloud Qwen Image Edit Plus 20251215 | alibaba/qwen-image/edit-plus-20251215 |
 | AtlasCloud Qwen Image 3.0 Edit | qwen-image-3.0/edit |
+| AtlasCloud Qwen Image 3.0 Pro Edit | qwen-image-3.0-pro/edit |
 | AtlasCloud Grok Imagine IQ Edit | xai/grok-imagine-image-quality/edit |
 | AtlasCloud Grok Imagine Edit | xai/grok-imagine-image/edit |
 | AtlasCloud Grok Imagine Image 2.0 Edit | xai/grok-imagine-image-2.0/edit |
