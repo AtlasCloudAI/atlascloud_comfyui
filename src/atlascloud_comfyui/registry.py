@@ -220,6 +220,7 @@ from atlascloud_comfyui.nodes.image.qwen_image_30_t2i import AtlasQwenImage30Tex
 from atlascloud_comfyui.nodes.image.qwen_image_30_edit import AtlasQwenImage30Edit
 from atlascloud_comfyui.nodes.image.qwen_image_30_pro_t2i import AtlasQwenImage30ProTextToImage
 from atlascloud_comfyui.nodes.image.qwen_image_30_pro_edit import AtlasQwenImage30ProEdit
+from atlascloud_comfyui.nodes.image.atlascloud_studio_product_visuals import AtlasStudioProductVisuals
 
 from atlascloud_comfyui.nodes.video.seedance_v1_pro_fast_t2v import AtlasSeedanceV1ProFastTextToVideo
 from atlascloud_comfyui.nodes.video.seedance_v1_pro_fast_i2v import AtlasSeedanceV1ProFastImageToVideo
@@ -343,6 +344,14 @@ from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_t2v import AtlasWan27TextToV
 from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_i2v import AtlasWan27ImageToVideo
 from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_r2v import AtlasWan27ReferenceToVideo
 from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_video_edit import AtlasWan27VideoEdit
+from atlascloud_comfyui.nodes.video.alibaba_wan_3_0_t2v import AtlasWan30TextToVideo
+from atlascloud_comfyui.nodes.video.alibaba_wan_3_0_i2v import AtlasWan30ImageToVideo
+from atlascloud_comfyui.nodes.video.alibaba_wan_3_0_r2v import AtlasWan30ReferenceToVideo
+from atlascloud_comfyui.nodes.video.atlascloud_studio_food_motion import AtlasStudioFoodMotion
+from atlascloud_comfyui.nodes.video.atlascloud_studio_virtual_try_on import AtlasStudioVirtualTryOn
+from atlascloud_comfyui.nodes.video.atlascloud_studio_ugc_ad import AtlasStudioUgcAd
+from atlascloud_comfyui.nodes.video.atlascloud_studio_trend_remix import AtlasStudioTrendRemix
+from atlascloud_comfyui.nodes.video.atlascloud_studio_tvc_maker import AtlasStudioTvcMaker
 from atlascloud_comfyui.nodes.video.alibaba_happyhorse_1_0_t2v import AtlasHappyHorse10TextToVideo
 from atlascloud_comfyui.nodes.video.alibaba_happyhorse_1_0_i2v import AtlasHappyHorse10ImageToVideo
 from atlascloud_comfyui.nodes.video.alibaba_happyhorse_1_0_r2v import AtlasHappyHorse10ReferenceToVideo
@@ -507,6 +516,14 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud WAN2.7 Image-to-Video": AtlasWan27ImageToVideo,
     "AtlasCloud WAN2.7 Reference-to-Video": AtlasWan27ReferenceToVideo,
     "AtlasCloud WAN2.7 Video-Edit": AtlasWan27VideoEdit,
+    "AtlasCloud WAN3.0 Text-to-Video": AtlasWan30TextToVideo,
+    "AtlasCloud WAN3.0 Image-to-Video": AtlasWan30ImageToVideo,
+    "AtlasCloud WAN3.0 Reference-to-Video": AtlasWan30ReferenceToVideo,
+    "AtlasCloud Studio Food Motion": AtlasStudioFoodMotion,
+    "AtlasCloud Studio Virtual Try-On": AtlasStudioVirtualTryOn,
+    "AtlasCloud Studio UGC Ad": AtlasStudioUgcAd,
+    "AtlasCloud Studio Trend Remix": AtlasStudioTrendRemix,
+    "AtlasCloud Studio TVC Maker": AtlasStudioTvcMaker,
     "AtlasCloud HappyHorse 1.0 Text-to-Video": AtlasHappyHorse10TextToVideo,
     "AtlasCloud HappyHorse 1.0 Image-to-Video": AtlasHappyHorse10ImageToVideo,
     "AtlasCloud HappyHorse 1.0 Reference-to-Video": AtlasHappyHorse10ReferenceToVideo,
@@ -718,6 +735,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Qwen Image 3.0 Edit": AtlasQwenImage30Edit,
     "AtlasCloud Qwen Image 3.0 Pro Text-to-Image": AtlasQwenImage30ProTextToImage,
     "AtlasCloud Qwen Image 3.0 Pro Edit": AtlasQwenImage30ProEdit,
+    "AtlasCloud Studio Product Visuals": AtlasStudioProductVisuals,
     "AtlasCloud Seedance V1 Pro Fast Text-to-Video": AtlasSeedanceV1ProFastTextToVideo,
     "AtlasCloud Seedance V1 Pro Fast Image-to-Video": AtlasSeedanceV1ProFastImageToVideo,
     "AtlasCloud Seedance V1 Pro Image-to-Video 1080p": AtlasBytedanceSeedanceV1ProI2V1080p,
@@ -1094,6 +1112,15 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Qwen Image 3.0 Edit": "AtlasCloud Qwen Image 3.0 Edit",
     "AtlasCloud Qwen Image 3.0 Pro Text-to-Image": "AtlasCloud Qwen Image 3.0 Pro Text-to-Image",
     "AtlasCloud Qwen Image 3.0 Pro Edit": "AtlasCloud Qwen Image 3.0 Pro Edit",
+    "AtlasCloud Studio Product Visuals": "AtlasCloud Studio Product Visuals",
+    "AtlasCloud WAN3.0 Text-to-Video": "AtlasCloud WAN3.0 Text-to-Video",
+    "AtlasCloud WAN3.0 Image-to-Video": "AtlasCloud WAN3.0 Image-to-Video",
+    "AtlasCloud WAN3.0 Reference-to-Video": "AtlasCloud WAN3.0 Reference-to-Video",
+    "AtlasCloud Studio Food Motion": "AtlasCloud Studio Food Motion",
+    "AtlasCloud Studio Virtual Try-On": "AtlasCloud Studio Virtual Try-On",
+    "AtlasCloud Studio UGC Ad": "AtlasCloud Studio UGC Ad",
+    "AtlasCloud Studio Trend Remix": "AtlasCloud Studio Trend Remix",
+    "AtlasCloud Studio TVC Maker": "AtlasCloud Studio TVC Maker",
     "AtlasCloud Seedance V1 Pro Fast Text-to-Video": "AtlasCloud Seedance V1 Pro Fast Text-to-Video",
     "AtlasCloud Seedance V1 Pro Fast Image-to-Video": "AtlasCloud Seedance V1 Pro Fast Image-to-Video",
     "AtlasCloud Seedance V1 Pro Image-to-Video 1080p": "AtlasCloud Seedance V1 Pro Image-to-Video 1080p",
