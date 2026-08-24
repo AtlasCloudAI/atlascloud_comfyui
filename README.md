@@ -299,6 +299,14 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud HappyHorse 1.0 Reference-to-Video | alibaba/happyhorse-1.0/reference-to-video |
 | AtlasCloud HappyHorse 1.1 Reference-to-Video | alibaba/happyhorse-1.1/reference-to-video |
 | AtlasCloud WAN2.7 Reference-to-Video | alibaba/wan-2.7/reference-to-video |
+| AtlasCloud WAN3.0 Text-to-Video | alibaba/wan-3.0/text-to-video |
+| AtlasCloud WAN3.0 Image-to-Video | alibaba/wan-3.0/image-to-video |
+| AtlasCloud WAN3.0 Reference-to-Video | alibaba/wan-3.0/reference-to-video |
+| AtlasCloud Studio Food Motion | atlascloud/studio/food-motion |
+| AtlasCloud Studio Virtual Try-On | atlascloud/studio/virtual-try-on |
+| AtlasCloud Studio UGC Ad | atlascloud/studio/ugc-ad |
+| AtlasCloud Studio Trend Remix | atlascloud/studio/trend-remix |
+| AtlasCloud Studio TVC Maker | atlascloud/studio/tvc-maker |
 | AtlasCloud WAN2.6 Image-to-Video Flash | alibaba/wan-2.6/image-to-video-flash |
 | AtlasCloud Kling Video O3 Pro Image-to-Video | kwaivgi/kling-video-o3-pro/image-to-video |
 | AtlasCloud Kling Video O3 Std Image-to-Video | kwaivgi/kling-video-o3-std/image-to-video |
@@ -491,6 +499,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Qwen Image Edit Plus 20251215 | alibaba/qwen-image/edit-plus-20251215 |
 | AtlasCloud Qwen Image 3.0 Edit | qwen-image-3.0/edit |
 | AtlasCloud Qwen Image 3.0 Pro Edit | qwen-image-3.0-pro/edit |
+| AtlasCloud Studio Product Visuals | atlascloud/studio/product-visuals |
 | AtlasCloud Grok Imagine IQ Edit | xai/grok-imagine-image-quality/edit |
 | AtlasCloud Grok Imagine Edit | xai/grok-imagine-image/edit |
 | AtlasCloud Grok Imagine Image 2.0 Edit | xai/grok-imagine-image-2.0/edit |
