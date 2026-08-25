@@ -302,6 +302,9 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud WAN3.0 Text-to-Video | alibaba/wan-3.0/text-to-video |
 | AtlasCloud WAN3.0 Image-to-Video | alibaba/wan-3.0/image-to-video |
 | AtlasCloud WAN3.0 Reference-to-Video | alibaba/wan-3.0/reference-to-video |
+| AtlasCloud WAN3.0-Prime Text-to-Video | alibaba/wan-3.0-prime/text-to-video |
+| AtlasCloud WAN3.0-Prime Image-to-Video | alibaba/wan-3.0-prime/image-to-video |
+| AtlasCloud WAN3.0-Prime Reference-to-Video | alibaba/wan-3.0-prime/reference-to-video |
 | AtlasCloud Studio Food Motion | atlascloud/studio/food-motion |
 | AtlasCloud Studio Virtual Try-On | atlascloud/studio/virtual-try-on |
 | AtlasCloud Studio UGC Ad | atlascloud/studio/ugc-ad |
