@@ -347,6 +347,9 @@ from atlascloud_comfyui.nodes.video.alibaba_wan_2_7_video_edit import AtlasWan27
 from atlascloud_comfyui.nodes.video.alibaba_wan_3_0_t2v import AtlasWan30TextToVideo
 from atlascloud_comfyui.nodes.video.alibaba_wan_3_0_i2v import AtlasWan30ImageToVideo
 from atlascloud_comfyui.nodes.video.alibaba_wan_3_0_r2v import AtlasWan30ReferenceToVideo
+from atlascloud_comfyui.nodes.video.alibaba_wan_3_0_prime_t2v import AtlasWan30PrimeTextToVideo
+from atlascloud_comfyui.nodes.video.alibaba_wan_3_0_prime_i2v import AtlasWan30PrimeImageToVideo
+from atlascloud_comfyui.nodes.video.alibaba_wan_3_0_prime_r2v import AtlasWan30PrimeReferenceToVideo
 from atlascloud_comfyui.nodes.video.atlascloud_studio_food_motion import AtlasStudioFoodMotion
 from atlascloud_comfyui.nodes.video.atlascloud_studio_virtual_try_on import AtlasStudioVirtualTryOn
 from atlascloud_comfyui.nodes.video.atlascloud_studio_ugc_ad import AtlasStudioUgcAd
@@ -519,6 +522,9 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud WAN3.0 Text-to-Video": AtlasWan30TextToVideo,
     "AtlasCloud WAN3.0 Image-to-Video": AtlasWan30ImageToVideo,
     "AtlasCloud WAN3.0 Reference-to-Video": AtlasWan30ReferenceToVideo,
+    "AtlasCloud WAN3.0-Prime Text-to-Video": AtlasWan30PrimeTextToVideo,
+    "AtlasCloud WAN3.0-Prime Image-to-Video": AtlasWan30PrimeImageToVideo,
+    "AtlasCloud WAN3.0-Prime Reference-to-Video": AtlasWan30PrimeReferenceToVideo,
     "AtlasCloud Studio Food Motion": AtlasStudioFoodMotion,
     "AtlasCloud Studio Virtual Try-On": AtlasStudioVirtualTryOn,
     "AtlasCloud Studio UGC Ad": AtlasStudioUgcAd,
@@ -1116,6 +1122,9 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud WAN3.0 Text-to-Video": "AtlasCloud WAN3.0 Text-to-Video",
     "AtlasCloud WAN3.0 Image-to-Video": "AtlasCloud WAN3.0 Image-to-Video",
     "AtlasCloud WAN3.0 Reference-to-Video": "AtlasCloud WAN3.0 Reference-to-Video",
+    "AtlasCloud WAN3.0-Prime Text-to-Video": "AtlasCloud WAN3.0-Prime Text-to-Video",
+    "AtlasCloud WAN3.0-Prime Image-to-Video": "AtlasCloud WAN3.0-Prime Image-to-Video",
+    "AtlasCloud WAN3.0-Prime Reference-to-Video": "AtlasCloud WAN3.0-Prime Reference-to-Video",
     "AtlasCloud Studio Food Motion": "AtlasCloud Studio Food Motion",
     "AtlasCloud Studio Virtual Try-On": "AtlasCloud Studio Virtual Try-On",
     "AtlasCloud Studio UGC Ad": "AtlasCloud Studio UGC Ad",
