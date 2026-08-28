@@ -246,6 +246,9 @@ from atlascloud_comfyui.nodes.video.atlascloud_wan_2_7_spicy_r2v import AtlasWan
 from atlascloud_comfyui.nodes.video.minimax_h3_t2v import AtlasMinimaxH3TextToVideo
 from atlascloud_comfyui.nodes.video.minimax_h3_i2v import AtlasMinimaxH3ImageToVideo
 from atlascloud_comfyui.nodes.video.minimax_h3_r2v import AtlasMinimaxH3ReferenceToVideo
+from atlascloud_comfyui.nodes.video.minimax_h3_developer_t2v import AtlasMinimaxH3DeveloperTextToVideo
+from atlascloud_comfyui.nodes.video.minimax_h3_developer_i2v import AtlasMinimaxH3DeveloperImageToVideo
+from atlascloud_comfyui.nodes.video.minimax_h3_developer_r2v import AtlasMinimaxH3DeveloperReferenceToVideo
 from atlascloud_comfyui.nodes.video.byteplus_video_upscaler import AtlasBytePlusVideoUpscaler
 from atlascloud_comfyui.nodes.video.tencent_video_upscaler import AtlasTencentVideoUpscaler
 from atlascloud_comfyui.nodes.image.tencent_image_upscaler import AtlasTencentImageUpscaler
@@ -696,6 +699,9 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud MiniMax H3 Text-to-Video": AtlasMinimaxH3TextToVideo,
     "AtlasCloud MiniMax H3 Image-to-Video": AtlasMinimaxH3ImageToVideo,
     "AtlasCloud MiniMax H3 Reference-to-Video": AtlasMinimaxH3ReferenceToVideo,
+    "AtlasCloud MiniMax H3-Developer Text-to-Video": AtlasMinimaxH3DeveloperTextToVideo,
+    "AtlasCloud MiniMax H3-Developer Image-to-Video": AtlasMinimaxH3DeveloperImageToVideo,
+    "AtlasCloud MiniMax H3-Developer Reference-to-Video": AtlasMinimaxH3DeveloperReferenceToVideo,
     "AtlasCloud Tencent Image Upscaler": AtlasTencentImageUpscaler,
     "AtlasCloud Tencent Video Upscaler": AtlasTencentVideoUpscaler,
     "AtlasCloud BytePlus Video Upscaler": AtlasBytePlusVideoUpscaler,
@@ -1075,6 +1081,9 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud MiniMax H3 Text-to-Video": "AtlasCloud MiniMax H3 Text-to-Video",
     "AtlasCloud MiniMax H3 Image-to-Video": "AtlasCloud MiniMax H3 Image-to-Video",
     "AtlasCloud MiniMax H3 Reference-to-Video": "AtlasCloud MiniMax H3 Reference-to-Video",
+    "AtlasCloud MiniMax H3-Developer Text-to-Video": "AtlasCloud MiniMax H3-Developer Text-to-Video",
+    "AtlasCloud MiniMax H3-Developer Image-to-Video": "AtlasCloud MiniMax H3-Developer Image-to-Video",
+    "AtlasCloud MiniMax H3-Developer Reference-to-Video": "AtlasCloud MiniMax H3-Developer Reference-to-Video",
     "AtlasCloud Tencent Image Upscaler": "AtlasCloud Tencent Image Upscaler",
     "AtlasCloud Tencent Video Upscaler": "AtlasCloud Tencent Video Upscaler",
     "AtlasCloud BytePlus Video Upscaler": "AtlasCloud BytePlus Video Upscaler",
