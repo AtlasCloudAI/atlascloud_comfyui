@@ -290,6 +290,9 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud MiniMax H3 Text-to-Video | minimax/h3/text-to-video |
 | AtlasCloud MiniMax H3 Image-to-Video | minimax/h3/image-to-video |
 | AtlasCloud MiniMax H3 Reference-to-Video | minimax/h3/reference-to-video |
+| AtlasCloud MiniMax H3-Developer Text-to-Video | minimax/h3-developer/text-to-video |
+| AtlasCloud MiniMax H3-Developer Image-to-Video | minimax/h3-developer/image-to-video |
+| AtlasCloud MiniMax H3-Developer Reference-to-Video | minimax/h3-developer/reference-to-video |
 | AtlasCloud Tencent Image Upscaler | tencent/image/upscaler |
 | AtlasCloud Tencent Video Upscaler | tencent/video/upscaler |
 | AtlasCloud BytePlus Video Upscaler | byteplus/video/upscaler |
