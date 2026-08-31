@@ -416,6 +416,8 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Seedream V4 Sequential Text-to-Image | bytedance/seedream-v4/sequential |
 | AtlasCloud Seedream V4.5 Text-to-Image | bytedance/seedream-v4.5 |
 | AtlasCloud Seedream V4.5 Sequential Text-to-Image | bytedance/seedream-v4.5/sequential |
+| AtlasCloud Seedream V4.7 Text-to-Image | bytedance/seedream-v4.7/text-to-image |
+| AtlasCloud Seedream V4.7 Sequential Text-to-Image | bytedance/seedream-v4.7/sequential |
 | AtlasCloud ZImage Turbo Text-to-Image | z-image/turbo |
 | AtlasCloud Ideogram V3 Quality Text-to-Image | ideogram-ai/ideogram-v3-quality |
 | AtlasCloud Ideogram V3 Turbo Text-to-Image | ideogram-ai/ideogram-v3-turbo |
@@ -492,6 +494,8 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Seedream V4 Edit Sequential | bytedance/seedream-v4/edit-sequential |
 | AtlasCloud Seedream V4.5 Edit | bytedance/seedream-v4.5/edit |
 | AtlasCloud Seedream V4.5 Edit Sequential | bytedance/seedream-v4.5/edit-sequential |
+| AtlasCloud Seedream V4.7 Edit | bytedance/seedream-v4.7/edit |
+| AtlasCloud Seedream V4.7 Edit Sequential | bytedance/seedream-v4.7/edit-sequential |
 | AtlasCloud Qwen Image Edit | atlascloud/qwen-image/edit |
 | AtlasCloud Qwen Image Edit (Alibaba) | alibaba/qwen-image/edit |
 | AtlasCloud Qwen Image Edit Plus (Alibaba) | alibaba/qwen-image/edit-plus |
