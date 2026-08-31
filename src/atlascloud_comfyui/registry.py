@@ -136,6 +136,10 @@ from atlascloud_comfyui.nodes.image.seedream_v45_t2i import AtlasSeedreamV45Text
 from atlascloud_comfyui.nodes.image.seedream_v45_edit import AtlasSeedreamV45Edit
 from atlascloud_comfyui.nodes.image.seedream_v45_sequential_t2i import AtlasSeedreamV45SequentialTextToImage
 from atlascloud_comfyui.nodes.image.seedream_v45_edit_sequential import AtlasSeedreamV45EditSequential
+from atlascloud_comfyui.nodes.image.seedream_v47_t2i import AtlasSeedreamV47TextToImage
+from atlascloud_comfyui.nodes.image.seedream_v47_sequential_t2i import AtlasSeedreamV47SequentialTextToImage
+from atlascloud_comfyui.nodes.image.seedream_v47_edit import AtlasSeedreamV47Edit
+from atlascloud_comfyui.nodes.image.seedream_v47_edit_sequential import AtlasSeedreamV47EditSequential
 from atlascloud_comfyui.nodes.image.seedream_v4_t2i import AtlasSeedreamV4TextToImage
 from atlascloud_comfyui.nodes.image.seedream_v4_sequential_t2i import AtlasSeedreamV4SequentialTextToImage
 from atlascloud_comfyui.nodes.image.seedream_v4_edit import AtlasSeedreamV4Edit
@@ -556,6 +560,10 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Seedream V4.5 Edit": AtlasSeedreamV45Edit,
     "AtlasCloud Seedream V4.5 Sequential Text-to-Image": AtlasSeedreamV45SequentialTextToImage,
     "AtlasCloud Seedream V4.5 Edit Sequential": AtlasSeedreamV45EditSequential,
+    "AtlasCloud Seedream V4.7 Text-to-Image": AtlasSeedreamV47TextToImage,
+    "AtlasCloud Seedream V4.7 Sequential Text-to-Image": AtlasSeedreamV47SequentialTextToImage,
+    "AtlasCloud Seedream V4.7 Edit": AtlasSeedreamV47Edit,
+    "AtlasCloud Seedream V4.7 Edit Sequential": AtlasSeedreamV47EditSequential,
     "AtlasCloud ZImage Turbo Lora Text-to-Image": AtlasZImageTurboLoraTextToImage,
     "AtlasCloud ZImage Turbo Text-to-Image": AtlasZImageTurboTextToImage,
     "AtlasCloud Nano Banana Pro Text-to-Image Ultra": AtlasNanoBananaProTextToImageUltra,
@@ -946,6 +954,10 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Seedream V4.5 Edit": "AtlasCloud Seedream V4.5 Edit",
     "AtlasCloud Seedream V4.5 Sequential Text-to-Image": "AtlasCloud Seedream V4.5 Sequential Text-to-Image",
     "AtlasCloud Seedream V4.5 Edit Sequential": "AtlasCloud Seedream V4.5 Edit Sequential",
+    "AtlasCloud Seedream V4.7 Text-to-Image": "AtlasCloud Seedream V4.7 Text-to-Image",
+    "AtlasCloud Seedream V4.7 Sequential Text-to-Image": "AtlasCloud Seedream V4.7 Sequential Text-to-Image",
+    "AtlasCloud Seedream V4.7 Edit": "AtlasCloud Seedream V4.7 Edit",
+    "AtlasCloud Seedream V4.7 Edit Sequential": "AtlasCloud Seedream V4.7 Edit Sequential",
     "AtlasCloud Image Preview": "AtlasCloud Image Preview",
     "AtlasCloud ZImage Turbo Lora Text-to-Image": "AtlasCloud ZImage Turbo Lora Text-to-Image",
     "AtlasCloud ZImage Turbo Text-to-Image": "AtlasCloud ZImage Turbo Text-to-Image",
