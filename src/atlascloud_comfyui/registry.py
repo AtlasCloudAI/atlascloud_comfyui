@@ -94,6 +94,11 @@ from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_t2v import AtlasGem
 from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_i2v import AtlasGeminiOmniFlashImageToVideo
 from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_r2v import AtlasGeminiOmniFlashReferenceToVideo
 from atlascloud_comfyui.nodes.video.google_gemini_omni_flash_video_edit import AtlasGeminiOmniFlashVideoEdit
+from atlascloud_comfyui.nodes.video.google_gemini_omni_1_1_flash_t2v import AtlasGeminiOmni11FlashTextToVideo
+from atlascloud_comfyui.nodes.video.google_gemini_omni_1_1_flash_i2v import AtlasGeminiOmni11FlashImageToVideo
+from atlascloud_comfyui.nodes.video.google_gemini_omni_1_1_flash_r2v import AtlasGeminiOmni11FlashReferenceToVideo
+from atlascloud_comfyui.nodes.video.google_gemini_omni_1_1_flash_video_edit import AtlasGeminiOmni11FlashVideoEdit
+from atlascloud_comfyui.nodes.video.google_gemini_omni_1_1_flash_video_extend import AtlasGeminiOmni11FlashVideoExtend
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_t2v import AtlasGrokImagineVideoTextToVideo
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_i2v import AtlasGrokImagineVideoImageToVideo
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_v15_i2v import AtlasGrokImagineVideoV15ImageToVideo
@@ -678,6 +683,11 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Gemini Omni Flash Image-to-Video": AtlasGeminiOmniFlashImageToVideo,
     "AtlasCloud Gemini Omni Flash Reference-to-Video": AtlasGeminiOmniFlashReferenceToVideo,
     "AtlasCloud Gemini Omni Flash Video Edit": AtlasGeminiOmniFlashVideoEdit,
+    "AtlasCloud Gemini Omni 1.1 Flash Text-to-Video": AtlasGeminiOmni11FlashTextToVideo,
+    "AtlasCloud Gemini Omni 1.1 Flash Image-to-Video": AtlasGeminiOmni11FlashImageToVideo,
+    "AtlasCloud Gemini Omni 1.1 Flash Reference-to-Video": AtlasGeminiOmni11FlashReferenceToVideo,
+    "AtlasCloud Gemini Omni 1.1 Flash Video Edit": AtlasGeminiOmni11FlashVideoEdit,
+    "AtlasCloud Gemini Omni 1.1 Flash Video Extend": AtlasGeminiOmni11FlashVideoExtend,
     "AtlasCloud VEO3.1 Reference-to-Video": AtlasVeo31ReferenceToVideo,
     "AtlasCloud VEO3.1 Image-to-Video": AtlasVeo31ImageToVideo,
     "AtlasCloud VEO3 Image-to-Video": AtlasVeo3ImageToVideo,
@@ -1066,6 +1076,11 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Gemini Omni Flash Image-to-Video": "AtlasCloud Gemini Omni Flash Image-to-Video",
     "AtlasCloud Gemini Omni Flash Reference-to-Video": "AtlasCloud Gemini Omni Flash Reference-to-Video",
     "AtlasCloud Gemini Omni Flash Video Edit": "AtlasCloud Gemini Omni Flash Video Edit",
+    "AtlasCloud Gemini Omni 1.1 Flash Text-to-Video": "AtlasCloud Gemini Omni 1.1 Flash Text-to-Video",
+    "AtlasCloud Gemini Omni 1.1 Flash Image-to-Video": "AtlasCloud Gemini Omni 1.1 Flash Image-to-Video",
+    "AtlasCloud Gemini Omni 1.1 Flash Reference-to-Video": "AtlasCloud Gemini Omni 1.1 Flash Reference-to-Video",
+    "AtlasCloud Gemini Omni 1.1 Flash Video Edit": "AtlasCloud Gemini Omni 1.1 Flash Video Edit",
+    "AtlasCloud Gemini Omni 1.1 Flash Video Extend": "AtlasCloud Gemini Omni 1.1 Flash Video Extend",
     "AtlasCloud VEO3.1 Reference-to-Video": "AtlasCloud VEO3.1 Reference-to-Video",
     "AtlasCloud VEO3.1 Image-to-Video": "AtlasCloud VEO3.1 Image-to-Video",
     "AtlasCloud VEO3 Image-to-Video": "AtlasCloud VEO3 Image-to-Video",

@@ -126,6 +126,11 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Cosmos 3 Super Image-to-Video | nvidia/cosmos-3-super/image-to-video |
 | AtlasCloud Gemini Omni Flash Reference-to-Video | google/gemini-omni-flash/reference-to-video |
 | AtlasCloud Gemini Omni Flash Video Edit | google/gemini-omni-flash/video-edit |
+| AtlasCloud Gemini Omni 1.1 Flash Text-to-Video | google/gemini-omni-1.1-flash/text-to-video |
+| AtlasCloud Gemini Omni 1.1 Flash Image-to-Video | google/gemini-omni-1.1-flash/image-to-video |
+| AtlasCloud Gemini Omni 1.1 Flash Reference-to-Video | google/gemini-omni-1.1-flash/reference-to-video |
+| AtlasCloud Gemini Omni 1.1 Flash Video Edit | google/gemini-omni-1.1-flash/video-edit |
+| AtlasCloud Gemini Omni 1.1 Flash Video Extend | google/gemini-omni-1.1-flash/video-extend |
 | AtlasCloud Grok Imagine Video Text-to-Video | xai/grok-imagine-video/text-to-video |
 | AtlasCloud VEO2 Text-to-Video | google/veo2 |
 | AtlasCloud WAN2.6 Text-to-Video | alibaba/wan-2.6/text-to-video |
