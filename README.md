@@ -452,6 +452,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Baidu ERNIE-Image-Turbo Text-to-Image | baidu/ERNIE-Image-Turbo/text-to-image |
 | AtlasCloud MAI-Image-2.5 Text-to-Image | microsoft/mai-image-2.5/text-to-image |
 | AtlasCloud MAI-Image-2.5-Flash Text-to-Image | microsoft/mai-image-2.5-flash/text-to-image |
+| AtlasCloud MAI-Image-2.5-Pro Text-to-Image | microsoft/mai-image-2.5-pro/text-to-image |
 | AtlasCloud GPT Image-2 Text-to-Image | openai/gpt-image-2/text-to-image |
 | AtlasCloud GPT Image-2 Developer Text-to-Image | openai/gpt-image-2-developer/text-to-image |
 
@@ -497,6 +498,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud WAN2.5 Image-Edit | alibaba/wan-2.5/image-edit |
 | AtlasCloud MAI-Image-2.5 Edit | microsoft/mai-image-2.5/edit |
 | AtlasCloud MAI-Image-2.5-Flash Edit | microsoft/mai-image-2.5-flash/edit |
+| AtlasCloud MAI-Image-2.5-Pro Edit | microsoft/mai-image-2.5-pro/edit |
 | AtlasCloud Seedream V4 Edit | bytedance/seedream-v4/edit |
 | AtlasCloud Seedream V4 Edit Sequential | bytedance/seedream-v4/edit-sequential |
 | AtlasCloud Seedream V4.5 Edit | bytedance/seedream-v4.5/edit |
