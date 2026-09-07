@@ -218,6 +218,9 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Grok Imagine Video Reference-to-Video | xai/grok-imagine-video/reference-to-video |
 | AtlasCloud Grok Imagine Video v1.5 Text-to-Video | xai/grok-imagine-video-v1.5/text-to-video |
 | AtlasCloud Grok Imagine Video v1.5 Reference-to-Video | xai/grok-imagine-video-v1.5/reference-to-video |
+| AtlasCloud Grok Imagine Video v1.5 Developer Text-to-Video | xai/grok-imagine-video-v1.5-developer/text-to-video |
+| AtlasCloud Grok Imagine Video v1.5 Developer Image-to-Video | xai/grok-imagine-video-v1.5-developer/image-to-video |
+| AtlasCloud Grok Imagine Video v1.5 Developer Reference-to-Video | xai/grok-imagine-video-v1.5-developer/reference-to-video |
 | AtlasCloud Grok Imagine Video Edit | xai/grok-imagine-video/edit-video |
 | AtlasCloud Grok Imagine Video Extend | xai/grok-imagine-video/extend-video |
 | AtlasCloud VEO3.1 Reference-to-Video | google/veo3.1/reference-to-video |
@@ -300,6 +303,9 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud MiniMax H3-Developer Reference-to-Video | minimax/h3-developer/reference-to-video |
 | AtlasCloud MiniMax H3 Max Text-to-Video | minimax/h3-max/text-to-video |
 | AtlasCloud MiniMax H3 Max Image-to-Video | minimax/h3-max/image-to-video |
+| AtlasCloud MiniMax H3 Fast Text-to-Video | minimax/h3-fast/text-to-video |
+| AtlasCloud MiniMax H3 Fast Image-to-Video | minimax/h3-fast/image-to-video |
+| AtlasCloud MiniMax H3 Fast Reference-to-Video | minimax/h3-fast/reference-to-video |
 | AtlasCloud Tencent Image Upscaler | tencent/image/upscaler |
 | AtlasCloud Tencent Video Upscaler | tencent/video/upscaler |
 | AtlasCloud BytePlus Video Upscaler | byteplus/video/upscaler |
@@ -449,6 +455,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Grok Imagine IQ Text-to-Image | xai/grok-imagine-image-quality/text-to-image |
 | AtlasCloud Grok Imagine Text-to-Image | xai/grok-imagine-image/text-to-image |
 | AtlasCloud Grok Imagine Image 2.0 Text-to-Image | xai/grok-imagine-image-2.0/text-to-image |
+| AtlasCloud Grok Imagine Image 2.0 Developer Text-to-Image | xai/grok-imagine-image-2.0-developer/text-to-image |
 | AtlasCloud Baidu ERNIE-Image-Turbo Text-to-Image | baidu/ERNIE-Image-Turbo/text-to-image |
 | AtlasCloud MAI-Image-2.5 Text-to-Image | microsoft/mai-image-2.5/text-to-image |
 | AtlasCloud MAI-Image-2.5-Flash Text-to-Image | microsoft/mai-image-2.5-flash/text-to-image |
@@ -522,6 +529,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Grok Imagine IQ Edit | xai/grok-imagine-image-quality/edit |
 | AtlasCloud Grok Imagine Edit | xai/grok-imagine-image/edit |
 | AtlasCloud Grok Imagine Image 2.0 Edit | xai/grok-imagine-image-2.0/edit |
+| AtlasCloud Grok Imagine Image 2.0 Developer Edit | xai/grok-imagine-image-2.0-developer/edit |
 | AtlasCloud GPT Image-2 Edit | openai/gpt-image-2/edit |
 | AtlasCloud GPT Image-2 Developer Edit | openai/gpt-image-2-developer/edit |
 | AtlasCloud LTX 2.3 Quality Text-to-Video | ltx-2.3-quality/text-to-video |

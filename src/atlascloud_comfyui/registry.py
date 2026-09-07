@@ -105,6 +105,9 @@ from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_v15_i2v import AtlasG
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_r2v import AtlasGrokImagineVideoReferenceToVideo
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_v15_t2v import AtlasGrokImagineVideoV15TextToVideo
 from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_v15_r2v import AtlasGrokImagineVideoV15ReferenceToVideo
+from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_v15_developer_t2v import AtlasGrokImagineVideoV15DeveloperTextToVideo
+from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_v15_developer_i2v import AtlasGrokImagineVideoV15DeveloperImageToVideo
+from atlascloud_comfyui.nodes.video.xai_grok_imagine_video_v15_developer_r2v import AtlasGrokImagineVideoV15DeveloperReferenceToVideo
 from atlascloud_comfyui.nodes.image.flux2_pro_t2i import AtlasFlux2ProTextToImage
 from atlascloud_comfyui.nodes.image.flux2_flex_edit import AtlasFlux2FlexEdit
 from atlascloud_comfyui.nodes.image.flux2_pro_edit import AtlasFlux2ProEdit
@@ -260,6 +263,9 @@ from atlascloud_comfyui.nodes.video.minimax_h3_developer_i2v import AtlasMinimax
 from atlascloud_comfyui.nodes.video.minimax_h3_developer_r2v import AtlasMinimaxH3DeveloperReferenceToVideo
 from atlascloud_comfyui.nodes.video.minimax_h3_max_t2v import AtlasMinimaxH3MaxTextToVideo
 from atlascloud_comfyui.nodes.video.minimax_h3_max_i2v import AtlasMinimaxH3MaxImageToVideo
+from atlascloud_comfyui.nodes.video.minimax_h3_fast_t2v import AtlasMinimaxH3FastTextToVideo
+from atlascloud_comfyui.nodes.video.minimax_h3_fast_i2v import AtlasMinimaxH3FastImageToVideo
+from atlascloud_comfyui.nodes.video.minimax_h3_fast_r2v import AtlasMinimaxH3FastReferenceToVideo
 from atlascloud_comfyui.nodes.video.byteplus_video_upscaler import AtlasBytePlusVideoUpscaler
 from atlascloud_comfyui.nodes.video.tencent_video_upscaler import AtlasTencentVideoUpscaler
 from atlascloud_comfyui.nodes.image.tencent_image_upscaler import AtlasTencentImageUpscaler
@@ -292,6 +298,8 @@ from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_t2i import AtlasGrokI
 from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_edit import AtlasGrokImagineImageEdit
 from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_20_t2i import AtlasGrokImagineImage20TextToImage
 from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_20_edit import AtlasGrokImagineImage20Edit
+from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_20_developer_t2i import AtlasGrokImagineImage20DeveloperTextToImage
+from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_20_developer_edit import AtlasGrokImagineImage20DeveloperEdit
 
 from atlascloud_comfyui.nodes.image.seedream_v50_pro_t2i import AtlasSeedreamV50ProTextToImage
 from atlascloud_comfyui.nodes.image.seedream_v50_pro_edit import AtlasSeedreamV50ProEdit
@@ -728,6 +736,9 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud MiniMax H3-Developer Reference-to-Video": AtlasMinimaxH3DeveloperReferenceToVideo,
     "AtlasCloud MiniMax H3 Max Text-to-Video": AtlasMinimaxH3MaxTextToVideo,
     "AtlasCloud MiniMax H3 Max Image-to-Video": AtlasMinimaxH3MaxImageToVideo,
+    "AtlasCloud MiniMax H3 Fast Text-to-Video": AtlasMinimaxH3FastTextToVideo,
+    "AtlasCloud MiniMax H3 Fast Image-to-Video": AtlasMinimaxH3FastImageToVideo,
+    "AtlasCloud MiniMax H3 Fast Reference-to-Video": AtlasMinimaxH3FastReferenceToVideo,
     "AtlasCloud Tencent Image Upscaler": AtlasTencentImageUpscaler,
     "AtlasCloud Tencent Video Upscaler": AtlasTencentVideoUpscaler,
     "AtlasCloud BytePlus Video Upscaler": AtlasBytePlusVideoUpscaler,
@@ -815,6 +826,8 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Grok Imagine Edit": AtlasGrokImagineImageEdit,
     "AtlasCloud Grok Imagine Image 2.0 Text-to-Image": AtlasGrokImagineImage20TextToImage,
     "AtlasCloud Grok Imagine Image 2.0 Edit": AtlasGrokImagineImage20Edit,
+    "AtlasCloud Grok Imagine Image 2.0 Developer Text-to-Image": AtlasGrokImagineImage20DeveloperTextToImage,
+    "AtlasCloud Grok Imagine Image 2.0 Developer Edit": AtlasGrokImagineImage20DeveloperEdit,
     "AtlasCloud Kling V2.0 I2V Master": AtlasKlingV20I2VMaster,
     "AtlasCloud VEO3 Fast Image-to-Video": AtlasVeo3FastImageToVideo,
     "AtlasCloud Kling V2.1 T2V Master": AtlasKlingV21T2VMaster,
@@ -845,6 +858,9 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Grok Imagine Video Reference-to-Video": AtlasGrokImagineVideoReferenceToVideo,
     "AtlasCloud Grok Imagine Video v1.5 Text-to-Video": AtlasGrokImagineVideoV15TextToVideo,
     "AtlasCloud Grok Imagine Video v1.5 Reference-to-Video": AtlasGrokImagineVideoV15ReferenceToVideo,
+    "AtlasCloud Grok Imagine Video v1.5 Developer Text-to-Video": AtlasGrokImagineVideoV15DeveloperTextToVideo,
+    "AtlasCloud Grok Imagine Video v1.5 Developer Image-to-Video": AtlasGrokImagineVideoV15DeveloperImageToVideo,
+    "AtlasCloud Grok Imagine Video v1.5 Developer Reference-to-Video": AtlasGrokImagineVideoV15DeveloperReferenceToVideo,
     "AtlasCloud FLUX.2 Pro Text-to-Image": AtlasFlux2ProTextToImage,
     "AtlasCloud FLUX.2 Flex Edit": AtlasFlux2FlexEdit,
     "AtlasCloud FLUX.2 Pro Edit": AtlasFlux2ProEdit,
@@ -1123,6 +1139,9 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud MiniMax H3-Developer Reference-to-Video": "AtlasCloud MiniMax H3-Developer Reference-to-Video",
     "AtlasCloud MiniMax H3 Max Text-to-Video": "AtlasCloud MiniMax H3 Max Text-to-Video",
     "AtlasCloud MiniMax H3 Max Image-to-Video": "AtlasCloud MiniMax H3 Max Image-to-Video",
+    "AtlasCloud MiniMax H3 Fast Text-to-Video": "AtlasCloud MiniMax H3 Fast Text-to-Video",
+    "AtlasCloud MiniMax H3 Fast Image-to-Video": "AtlasCloud MiniMax H3 Fast Image-to-Video",
+    "AtlasCloud MiniMax H3 Fast Reference-to-Video": "AtlasCloud MiniMax H3 Fast Reference-to-Video",
     "AtlasCloud Tencent Image Upscaler": "AtlasCloud Tencent Image Upscaler",
     "AtlasCloud Tencent Video Upscaler": "AtlasCloud Tencent Video Upscaler",
     "AtlasCloud BytePlus Video Upscaler": "AtlasCloud BytePlus Video Upscaler",
@@ -1219,6 +1238,8 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Grok Imagine Edit": "AtlasCloud Grok Imagine Edit",
     "AtlasCloud Grok Imagine Image 2.0 Text-to-Image": "AtlasCloud Grok Imagine Image 2.0 Text-to-Image",
     "AtlasCloud Grok Imagine Image 2.0 Edit": "AtlasCloud Grok Imagine Image 2.0 Edit",
+    "AtlasCloud Grok Imagine Image 2.0 Developer Text-to-Image": "AtlasCloud Grok Imagine Image 2.0 Developer Text-to-Image",
+    "AtlasCloud Grok Imagine Image 2.0 Developer Edit": "AtlasCloud Grok Imagine Image 2.0 Developer Edit",
     "AtlasCloud Kling V2.0 I2V Master": "AtlasCloud Kling V2.0 I2V Master",
     "AtlasCloud VEO3 Fast Image-to-Video": "AtlasCloud VEO3 Fast Image-to-Video",
     "AtlasCloud Kling V2.1 T2V Master": "AtlasCloud Kling V2.1 T2V Master",
@@ -1249,6 +1270,9 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Grok Imagine Video Reference-to-Video": "AtlasCloud Grok Imagine Video Reference-to-Video",
     "AtlasCloud Grok Imagine Video v1.5 Text-to-Video": "AtlasCloud Grok Imagine Video v1.5 Text-to-Video",
     "AtlasCloud Grok Imagine Video v1.5 Reference-to-Video": "AtlasCloud Grok Imagine Video v1.5 Reference-to-Video",
+    "AtlasCloud Grok Imagine Video v1.5 Developer Text-to-Video": "AtlasCloud Grok Imagine Video v1.5 Developer Text-to-Video",
+    "AtlasCloud Grok Imagine Video v1.5 Developer Image-to-Video": "AtlasCloud Grok Imagine Video v1.5 Developer Image-to-Video",
+    "AtlasCloud Grok Imagine Video v1.5 Developer Reference-to-Video": "AtlasCloud Grok Imagine Video v1.5 Developer Reference-to-Video",
     "AtlasCloud FLUX.2 Pro Text-to-Image": "AtlasCloud FLUX.2 Pro Text-to-Image",
     "AtlasCloud FLUX.2 Flex Edit": "AtlasCloud FLUX.2 Flex Edit",
     "AtlasCloud FLUX.2 Pro Edit": "AtlasCloud FLUX.2 Pro Edit",
