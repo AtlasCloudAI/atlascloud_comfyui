@@ -462,6 +462,8 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud MAI-Image-2.5-Pro Text-to-Image | microsoft/mai-image-2.5-pro/text-to-image |
 | AtlasCloud GPT Image-2 Text-to-Image | openai/gpt-image-2/text-to-image |
 | AtlasCloud GPT Image-2 Developer Text-to-Image | openai/gpt-image-2-developer/text-to-image |
+| AtlasCloud GPT Image-2.5 Sunburst Text-to-Image | openai/gpt-image-2.5-sunburst/text-to-image |
+| AtlasCloud GPT Image-2.5 Flare Text-to-Image | openai/gpt-image-2.5-flare/text-to-image |
 
 ### Video Extend
 
@@ -532,6 +534,8 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud Grok Imagine Image 2.0 Developer Edit | xai/grok-imagine-image-2.0-developer/edit |
 | AtlasCloud GPT Image-2 Edit | openai/gpt-image-2/edit |
 | AtlasCloud GPT Image-2 Developer Edit | openai/gpt-image-2-developer/edit |
+| AtlasCloud GPT Image-2.5 Sunburst Edit | openai/gpt-image-2.5-sunburst/edit |
+| AtlasCloud GPT Image-2.5 Flare Edit | openai/gpt-image-2.5-flare/edit |
 | AtlasCloud LTX 2.3 Quality Text-to-Video | ltx-2.3-quality/text-to-video |
 | AtlasCloud LTX 2.3 Quality Image-to-Video | ltx-2.3-quality/image-to-video |
 | AtlasCloud LTX 2.3 Quality Extend Video | ltx-2.3-quality/extend-video |
