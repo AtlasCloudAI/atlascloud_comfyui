@@ -303,6 +303,8 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud MiniMax H3-Developer Reference-to-Video | minimax/h3-developer/reference-to-video |
 | AtlasCloud MiniMax H3 Max Text-to-Video | minimax/h3-max/text-to-video |
 | AtlasCloud MiniMax H3 Max Image-to-Video | minimax/h3-max/image-to-video |
+| AtlasCloud MiniMax H3 Max Turbo Text-to-Video | minimax/h3-max-turbo/text-to-video |
+| AtlasCloud MiniMax H3 Max Turbo Image-to-Video | minimax/h3-max-turbo/image-to-video |
 | AtlasCloud MiniMax H3 Fast Text-to-Video | minimax/h3-fast/text-to-video |
 | AtlasCloud MiniMax H3 Fast Image-to-Video | minimax/h3-fast/image-to-video |
 | AtlasCloud MiniMax H3 Fast Reference-to-Video | minimax/h3-fast/reference-to-video |
