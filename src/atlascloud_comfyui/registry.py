@@ -267,6 +267,8 @@ from atlascloud_comfyui.nodes.video.minimax_h3_developer_i2v import AtlasMinimax
 from atlascloud_comfyui.nodes.video.minimax_h3_developer_r2v import AtlasMinimaxH3DeveloperReferenceToVideo
 from atlascloud_comfyui.nodes.video.minimax_h3_max_t2v import AtlasMinimaxH3MaxTextToVideo
 from atlascloud_comfyui.nodes.video.minimax_h3_max_i2v import AtlasMinimaxH3MaxImageToVideo
+from atlascloud_comfyui.nodes.video.minimax_h3_max_turbo_t2v import AtlasMinimaxH3MaxTurboTextToVideo
+from atlascloud_comfyui.nodes.video.minimax_h3_max_turbo_i2v import AtlasMinimaxH3MaxTurboImageToVideo
 from atlascloud_comfyui.nodes.video.minimax_h3_fast_t2v import AtlasMinimaxH3FastTextToVideo
 from atlascloud_comfyui.nodes.video.minimax_h3_fast_i2v import AtlasMinimaxH3FastImageToVideo
 from atlascloud_comfyui.nodes.video.minimax_h3_fast_r2v import AtlasMinimaxH3FastReferenceToVideo
@@ -740,6 +742,8 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud MiniMax H3-Developer Reference-to-Video": AtlasMinimaxH3DeveloperReferenceToVideo,
     "AtlasCloud MiniMax H3 Max Text-to-Video": AtlasMinimaxH3MaxTextToVideo,
     "AtlasCloud MiniMax H3 Max Image-to-Video": AtlasMinimaxH3MaxImageToVideo,
+    "AtlasCloud MiniMax H3 Max Turbo Text-to-Video": AtlasMinimaxH3MaxTurboTextToVideo,
+    "AtlasCloud MiniMax H3 Max Turbo Image-to-Video": AtlasMinimaxH3MaxTurboImageToVideo,
     "AtlasCloud MiniMax H3 Fast Text-to-Video": AtlasMinimaxH3FastTextToVideo,
     "AtlasCloud MiniMax H3 Fast Image-to-Video": AtlasMinimaxH3FastImageToVideo,
     "AtlasCloud MiniMax H3 Fast Reference-to-Video": AtlasMinimaxH3FastReferenceToVideo,
@@ -1147,6 +1151,8 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud MiniMax H3-Developer Reference-to-Video": "AtlasCloud MiniMax H3-Developer Reference-to-Video",
     "AtlasCloud MiniMax H3 Max Text-to-Video": "AtlasCloud MiniMax H3 Max Text-to-Video",
     "AtlasCloud MiniMax H3 Max Image-to-Video": "AtlasCloud MiniMax H3 Max Image-to-Video",
+    "AtlasCloud MiniMax H3 Max Turbo Text-to-Video": "AtlasCloud MiniMax H3 Max Turbo Text-to-Video",
+    "AtlasCloud MiniMax H3 Max Turbo Image-to-Video": "AtlasCloud MiniMax H3 Max Turbo Image-to-Video",
     "AtlasCloud MiniMax H3 Fast Text-to-Video": "AtlasCloud MiniMax H3 Fast Text-to-Video",
     "AtlasCloud MiniMax H3 Fast Image-to-Video": "AtlasCloud MiniMax H3 Fast Image-to-Video",
     "AtlasCloud MiniMax H3 Fast Reference-to-Video": "AtlasCloud MiniMax H3 Fast Reference-to-Video",
