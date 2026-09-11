@@ -435,6 +435,10 @@ from atlascloud_comfyui.nodes.image.mai_image_25_edit import AtlasMAIImage25Edit
 from atlascloud_comfyui.nodes.image.mai_image_25_flash_edit import AtlasMAIImage25FlashEdit
 from atlascloud_comfyui.nodes.image.mai_image_25_pro_t2i import AtlasMAIImage25ProTextToImage
 from atlascloud_comfyui.nodes.image.mai_image_25_pro_edit import AtlasMAIImage25ProEdit
+from atlascloud_comfyui.nodes.image.mai_image_26_t2i import AtlasMAIImage26TextToImage
+from atlascloud_comfyui.nodes.image.mai_image_26_flash_t2i import AtlasMAIImage26FlashTextToImage
+from atlascloud_comfyui.nodes.image.mai_image_26_edit import AtlasMAIImage26Edit
+from atlascloud_comfyui.nodes.image.mai_image_26_flash_edit import AtlasMAIImage26FlashEdit
 from atlascloud_comfyui.nodes.video.vidu_q1_t2v import AtlasViduQ1TextToVideo
 from atlascloud_comfyui.nodes.video.vidu_q1_i2v import AtlasViduQ1ImageToVideo
 from atlascloud_comfyui.nodes.video.vidu_q1_start_end import AtlasViduQ1StartEndToVideo
@@ -487,6 +491,10 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud MAI-Image-2.5-Flash Edit": AtlasMAIImage25FlashEdit,
     "AtlasCloud MAI-Image-2.5-Pro Text-to-Image": AtlasMAIImage25ProTextToImage,
     "AtlasCloud MAI-Image-2.5-Pro Edit": AtlasMAIImage25ProEdit,
+    "AtlasCloud MAI-Image-2.6 Text-to-Image": AtlasMAIImage26TextToImage,
+    "AtlasCloud MAI-Image-2.6-Flash Text-to-Image": AtlasMAIImage26FlashTextToImage,
+    "AtlasCloud MAI-Image-2.6 Edit": AtlasMAIImage26Edit,
+    "AtlasCloud MAI-Image-2.6-Flash Edit": AtlasMAIImage26FlashEdit,
     "AtlasCloud WAN2.5 Image-Edit": AtlasWan25ImageEdit,
     "AtlasCloud WAN2.6 Image-Edit": AtlasWAN26ImageEdit,
     "AtlasCloud WAN2.6 Image-to-Video": AtlasWAN26ImageToVideo,
@@ -1320,6 +1328,10 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud FLUX 3 Extend Video": "AtlasCloud FLUX 3 Extend Video",
     "AtlasCloud Kling V3.0 Pro Motion Control": "AtlasCloud Kling V3.0 Pro Motion Control",
     "AtlasCloud Kling V3.0 Std Motion Control": "AtlasCloud Kling V3.0 Std Motion Control",
+    "AtlasCloud MAI-Image-2.6 Text-to-Image": "AtlasCloud MAI-Image-2.6 Text-to-Image",
+    "AtlasCloud MAI-Image-2.6-Flash Text-to-Image": "AtlasCloud MAI-Image-2.6-Flash Text-to-Image",
+    "AtlasCloud MAI-Image-2.6 Edit": "AtlasCloud MAI-Image-2.6 Edit",
+    "AtlasCloud MAI-Image-2.6-Flash Edit": "AtlasCloud MAI-Image-2.6-Flash Edit",
 }
 
 
