@@ -462,6 +462,8 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud MAI-Image-2.5 Text-to-Image | microsoft/mai-image-2.5/text-to-image |
 | AtlasCloud MAI-Image-2.5-Flash Text-to-Image | microsoft/mai-image-2.5-flash/text-to-image |
 | AtlasCloud MAI-Image-2.5-Pro Text-to-Image | microsoft/mai-image-2.5-pro/text-to-image |
+| AtlasCloud MAI-Image-2.6 Text-to-Image | microsoft/mai-image-2.6/text-to-image |
+| AtlasCloud MAI-Image-2.6-Flash Text-to-Image | microsoft/mai-image-2.6-flash/text-to-image |
 | AtlasCloud GPT Image-2 Text-to-Image | openai/gpt-image-2/text-to-image |
 | AtlasCloud GPT Image-2 Developer Text-to-Image | openai/gpt-image-2-developer/text-to-image |
 | AtlasCloud GPT Image-2.5 Sunburst Text-to-Image | openai/gpt-image-2.5-sunburst/text-to-image |
@@ -510,6 +512,8 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud MAI-Image-2.5 Edit | microsoft/mai-image-2.5/edit |
 | AtlasCloud MAI-Image-2.5-Flash Edit | microsoft/mai-image-2.5-flash/edit |
 | AtlasCloud MAI-Image-2.5-Pro Edit | microsoft/mai-image-2.5-pro/edit |
+| AtlasCloud MAI-Image-2.6 Edit | microsoft/mai-image-2.6/edit |
+| AtlasCloud MAI-Image-2.6-Flash Edit | microsoft/mai-image-2.6-flash/edit |
 | AtlasCloud Seedream V4 Edit | bytedance/seedream-v4/edit |
 | AtlasCloud Seedream V4 Edit Sequential | bytedance/seedream-v4/edit-sequential |
 | AtlasCloud Seedream V4.5 Edit | bytedance/seedream-v4.5/edit |
