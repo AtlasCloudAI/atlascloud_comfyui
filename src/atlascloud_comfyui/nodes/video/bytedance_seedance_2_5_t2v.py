@@ -29,6 +29,7 @@ class AtlasSeedance25TextToVideo:
             },
             "optional": {
                 "duration": (
+                    "INT",
                     _DURATIONS,
                     {"default": 5, "tooltip": "Duration (seconds), or -1 for auto"},
                 ),
