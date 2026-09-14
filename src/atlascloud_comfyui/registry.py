@@ -226,6 +226,10 @@ from atlascloud_comfyui.nodes.image.openai_gpt_image_25_sunburst_t2i import Atla
 from atlascloud_comfyui.nodes.image.openai_gpt_image_25_sunburst_edit import AtlasOpenAIGPTImage25SunburstEdit
 from atlascloud_comfyui.nodes.image.openai_gpt_image_25_flare_t2i import AtlasOpenAIGPTImage25FlareTextToImage
 from atlascloud_comfyui.nodes.image.openai_gpt_image_25_flare_edit import AtlasOpenAIGPTImage25FlareEdit
+from atlascloud_comfyui.nodes.image.openai_gpt_image_25_sunburst_developer_t2i import AtlasOpenAIGPTImage25SunburstDeveloperTextToImage
+from atlascloud_comfyui.nodes.image.openai_gpt_image_25_sunburst_developer_edit import AtlasOpenAIGPTImage25SunburstDeveloperEdit
+from atlascloud_comfyui.nodes.image.openai_gpt_image_25_flare_developer_t2i import AtlasOpenAIGPTImage25FlareDeveloperTextToImage
+from atlascloud_comfyui.nodes.image.openai_gpt_image_25_flare_developer_edit import AtlasOpenAIGPTImage25FlareDeveloperEdit
 from atlascloud_comfyui.nodes.deprecated.image.openai_gpt_image_2_dev_t2i import AtlasOpenAIGPTImage2DeveloperTextToImage
 from atlascloud_comfyui.nodes.deprecated.image.openai_gpt_image_2_dev_edit import AtlasOpenAIGPTImage2DeveloperEdit
 from atlascloud_comfyui.nodes.image.qwen_image_20_t2i import AtlasQwenImage20TextToImage
@@ -796,6 +800,10 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud GPT Image-2.5 Sunburst Edit": AtlasOpenAIGPTImage25SunburstEdit,
     "AtlasCloud GPT Image-2.5 Flare Text-to-Image": AtlasOpenAIGPTImage25FlareTextToImage,
     "AtlasCloud GPT Image-2.5 Flare Edit": AtlasOpenAIGPTImage25FlareEdit,
+    "AtlasCloud GPT Image-2.5 Sunburst Developer Text-to-Image": AtlasOpenAIGPTImage25SunburstDeveloperTextToImage,
+    "AtlasCloud GPT Image-2.5 Sunburst Developer Edit": AtlasOpenAIGPTImage25SunburstDeveloperEdit,
+    "AtlasCloud GPT Image-2.5 Flare Developer Text-to-Image": AtlasOpenAIGPTImage25FlareDeveloperTextToImage,
+    "AtlasCloud GPT Image-2.5 Flare Developer Edit": AtlasOpenAIGPTImage25FlareDeveloperEdit,
     "AtlasCloud Qwen Image 2.0 Text-to-Image": AtlasQwenImage20TextToImage,
     "AtlasCloud Qwen Image 2.0 Edit": AtlasQwenImage20Edit,
     "AtlasCloud Qwen Image 2.0 Pro Text-to-Image": AtlasQwenImage20ProTextToImage,
@@ -1203,6 +1211,10 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud GPT Image-2.5 Sunburst Edit": "AtlasCloud GPT Image-2.5 Sunburst Edit",
     "AtlasCloud GPT Image-2.5 Flare Text-to-Image": "AtlasCloud GPT Image-2.5 Flare Text-to-Image",
     "AtlasCloud GPT Image-2.5 Flare Edit": "AtlasCloud GPT Image-2.5 Flare Edit",
+    "AtlasCloud GPT Image-2.5 Sunburst Developer Text-to-Image": "AtlasCloud GPT Image-2.5 Sunburst Developer Text-to-Image",
+    "AtlasCloud GPT Image-2.5 Sunburst Developer Edit": "AtlasCloud GPT Image-2.5 Sunburst Developer Edit",
+    "AtlasCloud GPT Image-2.5 Flare Developer Text-to-Image": "AtlasCloud GPT Image-2.5 Flare Developer Text-to-Image",
+    "AtlasCloud GPT Image-2.5 Flare Developer Edit": "AtlasCloud GPT Image-2.5 Flare Developer Edit",
     "AtlasCloud Qwen Image 2.0 Text-to-Image": "AtlasCloud Qwen Image 2.0 Text-to-Image",
     "AtlasCloud Qwen Image 2.0 Edit": "AtlasCloud Qwen Image 2.0 Edit",
     "AtlasCloud Qwen Image 2.0 Pro Text-to-Image": "AtlasCloud Qwen Image 2.0 Pro Text-to-Image",
