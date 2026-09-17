@@ -554,6 +554,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud FLUX 3 First & Last Frame to Video | black-forest-labs/flux-3/first-last-frame-to-video |
 | AtlasCloud FLUX 3 Keyframes to Video | black-forest-labs/flux-3/keyframes-to-video |
 | AtlasCloud FLUX 3 Extend Video | black-forest-labs/flux-3/extend-video |
+| AtlasCloud FLUX 3 Edit Video | black-forest-labs/flux-3/edit-video |
 | AtlasCloud Kling V3.0 Pro Motion Control | kwaivgi/kling-v3.0-pro/motion-control |
 | AtlasCloud Kling V3.0 Std Motion Control | kwaivgi/kling-v3.0-std/motion-control |
 

@@ -328,6 +328,7 @@ from atlascloud_comfyui.nodes.video.flux3_i2v import AtlasFlux3ImageToVideo
 from atlascloud_comfyui.nodes.video.flux3_first_last_frame_to_video import AtlasFlux3FirstLastFrameToVideo
 from atlascloud_comfyui.nodes.video.flux3_keyframes_to_video import AtlasFlux3KeyframesToVideo
 from atlascloud_comfyui.nodes.video.flux3_extend_video import AtlasFlux3ExtendVideo
+from atlascloud_comfyui.nodes.video.flux3_edit_video import AtlasFlux3EditVideo
 from atlascloud_comfyui.nodes.video.kling_v30_pro_motion_control import AtlasKlingV30ProMotionControl
 from atlascloud_comfyui.nodes.video.kling_v30_std_motion_control import AtlasKlingV30StdMotionControl
 
@@ -909,6 +910,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud FLUX 3 First & Last Frame to Video": AtlasFlux3FirstLastFrameToVideo,
     "AtlasCloud FLUX 3 Keyframes to Video": AtlasFlux3KeyframesToVideo,
     "AtlasCloud FLUX 3 Extend Video": AtlasFlux3ExtendVideo,
+    "AtlasCloud FLUX 3 Edit Video": AtlasFlux3EditVideo,
     "AtlasCloud Kling V3.0 Pro Motion Control": AtlasKlingV30ProMotionControl,
     "AtlasCloud Kling V3.0 Std Motion Control": AtlasKlingV30StdMotionControl,
 }
@@ -1338,6 +1340,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud FLUX 3 First & Last Frame to Video": "AtlasCloud FLUX 3 First & Last Frame to Video",
     "AtlasCloud FLUX 3 Keyframes to Video": "AtlasCloud FLUX 3 Keyframes to Video",
     "AtlasCloud FLUX 3 Extend Video": "AtlasCloud FLUX 3 Extend Video",
+    "AtlasCloud FLUX 3 Edit Video": "AtlasCloud FLUX 3 Edit Video",
     "AtlasCloud Kling V3.0 Pro Motion Control": "AtlasCloud Kling V3.0 Pro Motion Control",
     "AtlasCloud Kling V3.0 Std Motion Control": "AtlasCloud Kling V3.0 Std Motion Control",
     "AtlasCloud MAI-Image-2.6 Text-to-Image": "AtlasCloud MAI-Image-2.6 Text-to-Image",
