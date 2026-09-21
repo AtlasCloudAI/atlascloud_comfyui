@@ -322,6 +322,16 @@ from atlascloud_comfyui.nodes.image.ideogram_v4_quality_t2i import AtlasIdeogram
 from atlascloud_comfyui.nodes.video.ltx_2_3_quality_t2v import AtlasLtx23QualityTextToVideo
 from atlascloud_comfyui.nodes.video.ltx_2_3_quality_i2v import AtlasLtx23QualityImageToVideo
 from atlascloud_comfyui.nodes.video.ltx_2_3_quality_extend_video import AtlasLtx23QualityExtendVideo
+from atlascloud_comfyui.nodes.video.ltx_2_3_fast_t2v import AtlasLtx23FastTextToVideo
+from atlascloud_comfyui.nodes.video.ltx_2_3_fast_i2v import AtlasLtx23FastImageToVideo
+from atlascloud_comfyui.nodes.video.ltx_2_3_pro_t2v import AtlasLtx23ProTextToVideo
+from atlascloud_comfyui.nodes.video.ltx_2_3_pro_i2v import AtlasLtx23ProImageToVideo
+from atlascloud_comfyui.nodes.video.ltx_2_3_pro_a2v import AtlasLtx23ProAudioToVideo
+from atlascloud_comfyui.nodes.video.ltx_2_5_fast_t2v import AtlasLtx25FastTextToVideo
+from atlascloud_comfyui.nodes.video.ltx_2_5_fast_i2v import AtlasLtx25FastImageToVideo
+from atlascloud_comfyui.nodes.video.ltx_2_5_pro_t2v import AtlasLtx25ProTextToVideo
+from atlascloud_comfyui.nodes.video.ltx_2_5_pro_i2v import AtlasLtx25ProImageToVideo
+from atlascloud_comfyui.nodes.video.ltx_2_5_pro_a2v import AtlasLtx25ProAudioToVideo
 
 from atlascloud_comfyui.nodes.video.flux3_t2v import AtlasFlux3TextToVideo
 from atlascloud_comfyui.nodes.video.flux3_i2v import AtlasFlux3ImageToVideo
@@ -905,6 +915,16 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud LTX 2.3 Quality Text-to-Video": AtlasLtx23QualityTextToVideo,
     "AtlasCloud LTX 2.3 Quality Image-to-Video": AtlasLtx23QualityImageToVideo,
     "AtlasCloud LTX 2.3 Quality Extend Video": AtlasLtx23QualityExtendVideo,
+    "AtlasCloud LTX 2.3 Fast Text-to-Video": AtlasLtx23FastTextToVideo,
+    "AtlasCloud LTX 2.3 Fast Image-to-Video": AtlasLtx23FastImageToVideo,
+    "AtlasCloud LTX 2.3 Pro Text-to-Video": AtlasLtx23ProTextToVideo,
+    "AtlasCloud LTX 2.3 Pro Image-to-Video": AtlasLtx23ProImageToVideo,
+    "AtlasCloud LTX 2.3 Pro Audio-to-Video": AtlasLtx23ProAudioToVideo,
+    "AtlasCloud LTX 2.5 Fast Text-to-Video": AtlasLtx25FastTextToVideo,
+    "AtlasCloud LTX 2.5 Fast Image-to-Video": AtlasLtx25FastImageToVideo,
+    "AtlasCloud LTX 2.5 Pro Text-to-Video": AtlasLtx25ProTextToVideo,
+    "AtlasCloud LTX 2.5 Pro Image-to-Video": AtlasLtx25ProImageToVideo,
+    "AtlasCloud LTX 2.5 Pro Audio-to-Video": AtlasLtx25ProAudioToVideo,
     "AtlasCloud FLUX 3 Text-to-Video": AtlasFlux3TextToVideo,
     "AtlasCloud FLUX 3 Image-to-Video": AtlasFlux3ImageToVideo,
     "AtlasCloud FLUX 3 First & Last Frame to Video": AtlasFlux3FirstLastFrameToVideo,
@@ -1335,6 +1355,16 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud LTX 2.3 Quality Text-to-Video": "AtlasCloud LTX 2.3 Quality Text-to-Video",
     "AtlasCloud LTX 2.3 Quality Image-to-Video": "AtlasCloud LTX 2.3 Quality Image-to-Video",
     "AtlasCloud LTX 2.3 Quality Extend Video": "AtlasCloud LTX 2.3 Quality Extend Video",
+    "AtlasCloud LTX 2.3 Fast Text-to-Video": "AtlasCloud LTX 2.3 Fast Text-to-Video",
+    "AtlasCloud LTX 2.3 Fast Image-to-Video": "AtlasCloud LTX 2.3 Fast Image-to-Video",
+    "AtlasCloud LTX 2.3 Pro Text-to-Video": "AtlasCloud LTX 2.3 Pro Text-to-Video",
+    "AtlasCloud LTX 2.3 Pro Image-to-Video": "AtlasCloud LTX 2.3 Pro Image-to-Video",
+    "AtlasCloud LTX 2.3 Pro Audio-to-Video": "AtlasCloud LTX 2.3 Pro Audio-to-Video",
+    "AtlasCloud LTX 2.5 Fast Text-to-Video": "AtlasCloud LTX 2.5 Fast Text-to-Video",
+    "AtlasCloud LTX 2.5 Fast Image-to-Video": "AtlasCloud LTX 2.5 Fast Image-to-Video",
+    "AtlasCloud LTX 2.5 Pro Text-to-Video": "AtlasCloud LTX 2.5 Pro Text-to-Video",
+    "AtlasCloud LTX 2.5 Pro Image-to-Video": "AtlasCloud LTX 2.5 Pro Image-to-Video",
+    "AtlasCloud LTX 2.5 Pro Audio-to-Video": "AtlasCloud LTX 2.5 Pro Audio-to-Video",
     "AtlasCloud FLUX 3 Text-to-Video": "AtlasCloud FLUX 3 Text-to-Video",
     "AtlasCloud FLUX 3 Image-to-Video": "AtlasCloud FLUX 3 Image-to-Video",
     "AtlasCloud FLUX 3 First & Last Frame to Video": "AtlasCloud FLUX 3 First & Last Frame to Video",
