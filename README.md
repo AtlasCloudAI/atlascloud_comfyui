@@ -549,6 +549,16 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud LTX 2.3 Quality Text-to-Video | ltx-2.3-quality/text-to-video |
 | AtlasCloud LTX 2.3 Quality Image-to-Video | ltx-2.3-quality/image-to-video |
 | AtlasCloud LTX 2.3 Quality Extend Video | ltx-2.3-quality/extend-video |
+| AtlasCloud LTX 2.3 Fast Text-to-Video | ltx/ltx-2.3-fast/text-to-video |
+| AtlasCloud LTX 2.3 Fast Image-to-Video | ltx/ltx-2.3-fast/image-to-video |
+| AtlasCloud LTX 2.3 Pro Text-to-Video | ltx/ltx-2.3-pro/text-to-video |
+| AtlasCloud LTX 2.3 Pro Image-to-Video | ltx/ltx-2.3-pro/image-to-video |
+| AtlasCloud LTX 2.3 Pro Audio-to-Video | ltx/ltx-2.3-pro/audio-to-video |
+| AtlasCloud LTX 2.5 Fast Text-to-Video | ltx/ltx-2.5-fast/text-to-video |
+| AtlasCloud LTX 2.5 Fast Image-to-Video | ltx/ltx-2.5-fast/image-to-video |
+| AtlasCloud LTX 2.5 Pro Text-to-Video | ltx/ltx-2.5-pro/text-to-video |
+| AtlasCloud LTX 2.5 Pro Image-to-Video | ltx/ltx-2.5-pro/image-to-video |
+| AtlasCloud LTX 2.5 Pro Audio-to-Video | ltx/ltx-2.5-pro/audio-to-video |
 | AtlasCloud FLUX 3 Text-to-Video | black-forest-labs/flux-3/text-to-video |
 | AtlasCloud FLUX 3 Image-to-Video | black-forest-labs/flux-3/image-to-video |
 | AtlasCloud FLUX 3 First & Last Frame to Video | black-forest-labs/flux-3/first-last-frame-to-video |
