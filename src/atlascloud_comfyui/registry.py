@@ -332,6 +332,7 @@ from atlascloud_comfyui.nodes.video.ltx_2_5_fast_i2v import AtlasLtx25FastImageT
 from atlascloud_comfyui.nodes.video.ltx_2_5_pro_t2v import AtlasLtx25ProTextToVideo
 from atlascloud_comfyui.nodes.video.ltx_2_5_pro_i2v import AtlasLtx25ProImageToVideo
 from atlascloud_comfyui.nodes.video.ltx_2_5_pro_a2v import AtlasLtx25ProAudioToVideo
+from atlascloud_comfyui.nodes.video.ltx_2_5_fast_a2v import AtlasLtx25FastAudioToVideo
 
 from atlascloud_comfyui.nodes.video.flux3_t2v import AtlasFlux3TextToVideo
 from atlascloud_comfyui.nodes.video.flux3_i2v import AtlasFlux3ImageToVideo
@@ -925,6 +926,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud LTX 2.5 Pro Text-to-Video": AtlasLtx25ProTextToVideo,
     "AtlasCloud LTX 2.5 Pro Image-to-Video": AtlasLtx25ProImageToVideo,
     "AtlasCloud LTX 2.5 Pro Audio-to-Video": AtlasLtx25ProAudioToVideo,
+    "AtlasCloud LTX 2.5 Fast Audio-to-Video": AtlasLtx25FastAudioToVideo,
     "AtlasCloud FLUX 3 Text-to-Video": AtlasFlux3TextToVideo,
     "AtlasCloud FLUX 3 Image-to-Video": AtlasFlux3ImageToVideo,
     "AtlasCloud FLUX 3 First & Last Frame to Video": AtlasFlux3FirstLastFrameToVideo,
@@ -1365,6 +1367,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud LTX 2.5 Pro Text-to-Video": "AtlasCloud LTX 2.5 Pro Text-to-Video",
     "AtlasCloud LTX 2.5 Pro Image-to-Video": "AtlasCloud LTX 2.5 Pro Image-to-Video",
     "AtlasCloud LTX 2.5 Pro Audio-to-Video": "AtlasCloud LTX 2.5 Pro Audio-to-Video",
+    "AtlasCloud LTX 2.5 Fast Audio-to-Video": "AtlasCloud LTX 2.5 Fast Audio-to-Video",
     "AtlasCloud FLUX 3 Text-to-Video": "AtlasCloud FLUX 3 Text-to-Video",
     "AtlasCloud FLUX 3 Image-to-Video": "AtlasCloud FLUX 3 Image-to-Video",
     "AtlasCloud FLUX 3 First & Last Frame to Video": "AtlasCloud FLUX 3 First & Last Frame to Video",

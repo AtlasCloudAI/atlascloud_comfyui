@@ -559,6 +559,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud LTX 2.5 Pro Text-to-Video | ltx/ltx-2.5-pro/text-to-video |
 | AtlasCloud LTX 2.5 Pro Image-to-Video | ltx/ltx-2.5-pro/image-to-video |
 | AtlasCloud LTX 2.5 Pro Audio-to-Video | ltx/ltx-2.5-pro/audio-to-video |
+| AtlasCloud LTX 2.5 Fast Audio-to-Video | ltx/ltx-2.5-fast/audio-to-video |
 | AtlasCloud FLUX 3 Text-to-Video | black-forest-labs/flux-3/text-to-video |
 | AtlasCloud FLUX 3 Image-to-Video | black-forest-labs/flux-3/image-to-video |
 | AtlasCloud FLUX 3 First & Last Frame to Video | black-forest-labs/flux-3/first-last-frame-to-video |
