@@ -9,6 +9,8 @@ import uuid
 import urllib.request
 from typing import Dict
 
+from atlascloud_comfyui.path_safety import confine, safe_filename_part, safe_relative_dir
+
 
 def _load_image_bytes(source: str, timeout_sec: int = 60) -> bytes:
     s = (source or "").strip()
@@ -106,8 +108,9 @@ class AtlasImagePreviewURL:
         except Exception:
             output_dir = os.path.expanduser("~/Documents/ComfyUI/output")
 
-        safe_sub = (subfolder or "").strip().strip("/").strip("\\")
-        out_dir = os.path.join(output_dir, safe_sub) if safe_sub else output_dir
+        safe_sub = safe_relative_dir(subfolder)
+        prefix = safe_filename_part(filename_prefix)
+        out_dir = confine(os.path.join(output_dir, safe_sub) if safe_sub else output_dir, output_dir)
         os.makedirs(out_dir, exist_ok=True)
 
         stamp = time.strftime("%Y%m%d_%H%M%S")
@@ -115,8 +118,8 @@ class AtlasImagePreviewURL:
         if ext not in ("png", "jpg", "webp"):
             ext = "png"
 
-        filename = f"{filename_prefix}_{stamp}_{uuid.uuid4().hex[:8]}.{ext}"
-        file_path = os.path.join(out_dir, filename)
+        filename = f"{prefix}_{stamp}_{uuid.uuid4().hex[:8]}.{ext}"
+        file_path = confine(os.path.join(out_dir, filename), output_dir)
 
         save_kwargs = {}
         if ext in ("jpg", "webp"):

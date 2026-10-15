@@ -7,6 +7,8 @@ import urllib.request
 from urllib.parse import urlencode, urlparse
 from typing import Dict
 
+from atlascloud_comfyui.path_safety import confine, safe_filename_part, safe_relative_dir
+
 
 def _guess_ext_from_url(url: str) -> str:
     path = urlparse(url).path or ""
@@ -75,14 +77,15 @@ class AtlasVideoPreviewer:
             # Fallback for non-ComfyUI contexts (adjust if your output dir differs)
             output_dir = os.path.expanduser("~/Documents/ComfyUI/output")
 
-        safe_sub = (subfolder or "").strip().strip("/").strip("\\")
-        out_folder = os.path.join(output_dir, safe_sub) if safe_sub else output_dir
+        safe_sub = safe_relative_dir(subfolder)
+        prefix = safe_filename_part(filename_prefix)
+        out_folder = confine(os.path.join(output_dir, safe_sub) if safe_sub else output_dir, output_dir)
         os.makedirs(out_folder, exist_ok=True)
 
         ext = _guess_ext_from_url(video_url)
         stamp = time.strftime("%Y%m%d_%H%M%S")
-        name = f"{filename_prefix}_{stamp}_{uuid.uuid4().hex[:8]}{ext}"
-        dst_path = os.path.join(out_folder, name)
+        name = f"{prefix}_{stamp}_{uuid.uuid4().hex[:8]}{ext}"
+        dst_path = confine(os.path.join(out_folder, name), output_dir)
 
         if (not overwrite) and os.path.exists(dst_path):
             raise RuntimeError(f"File already exists: {dst_path}")
