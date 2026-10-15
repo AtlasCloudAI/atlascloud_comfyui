@@ -30,13 +30,13 @@ class AtlasSeedance20FastTextToVideo:
                     [-1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
                     {"default": 5, "tooltip": "Duration (seconds), or -1 for auto"},
                 ),
-                "resolution": (["480p", "720p", "1080p", "1080p-SR"], {"default": "720p", "tooltip": "Resolution (1080p = 原生1080p; 1080p-SR = 720p超分到1080p,更快更省但画质略降)"}),
+                "resolution": (["480p", "720p", "1080p", "1080p-SR"], {"default": "720p", "tooltip": "Resolution (1080p = native 1080p; 1080p-SR = 720p upscaled to 1080p, faster and cheaper but slightly lower quality)"}),
                 "ratio": (
                     ["16:9", "4:3", "1:1", "3:4", "9:16", "21:9", "adaptive"],
                     {"default": "adaptive", "tooltip": "Aspect ratio (adaptive = auto)"},
                 ),
-                "randomize_seed": ("BOOLEAN", {"default": True, "tooltip": "开启后每次生成随机结果；关闭后使用下方固定 seed"}),
-                "seed": ("INT", {"default": 0, "min": 0, "max": 4294967295, "tooltip": "固定 seed（仅在随机开关关闭时生效）"}),
+                "randomize_seed": ("BOOLEAN", {"default": True, "tooltip": "When on, each run uses a random seed; when off, the fixed seed below is used"}),
+                "seed": ("INT", {"default": 0, "min": 0, "max": 4294967295, "tooltip": "Fixed seed (only used when randomize_seed is off)"}),
                 "generate_audio": ("BOOLEAN", {"default": True, "tooltip": "Generate audio"}),
                 "watermark": ("BOOLEAN", {"default": False, "tooltip": "Add watermark"}),
                 "return_last_frame": ("BOOLEAN", {"default": False, "tooltip": "Return last frame (if supported)"}),
@@ -66,9 +66,9 @@ class AtlasSeedance20FastTextToVideo:
         poll_interval_sec: float = 2.0,
         timeout_sec: int = 900,
     ) -> Tuple[str, str]:
-        # ⚡ async 节点:把阻塞的"提交 + 轮询"丢到线程池,本协程立即让出事件循环。
-        # 这样同一个工作流里多个【相互独立】的视频节点会被 ComfyUI【并发】调度,
-        # 在云端同时生成,总耗时 ≈ 最慢的那一个,而不是逐个排队相加。
+        # async node: run the blocking "submit + poll" in a thread pool and yield the event loop immediately.
+        # This lets ComfyUI schedule several independent video nodes in one workflow concurrently,
+        # generating in the cloud at the same time: total time is about the slowest one, not the sum.
         import asyncio
 
         loop = asyncio.get_event_loop()

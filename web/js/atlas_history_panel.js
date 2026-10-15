@@ -467,7 +467,7 @@ function ensureUi() {
   if (!button) {
     button = document.createElement("button");
     button.id = BUTTON_ID;
-    button.textContent = "Atlas 历史中心";
+    button.textContent = "Atlas History";
     document.body.appendChild(button);
   }
 
@@ -479,28 +479,28 @@ function ensureUi() {
       <div class="atlas-history-sidebar">
         <div class="atlas-history-header">
           <div class="atlas-history-title-wrap">
-            <div class="atlas-history-title">Atlas 节点历史</div>
-            <div class="atlas-history-subtitle">只展示 Atlas 节点自己的提示词、传参与结果</div>
+            <div class="atlas-history-title">Atlas Node History</div>
+            <div class="atlas-history-subtitle">Shows prompts, parameters and results of Atlas nodes only</div>
           </div>
           <div class="atlas-history-toolbar">
-            <button id="atlas-history-refresh">刷新</button>
+            <button id="atlas-history-refresh">Refresh</button>
           </div>
         </div>
-        <div id="atlas-history-meta" class="atlas-history-meta">加载中...</div>
-        <input id="atlas-history-search" class="atlas-history-search" placeholder="搜索模型、节点、prompt、prediction_id" />
+        <div id="atlas-history-meta" class="atlas-history-meta">Loading...</div>
+        <input id="atlas-history-search" class="atlas-history-search" placeholder="Search model, node, prompt, prediction_id" />
         <div id="atlas-history-list" class="atlas-history-list"></div>
       </div>
       <div class="atlas-history-main">
         <div class="atlas-history-main-header">
           <div class="atlas-history-title-wrap">
-            <div class="atlas-history-title">历史详情</div>
-            <div class="atlas-history-subtitle">结构化查看输入提示词、参数与输出结果预览</div>
+            <div class="atlas-history-title">History Details</div>
+            <div class="atlas-history-subtitle">Structured view of input prompts, parameters and output previews</div>
           </div>
           <div class="atlas-history-toolbar">
-            <button id="atlas-history-close" class="atlas-secondary">关闭</button>
+            <button id="atlas-history-close" class="atlas-secondary">Close</button>
           </div>
         </div>
-        <div id="atlas-history-detail" class="atlas-history-main-content atlas-history-empty-main">点击左侧任意一条 Atlas 节点历史查看详情</div>
+        <div id="atlas-history-detail" class="atlas-history-main-content atlas-history-empty-main">Select an Atlas node history entry on the left to see details</div>
       </div>
     `;
     document.body.appendChild(panel);
@@ -520,7 +520,7 @@ function ensureUi() {
 }
 
 function getCardTitle(item) {
-  return item.node_context?.node_class || item.model || item.prediction_id || "未命名记录";
+  return item.node_context?.node_class || item.model || item.prediction_id || "Untitled run";
 }
 
 function getSearchText(item) {
@@ -540,7 +540,7 @@ function getSearchText(item) {
 function renderList(container, items, selectedPredictionId, onSelect) {
   container.innerHTML = "";
   if (!items.length) {
-    container.innerHTML = `<div class="atlas-history-empty">暂无 Atlas 节点历史记录</div>`;
+    container.innerHTML = `<div class="atlas-history-empty">No Atlas node history yet</div>`;
     return;
   }
 
@@ -556,8 +556,8 @@ function renderList(container, items, selectedPredictionId, onSelect) {
         ${renderStatus(item.latest_status)}
       </div>
       <div class="atlas-history-card-meta">${escapeHtml(item.request_kind || "")} · ${escapeHtml(formatTime(item.submitted_at))}</div>
-      <div class="atlas-history-card-meta">本地文件 ${escapeHtml(item.local_asset_count || 0)} · ${escapeHtml(item.prediction_id || "")}</div>
-      <div class="atlas-history-card-prompt">${escapeHtml(item.prompt_preview || "无 prompt")}</div>
+      <div class="atlas-history-card-meta">Local files ${escapeHtml(item.local_asset_count || 0)} · ${escapeHtml(item.prediction_id || "")}</div>
+      <div class="atlas-history-card-prompt">${escapeHtml(item.prompt_preview || "No prompt")}</div>
     `;
     card.addEventListener("click", () => onSelect(item.prediction_id));
     container.appendChild(card);
@@ -574,7 +574,7 @@ function formatValue(value) {
 function renderParamGrid(payload) {
   const entries = Object.entries(payload || {});
   if (!entries.length) {
-    return `<div class="atlas-history-empty">暂无结构化参数</div>`;
+    return `<div class="atlas-history-empty">No structured parameters</div>`;
   }
   return `
     <div class="atlas-param-grid">
@@ -616,7 +616,7 @@ function renderInputAssets(item) {
   const inputAssets = Array.isArray(item.input_downloaded_assets) ? item.input_downloaded_assets : [];
 
   if (!inputAssets.length) {
-    return `<div class="atlas-history-empty">暂无输入素材预览</div>`;
+    return `<div class="atlas-history-empty">No input asset preview</div>`;
   }
 
   return `
@@ -628,10 +628,10 @@ function renderInputAssets(item) {
               <div class="atlas-preview-title">${escapeHtml(asset.label || asset.filename || "input")}</div>
               ${asset.status === "downloaded" ? previewMarkup(asset.serve_path, inferAssetKind(asset.filename || asset.label, asset.serve_path, asset.mime_type)) : ""}
               <div class="atlas-preview-actions">
-                ${asset.status === "downloaded" ? `<a class="atlas-preview-link" href="${escapeHtml(asset.serve_path)}" target="_blank">打开本地素材</a>` : ""}
+                ${asset.status === "downloaded" ? `<a class="atlas-preview-link" href="${escapeHtml(asset.serve_path)}" target="_blank">Open local asset</a>` : ""}
               </div>
-              <div class="atlas-preview-meta">${asset.status === "downloaded" ? `本地路径: ${escapeHtml(asset.local_path || "-")}` : `下载失败: ${escapeHtml(asset.error || "")}`}</div>
-              ${asset.source_url ? `<div class="atlas-preview-meta">来源: ${escapeHtml(asset.source_url)}</div>` : ""}
+              <div class="atlas-preview-meta">${asset.status === "downloaded" ? `Local path: ${escapeHtml(asset.local_path || "-")}` : `Download failed: ${escapeHtml(asset.error || "")}`}</div>
+              ${asset.source_url ? `<div class="atlas-preview-meta">Source: ${escapeHtml(asset.source_url)}</div>` : ""}
             </div>
           `
         )
@@ -643,7 +643,7 @@ function renderInputAssets(item) {
 function renderOutputAssets(item) {
   const downloadedAssets = Array.isArray(item.downloaded_assets) ? item.downloaded_assets : [];
   if (!downloadedAssets.length) {
-    return `<div class="atlas-history-empty">暂无本地输出文件，可点击“补下载本地文件”</div>`;
+    return `<div class="atlas-history-empty">No local output files yet; click \"Download missing local files\"</div>`;
   }
 
   return `
@@ -653,8 +653,8 @@ function renderOutputAssets(item) {
           if (asset.status !== "downloaded") {
             return `
               <div class="atlas-preview-card">
-                <div class="atlas-preview-title">文件 ${escapeHtml(asset.index)}</div>
-                <div class="atlas-preview-meta">下载失败: ${escapeHtml(asset.error || "")}</div>
+                <div class="atlas-preview-title">File ${escapeHtml(asset.index)}</div>
+                <div class="atlas-preview-meta">Download failed: ${escapeHtml(asset.error || "")}</div>
               </div>
             `;
           }
@@ -662,13 +662,13 @@ function renderOutputAssets(item) {
           const kind = inferAssetKind(asset.filename, asset.serve_path, asset.mime_type);
           return `
             <div class="atlas-preview-card">
-              <div class="atlas-preview-title">${escapeHtml(asset.filename || `文件 ${asset.index}`)}</div>
+              <div class="atlas-preview-title">${escapeHtml(asset.filename || `File ${asset.index}`)}</div>
               ${previewMarkup(asset.serve_path, kind)}
               <div class="atlas-preview-actions">
-                <a class="atlas-preview-link" href="${escapeHtml(asset.serve_path)}" target="_blank">预览本地文件</a>
+                <a class="atlas-preview-link" href="${escapeHtml(asset.serve_path)}" target="_blank">Preview local file</a>
               </div>
-              <div class="atlas-preview-meta">本地路径: ${escapeHtml(asset.local_path || "-")}</div>
-              <div class="atlas-preview-meta">大小: ${escapeHtml(asset.size_bytes || "-")} bytes</div>
+              <div class="atlas-preview-meta">Local path: ${escapeHtml(asset.local_path || "-")}</div>
+              <div class="atlas-preview-meta">Size: ${escapeHtml(asset.size_bytes || "-")} bytes</div>
             </div>
           `;
         })
@@ -688,15 +688,15 @@ function renderDetail(item) {
     <div>
       <div class="atlas-detail-grid">
         <div class="atlas-kpi">
-          <div class="atlas-kpi-label">节点</div>
+          <div class="atlas-kpi-label">Node</div>
           <div class="atlas-kpi-value">${escapeHtml(nodeClass)}</div>
         </div>
         <div class="atlas-kpi">
-          <div class="atlas-kpi-label">模型</div>
+          <div class="atlas-kpi-label">Model</div>
           <div class="atlas-kpi-value">${escapeHtml(model)}</div>
         </div>
         <div class="atlas-kpi">
-          <div class="atlas-kpi-label">状态</div>
+          <div class="atlas-kpi-label">Status</div>
           <div class="atlas-kpi-value">${renderStatus(status)}</div>
         </div>
         <div class="atlas-kpi">
@@ -704,32 +704,32 @@ function renderDetail(item) {
           <div class="atlas-kpi-value">${escapeHtml(item.prediction_id || "-")}</div>
         </div>
         <div class="atlas-kpi">
-          <div class="atlas-kpi-label">提交时间</div>
+          <div class="atlas-kpi-label">Submitted</div>
           <div class="atlas-kpi-value">${escapeHtml(formatTime(item.submitted_at))}</div>
         </div>
         <div class="atlas-kpi">
-          <div class="atlas-kpi-label">完成时间</div>
+          <div class="atlas-kpi-label">Completed</div>
           <div class="atlas-kpi-value">${escapeHtml(formatTime(item.completed_at))}</div>
         </div>
       </div>
 
       <div class="atlas-section">
         <div class="atlas-section-header">
-          <div class="atlas-section-title">提示词</div>
+          <div class="atlas-section-title">Prompt</div>
           <div class="atlas-history-toolbar">
-            ${item.prompt_file?.serve_path ? `<a class="atlas-preview-link" href="${escapeHtml(item.prompt_file.serve_path)}" target="_blank">打开本地 prompt.txt</a>` : ""}
+            ${item.prompt_file?.serve_path ? `<a class="atlas-preview-link" href="${escapeHtml(item.prompt_file.serve_path)}" target="_blank">Open local prompt.txt</a>` : ""}
           </div>
         </div>
         <div class="atlas-section-body">
-          <div class="atlas-prompt">${escapeHtml(prompt || "无正向提示词")}</div>
-          ${negativePrompt ? `<div class="atlas-prompt" style="margin-top:12px;color:#94a3b8;">负向提示词: ${escapeHtml(negativePrompt)}</div>` : ""}
-          ${item.prompt_file?.local_path ? `<div class="atlas-preview-meta" style="margin-top:12px;">本地提示词文件: ${escapeHtml(item.prompt_file.local_path)}</div>` : ""}
+          <div class="atlas-prompt">${escapeHtml(prompt || "No positive prompt")}</div>
+          ${negativePrompt ? `<div class="atlas-prompt" style="margin-top:12px;color:#94a3b8;">Negative prompt: ${escapeHtml(negativePrompt)}</div>` : ""}
+          ${item.prompt_file?.local_path ? `<div class="atlas-preview-meta" style="margin-top:12px;">Local prompt file: ${escapeHtml(item.prompt_file.local_path)}</div>` : ""}
         </div>
       </div>
 
       <div class="atlas-section">
         <div class="atlas-section-header">
-          <div class="atlas-section-title">结构化传参</div>
+          <div class="atlas-section-title">Parameters</div>
         </div>
         <div class="atlas-section-body">
           ${renderParamGrid(payload)}
@@ -738,7 +738,7 @@ function renderDetail(item) {
 
       <div class="atlas-section">
         <div class="atlas-section-header">
-          <div class="atlas-section-title">输入素材预览</div>
+          <div class="atlas-section-title">Input Assets</div>
         </div>
         <div class="atlas-section-body">
           ${renderInputAssets(item)}
@@ -747,9 +747,9 @@ function renderDetail(item) {
 
       <div class="atlas-section">
         <div class="atlas-section-header">
-          <div class="atlas-section-title">输出结果预览</div>
+          <div class="atlas-section-title">Outputs</div>
           <div class="atlas-history-toolbar">
-            <button id="atlas-history-refresh-assets">补下载本地文件</button>
+            <button id="atlas-history-refresh-assets">Download missing local files</button>
           </div>
         </div>
         <div class="atlas-section-body">
@@ -759,7 +759,7 @@ function renderDetail(item) {
 
       <div class="atlas-section">
         <details>
-          <summary>查看原始 JSON</summary>
+          <summary>View raw JSON</summary>
           <pre class="atlas-raw-json">${escapeHtml(JSON.stringify(item, null, 2))}</pre>
         </details>
       </div>
@@ -794,31 +794,31 @@ app.registerExtension({
     }
 
     async function loadList() {
-      ui.meta.textContent = "加载中...";
+      ui.meta.textContent = "Loading...";
       try {
         const data = await fetchJson("/api/atlas/history/runs?limit=80");
         state.items = Array.isArray(data.items) ? data.items : [];
         state.selectedPredictionId ||= state.items[0]?.prediction_id || "";
-        ui.meta.textContent = `本地目录: ${data.history_dir || ""}`;
+        ui.meta.textContent = `Local directory: ${data.history_dir || ""}`;
         applyFilter();
         if (state.selectedPredictionId) {
           await loadDetail(state.selectedPredictionId);
         } else {
-          ui.detail.innerHTML = `<div class="atlas-history-empty-main">还没有 Atlas 节点历史，先跑一个 Atlas 节点任务再回来查看。</div>`;
+          ui.detail.innerHTML = `<div class="atlas-history-empty-main">No Atlas node history yet. Run an Atlas node first, then come back.</div>`;
         }
       } catch (error) {
-        ui.meta.textContent = `加载失败: ${error}`;
+        ui.meta.textContent = `Failed to load: ${error}`;
         state.items = [];
         state.filteredItems = [];
         renderList(ui.list, [], "", loadDetail);
-        ui.detail.innerHTML = `<div class="atlas-history-empty-main">接口不可用，请先重启 ComfyUI。</div>`;
+        ui.detail.innerHTML = `<div class="atlas-history-empty-main">API unavailable. Please restart ComfyUI.</div>`;
       }
     }
 
     async function loadDetail(predictionId) {
       state.selectedPredictionId = predictionId;
       renderList(ui.list, state.filteredItems, state.selectedPredictionId, loadDetail);
-      ui.detail.innerHTML = `<div class="atlas-history-empty-main">详情加载中...</div>`;
+      ui.detail.innerHTML = `<div class="atlas-history-empty-main">Loading details...</div>`;
       try {
         const data = await fetchJson(`/api/atlas/history/runs/${encodeURIComponent(predictionId)}`);
         ui.detail.innerHTML = renderDetail(data.item || {});
@@ -826,7 +826,7 @@ app.registerExtension({
         if (refreshAssetsButton) {
           refreshAssetsButton.addEventListener("click", async () => {
             refreshAssetsButton.disabled = true;
-            refreshAssetsButton.textContent = "补下载中...";
+            refreshAssetsButton.textContent = "Downloading...";
             try {
               const refreshed = await postJson(`/api/atlas/history/runs/${encodeURIComponent(predictionId)}/refresh-assets`);
               ui.detail.innerHTML = renderDetail(refreshed.item || {});
@@ -838,13 +838,13 @@ app.registerExtension({
             } catch (error) {
               ui.detail.insertAdjacentHTML(
                 "afterbegin",
-                `<div class="atlas-history-empty" style="margin-bottom:14px;color:#fca5a5;">补下载失败: ${escapeHtml(error)}</div>`
+                `<div class="atlas-history-empty" style="margin-bottom:14px;color:#fca5a5;">Download failed: ${escapeHtml(error)}</div>`
               );
             }
           });
         }
       } catch (error) {
-        ui.detail.innerHTML = `<div class="atlas-history-empty-main">加载详情失败: ${escapeHtml(error)}</div>`;
+        ui.detail.innerHTML = `<div class="atlas-history-empty-main">Failed to load details: ${escapeHtml(error)}</div>`;
       }
     }
 

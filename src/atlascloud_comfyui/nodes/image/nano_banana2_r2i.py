@@ -20,8 +20,8 @@ class AtlasNanoBanana2ReferenceToImage:
                 "video_url": ("STRING", {"default": "", "tooltip": "Source video clip URL (HTTP <=15MB or YouTube URL)"}),
             },
             "optional": {
-                "randomize_seed": ("BOOLEAN", {"default": True, "tooltip": "开启后每次生成随机结果；关闭后使用下方固定 seed"}),
-                "seed": ("INT", {"default": 0, "min": 0, "max": 4294967295, "tooltip": "固定 seed（仅在随机开关关闭时生效）"}),
+                "randomize_seed": ("BOOLEAN", {"default": True, "tooltip": "When on, each run uses a random seed; when off, the fixed seed below is used"}),
+                "seed": ("INT", {"default": 0, "min": 0, "max": 4294967295, "tooltip": "Fixed seed (only used when randomize_seed is off)"}),
                 "video_start": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 86400.0, "tooltip": "Trim start (seconds)"}),
                 "video_ends": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 86400.0, "tooltip": "Trim end (seconds); 0 = whole video"}),
                 "video_fps": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 24.0, "tooltip": "FPS of the video clip"}),

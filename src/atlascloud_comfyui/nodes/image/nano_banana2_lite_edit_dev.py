@@ -27,8 +27,8 @@ class AtlasNanoBanana2LiteEditDev:
                 "enable_base64_output": ("BOOLEAN", {"default": False, "tooltip": "Return base64 instead of URL if supported"}),
             },
             "optional": {
-                "randomize_seed": ("BOOLEAN", {"default": True, "tooltip": "开启后每次生成随机结果；关闭后使用下方固定 seed"}),
-                "seed": ("INT", {"default": 0, "min": 0, "max": 4294967295, "tooltip": "固定 seed（仅在随机开关关闭时生效）"}),
+                "randomize_seed": ("BOOLEAN", {"default": True, "tooltip": "When on, each run uses a random seed; when off, the fixed seed below is used"}),
+                "seed": ("INT", {"default": 0, "min": 0, "max": 4294967295, "tooltip": "Fixed seed (only used when randomize_seed is off)"}),
                 "poll_interval_sec": ("FLOAT", {"default": 2.0, "min": 0.5, "max": 10.0, "tooltip": "Polling interval (seconds)"}),
                 "timeout_sec": ("INT", {"default": 300, "min": 30, "max": 7200, "tooltip": "Timeout (seconds)"}),
             },

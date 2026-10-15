@@ -211,7 +211,7 @@ class AtlasClient:
         *,
         poll_interval_sec: float = 2.0,
         timeout_sec: float = 900,
-        warmup_grace_sec: float = 30.0,  # ✅ 建议 30s：job 刚创建时 prediction 可能暂时查不到
+        warmup_grace_sec: float = 30.0,  # ✅ recommended 30s: a prediction may not be queryable right after the job is created
     ):
         import requests
 
@@ -227,7 +227,7 @@ class AtlasClient:
         if not prediction_id:
             raise AtlasError("prediction_id is empty")
 
-        # ✅ 只保留正确的 endpoint（不要再试 /prediction 这种不存在的路径）
+        # ✅ keep only the correct endpoint (do not probe non-existent paths such as /prediction)
         url_candidates = [
             f"{self.base_url}/api/v1/model/prediction/{prediction_id}",
             f"{self.base_url}/api/v1/model/prediction/{prediction_id}/",
@@ -265,7 +265,7 @@ class AtlasClient:
                     r = requests.get(
                         url,
                         headers=self._auth_headers(),
-                        params=self.tracking_params,  # ✅ utm params OK，但只作为 query
+                        params=self.tracking_params,  # ✅ utm params are fine, but only as query params
                         timeout=60,
                     )
 
@@ -293,7 +293,7 @@ class AtlasClient:
                         )
                         raise AtlasError(f"{err} (error_code={code})" if code else str(err))
 
-                    # ✅ 401/403/422：不可重试，立即抛出，避免认证失败等错误被隐藏到超时
+                    # ✅ 401/403/422: not retryable, raise immediately so auth failures are not hidden until timeout
                     if r.status_code in (401, 403, 422):
                         body = (r.text or "")[:800]
                         self.history.record_failure(
@@ -302,14 +302,14 @@ class AtlasClient:
                         )
                         raise AtlasError(f"Prediction query failed (http={r.status_code}) url={url} body={body}")
 
-                    # ✅ 400/404：很多异步系统刚创建会短暂查不到，warmup 内继续轮询
+                    # ✅ 400/404: many async systems briefly cannot find a just-created job, keep polling during warmup
                     if r.status_code in (400, 404):
                         got_response = True
                         last_http = r.status_code
                         last_body = (r.text or "")[:800]
                         if elapsed <= float(warmup_grace_sec):
                             continue  # try next candidate / keep polling
-                        # warmup 过了仍然 400/404 才报错，并打印 body
+                        # only raise (and print the body) if 400/404 persists after warmup
                         self.history.record_failure(
                             prediction_id,
                             error_message=f"Prediction query failed (http={r.status_code}) url={url} body={last_body}",
@@ -326,7 +326,7 @@ class AtlasClient:
                     resp = getattr(e, "response", None)
                     last_http = getattr(resp, "status_code", None)
                     last_body = (getattr(resp, "text", "") or "")[:800] if resp is not None else repr(e)
-                    # 401/403/422 不可重试，立即抛出，避免认证失败等错误被隐藏到超时
+                    # 401/403/422 are not retryable, raise immediately so auth failures are not hidden until timeout
                     if last_http in (401, 403, 422):
                         self.history.record_failure(
                             prediction_id,

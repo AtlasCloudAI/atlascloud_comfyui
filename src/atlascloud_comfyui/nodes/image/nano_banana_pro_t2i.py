@@ -24,8 +24,8 @@ class AtlasNanoBananaProTextToImage:
                 "resolution": (["1k", "2k", "4k"], {"default": "1k", "tooltip": "Resolution preset"}),
             },
             "optional": {
-                "randomize_seed": ("BOOLEAN", {"default": True, "tooltip": "开启后每次生成随机结果；关闭后使用下方固定 seed"}),
-                "seed": ("INT", {"default": 0, "min": 0, "max": 4294967295, "tooltip": "固定 seed（仅在随机开关关闭时生效）"}),
+                "randomize_seed": ("BOOLEAN", {"default": True, "tooltip": "When on, each run uses a random seed; when off, the fixed seed below is used"}),
+                "seed": ("INT", {"default": 0, "min": 0, "max": 4294967295, "tooltip": "Fixed seed (only used when randomize_seed is off)"}),
                 "enable_base64_output": ("BOOLEAN", {"default": False, "tooltip": "Return base64 instead of URL if supported"}),
                 "enable_sync_mode": ("BOOLEAN", {"default": False, "tooltip": "If true, server may try to return result synchronously"}),
                 "poll_interval_sec": ("FLOAT", {"default": 2.0, "min": 0.5, "max": 10.0, "tooltip": "Polling interval (seconds)"}),
