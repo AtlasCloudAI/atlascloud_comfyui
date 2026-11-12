@@ -19,8 +19,8 @@ class AtlasSeedreamV50ProTextToImage:
                 "prompt": ("STRING", {"multiline": True, "tooltip": "Text prompt (recommended under 600 English words)"}),
                 "size": (
                     [
-                        "2048*2048", "2304*1728", "1728*2304", "2720*1530", "1530*2720",
-                        "2496*1664", "1664*2496", "1024*1024", "1536*1536",
+                        "2048*2048", "2368*1776", "1776*2368", "2816*1584", "1584*2816",
+                        "2496*1664", "1664*2496", "3136*1344", "1024*1024", "1536*1536",
                         "1776*1328", "1328*1776", "2048*1152", "1152*2048",
                     ],
                     {"default": "2048*2048", "tooltip": "Output image size WIDTH*HEIGHT"},
@@ -29,6 +29,8 @@ class AtlasSeedreamV50ProTextToImage:
                 "enable_base64_output": ("BOOLEAN", {"default": False, "tooltip": "Return base64 instead of URL if supported"}),
             },
             "optional": {
+                "thinking": (["enabled", "disabled"], {"default": "enabled", "tooltip": "Prompt-optimization thinking; disable for faster generation"}),
+                "prompt_optimization_mode": (["standard", "fast"], {"default": "standard", "tooltip": "fast trades some prompt-optimization quality for speed"}),
                 "poll_interval_sec": ("FLOAT", {"default": 2.0, "min": 0.5, "max": 10.0, "tooltip": "Polling interval (seconds)"}),
                 "timeout_sec": ("INT", {"default": 300, "min": 30, "max": 7200, "tooltip": "Timeout (seconds)"}),
             },
@@ -43,6 +45,8 @@ class AtlasSeedreamV50ProTextToImage:
         enable_base64_output: bool,
         poll_interval_sec: float = 2.0,
         timeout_sec: int = 300,
+        thinking: str = "enabled",
+        prompt_optimization_mode: str = "standard",
     ) -> Tuple[str, str]:
         client = atlas_client.client
 
@@ -52,6 +56,8 @@ class AtlasSeedreamV50ProTextToImage:
             "size": size,
             "output_format": output_format,
             "enable_base64_output": bool(enable_base64_output),
+            "thinking": thinking,
+            "prompt_optimization_mode": prompt_optimization_mode,
         }
 
         prediction_id = client.generate_image(payload)

@@ -5,6 +5,10 @@ from typing import Any, Dict, Tuple
 from ..auth.atlas_client_node import AtlasClientHandle
 
 _DURATIONS = [-1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+_RESOLUTIONS = [
+    "480p", "720p", "720p-sr", "720p-esr", "1080p", "1080p-sr", "1080p-esr",
+    "1080p-esr & 60fps", "1440p-sr", "1440p-esr", "4k-esr",
+]
 
 
 class AtlasSeedance25TextToVideo:
@@ -32,7 +36,7 @@ class AtlasSeedance25TextToVideo:
                     _DURATIONS,
                     {"default": 5, "tooltip": "Duration (seconds), or -1 for auto"},
                 ),
-                "resolution": (["480p", "720p"], {"default": "720p", "tooltip": "Resolution"}),
+                "resolution": (_RESOLUTIONS, {"default": "720p", "tooltip": "Resolution (-sr/-esr upscale or enhance a lower native render)"}),
                 "ratio": (
                     ["16:9", "4:3", "1:1", "3:4", "9:16", "21:9", "adaptive"],
                     {"default": "adaptive", "tooltip": "Aspect ratio (adaptive = auto)"},
@@ -41,6 +45,10 @@ class AtlasSeedance25TextToVideo:
                 "watermark": ("BOOLEAN", {"default": False, "tooltip": "Add watermark"}),
                 "return_last_frame": ("BOOLEAN", {"default": False, "tooltip": "Return last frame (if supported)"}),
                 "output_format": (["mp4", "mov"], {"default": "mp4", "tooltip": "Output container format"}),
+                "draft": (
+                    "BOOLEAN",
+                    {"default": False, "tooltip": "Render a 480p draft; feed its prediction_id to Seedance 2.5 Draft Complete for the 1080p final"},
+                ),
                 "poll_interval_sec": (
                     "FLOAT",
                     {"default": 2.0, "min": 0.5, "max": 10.0, "tooltip": "Polling interval (seconds)"},
@@ -65,6 +73,7 @@ class AtlasSeedance25TextToVideo:
         output_format: str = "mp4",
         poll_interval_sec: float = 2.0,
         timeout_sec: int = 900,
+        draft: bool = False,
     ) -> Tuple[str, str]:
         prompt = (prompt or "").strip()
         if not prompt:
@@ -83,6 +92,9 @@ class AtlasSeedance25TextToVideo:
             "return_last_frame": bool(return_last_frame),
             "output_format": output_format,
         }
+
+        if draft:
+            payload["draft"] = True
 
         prediction_id = client.generate_video(payload)
         result = client.poll_prediction(

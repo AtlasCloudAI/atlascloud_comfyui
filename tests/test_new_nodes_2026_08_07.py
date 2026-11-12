@@ -18,7 +18,12 @@ def _seedance_25_common_assertions(cls):
     assert "atlas_client" in inputs["required"]
     assert optional["duration"][0] == _DURATIONS
     assert optional["duration"][1]["default"] == 5
-    assert optional["resolution"][0] == ["480p", "720p"]
+    assert optional["resolution"][0] == [
+        "480p", "720p", "720p-sr", "720p-esr", "1080p", "1080p-sr", "1080p-esr",
+        "1080p-esr & 60fps", "1440p-sr", "1440p-esr", "4k-esr",
+    ]
+    assert optional["draft"][0] == "BOOLEAN"
+    assert optional["draft"][1]["default"] is False
     assert optional["resolution"][1]["default"] == "720p"
     assert optional["generate_audio"][0] == "BOOLEAN"
     assert optional["generate_audio"][1]["default"] is True
@@ -92,7 +97,7 @@ def test_seedance_25_r2v_requires_a_reference(images, videos):
         AtlasSeedance25ReferenceToVideo,
     )
 
-    with pytest.raises(RuntimeError, match="at least one reference image or reference video"):
+    with pytest.raises(RuntimeError, match="at least one reference image, video or audio"):
         AtlasSeedance25ReferenceToVideo().run(None, images, videos)
 
 
