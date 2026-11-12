@@ -314,6 +314,12 @@ from atlascloud_comfyui.nodes.image.xai_grok_imagine_image_20_developer_edit imp
 from atlascloud_comfyui.nodes.image.seedream_v50_pro_t2i import AtlasSeedreamV50ProTextToImage
 from atlascloud_comfyui.nodes.image.seedream_v50_pro_edit import AtlasSeedreamV50ProEdit
 from atlascloud_comfyui.nodes.image.seedream_v50_pro_layer_decomposition import AtlasSeedreamV50ProLayerDecomposition
+from atlascloud_comfyui.nodes.image.seedream_v55_t2i import AtlasSeedreamV55TextToImage
+from atlascloud_comfyui.nodes.image.seedream_v55_edit import AtlasSeedreamV55Edit
+from atlascloud_comfyui.nodes.image.seedream_v55_layer_decomposition import AtlasSeedreamV55LayerDecomposition
+from atlascloud_comfyui.nodes.image.seedream_v50_flash_t2i import AtlasSeedreamV50FlashTextToImage
+from atlascloud_comfyui.nodes.image.seedream_v50_flash_edit import AtlasSeedreamV50FlashEdit
+from atlascloud_comfyui.nodes.image.seedream_v50_flash_layer_decomposition import AtlasSeedreamV50FlashLayerDecomposition
 from atlascloud_comfyui.nodes.image.nvidia_cosmos_3_super_t2i import AtlasCosmos3SuperTextToImage
 from atlascloud_comfyui.nodes.video.nvidia_cosmos_3_super_i2v import AtlasCosmos3SuperImageToVideo
 from atlascloud_comfyui.nodes.image.ideogram_v4_turbo_t2i import AtlasIdeogramV4TurboTextToImage
@@ -373,6 +379,7 @@ from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_mini_r2v import Atlas
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_5_t2v import AtlasSeedance25TextToVideo
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_5_i2v import AtlasSeedance25ImageToVideo
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_5_r2v import AtlasSeedance25ReferenceToVideo
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_5_draft_complete import AtlasSeedance25DraftComplete
 from atlascloud_comfyui.nodes.video.bytedance_avatar_omni_human_v15 import AtlasAvatarOmniHumanV15
 from atlascloud_comfyui.nodes.image.atlascloud_image_upscaler import AtlasImageUpscaler
 from atlascloud_comfyui.nodes.image.atlascloud_face_swap_image import AtlasFaceSwapImage
@@ -560,6 +567,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Seedance 2.5 Text-to-Video": AtlasSeedance25TextToVideo,
     "AtlasCloud Seedance 2.5 Image-to-Video": AtlasSeedance25ImageToVideo,
     "AtlasCloud Seedance 2.5 Reference-to-Video": AtlasSeedance25ReferenceToVideo,
+    "AtlasCloud Seedance 2.5 Draft Complete": AtlasSeedance25DraftComplete,
     "AtlasCloud Avatar Omni Human 1.5": AtlasAvatarOmniHumanV15,
     "AtlasCloud Image Upscaler": AtlasImageUpscaler,
     "AtlasCloud Face Swap (Image)": AtlasFaceSwapImage,
@@ -909,6 +917,12 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Seedream V5.0 Pro Text-to-Image": AtlasSeedreamV50ProTextToImage,
     "AtlasCloud Seedream V5.0 Pro Edit": AtlasSeedreamV50ProEdit,
     "AtlasCloud Seedream V5.0 Pro Layer Decomposition": AtlasSeedreamV50ProLayerDecomposition,
+    "AtlasCloud Seedream V5.5 Text-to-Image": AtlasSeedreamV55TextToImage,
+    "AtlasCloud Seedream V5.5 Edit": AtlasSeedreamV55Edit,
+    "AtlasCloud Seedream V5.5 Layer Decomposition": AtlasSeedreamV55LayerDecomposition,
+    "AtlasCloud Seedream V5.0 Flash Text-to-Image": AtlasSeedreamV50FlashTextToImage,
+    "AtlasCloud Seedream V5.0 Flash Edit": AtlasSeedreamV50FlashEdit,
+    "AtlasCloud Seedream V5.0 Flash Layer Decomposition": AtlasSeedreamV50FlashLayerDecomposition,
     "AtlasCloud Cosmos 3 Super Text-to-Image": AtlasCosmos3SuperTextToImage,
     "AtlasCloud Cosmos 3 Super Image-to-Video": AtlasCosmos3SuperImageToVideo,
     "AtlasCloud Ideogram V4 Turbo Text-to-Image": AtlasIdeogramV4TurboTextToImage,
@@ -1003,6 +1017,7 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Seedance 2.5 Text-to-Video": "AtlasCloud Seedance 2.5 Text-to-Video",
     "AtlasCloud Seedance 2.5 Image-to-Video": "AtlasCloud Seedance 2.5 Image-to-Video",
     "AtlasCloud Seedance 2.5 Reference-to-Video": "AtlasCloud Seedance 2.5 Reference-to-Video",
+    "AtlasCloud Seedance 2.5 Draft Complete": "AtlasCloud Seedance 2.5 Draft Complete",
     "AtlasCloud Avatar Omni Human 1.5": "AtlasCloud Avatar Omni Human 1.5",
     "AtlasCloud Image Upscaler": "AtlasCloud Image Upscaler",
     "AtlasCloud Face Swap (Image)": "AtlasCloud Face Swap (Image)",
@@ -1350,6 +1365,12 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud Seedream V5.0 Pro Text-to-Image": "AtlasCloud Seedream V5.0 Pro Text-to-Image",
     "AtlasCloud Seedream V5.0 Pro Edit": "AtlasCloud Seedream V5.0 Pro Edit",
     "AtlasCloud Seedream V5.0 Pro Layer Decomposition": "AtlasCloud Seedream V5.0 Pro Layer Decomposition",
+    "AtlasCloud Seedream V5.5 Text-to-Image": "AtlasCloud Seedream V5.5 Text-to-Image",
+    "AtlasCloud Seedream V5.5 Edit": "AtlasCloud Seedream V5.5 Edit",
+    "AtlasCloud Seedream V5.5 Layer Decomposition": "AtlasCloud Seedream V5.5 Layer Decomposition",
+    "AtlasCloud Seedream V5.0 Flash Text-to-Image": "AtlasCloud Seedream V5.0 Flash Text-to-Image",
+    "AtlasCloud Seedream V5.0 Flash Edit": "AtlasCloud Seedream V5.0 Flash Edit",
+    "AtlasCloud Seedream V5.0 Flash Layer Decomposition": "AtlasCloud Seedream V5.0 Flash Layer Decomposition",
     "AtlasCloud Cosmos 3 Super Text-to-Image": "AtlasCloud Cosmos 3 Super Text-to-Image",
     "AtlasCloud Cosmos 3 Super Image-to-Video": "AtlasCloud Cosmos 3 Super Image-to-Video",
     "AtlasCloud Ideogram V4 Turbo Text-to-Image": "AtlasCloud Ideogram V4 Turbo Text-to-Image",

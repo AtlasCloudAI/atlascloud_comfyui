@@ -5,6 +5,10 @@ from typing import Any, Dict, List, Tuple
 from ..auth.atlas_client_node import AtlasClientHandle
 
 _DURATIONS = [-1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+_RESOLUTIONS = [
+    "480p", "720p", "720p-sr", "720p-esr", "1080p", "1080p-sr", "1080p-esr",
+    "1080p-esr & 60fps", "1440p-sr", "1440p-esr", "4k-esr",
+]
 
 
 class AtlasSeedance25ReferenceToVideo:
@@ -44,7 +48,7 @@ class AtlasSeedance25ReferenceToVideo:
                     _DURATIONS,
                     {"default": 5, "tooltip": "Duration (seconds), or -1 for auto (required for video-editing mode)"},
                 ),
-                "resolution": (["480p", "720p"], {"default": "720p", "tooltip": "Resolution"}),
+                "resolution": (_RESOLUTIONS, {"default": "720p", "tooltip": "Resolution (-sr/-esr upscale or enhance a lower native render)"}),
                 "ratio": (
                     ["16:9", "4:3", "1:1", "3:4", "9:16", "21:9", "adaptive"],
                     {"default": "adaptive", "tooltip": "Aspect ratio (adaptive = auto)"},
@@ -53,6 +57,14 @@ class AtlasSeedance25ReferenceToVideo:
                 "watermark": ("BOOLEAN", {"default": False, "tooltip": "Add watermark"}),
                 "return_last_frame": ("BOOLEAN", {"default": False, "tooltip": "Return last frame (if supported)"}),
                 "output_format": (["mp4", "mov"], {"default": "mp4", "tooltip": "Output container format"}),
+                "omni_reference_task_type": (
+                    ["auto", "reference", "edit", "extend"],
+                    {"default": "auto", "tooltip": "Subtask hint; auto lets the model infer it. edit/extend need exactly one reference video and ratio adaptive"},
+                ),
+                "draft": (
+                    "BOOLEAN",
+                    {"default": False, "tooltip": "Render a 480p draft; feed its prediction_id to Seedance 2.5 Draft Complete for the 1080p final"},
+                ),
                 "poll_interval_sec": (
                     "FLOAT",
                     {"default": 2.0, "min": 0.5, "max": 10.0, "tooltip": "Polling interval (seconds)"},
@@ -80,11 +92,14 @@ class AtlasSeedance25ReferenceToVideo:
         output_format: str = "mp4",
         poll_interval_sec: float = 2.0,
         timeout_sec: int = 900,
+        omni_reference_task_type: str = "auto",
+        draft: bool = False,
     ) -> Tuple[str, str]:
         ref_imgs: List[str] = [v.strip() for v in (reference_images or "").splitlines() if v.strip()]
         ref_vids: List[str] = [v.strip() for v in (reference_videos or "").splitlines() if v.strip()]
-        if not ref_imgs and not ref_vids:
-            raise RuntimeError("Provide at least one reference image or reference video")
+        ref_auds: List[str] = [v.strip() for v in (reference_audios or "").splitlines() if v.strip()]
+        if not ref_imgs and not ref_vids and not ref_auds:
+            raise RuntimeError("Provide at least one reference image, video or audio")
 
         client = atlas_client.client
 
@@ -103,7 +118,6 @@ class AtlasSeedance25ReferenceToVideo:
         if p:
             payload["prompt"] = p
 
-        ref_auds: List[str] = [v.strip() for v in (reference_audios or "").splitlines() if v.strip()]
         if ref_auds:
             payload["reference_audios"] = ref_auds
 
@@ -111,6 +125,11 @@ class AtlasSeedance25ReferenceToVideo:
             payload["reference_images"] = ref_imgs
         if ref_vids:
             payload["reference_videos"] = ref_vids
+
+        if omni_reference_task_type != "auto":
+            payload["omni_reference_task_type"] = omni_reference_task_type
+        if draft:
+            payload["draft"] = True
 
         prediction_id = client.generate_video(payload)
         result = client.poll_prediction(
