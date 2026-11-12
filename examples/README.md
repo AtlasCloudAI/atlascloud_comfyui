@@ -1,7 +1,7 @@
 # Example Workflows
 
 Ready-to-run graphs. Drag the `.json` onto the ComfyUI canvas (or **Workflow → Open**),
-open the **AtlasCloud Client** node, and replace `PASTE_YOUR_ATLASCLOUD_API_KEY` with your
+click **🔑 Set API key** on the **AtlasCloud Client** node, and paste your
 [free API key](https://www.atlascloud.ai/console/api-keys?utm_source=github&utm_campaign=atlascloud_comfyui). Then hit **Run** — no local GPU or model weights needed.
 
 | File | What it does | Models | Nodes |

@@ -43,7 +43,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 
 1. Install the nodes (see [Installation](#installation)).
 2. Drag [`examples/01-text-to-image.json`](examples/01-text-to-image.json) onto the ComfyUI canvas.
-3. Open the **AtlasCloud Client** node and paste your [API key](https://www.atlascloud.ai/console/api-keys?utm_source=github&utm_campaign=atlascloud_comfyui).
+3. Click **🔑 Set API key** on the **AtlasCloud Client** node and paste your [API key](https://www.atlascloud.ai/console/api-keys?utm_source=github&utm_campaign=atlascloud_comfyui). The key is stored on your ComfyUI server (`ComfyUI/user/__atlascloud/api_key`), never in workflows or image metadata. Alternatively, set the `ATLASCLOUD_API_KEY` environment variable.
 4. Hit **Run** — your first image renders through Atlas Cloud. More graphs in [`examples/`](examples/).
 
 ---
@@ -107,7 +107,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 
 ### Common
 
--   **AtlasCloud Client** — Stores your API key and base URL for all Atlas Cloud nodes.
+-   **AtlasCloud Client** — Connects the Atlas Cloud nodes to your account. Its **Set API key** button stores the key on the ComfyUI server, so it is never saved in workflows or image metadata.
 -   **Image Previewer** — Preview generated images in ComfyUI.
 -   **Video Previewer** — Preview generated videos in ComfyUI.
 
@@ -575,7 +575,7 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 
 ## Example Workflows
 
-Three ready-to-run graphs live in [`examples/`](examples/) — drag a `.json` onto the canvas, paste your API key into the **AtlasCloud Client** node, and run (no local GPU needed):
+Three ready-to-run graphs live in [`examples/`](examples/) — drag a `.json` onto the canvas, set your API key with the **AtlasCloud Client** node's **Set API key** button, and run (no local GPU needed):
 
 | Workflow | What it does | Models | Nodes |
 |----------|--------------|--------|-------|

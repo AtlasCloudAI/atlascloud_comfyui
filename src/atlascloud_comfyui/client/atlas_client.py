@@ -8,6 +8,7 @@ from typing import Any, Dict, Optional
 from urllib.parse import urlsplit, urlunsplit
 
 from ..history import LocalHistoryRecorder
+from .api_key_store import load_api_key
 
 
 class AtlasError(RuntimeError):
@@ -36,9 +37,12 @@ class AtlasClient:
 
     @classmethod
     def from_env(cls, *, base_url: Optional[str] = None) -> "AtlasClient":
-        api_key = os.getenv("ATLASCLOUD_API_KEY", "").strip()
+        api_key = load_api_key()
         if not api_key:
-            raise AtlasError("Missing ATLASCLOUD_API_KEY environment variable.")
+            raise AtlasError(
+                "No AtlasCloud API key. Click 'Set API key' on the AtlasCloud Client node, "
+                "or set the ATLASCLOUD_API_KEY environment variable."
+            )
 
         resolved_base = (base_url or os.getenv("ATLASCLOUD_BASE_URL", "https://api.atlascloud.ai")).strip()
 
