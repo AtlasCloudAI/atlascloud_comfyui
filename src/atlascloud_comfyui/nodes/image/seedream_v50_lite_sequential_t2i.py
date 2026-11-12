@@ -17,6 +17,16 @@ class AtlasSeedreamV50LiteSequentialTextToImage:
             "required": {
                 "atlas_client": ("ATLAS_CLIENT",),
                 "prompt": ("STRING", {"multiline": True, "tooltip": "Text prompt"}),
+                "seed": (
+                    "INT",
+                    {
+                        "default": 0,
+                        "min": 0,
+                        "max": 0xFFFFFFFFFFFFFFFF,
+                        "control_after_generate": True,
+                        "tooltip": "Change to run the node again (not sent to the API)",
+                    },
+                ),
                 "size": (
                     [
                         "2048*2048",
@@ -52,6 +62,7 @@ class AtlasSeedreamV50LiteSequentialTextToImage:
         self,
         atlas_client: AtlasClientHandle,
         prompt: str,
+        seed: int,
         size: str,
         max_images: int,
         output_format: str,

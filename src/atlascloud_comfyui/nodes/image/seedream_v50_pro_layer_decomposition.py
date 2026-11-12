@@ -20,6 +20,16 @@ class AtlasSeedreamV50ProLayerDecomposition:
                     "STRING",
                     {"default": "", "tooltip": "Image to decompose into layers (URL or base64), exactly one"},
                 ),
+                "seed": (
+                    "INT",
+                    {
+                        "default": 0,
+                        "min": 0,
+                        "max": 0xFFFFFFFFFFFFFFFF,
+                        "control_after_generate": True,
+                        "tooltip": "Change to run the node again (not sent to the API)",
+                    },
+                ),
                 "size": (
                     ["auto", "1K", "1.5K", "2K"],
                     {"default": "auto", "tooltip": "Output resolution tier (auto follows the input image)"},
@@ -45,6 +55,7 @@ class AtlasSeedreamV50ProLayerDecomposition:
         self,
         atlas_client: AtlasClientHandle,
         image: str,
+        seed: int,
         size: str,
         output_format: str,
         enable_base64_output: bool,

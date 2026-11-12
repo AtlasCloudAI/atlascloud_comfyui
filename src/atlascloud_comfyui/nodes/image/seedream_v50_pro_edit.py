@@ -18,6 +18,16 @@ class AtlasSeedreamV50ProEdit:
                 "atlas_client": ("ATLAS_CLIENT",),
                 "images": ("STRING", {"multiline": True, "default": "", "tooltip": "Input image URLs/base64, one per line"}),
                 "prompt": ("STRING", {"multiline": True, "tooltip": "Edit instruction"}),
+                "seed": (
+                    "INT",
+                    {
+                        "default": 0,
+                        "min": 0,
+                        "max": 0xFFFFFFFFFFFFFFFF,
+                        "control_after_generate": True,
+                        "tooltip": "Change to run the node again (not sent to the API)",
+                    },
+                ),
                 "size": (
                     [
                         "2048*2048", "2304*1728", "1728*2304", "2720*1530", "1530*2720",
@@ -40,6 +50,7 @@ class AtlasSeedreamV50ProEdit:
         atlas_client: AtlasClientHandle,
         images: str,
         prompt: str,
+        seed: int,
         size: str,
         output_format: str,
         enable_base64_output: bool,

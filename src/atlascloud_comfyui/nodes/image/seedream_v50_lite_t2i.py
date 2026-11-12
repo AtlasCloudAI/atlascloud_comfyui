@@ -17,6 +17,16 @@ class AtlasSeedreamV50LiteTextToImage:
             "required": {
                 "atlas_client": ("ATLAS_CLIENT",),
                 "prompt": ("STRING", {"multiline": True, "tooltip": "Text prompt"}),
+                "seed": (
+                    "INT",
+                    {
+                        "default": 0,
+                        "min": 0,
+                        "max": 0xFFFFFFFFFFFFFFFF,
+                        "control_after_generate": True,
+                        "tooltip": "Change to run the node again (not sent to the API)",
+                    },
+                ),
                 "width": ("INT", {"default": 1024, "min": 1024, "max": 4096, "step": 64, "tooltip": "Width (1024-4096)"}),
                 "height": ("INT", {"default": 1024, "min": 1024, "max": 4096, "step": 64, "tooltip": "Height (1024-4096)"}),
                 "enable_base64_output": ("BOOLEAN", {"default": False, "tooltip": "Return base64 instead of URL if supported"}),
@@ -31,6 +41,7 @@ class AtlasSeedreamV50LiteTextToImage:
         self,
         atlas_client: AtlasClientHandle,
         prompt: str,
+        seed: int,
         width: int,
         height: int,
         enable_base64_output: bool,
