@@ -480,6 +480,15 @@ from atlascloud_comfyui.nodes.video.bytedance_seedance_v1_pro_i2v_480p import At
 
 from atlascloud_comfyui.nodes.video.kling_v20_t2v_master import AtlasKlingV20T2VMaster
 
+from atlascloud_comfyui.nodes.audio.seed_audio_v10 import AtlasSeedAudio10
+from atlascloud_comfyui.nodes.audio.minimax_music import AtlasMiniMaxMusic
+from atlascloud_comfyui.nodes.audio.minimax_speech import AtlasMiniMaxSpeech
+from atlascloud_comfyui.nodes.audio.minimax_lyrics import AtlasMiniMaxLyrics
+from atlascloud_comfyui.nodes.audio.suno_v6 import AtlasSunoV6
+from atlascloud_comfyui.nodes.audio.elevenlabs_v4_tts import AtlasElevenLabsV4TextToSpeech
+from atlascloud_comfyui.nodes.audio.elevenlabs_v3_tts import AtlasElevenLabsV3TextToSpeech
+from atlascloud_comfyui.nodes.audio.qwen_audio_31_tts import AtlasQwenAudio31TextToSpeech
+
 from atlascloud_comfyui.nodes.utils.image_preview import AtlasImagePreviewURL
 from atlascloud_comfyui.nodes.utils.video_previewer import AtlasVideoPreviewer
 from atlascloud_comfyui.nodes.utils.image_to_base64 import AtlasImageToBase64
@@ -935,6 +944,14 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud FLUX 3 Edit Video": AtlasFlux3EditVideo,
     "AtlasCloud Kling V3.0 Pro Motion Control": AtlasKlingV30ProMotionControl,
     "AtlasCloud Kling V3.0 Std Motion Control": AtlasKlingV30StdMotionControl,
+    "AtlasCloud Seed Audio 1.0": AtlasSeedAudio10,
+    "AtlasCloud MiniMax Music": AtlasMiniMaxMusic,
+    "AtlasCloud MiniMax Speech": AtlasMiniMaxSpeech,
+    "AtlasCloud MiniMax Lyrics Generation": AtlasMiniMaxLyrics,
+    "AtlasCloud Suno V6": AtlasSunoV6,
+    "AtlasCloud ElevenLabs v4 Text-to-Speech": AtlasElevenLabsV4TextToSpeech,
+    "AtlasCloud ElevenLabs v3 Text-to-Speech": AtlasElevenLabsV3TextToSpeech,
+    "AtlasCloud Qwen-Audio 3.1 Text-to-Speech": AtlasQwenAudio31TextToSpeech,
 }
 
 
@@ -1376,6 +1393,14 @@ NODE_DISPLAY_NAME_MAPPINGS: Dict[str, str] = {
     "AtlasCloud FLUX 3 Edit Video": "AtlasCloud FLUX 3 Edit Video",
     "AtlasCloud Kling V3.0 Pro Motion Control": "AtlasCloud Kling V3.0 Pro Motion Control",
     "AtlasCloud Kling V3.0 Std Motion Control": "AtlasCloud Kling V3.0 Std Motion Control",
+    "AtlasCloud Seed Audio 1.0": "AtlasCloud Seed Audio 1.0",
+    "AtlasCloud MiniMax Music": "AtlasCloud MiniMax Music",
+    "AtlasCloud MiniMax Speech": "AtlasCloud MiniMax Speech",
+    "AtlasCloud MiniMax Lyrics Generation": "AtlasCloud MiniMax Lyrics Generation",
+    "AtlasCloud Suno V6": "AtlasCloud Suno V6",
+    "AtlasCloud ElevenLabs v4 Text-to-Speech": "AtlasCloud ElevenLabs v4 Text-to-Speech",
+    "AtlasCloud ElevenLabs v3 Text-to-Speech": "AtlasCloud ElevenLabs v3 Text-to-Speech",
+    "AtlasCloud Qwen-Audio 3.1 Text-to-Speech": "AtlasCloud Qwen-Audio 3.1 Text-to-Speech",
     "AtlasCloud MAI-Image-2.6 Text-to-Image": "AtlasCloud MAI-Image-2.6 Text-to-Image",
     "AtlasCloud MAI-Image-2.6-Flash Text-to-Image": "AtlasCloud MAI-Image-2.6-Flash Text-to-Image",
     "AtlasCloud MAI-Image-2.6 Edit": "AtlasCloud MAI-Image-2.6 Edit",

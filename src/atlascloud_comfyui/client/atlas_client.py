@@ -131,6 +131,12 @@ class AtlasClient:
         except KeyError as e:
             raise AtlasError("Unexpected generateImage response: missing data.id") from e
 
+    def generate_audio(self, payload: Dict[str, Any]) -> str:
+        try:
+            return self._generate("/api/v1/model/generateAudio", payload, request_kind="audio")
+        except KeyError as e:
+            raise AtlasError("Unexpected generateAudio response: missing data.id") from e
+
     def upload_media_bytes(self, content: bytes, *, filename: str, mime_type: str = "application/octet-stream") -> Dict[str, Any]:
         import requests
 
