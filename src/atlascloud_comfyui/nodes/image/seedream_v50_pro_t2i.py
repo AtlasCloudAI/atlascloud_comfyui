@@ -17,6 +17,16 @@ class AtlasSeedreamV50ProTextToImage:
             "required": {
                 "atlas_client": ("ATLAS_CLIENT",),
                 "prompt": ("STRING", {"multiline": True, "tooltip": "Text prompt (recommended under 600 English words)"}),
+                "seed": (
+                    "INT",
+                    {
+                        "default": 0,
+                        "min": 0,
+                        "max": 0xFFFFFFFFFFFFFFFF,
+                        "control_after_generate": True,
+                        "tooltip": "Change to run the node again (not sent to the API)",
+                    },
+                ),
                 "size": (
                     [
                         "2048*2048", "2304*1728", "1728*2304", "2720*1530", "1530*2720",
@@ -38,6 +48,7 @@ class AtlasSeedreamV50ProTextToImage:
         self,
         atlas_client: AtlasClientHandle,
         prompt: str,
+        seed: int,
         size: str,
         output_format: str,
         enable_base64_output: bool,

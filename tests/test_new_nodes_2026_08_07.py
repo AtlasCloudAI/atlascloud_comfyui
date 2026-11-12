@@ -106,6 +106,9 @@ def test_seedream_v50_pro_layer_decomposition_metadata():
     required = inputs["required"]
     assert "atlas_client" in required
     assert "image" in required
+    assert "seed" in required
+    assert required["seed"][0] == "INT"
+    assert required["seed"][1]["control_after_generate"] is True
     assert required["size"][0] == ["auto", "1K", "1.5K", "2K"]
     assert required["size"][1]["default"] == "auto"
     assert required["output_format"][0] == ["jpeg", "png"]
@@ -124,7 +127,7 @@ def test_seedream_v50_pro_layer_decomposition_requires_image(bad_image):
     )
 
     with pytest.raises(RuntimeError, match="image is required"):
-        AtlasSeedreamV50ProLayerDecomposition().run(None, bad_image, "auto", "jpeg", False)
+        AtlasSeedreamV50ProLayerDecomposition().run(None, bad_image, 0, "auto", "jpeg", False)
 
 
 def test_new_nodes_2026_08_07_registered():

@@ -18,6 +18,16 @@ class AtlasSeedreamV50LiteEditSequential:
                 "atlas_client": ("ATLAS_CLIENT",),
                 "prompt": ("STRING", {"multiline": True, "tooltip": "Text prompt for editing"}),
                 "images": ("STRING", {"multiline": True, "default": "", "tooltip": "1-14 image URLs/base64, one per line"}),
+                "seed": (
+                    "INT",
+                    {
+                        "default": 0,
+                        "min": 0,
+                        "max": 0xFFFFFFFFFFFFFFFF,
+                        "control_after_generate": True,
+                        "tooltip": "Change to run the node again (not sent to the API)",
+                    },
+                ),
                 "size": (
                     [
                         "2048*2048",
@@ -54,6 +64,7 @@ class AtlasSeedreamV50LiteEditSequential:
         atlas_client: AtlasClientHandle,
         prompt: str,
         images: str,
+        seed: int,
         size: str,
         max_images: int,
         output_format: str,
