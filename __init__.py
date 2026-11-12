@@ -42,3 +42,10 @@ try:
     register_history_routes()
 except Exception as e:
     print("[AtlasCloud] Failed to register history routes:", repr(e))
+
+try:
+    from atlascloud_comfyui.nodes.auth.api_key_routes import register_api_key_routes
+
+    register_api_key_routes()
+except Exception as e:
+    print("[AtlasCloud] Failed to register API key routes:", repr(e))

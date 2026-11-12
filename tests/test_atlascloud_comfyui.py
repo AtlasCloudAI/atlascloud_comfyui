@@ -26,14 +26,12 @@ def test_atlas_client_node_initialization(atlas_client_node):
 def test_atlas_client_node_metadata():
     """Test AtlasClientNode INPUT_TYPES and RETURN_NAMES."""
     assert AtlasClientNode.RETURN_NAMES == ("atlas_client",)
-    assert AtlasClientNode.INPUT_TYPES() == {
-        "required": {
-            "api_key": ("STRING", {"default": ""}),
-        },
-        "optional": {
-            "base_url": ("STRING", {"default": "https://api.atlascloud.ai"}),
-        },
-    }
+    inputs = AtlasClientNode.INPUT_TYPES()
+    assert inputs["required"] == {}
+    # api_key stays first so widget positions in older workflows still line up.
+    assert list(inputs["optional"]) == ["api_key", "base_url"]
+    assert inputs["optional"]["api_key"][1]["default"] == ""
+    assert inputs["optional"]["base_url"] == ("STRING", {"default": "https://api.atlascloud.ai"})
 
 
 # Model nodes: ensure INPUT_TYPES and RETURN_TYPES are correct so nodes are usable

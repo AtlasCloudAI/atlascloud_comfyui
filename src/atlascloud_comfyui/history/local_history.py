@@ -15,6 +15,8 @@ from typing import Any, Dict, List, Optional
 from urllib.parse import urlsplit, urlunsplit
 from urllib.request import urlopen
 
+from ..client.api_key_store import load_api_key
+
 
 def _utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
@@ -402,7 +404,7 @@ class LocalHistoryRecorder:
         if not prediction_id:
             return []
 
-        api_key = os.getenv("ATLASCLOUD_API_KEY", "").strip()
+        api_key = load_api_key()
         if not api_key:
             return []
 

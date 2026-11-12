@@ -32,7 +32,7 @@
         "Node name for S&R": "AtlasCloud Client"
       },
       "widgets_values": [
-        "PASTE_YOUR_ATLASCLOUD_API_KEY",
+        "",
         "https://api.atlascloud.ai"
       ]
     },
