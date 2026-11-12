@@ -59,6 +59,10 @@ def _guess_extension_from_url(url: str, default_ext: str = ".bin") -> str:
 
 
 def _default_extension(request_kind: str, payload: Dict[str, Any]) -> str:
+    if request_kind == "audio":
+        # e.g. "mp3", "ogg_opus", or ElevenLabs-style "mp3_44100_128"
+        audio_format = str(payload.get("output_format") or payload.get("format") or "mp3").strip().lower()
+        return "." + audio_format.split("_")[0]
     output_format = str(payload.get("output_format") or "").strip().lower()
     if output_format:
         return "." + output_format.lstrip(".")

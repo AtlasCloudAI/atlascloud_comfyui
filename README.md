@@ -22,7 +22,7 @@
 - 🎬 **Video** — Seedance 2.0 · Kling 3 · Sora 2 · Veo 3.1 · HappyHorse 1 · Grok Imagine 1.5 · Wan 2.7
 - 🎨 **Image** — Nano Banana 2/Pro · GPT Image 2 · Flux 2 · Seedream 5
 - 💬 **LLM** — Claude · GPT · DeepSeek · MiniMax · Kimi · GLM · Qwen
-- 🔊 **Audio** — Grok TTS
+- 🔊 **Audio** — Seed Audio · MiniMax Music & Speech · Suno V6 · ElevenLabs · Qwen-Audio TTS
 - 📚 **Explore more** — [300+ models »](https://www.atlascloud.ai/models?utm_source=github&utm_campaign=atlascloud_comfyui)
 
 This node pack focuses on **image / video / edit** — see the full **[node catalog by task type](#available-nodes)** below.
@@ -568,6 +568,21 @@ This node pack focuses on **image / video / edit** — see the full **[node cata
 | AtlasCloud FLUX 3 Edit Video | black-forest-labs/flux-3/edit-video |
 | AtlasCloud Kling V3.0 Pro Motion Control | kwaivgi/kling-v3.0-pro/motion-control |
 | AtlasCloud Kling V3.0 Std Motion Control | kwaivgi/kling-v3.0-std/motion-control |
+
+### Audio (Music / Speech / Sound)
+
+Outputs a ComfyUI `AUDIO` plus the result URL.
+
+| Node | Model |
+|------|-------|
+| AtlasCloud Seed Audio 1.0 | bytedance/seed-audio-1.0 |
+| AtlasCloud MiniMax Music | minimax/music-3.0, minimax/music-2.6 |
+| AtlasCloud MiniMax Speech | minimax/speech-2.8-hd, -2.8-turbo, -2.6-hd, -2.6-turbo |
+| AtlasCloud MiniMax Lyrics Generation | minimax/lyrics-generation |
+| AtlasCloud Suno V6 | suno/chirp-v6, chirp-v6-mini, chirp-v6-wild |
+| AtlasCloud ElevenLabs v4 Text-to-Speech | elevenlabs/v4/text-to-speech, v4-turbo/text-to-speech |
+| AtlasCloud ElevenLabs v3 Text-to-Speech | elevenlabs/v3/text-to-speech |
+| AtlasCloud Qwen-Audio 3.1 Text-to-Speech | alibaba/qwen-audio-3.1-tts-flash/text-to-speech, -plus |
 
 > Nodes are continuously expanded as new models are added to AtlasCloud.
 
