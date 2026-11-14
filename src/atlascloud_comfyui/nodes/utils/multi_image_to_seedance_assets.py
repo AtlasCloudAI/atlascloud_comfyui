@@ -31,7 +31,7 @@ class AtlasMultiImageToSeedanceAssets:
     RETURN_TYPES = ("STRING", "INT")
     RETURN_NAMES = ("asset_references", "count")
 
-    MAX_IMAGES = 8
+    MAX_IMAGES = 30
 
     @classmethod
     def INPUT_TYPES(cls):

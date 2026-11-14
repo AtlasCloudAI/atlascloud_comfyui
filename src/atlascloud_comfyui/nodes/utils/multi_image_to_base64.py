@@ -9,7 +9,7 @@ class AtlasMultiImageToBase64:
     Nano Banana / GPT edit `images` (all split on newlines).
 
     Accepts BOTH kinds of source, treated uniformly:
-      - `image_1..image_8` (IMAGE): local/uploaded images -> encoded to base64
+      - `image_1..image_30` (IMAGE, sockets appear as you connect): local/uploaded images -> encoded to base64
       - `refs` (STRING, multiline): existing references passed THROUGH as-is,
         one per line — `asset://atlas-asset-...`, http(s) URLs, or base64.
         AtlasCloud accepts asset:// and URL refs directly (the backend
@@ -25,7 +25,7 @@ class AtlasMultiImageToBase64:
     RETURN_TYPES = ("STRING", "INT")
     RETURN_NAMES = ("references", "count")
 
-    MAX_IMAGES = 8
+    MAX_IMAGES = 30
 
     @classmethod
     def INPUT_TYPES(cls):
