@@ -115,15 +115,21 @@ def test_seed_audio_no_references(fake_load):
     assert "seed" not in _payload(handle)
 
 
-def test_minimax_music_optimizer_only_for_30(fake_load):
+@pytest.mark.parametrize(
+    "model,lyrics,instrumental,expected",
+    [
+        ("music-3.0", "", False, True),
+        ("music-3.0", "[Verse] la", False, False),
+        ("music-3.0", "", True, False),
+        ("music-2.6", "", False, None),
+    ],
+)
+def test_minimax_music_lyrics_optimizer_is_derived(fake_load, model, lyrics, instrumental, expected):
     handle = _handle(["http://x/song.mp3"])
-    minimax_music.AtlasMiniMaxMusic().run(handle, "music-3.0", "lofi", "", 0, lyrics_optimizer=True)
-    assert _payload(handle)["model"] == "minimax/music-3.0"
-    assert _payload(handle)["lyrics_optimizer"] is True
-
-    minimax_music.AtlasMiniMaxMusic().run(handle, "music-2.6", "lofi", "", 0, lyrics_optimizer=True)
-    assert _payload(handle)["model"] == "minimax/music-2.6"
-    assert "lyrics_optimizer" not in _payload(handle)
+    minimax_music.AtlasMiniMaxMusic().run(handle, model, "lofi", lyrics, 0, is_instrumental=instrumental)
+    payload = _payload(handle)
+    assert payload["model"] == f"minimax/{model}"
+    assert payload.get("lyrics_optimizer") is expected
 
 
 @pytest.mark.parametrize("model,key", [("speech-2.8-hd", "output_format"), ("speech-2.6-turbo", "format")])
@@ -142,19 +148,50 @@ def test_minimax_lyrics_returns_text():
     assert _payload(handle)["model"] == "minimax/lyrics-generation"
 
 
-def test_suno_two_takes_and_optional_fields(fake_load):
+def test_suno_lyrics_use_custom_mode(fake_load):
     handle = _handle(["http://x/1.mp3", "http://x/2.mp3"])
     first, second, urls, pred = suno_v6.AtlasSunoV6().run(
-        handle, "chirp-v6-wild", "[Verse] hi", True, False, 0, title="Song", style_weight=0.4
+        handle, "chirp-v6-wild", "dreamy synthpop", "[Verse] hi", False, 0, title="Song", style_weight=0.4
     )
     assert fake_load == ["http://x/1.mp3", "http://x/2.mp3"]
     assert urls == "http://x/1.mp3\nhttp://x/2.mp3"
     payload = _payload(handle)
     assert payload["model"] == "suno/chirp-v6-wild"
+    assert payload["custom"] is True
+    assert payload["prompt"] == "[Verse] hi"
+    assert payload["style"] == "dreamy synthpop"
+    assert payload["auto_lyrics"] is False
     assert payload["title"] == "Song"
     assert payload["style_weight"] == 0.4
-    for key in ("style", "vocal_gender", "variety", "duration", "weirdness_constraint", "audio_weight", "persona_id"):
+    for key in ("vocal_gender", "variety", "duration", "weirdness_constraint", "audio_weight", "persona_id"):
         assert key not in payload
+
+
+def test_suno_style_input_wins_over_description(fake_load):
+    handle = _handle(["http://x/1.mp3", "http://x/2.mp3"])
+    suno_v6.AtlasSunoV6().run(handle, "chirp-v6", "dreamy synthpop", "[Verse] hi", False, 0, style="punk")
+    assert _payload(handle)["style"] == "punk"
+
+
+def test_suno_without_lyrics_uses_inspiration_mode(fake_load):
+    handle = _handle(["http://x/1.mp3", "http://x/2.mp3"])
+    suno_v6.AtlasSunoV6().run(handle, "chirp-v6", "dreamy synthpop", "  ", False, 0, title="ignored", auto_lyrics=True)
+    payload = _payload(handle)
+    assert payload["custom"] is False
+    assert payload["prompt"] == "dreamy synthpop"
+    for key in ("style", "title", "auto_lyrics"):
+        assert key not in payload
+
+
+def test_suno_instrumental_uses_description_as_style(fake_load):
+    handle = _handle(["http://x/1.mp3", "http://x/2.mp3"])
+    suno_v6.AtlasSunoV6().run(handle, "chirp-v6", "dreamy synthpop", "", True, 0, duration=90)
+    payload = _payload(handle)
+    assert payload["custom"] is True
+    assert payload["instrumental"] is True
+    assert "prompt" not in payload
+    assert payload["style"] == "dreamy synthpop"
+    assert payload["duration"] == 90
 
 
 def test_elevenlabs_v4_voice_id_override(fake_load):

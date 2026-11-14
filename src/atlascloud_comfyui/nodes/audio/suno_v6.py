@@ -5,7 +5,7 @@ from typing import Any, Dict, Tuple
 from ..auth.atlas_client_node import AtlasClientHandle
 from ..utils.audio_output import SEED_INPUT, generate_audio_outputs, load_audio_url
 
-_WEIGHT_TOOLTIP = "Custom mode only; -1 leaves it to the API"
+_WEIGHT_TOOLTIP = "Needs lyrics or instrumental; -1 leaves it to the API"
 
 
 class AtlasSunoV6:
@@ -25,28 +25,44 @@ class AtlasSunoV6:
                     {
                         "multiline": True,
                         "default": "Late-night city lo-fi piano with the sound of rain",
-                        "tooltip": "custom off: a description of the song. custom on: the lyrics ([Verse] / [Chorus] ...)",
+                        "tooltip": "Describe the song: genre, mood, instruments, vocals",
                     },
                 ),
-                "custom": ("BOOLEAN", {"default": False, "tooltip": "Custom mode: prompt is lyrics; title/style/weights apply"}),
+                "lyrics": (
+                    "STRING",
+                    {
+                        "multiline": True,
+                        "default": "",
+                        "tooltip": "Your lyrics ([Verse] / [Chorus] ...). Leave empty and Suno writes its own; turn on instrumental for no vocals",
+                    },
+                ),
                 "instrumental": ("BOOLEAN", {"default": False, "tooltip": "No vocals"}),
                 "seed": SEED_INPUT,
             },
             "optional": {
-                "title": ("STRING", {"default": "", "tooltip": "Song title (custom mode)"}),
-                "style": ("STRING", {"default": "", "tooltip": "Style tags, e.g. synthwave, female vocal (custom mode)"}),
-                "negative_tags": ("STRING", {"default": "", "tooltip": "Styles to avoid (custom mode)"}),
+                "title": ("STRING", {"default": "", "tooltip": "Song title (needs lyrics or instrumental)"}),
+                "style": (
+                    "STRING",
+                    {
+                        "default": "",
+                        "tooltip": "Style tags, e.g. synthwave, female vocal; empty = use the prompt (needs lyrics or instrumental)",
+                    },
+                ),
+                "negative_tags": ("STRING", {"default": "", "tooltip": "Styles to avoid (needs lyrics or instrumental)"}),
                 "vocal_gender": (["auto", "Male", "Female"], {"default": "auto", "tooltip": "Vocal gender"}),
                 "variety": (
                     ["auto", "off", "normal", "high", "extra", "max"],
                     {"default": "auto", "tooltip": "How far the two takes stray from the obvious rendition"},
                 ),
-                "auto_lyrics": ("BOOLEAN", {"default": False, "tooltip": "Let the model rewrite the lyrics (custom mode)"}),
-                "duration": ("INT", {"default": 0, "min": 0, "max": 360, "tooltip": "Seconds (10-360, custom mode); 0 = auto"}),
+                "auto_lyrics": ("BOOLEAN", {"default": False, "tooltip": "Let Suno rewrite your lyrics (only when lyrics are given)"}),
+                "duration": (
+                    "INT",
+                    {"default": 0, "min": 0, "max": 360, "tooltip": "Seconds (10-360, needs lyrics or instrumental); 0 = auto"},
+                ),
                 "style_weight": ("FLOAT", {"default": -1.0, "min": -1.0, "max": 1.0, "step": 0.05, "tooltip": _WEIGHT_TOOLTIP}),
                 "weirdness_constraint": ("FLOAT", {"default": -1.0, "min": -1.0, "max": 1.0, "step": 0.05, "tooltip": _WEIGHT_TOOLTIP}),
                 "audio_weight": ("FLOAT", {"default": -1.0, "min": -1.0, "max": 1.0, "step": 0.05, "tooltip": _WEIGHT_TOOLTIP}),
-                "persona_id": ("STRING", {"default": "", "tooltip": "Persona (voice identity) id (custom mode)"}),
+                "persona_id": ("STRING", {"default": "", "tooltip": "Persona (voice identity) id (needs lyrics or instrumental)"}),
                 "poll_interval_sec": ("FLOAT", {"default": 3.0, "min": 0.5, "max": 10.0, "tooltip": "Polling interval (seconds)"}),
                 "timeout_sec": ("INT", {"default": 900, "min": 30, "max": 7200, "tooltip": "Timeout (seconds)"}),
             },
@@ -57,7 +73,7 @@ class AtlasSunoV6:
         atlas_client: AtlasClientHandle,
         model: str,
         prompt: str,
-        custom: bool,
+        lyrics: str,
         instrumental: bool,
         seed: int,
         title: str = "",
@@ -74,25 +90,41 @@ class AtlasSunoV6:
         poll_interval_sec: float = 3.0,
         timeout_sec: int = 900,
     ) -> Tuple[Dict[str, Any], Dict[str, Any], str, str]:
+        description = (prompt or "").strip()
+        lyrics = (lyrics or "").strip()
+        # Suno's custom mode reads `prompt` as lyrics and is the only mode where title, style,
+        # duration and the weights apply; inspiration mode reads `prompt` as a description and
+        # always writes its own lyrics unless instrumental.
+        custom = bool(lyrics) or bool(instrumental)
         payload: Dict[str, Any] = {
             "model": f"suno/{model}",
-            "prompt": (prompt or "").strip(),
-            "custom": bool(custom),
+            "custom": custom,
             "instrumental": bool(instrumental),
-            "auto_lyrics": bool(auto_lyrics),
         }
-        for key, value in (("title", title), ("style", style), ("negative_tags", negative_tags), ("persona_id", persona_id)):
-            if (value or "").strip():
-                payload[key] = value.strip()
         if vocal_gender != "auto":
             payload["vocal_gender"] = vocal_gender
         if variety != "auto":
             payload["variety"] = variety
-        if duration > 0:
-            payload["duration"] = int(duration)
-        for key, value in (("style_weight", style_weight), ("weirdness_constraint", weirdness_constraint), ("audio_weight", audio_weight)):
-            if value >= 0:
-                payload[key] = float(value)
+
+        if not custom:
+            payload["prompt"] = description
+        else:
+            if lyrics:
+                payload["prompt"] = lyrics
+                payload["auto_lyrics"] = bool(auto_lyrics)
+            style = (style or "").strip() or description
+            for key, value in (("title", title), ("style", style), ("negative_tags", negative_tags), ("persona_id", persona_id)):
+                if (value or "").strip():
+                    payload[key] = value.strip()
+            if duration > 0:
+                payload["duration"] = int(duration)
+            for key, value in (
+                ("style_weight", style_weight),
+                ("weirdness_constraint", weirdness_constraint),
+                ("audio_weight", audio_weight),
+            ):
+                if value >= 0:
+                    payload[key] = float(value)
 
         outputs, prediction_id = generate_audio_outputs(atlas_client, payload, poll_interval_sec=poll_interval_sec, timeout_sec=timeout_sec)
         # Suno returns two takes per request.

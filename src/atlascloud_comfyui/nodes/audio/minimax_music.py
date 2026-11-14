@@ -24,13 +24,16 @@ class AtlasMiniMaxMusic:
                 ),
                 "lyrics": (
                     "STRING",
-                    {"multiline": True, "default": "", "tooltip": "Lyrics with section tags such as [Verse] / [Chorus]"},
+                    {
+                        "multiline": True,
+                        "default": "",
+                        "tooltip": "Lyrics with section tags such as [Verse] / [Chorus]. Empty: music-3.0 writes its own from the prompt",
+                    },
                 ),
                 "seed": SEED_INPUT,
             },
             "optional": {
                 "is_instrumental": ("BOOLEAN", {"default": False, "tooltip": "Instrumental only; lyrics are ignored"}),
-                "lyrics_optimizer": ("BOOLEAN", {"default": False, "tooltip": "music-3.0 only: write lyrics from the prompt"}),
                 "format": (["mp3", "wav"], {"default": "mp3", "tooltip": "Output audio format"}),
                 "sample_rate": ([16000, 24000, 32000, 44100], {"default": 44100, "tooltip": "Sample rate (Hz)"}),
                 "bitrate": ([32000, 64000, 128000, 256000], {"default": 256000, "tooltip": "Bitrate (bps)"}),
@@ -47,24 +50,25 @@ class AtlasMiniMaxMusic:
         lyrics: str,
         seed: int,
         is_instrumental: bool = False,
-        lyrics_optimizer: bool = False,
         format: str = "mp3",
         sample_rate: int = 44100,
         bitrate: int = 256000,
         poll_interval_sec: float = 3.0,
         timeout_sec: int = 900,
     ) -> Tuple[Dict[str, Any], str, str]:
+        lyrics = (lyrics or "").strip()
         payload: Dict[str, Any] = {
             "model": f"minimax/{model}",
             "prompt": (prompt or "").strip(),
-            "lyrics": (lyrics or "").strip(),
+            "lyrics": lyrics,
             "is_instrumental": bool(is_instrumental),
             "format": format,
             "sample_rate": int(sample_rate),
             "bitrate": int(bitrate),
         }
         if model == "music-3.0":
-            payload["lyrics_optimizer"] = bool(lyrics_optimizer)
+            # 3.0 rejects lyrics_optimizer together with lyrics, and needs it when there are none.
+            payload["lyrics_optimizer"] = not lyrics and not is_instrumental
 
         outputs, prediction_id = generate_audio_outputs(atlas_client, payload, poll_interval_sec=poll_interval_sec, timeout_sec=timeout_sec)
         return (load_audio_url(outputs[0]), outputs[0], prediction_id)
