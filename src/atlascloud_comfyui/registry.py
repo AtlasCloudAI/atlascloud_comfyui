@@ -373,6 +373,7 @@ from atlascloud_comfyui.nodes.video.bytedance_seedance_2_0_mini_r2v import Atlas
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_5_t2v import AtlasSeedance25TextToVideo
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_5_i2v import AtlasSeedance25ImageToVideo
 from atlascloud_comfyui.nodes.video.bytedance_seedance_2_5_r2v import AtlasSeedance25ReferenceToVideo
+from atlascloud_comfyui.nodes.video.bytedance_seedance_2_5_flash_r2v import AtlasSeedance25FlashReferenceToVideo
 from atlascloud_comfyui.nodes.video.bytedance_avatar_omni_human_v15 import AtlasAvatarOmniHumanV15
 from atlascloud_comfyui.nodes.image.atlascloud_image_upscaler import AtlasImageUpscaler
 from atlascloud_comfyui.nodes.image.atlascloud_face_swap_image import AtlasFaceSwapImage
@@ -560,6 +561,7 @@ NODE_CLASS_MAPPINGS: Dict[str, Type[Any]] = {
     "AtlasCloud Seedance 2.5 Text-to-Video": AtlasSeedance25TextToVideo,
     "AtlasCloud Seedance 2.5 Image-to-Video": AtlasSeedance25ImageToVideo,
     "AtlasCloud Seedance 2.5 Reference-to-Video": AtlasSeedance25ReferenceToVideo,
+    "AtlasCloud Seedance 2.5 Flash Reference-to-Video": AtlasSeedance25FlashReferenceToVideo,
     "AtlasCloud Avatar Omni Human 1.5": AtlasAvatarOmniHumanV15,
     "AtlasCloud Image Upscaler": AtlasImageUpscaler,
     "AtlasCloud Face Swap (Image)": AtlasFaceSwapImage,

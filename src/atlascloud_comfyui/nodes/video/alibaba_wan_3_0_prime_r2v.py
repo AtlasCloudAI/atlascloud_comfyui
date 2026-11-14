@@ -17,8 +17,8 @@ _MAX_REFERS = 20
 class AtlasWan30PrimeReferenceToVideo:
     CATEGORY = "AtlasCloud/Video"
     FUNCTION = "run"
-    RETURN_TYPES = ("STRING", "STRING")
-    RETURN_NAMES = ("video_url", "prediction_id")
+    RETURN_TYPES = ("STRING", "STRING", "DICT")
+    RETURN_NAMES = ("video_url", "prediction_id", "payload")
 
     @classmethod
     def INPUT_TYPES(cls):
@@ -131,4 +131,4 @@ class AtlasWan30PrimeReferenceToVideo:
                 f"Unexpected output type for prediction {prediction_id}: {type(first).__name__} {first!r}"
             )
 
-        return (first, prediction_id)
+        return (first, prediction_id, payload)

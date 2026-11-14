@@ -8,8 +8,8 @@ from ..auth.atlas_client_node import AtlasClientHandle
 class AtlasSeedance20ReferenceToVideo:
     CATEGORY = "AtlasCloud/Video"
     FUNCTION = "run"
-    RETURN_TYPES = ("STRING", "STRING")
-    RETURN_NAMES = ("video_url", "prediction_id")
+    RETURN_TYPES = ("STRING", "STRING", "DICT")
+    RETURN_NAMES = ("video_url", "prediction_id", "payload")
 
     @classmethod
     def INPUT_TYPES(cls):
@@ -39,6 +39,7 @@ class AtlasSeedance20ReferenceToVideo:
                     {"multiline": True, "default": "", "tooltip": "Reference audio URLs, one per line (up to 3, each wav/mp3 2-15s ≤15MB)"},
                 ),
                 "duration": (
+                    "INT",
                     [-1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
                     {"default": 5, "tooltip": "Duration (seconds), or -1 for auto"},
                 ),
@@ -131,4 +132,4 @@ class AtlasSeedance20ReferenceToVideo:
                 f"Unexpected output type for prediction {prediction_id}: {type(first).__name__} {first!r}"
             )
 
-        return (first, prediction_id)
+        return (first, prediction_id, payload)
