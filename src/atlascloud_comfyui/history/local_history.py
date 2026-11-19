@@ -93,6 +93,45 @@ def _sanitize_value(key: str, value: Any) -> Any:
     return value
 
 
+
+def _is_safe_path_segment(value: str) -> bool:
+    """Whether *value* may be used as a single path segment.
+
+    Rejects empty values, ``.``/``..``, anything carrying a path separator
+    (including the encoded and Windows forms), and NUL. Callers pass these
+    straight from HTTP route parameters, so a segment that can traverse is a
+    remote read/write outside the history store.
+    """
+    if not value or value in (".", ".."):
+        return False
+    lowered = value.lower()
+    for marker in ("/", "\\", "%2f", "%5c", "\x00"):
+        if marker in lowered:
+            return False
+    return True
+
+
+def _contained(path: Path, base: Path) -> Optional[Path]:
+    """Return *path* only when it really resolves inside *base*.
+
+    ``base`` must be a fixed root, never one built from caller input: deriving
+    it from the same untrusted segment makes the containment check move with
+    the attacker and pass trivially.
+    """
+    try:
+        real = path.resolve()
+        root = base.resolve()
+    except Exception:
+        return None
+    try:
+        if os.path.commonpath([str(real), str(root)]) != str(root):
+            return None
+    except ValueError:
+        # different drives on Windows
+        return None
+    return real
+
+
 class LocalHistoryRecorder:
     def __init__(self, base_dir: Optional[str] = None, *, enabled: bool = True) -> None:
         self.enabled = enabled
@@ -202,20 +241,16 @@ class LocalHistoryRecorder:
         return doc
 
     def asset_path(self, prediction_id: str, filename: str) -> Optional[Path]:
-        path = (self.assets_dir / prediction_id / filename).resolve()
-        try:
-            path.relative_to((self.assets_dir / prediction_id).resolve())
-        except Exception:
+        if not _is_safe_path_segment(prediction_id) or not _is_safe_path_segment(filename):
             return None
-        return path if path.exists() else None
+        path = _contained(self.assets_dir / prediction_id / filename, self.assets_dir)
+        return path if path is not None and path.exists() else None
 
     def input_asset_path(self, prediction_id: str, filename: str) -> Optional[Path]:
-        path = (self.inputs_dir / prediction_id / filename).resolve()
-        try:
-            path.relative_to((self.inputs_dir / prediction_id).resolve())
-        except Exception:
+        if not _is_safe_path_segment(prediction_id) or not _is_safe_path_segment(filename):
             return None
-        return path if path.exists() else None
+        path = _contained(self.inputs_dir / prediction_id / filename, self.inputs_dir)
+        return path if path is not None and path.exists() else None
 
     def record_submission(
         self,
@@ -323,16 +358,31 @@ class LocalHistoryRecorder:
         self._safe_write_run(prediction_id, doc)
 
     def _run_path(self, prediction_id: str) -> Path:
-        return self.runs_dir / f"{prediction_id}.json"
+        return self._contained_child(self.runs_dir, f"{prediction_id}.json", prediction_id)
 
     def _asset_dir(self, prediction_id: str) -> Path:
-        return self.assets_dir / prediction_id
+        return self._contained_child(self.assets_dir, prediction_id, prediction_id)
 
     def _input_dir(self, prediction_id: str) -> Path:
-        return self.inputs_dir / prediction_id
+        return self._contained_child(self.inputs_dir, prediction_id, prediction_id)
 
     def _prompt_dir(self, prediction_id: str) -> Path:
-        return self.prompts_dir / prediction_id
+        return self._contained_child(self.prompts_dir, prediction_id, prediction_id)
+
+    @staticmethod
+    def _contained_child(base: Path, child: str, prediction_id: str) -> Path:
+        """Join *child* under *base*, refusing anything that escapes it.
+
+        These feed writes as well as reads (record_submission, refresh_assets),
+        so an unchecked prediction_id would let a caller write outside the
+        history store, not just read from it.
+        """
+        if not _is_safe_path_segment(prediction_id):
+            raise ValueError(f"unsafe prediction_id: {prediction_id!r}")
+        resolved = _contained(base / child, base)
+        if resolved is None:
+            raise ValueError(f"path escapes the history store: {prediction_id!r}")
+        return resolved
 
     @staticmethod
     def _prompt_preview(doc: Dict[str, Any]) -> str:

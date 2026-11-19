@@ -9,6 +9,8 @@ import uuid
 import urllib.request
 from typing import Dict
 
+from .safe_paths import resolve_output_subdir, safe_filename_prefix
+
 
 def _load_image_bytes(source: str, timeout_sec: int = 60) -> bytes:
     s = (source or "").strip()
@@ -106,8 +108,8 @@ class AtlasImagePreviewURL:
         except Exception:
             output_dir = os.path.expanduser("~/Documents/ComfyUI/output")
 
-        safe_sub = (subfolder or "").strip().strip("/").strip("\\")
-        out_dir = os.path.join(output_dir, safe_sub) if safe_sub else output_dir
+        safe_sub, out_dir = resolve_output_subdir(output_dir, subfolder)
+        filename_prefix = safe_filename_prefix(filename_prefix, "AtlasImage")
         os.makedirs(out_dir, exist_ok=True)
 
         stamp = time.strftime("%Y%m%d_%H%M%S")
