@@ -7,6 +7,8 @@ import urllib.request
 from urllib.parse import urlencode, urlparse
 from typing import Dict
 
+from .safe_paths import resolve_output_subdir, safe_filename_prefix
+
 
 def _guess_ext_from_url(url: str) -> str:
     path = urlparse(url).path or ""
@@ -75,8 +77,8 @@ class AtlasVideoPreviewer:
             # Fallback for non-ComfyUI contexts (adjust if your output dir differs)
             output_dir = os.path.expanduser("~/Documents/ComfyUI/output")
 
-        safe_sub = (subfolder or "").strip().strip("/").strip("\\")
-        out_folder = os.path.join(output_dir, safe_sub) if safe_sub else output_dir
+        safe_sub, out_folder = resolve_output_subdir(output_dir, subfolder)
+        filename_prefix = safe_filename_prefix(filename_prefix, "AtlasVideo")
         os.makedirs(out_folder, exist_ok=True)
 
         ext = _guess_ext_from_url(video_url)
